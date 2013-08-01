@@ -11,7 +11,7 @@
                  [com.draines/postal        "1.10.4"]]
   :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
   :plugins      [[lein-cljsbuild "0.3.2"]]
-  :cljsbuild    {:builds [{:source-path "src/cljs"
-                           :compiler    {:output-to     "resources/public/piggieback.js"
-                                         :optimizations :whitespace
-                                         :pretty-print  true}}]})
+  :cljsbuild    {:builds [{:source-paths ["src/cljs"]
+                           :compiler     {:pretty-print  true
+                                          :output-to     "resources/public/piggieback.js"
+                                          :optimizations :whitespace}}]})

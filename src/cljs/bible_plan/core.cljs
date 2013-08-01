@@ -1,12 +1,10 @@
-(ns bible-plan.core)
+(ns bible-plan.core
+  (:require [goog.date.DateTime]))
 
 (comment
   (set! (.-value (goog.dom/getElement "afield")) "Ohai, Charnock!")
   (.-value (goog.dom/getElement "afield"))
-  )
 
-(comment
-  (require 'cljs.repl.browser)
-
-  (cemerick.piggieback/cljs-repl :repl-env (doto (cljs.repl.browser/repl-env :port 9000) cljs.repl/-setup))
+  (load-namespace 'goog.date.DateTime)
+  (goog.date/DateTime.)
   )
