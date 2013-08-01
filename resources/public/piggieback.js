@@ -30553,3 +30553,6 @@ goog.require("cljs.core");
 goog.require("clojure.browser.repl");
 console.log("Ohai, Charnock!");
 clojure.browser.repl.connect.call(null, "http://localhost:9000/repl");
+console.log("Ohai, Whitefield!");
+goog.provide("bible_plan.core");
+goog.require("cljs.core");
