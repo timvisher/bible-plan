@@ -3,6 +3,10 @@
 
 (.log js/console "Ohai, Charnock!")
 
-(repl/connect "http://localhost:9000/repl")
+(defn connect []
+  (.log js/console "boom")
+  (repl/connect "http://localhost:9000/repl"))
+
+(js/setTimeout connect 1000)
 
 (.log js/console "Ohai, Whitefield!")
