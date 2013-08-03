@@ -7,6 +7,6 @@
   (.log js/console "boom")
   (repl/connect "http://localhost:9000/repl"))
 
-(js/setTimeout connect 1000)
+(js/setTimeout connect 2500)
 
 (.log js/console "Ohai, Whitefield!")
