@@ -34,7 +34,7 @@
   (->str {:start {:book 30 :chapter 1} :end {:book 29 :chapter 1}}) ;; => Error. References must be in book order
   (->str {:start {:book 30 :chapter 1} :end {:book 32 :chapter 3}}) ;; => Am. 1-Jon. 3
   (->str {:start {:book 30 :chapter 1 :verse 15} :end {:book 30 :chapter 1 :verse 1}}) ;; Error. References must be in ascending order
-  
+  mcheyne/mcheyne
   )
 
 (defn ->book-str [{:keys [book chapter] :as reference}]
@@ -63,10 +63,18 @@
         book
         (string/capitalize (->book-str reference))))
 
+(let [{a :a b :b :or {a 2 b 3}} {}]
+  [a b])
+
 (defn compound->str [start end]
   {:pre [(reference< start end)]}
-  (let []
-    (str (single->str start) "-" (single->str end))))
+  (let [{s-book :book s-chapter :chapter s-verse :verse :or {s-chapter 1 s-verse 1}} start
+        {e-book :book e-chapter :chapter e-verse :verse :or {e-chapter 1 e-verse 1}} end]
+    (cond (and (= s-book e-book) (= s-chapter e-chapter) (not= s-verse e-verse))
+          (str (string/capitalize (->book-str start)) ". " (->chapter-str start) "." s-verse "-" e-verse)
+
+          :default
+          (str (single->str start) "-" (single->str end)))))
 
 (defn ->str [{:keys [start end] :as reference}]
   {:pre [(:book start)]}

@@ -23,7 +23,7 @@
   (is (thrown-with-msg? js/Error #"reference<" (ref/->str {:start {:book 30 :chapter 1} :end {:book 29 :chapter 1}}))))
 
 (deftest ->str-start-and-end-when-ascending
-  (is (= "Am.-Jon. 3" (ref/->str {:start {:book 30 :chapter 1} :end {:book 32 :chapter 3}}))))
+  (is (= "Am. 1-Jon. 3" (ref/->str {:start {:book 30 :chapter 1} :end {:book 32 :chapter 3}}))))
 
 (deftest ->str-start-and-end-when-verses-not-ascending
   (is (thrown-with-msg? js/Error #"reference<" (ref/->str {:start {:book 30 :chapter 1 :verse 15} :end {:book 30 :chapter 1 :verse 1}}))))
