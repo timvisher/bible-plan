@@ -63,15 +63,15 @@
         book
         (string/capitalize (->book-str reference))))
 
-(let [{a :a b :b :or {a 2 b 3}} {}]
-  [a b])
-
 (defn compound->str [start end]
   {:pre [(reference< start end)]}
   (let [{s-book :book s-chapter :chapter s-verse :verse :or {s-chapter 1 s-verse 1}} start
         {e-book :book e-chapter :chapter e-verse :verse :or {e-chapter 1 e-verse 1}} end]
     (cond (and (= s-book e-book) (= s-chapter e-chapter) (not= s-verse e-verse))
           (str (string/capitalize (->book-str start)) ". " (->chapter-str start) "." s-verse "-" e-verse)
+
+          (and (= s-book e-book) (not= s-chapter e-chapter) (not= s-verse e-verse))
+          (str (string/capitalize (->book-str start)) ". " (->chapter-str start) "." s-verse "-" (->chapter-str end) "." e-verse)
 
           :default
           (str (single->str start) "-" (single->str end)))))

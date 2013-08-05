@@ -19,6 +19,9 @@
 (deftest ->str-start-and-end-when-both-have-verses
   (is (= "Am. 1.16-32" (ref/->str {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 1 :verse 32}}))))
 
+(deftest ->str-start-and-end-chapters-and-verses-differ
+  (is (= "Am. 1.16-2.32" (ref/->str {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 2 :verse 32}}))))
+
 (deftest ->str-start-and-end-when-books-not-ascending
   (is (thrown-with-msg? js/Error #"reference<" (ref/->str {:start {:book 30 :chapter 1} :end {:book 29 :chapter 1}}))))
 
