@@ -4,8 +4,15 @@
     <title>Generate Your Bible Plans!</title>
   </head>
   <body>
-    <h1>Ohai, Charnock!</h1>
-    <h2>Moooooare Soon!</h2>
+    <form>
+      <h1>Create Your Own Bible Plan</h1>
+
+      <h2>Pick a Plan</h2>
+      <input type="checkbox" name="plan" id="plan-mcheyne" value="mcheyne"><label for="plan-mcheyne">Robert Murray M'Cheyne (<a href="http://www.bibleplan.org/mcheyne.htm" target="_blank">info</a>)</label>
+
+      <h2>The Base Plan</h2>
+      <ol id="base-plan"></ol>
+    </form>
     <script type="text/javascript" src="piggieback.js"></script>
     <script type="text/javascript">
       goog.require('piggieback_browser');

@@ -2,18 +2,19 @@
   (:require    [goog.date.DateTime]
                [goog.i18n.DateTimeFormat.Format]
                [goog.i18n.DateTimeFormat]
-               [dommy.core :as dom])
+               [dommy.core :as dom]
+               [bible-plan.mcheyne :as mcheyne])
   (:use-macros [dommy.macros :only [sel sel1]]))
-
-(let [long-date-formatter (goog.i18n/DateTimeFormat. goog.i18n.DateTimeFormat.Format.LONG_DATE)
-      now                 (goog.date/DateTime.)
-      formatted-now       (.format long-date-formatter now)
-      h1                  (sel1 :h1)]
-  (dom/set-text! h1 (str (dom/text h1) " " formatted-now)))
 
 (comment
 
-  (.-textContent (sel1 :body))
+  (let [long-date-formatter (goog.i18n/DateTimeFormat. goog.i18n.DateTimeFormat.Format.LONG_DATE)
+        now                 (goog.date/DateTime.)
+        formatted-now       (.format long-date-formatter now)
+        h1                  (sel1 :h1)]
+    (dom/set-text! h1 (str (dom/text h1) " " formatted-now)))
+
+  (.-textContent (sel1 :#base-plan))
 
   (dom/text (sel1 :h1))
 
