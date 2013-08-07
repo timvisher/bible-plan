@@ -6,9 +6,6 @@
 
   (:use-macros [dommy.macros :only [sel1 sel node deftemplate]]))
 
-(deftemplate ->li [day]
-  [:li (string/join ", " (map ->str day))])
-
 (defn reference< [reference & references]
   {:pre [#(every? :book (into [reference] references))]}
   (let [references              (into [reference] references)
@@ -30,6 +27,8 @@
   (dom/append! (sel1 :#base-plan) (->li {:start {:book 1 :chapter 1}}))
 
   (dom/replace-contents! (sel1 :#base-plan) (map ->li mcheyne/mcheyne))
+
+  (dom/listen! (sel1 (keyword "input[name=plan]")) :change (fn [e] (.log js/console e)))
 
   (->str {:start {:book 30}}) ;; => Amos
 
@@ -91,3 +90,6 @@
   (if (and start end)
     (compound->str start end)
     (single->str start)))
+
+(deftemplate ->li [day]
+  [:li (string/join ", " (map ->str day))])

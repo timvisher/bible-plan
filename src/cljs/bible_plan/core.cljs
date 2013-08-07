@@ -3,8 +3,12 @@
                [goog.i18n.DateTimeFormat.Format]
                [goog.i18n.DateTimeFormat]
                [dommy.core :as dom]
-               [bible-plan.mcheyne :as mcheyne])
+               [bible-plan.mcheyne :as mcheyne]
+               [bible-plan.reference :as ref])
   (:use-macros [dommy.macros :only [sel sel1]]))
+
+(dom/listen! (sel1 (keyword "input[name=plan]")) :change (fn [e] (dom/replace-contents! (sel1 :#base-plan) (map ref/->li mcheyne/mcheyne))))
+
 
 (comment
 
