@@ -22,7 +22,7 @@
    19 {:name "psalms" :chapters 150 :abbreviation "ps"}
    20 {:name "proverbs" :chapters 31 :abbreviation "prv"}
    21 {:name "ecclesiastes" :chapters 12 :abbreviation "eccl"}
-   22 {:name "song of songs" :chapters 8 :abbreviation nil}
+   22 {:name "song of songs" :chapters 8 :abbreviation "sg"}
    23 {:name "isaiah" :chapters 66 :abbreviation "is"}
    24 {:name "jeremiah" :chapters 52 :abbreviation "jer"}
    25 {:name "lamentations" :chapters 5 :abbreviation "lam"}
@@ -44,7 +44,7 @@
    41 {:name "mark" :chapters 16 :abbreviation "mk"}
    42 {:name "luke" :chapters 24 :abbreviation "lk"}
    43 {:name "john" :chapters 21 :abbreviation "jn"}
-   44 {:name "acts" :chapters 28 :abbreviation nil}
+   44 {:name "acts of the apostles" :chapters 28 :abbreviation "acts"}
    45 {:name "romans" :chapters 16 :abbreviation "rom"}
    46 {:name "1 corinthians" :chapters 16 :abbreviation "1 cor"}
    47 {:name "2 corinthians" :chapters 13 :abbreviation "2 cor"}
@@ -65,5 +65,5 @@
    62 {:name "1 john" :chapters 5 :abbreviation "1 jn"}
    63 {:name "2 john" :chapters 1 :abbreviation "2 jn"}
    64 {:name "3 john" :chapters 1 :abbreviation "3 jn"}
-   65 {:name "jude" :chapters 1 :abbreviation nil}
+   65 {:name "jude" :chapters 1 :abbreviation "jude"}
    66 {:name "revelation" :chapters 22 :abbreviation "rev"}})

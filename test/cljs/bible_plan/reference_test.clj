@@ -13,9 +13,6 @@
 (deftest ->str-book-chapter-and-verse
   (is (= "Am. 1.1" (ref/->str {:start {:book 30 :chapter 1 :verse 1}}))))
 
-(deftest ->str-start-and-end-when-start-has-no-verse-and-verses-are-different
-  (is (= "Am. 1.1-15" (ref/->str {:start {:book 30 :chapter 1} :end {:book 30 :chapter 1 :verse 15}}))))
-
 (deftest ->str-start-and-end-when-both-have-verses
   (is (= "Am. 1.16-32" (ref/->str {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 1 :verse 32}}))))
 
@@ -31,12 +28,14 @@
 (deftest ->str-start-and-end-when-verses-not-ascending
   (is (thrown-with-msg? js/Error #"reference<" (ref/->str {:start {:book 30 :chapter 1 :verse 15} :end {:book 30 :chapter 1 :verse 1}}))))
 
-(deftest reference<-ascending-with-start-missing-verse
-  (is (ref/reference< {:book 30 :chapter 1} {:book 30 :chapter 1 :verse 15})))
-
 (deftest reference<-ascending-start-and-end-full-reference
   (is (ref/reference< {:book 30 :chapter 1 :verse 16} {:book 30 :chapter 1 :verse 32})))
 
+(deftest reference<-differing-specificity-chapters-is-false
+  (is (not (ref/reference< {:book 30} {:book 30 :chapter 2}))))
+
+(deftest reference<-differing-specificity-verses-is-false
+  (is (not (ref/reference< {:book 30 :chapter 1}  {:book 30 :chapter 1 :verse 15}))))
 
 (comment
   (t/test-ns 'bible-plan.reference-test)

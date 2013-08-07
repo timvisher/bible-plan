@@ -6,28 +6,37 @@
 
   (:use-macros [dommy.macros :only [sel1 sel node deftemplate]]))
 
-(deftemplate ->li [reference]
-  [:li (str (get-in reference [:start :book]) " " (get-in reference [:start :chapter]))])
+(deftemplate ->li [day]
+  [:li (string/join ", " (map ->str day))])
 
 (defn reference< [reference & references]
   {:pre [#(every? :book (into [reference] references))]}
-  (let [references (into [reference] references)
-        books      (map :book references)
-        chapters   (map #(or (:chapter %) 1) references)
-        verses     (map #(or (:verse %) 1) references)]
+  (let [references              (into [reference] references)
+        [books chapters verses] ((juxt (partial map :book)
+                                       (partial map :chapter)
+                                       (partial map :verse))
+                                 references)]
     (or (apply < books)
-        (and (apply = books) (apply < chapters))
-        (and (apply = books) (apply = chapters) (apply < verses)))))
+        (and (apply = books)
+             (every? identity chapters)
+             (apply < chapters))
+        (and (apply = books)
+             (every? identity chapters)
+             (apply = chapters)
+             (every? identity verses)
+             (apply < verses)))))
 
 (comment
   (dom/append! (sel1 :#base-plan) (->li {:start {:book 1 :chapter 1}}))
+
+  (dom/replace-contents! (sel1 :#base-plan) (map ->li mcheyne/mcheyne))
 
   (->str {:start {:book 30}}) ;; => Amos
 
   bible/bible
 
   *charnock*
-  (->str {:start {:book 30 :chapter 1}}) ;; => Am. 1
+  (->str {:start {:book 44 :chapter 1}}) ;; => Am. 1
   (->str {:start {:book 30 :chapter 1 :verse 1}}) ;; => Am. 1.1
   (->str {:start {:book 30 :chapter 1} :end {:book 30 :chapter 1 :verse 15}}) ;; => Am. 1.1-15
   (->str {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 1 :verse 32}}) ;; => Am. 1.16-32
@@ -44,16 +53,17 @@
     (get-in bible/bible [book :abbreviation])))
 
 (defn ->chapter-str [{:keys [chapter] :as reference}]
+  {:pre [chapter]}
   chapter)
 
 (defn ->verse-str [{:keys [verse] :as reference}]
+  {:pre [verse]}
   verse)
 
 (defn single->str [{:keys [book chapter verse] :as reference}]
   {:pre [(or (and book chapter verse)
              (and book chapter (not verse))
              (and book (not chapter verse)))]}
-  (def ^:dynamic *charnock* [book chapter verse reference])
   (cond (and book chapter verse)
         (str (string/capitalize (->book-str reference)) ". " (->chapter-str reference) "." (->verse-str reference))
 
@@ -81,5 +91,3 @@
   (if (and start end)
     (compound->str start end)
     (single->str start)))
-
-
