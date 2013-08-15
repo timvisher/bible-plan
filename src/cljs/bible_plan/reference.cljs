@@ -29,20 +29,6 @@
   (dom/replace-contents! (sel1 :#base-plan) (map ->li mcheyne/mcheyne))
 
   (dom/listen! (sel1 (keyword "input[name=plan]")) :change (fn [e] (.log js/console e)))
-
-  (->str {:start {:book 30}}) ;; => Amos
-
-  bible/bible
-
-  *charnock*
-  (->str {:start {:book 44 :chapter 1}}) ;; => Am. 1
-  (->str {:start {:book 30 :chapter 1 :verse 1}}) ;; => Am. 1.1
-  (->str {:start {:book 30 :chapter 1} :end {:book 30 :chapter 1 :verse 15}}) ;; => Am. 1.1-15
-  (->str {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 1 :verse 32}}) ;; => Am. 1.16-32
-  (->str {:start {:book 30 :chapter 1} :end {:book 29 :chapter 1}}) ;; => Error. References must be in book order
-  (->str {:start {:book 30 :chapter 1} :end {:book 32 :chapter 3}}) ;; => Am. 1-Jon. 3
-  (->str {:start {:book 30 :chapter 1 :verse 15} :end {:book 30 :chapter 1 :verse 1}}) ;; Error. References must be in ascending order
-  mcheyne/mcheyne
   )
 
 (defn ->book-str [{:keys [book chapter] :as reference}]

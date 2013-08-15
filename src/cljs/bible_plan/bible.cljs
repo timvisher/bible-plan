@@ -437,7 +437,7 @@
    {:book 1 :chapter 15 :verse 4 :word-count 25}
    {:book 1 :chapter 15 :verse 5 :word-count 31}
    {:book 1 :chapter 15 :verse 6 :word-count 13}
-   {:book 1:chapter 15 :verse 7 :word-count 25}
+   {:book 1 :chapter 15 :verse 7 :word-count 25}
    {:book 1 :chapter 15 :verse 8 :word-count 16}
    {:book 1 :chapter 15 :verse 9 :word-count 28}
    {:book 1 :chapter 15 :verse 10 :word-count 27}
@@ -677,7 +677,7 @@
    {:book 1 :chapter 24 :verse 13 :word-count 24}
    {:book 1 :chapter 24 :verse 14 :word-count 55}
    {:book 1 :chapter 24 :verse 15 :word-count 31}
-   {:book 1 :chapter 24 :verse 16:word-count 28}
+   {:book 1 :chapter 24 :verse 16 :word-count 28}
    {:book 1 :chapter 24 :verse 17 :word-count 20}
    {:book 1 :chapter 24 :verse 18 :word-count 20}
    {:book 1 :chapter 24 :verse 19 :word-count 23}
@@ -869,7 +869,7 @@
    {:book 1 :chapter 29 :verse 1 :word-count 17}
    {:book 1 :chapter 29 :verse 2 :word-count 36}
    {:book 1 :chapter 29 :verse 3 :word-count 38}
-   {:book 1 :chapter 29 :verse 4:word-count 17}
+   {:book 1 :chapter 29 :verse 4 :word-count 17}
    {:book 1 :chapter 29 :verse 5 :word-count 17}
    {:book 1 :chapter 29 :verse 6 :word-count 24}
    {:book 1 :chapter 29 :verse 7 :word-count 26}
@@ -1085,7 +1085,7 @@
    {:book 1 :chapter 35 :verse 1 :word-count 30}
    {:book 1 :chapter 35 :verse 2 :word-count 29}
    {:book 1 :chapter 35 :verse 3 :word-count 38}
-   {:book 1 :chapter 35 :verse 4:word-count 31}
+   {:book 1 :chapter 35 :verse 4 :word-count 31}
    {:book 1 :chapter 35 :verse 5 :word-count 26}
    {:book 1 :chapter 35 :verse 6 :word-count 24}
    {:book 1 :chapter 35 :verse 7 :word-count 25}
@@ -1109,7 +1109,7 @@
    {:book 1 :chapter 35 :verse 25 :word-count 9}
    {:book 1 :chapter 35 :verse 26 :word-count 22}
    {:book 1 :chapter 35 :verse 27 :word-count 20}
-   {:book 1 :chapter 35 :verse 28:word-count 8}
+   {:book 1 :chapter 35 :verse 28 :word-count 8}
    {:book 1 :chapter 35 :verse 29 :word-count 27}
    {:book 1 :chapter 36 :verse 1 :word-count 9}
    {:book 1 :chapter 36 :verse 2 :word-count 25}
@@ -1302,7 +1302,7 @@
    {:book 1 :chapter 41 :verse 33 :word-count 18}
    {:book 1 :chapter 41 :verse 34 :word-count 25}
    {:book 1 :chapter 41 :verse 35 :word-count 33}
-   {:book 1 :chapter 41 :verse 36:word-count 34}
+   {:book 1 :chapter 41 :verse 36 :word-count 34}
    {:book 1 :chapter 41 :verse 37 :word-count 8}
    {:book 1 :chapter 41 :verse 38 :word-count 20}
    {:book 1 :chapter 41 :verse 39 :word-count 22}
@@ -1615,7 +1615,7 @@
    {:book 2 :chapter 1 :verse 9 :word-count 19}
    {:book 2 :chapter 1 :verse 10 :word-count 28}
    {:book 2 :chapter 1 :verse 11 :word-count 21}
-   {:book 2:chapter 1 :verse 12 :word-count 27}
+   {:book 2 :chapter 1 :verse 12 :word-count 27}
    {:book 2 :chapter 1 :verse 13 :word-count 11}
    {:book 2 :chapter 1 :verse 14 :word-count 32}
    {:book 2 :chapter 1 :verse 15 :word-count 20}
@@ -1909,7 +1909,7 @@
    {:book 2 :chapter 12 :verse 19 :word-count 40}
    {:book 2 :chapter 12 :verse 20 :word-count 15}
    {:book 2 :chapter 12 :verse 21 :word-count 27}
-   {:book 2:chapter 12 :verse 22 :word-count 47}
+   {:book 2 :chapter 12 :verse 22 :word-count 47}
    {:book 2 :chapter 12 :verse 23 :word-count 44}
    {:book 2 :chapter 12 :verse 24 :word-count 15}
    {:book 2 :chapter 12 :verse 25 :word-count 22}
@@ -1957,7 +1957,7 @@
    {:book 2 :chapter 13 :verse 16 :word-count 26}
    {:book 2 :chapter 13 :verse 17 :word-count 40}
    {:book 2 :chapter 13 :verse 18 :word-count 32}
-   {:book 2:chapter 13 :verse 19 :word-count 35}
+   {:book 2 :chapter 13 :verse 19 :word-count 35}
    {:book 2 :chapter 13 :verse 20 :word-count 16}
    {:book 2 :chapter 13 :verse 21 :word-count 40}
    {:book 2 :chapter 13 :verse 22 :word-count 20}
@@ -2342,7 +2342,7 @@
    {:book 2 :chapter 26 :verse 32 :word-count 22}
    {:book 2 :chapter 26 :verse 33 :word-count 35}
    {:book 2 :chapter 26 :verse 34 :word-count 17}
-   {:book 2 :chapter 26 :verse 35:word-count 32}
+   {:book 2 :chapter 26 :verse 35 :word-count 32}
    {:book 2 :chapter 26 :verse 36 :word-count 25}
    {:book 2 :chapter 26 :verse 37 :word-count 32}
    {:book 2 :chapter 27 :verse 1 :word-count 27}
@@ -2534,7 +2534,7 @@
    {:book 2 :chapter 32 :verse 21 :word-count 22}
    {:book 2 :chapter 32 :verse 22 :word-count 22}
    {:book 2 :chapter 32 :verse 23 :word-count 38}
-   {:book 2 :chapter 32 :verse 24:word-count 31}
+   {:book 2 :chapter 32 :verse 24 :word-count 31}
    {:book 2 :chapter 32 :verse 25 :word-count 23}
    {:book 2 :chapter 32 :verse 26 :word-count 29}
    {:book 2 :chapter 32 :verse 27 :word-count 46}
@@ -2558,7 +2558,7 @@
    {:book 2 :chapter 33 :verse 10 :word-count 30}
    {:book 2 :chapter 33 :verse 11 :word-count 41}
    {:book 2 :chapter 33 :verse 12 :word-count 45}
-   {:book 2 :chapter 33 :verse 13:word-count 37}
+   {:book 2 :chapter 33 :verse 13 :word-count 37}
    {:book 2 :chapter 33 :verse 14 :word-count 15}
    {:book 2 :chapter 33 :verse 15 :word-count 20}
    {:book 2 :chapter 33 :verse 16 :word-count 45}
@@ -2654,7 +2654,7 @@
    {:book 2 :chapter 36 :verse 13 :word-count 24}
    {:book 2 :chapter 36 :verse 14 :word-count 17}
    {:book 2 :chapter 36 :verse 15 :word-count 23}
-   {:book 2 :chapter 36 :verse 16:word-count 11}
+   {:book 2 :chapter 36 :verse 16 :word-count 11}
    {:book 2 :chapter 36 :verse 17 :word-count 27}
    {:book 2 :chapter 36 :verse 18 :word-count 19}
    {:book 2 :chapter 36 :verse 19 :word-count 14}
@@ -2750,7 +2750,7 @@
    {:book 2 :chapter 39 :verse 11 :word-count 11}
    {:book 2 :chapter 39 :verse 12 :word-count 11}
    {:book 2 :chapter 39 :verse 13 :word-count 19}
-   {:book 2 :chapter 39 :verse 14:word-count 29}
+   {:book 2 :chapter 39 :verse 14 :word-count 29}
    {:book 2 :chapter 39 :verse 15 :word-count 13}
    {:book 2 :chapter 39 :verse 16 :word-count 24}
    {:book 2 :chapter 39 :verse 17 :word-count 18}
@@ -2822,7 +2822,7 @@
    {:book 3 :chapter 1 :verse 2 :word-count 35}
    {:book 3 :chapter 1 :verse 3 :word-count 37}
    {:book 3 :chapter 1 :verse 4 :word-count 24}
-   {:book 3 :chapter 1 :verse 5:word-count 38}
+   {:book 3 :chapter 1 :verse 5 :word-count 38}
    {:book 3 :chapter 1 :verse 6 :word-count 12}
    {:book 3 :chapter 1 :verse 7 :word-count 19}
    {:book 3 :chapter 1 :verse 8 :word-count 25}
@@ -3044,7 +3044,7 @@
    {:book 3 :chapter 9 :verse 16 :word-count 13}
    {:book 3 :chapter 9 :verse 17 :word-count 24}
    {:book 3 :chapter 9 :verse 18 :word-count 33}
-   {:book 3 :chapter 9:verse 19 :word-count 30}
+   {:book 3 :chapter 9 :verse 19 :word-count 30}
    {:book 3 :chapter 9 :verse 20 :word-count 17}
    {:book 3 :chapter 9 :verse 21 :word-count 19}
    {:book 3 :chapter 9 :verse 22 :word-count 29}
@@ -3236,7 +3236,7 @@
    {:book 3 :chapter 14 :verse 50 :word-count 14}
    {:book 3 :chapter 14 :verse 51 :word-count 40}
    {:book 3 :chapter 14 :verse 52 :word-count 31}
-   {:book 3 :chapter 14:verse 53 :word-count 29}
+   {:book 3 :chapter 14 :verse 53 :word-count 29}
    {:book 3 :chapter 14 :verse 54 :word-count 13}
    {:book 3 :chapter 14 :verse 55 :word-count 10}
    {:book 3 :chapter 14 :verse 56 :word-count 10}
@@ -3308,7 +3308,7 @@
    {:book 3 :chapter 16 :verse 32 :word-count 22}
    {:book 3 :chapter 16 :verse 33 :word-count 38}
    {:book 3 :chapter 16 :verse 34 :word-count 36}
-   {:book 3 :chapter 17:verse 1 :word-count 7}
+   {:book 3 :chapter 17 :verse 1 :word-count 7}
    {:book 3 :chapter 17 :verse 2 :word-count 26}
    {:book 3 :chapter 17 :verse 3 :word-count 26}
    {:book 3 :chapter 17 :verse 4 :word-count 52}
@@ -3332,7 +3332,7 @@
    {:book 3 :chapter 18 :verse 6 :word-count 18}
    {:book 3 :chapter 18 :verse 7 :word-count 26}
    {:book 3 :chapter 18 :verse 8 :word-count 15}
-   {:book 3 :chapter 18 :verse 9:word-count 26}
+   {:book 3 :chapter 18 :verse 9 :word-count 26}
    {:book 3 :chapter 18 :verse 10 :word-count 22}
    {:book 3 :chapter 18 :verse 11 :word-count 22}
    {:book 3 :chapter 18 :verse 12 :word-count 15}
@@ -3428,7 +3428,7 @@
    {:book 3 :chapter 21 :verse 8 :word-count 27}
    {:book 3 :chapter 21 :verse 9 :word-count 21}
    {:book 3 :chapter 21 :verse 10 :word-count 39}
-   {:book 3 :chapter 21 :verse 11:word-count 21}
+   {:book 3 :chapter 21 :verse 11 :word-count 21}
    {:book 3 :chapter 21 :verse 12 :word-count 33}
    {:book 3 :chapter 21 :verse 13 :word-count 9}
    {:book 3 :chapter 21 :verse 14 :word-count 34}
@@ -3476,7 +3476,7 @@
    {:book 3 :chapter 22 :verse 32 :word-count 25}
    {:book 3 :chapter 22 :verse 33 :word-count 17}
    {:book 3 :chapter 23 :verse 1 :word-count 6}
-   {:book 3 :chapter 23 :verse 2:word-count 30}
+   {:book 3 :chapter 23 :verse 2 :word-count 30}
    {:book 3 :chapter 23 :verse 3 :word-count 37}
    {:book 3 :chapter 23 :verse 4 :word-count 21}
    {:book 3 :chapter 23 :verse 5 :word-count 17}
@@ -3841,7 +3841,7 @@
    {:book 4 :chapter 4 :verse 23 :word-count 28}
    {:book 4 :chapter 4 :verse 24 :word-count 15}
    {:book 4 :chapter 4 :verse 25 :word-count 38}
-   {:book 4 :chapter 4:verse 26 :word-count 50}
+   {:book 4 :chapter 4 :verse 26 :word-count 50}
    {:book 4 :chapter 4 :verse 27 :word-count 47}
    {:book 4 :chapter 4 :verse 28 :word-count 36}
    {:book 4 :chapter 4 :verse 29 :word-count 17}
@@ -4183,7 +4183,7 @@
    {:book 4 :chapter 13 :verse 33 :word-count 28}
    {:book 4 :chapter 14 :verse 1 :word-count 14}
    {:book 4 :chapter 14 :verse 2 :word-count 36}
-   {:book 4 :chapter 14:verse 3 :word-count 36}
+   {:book 4 :chapter 14 :verse 3 :word-count 36}
    {:book 4 :chapter 14 :verse 4 :word-count 16}
    {:book 4 :chapter 14 :verse 5 :word-count 20}
    {:book 4 :chapter 14 :verse 6 :word-count 25}
@@ -4207,7 +4207,7 @@
    {:book 4 :chapter 14 :verse 24 :word-count 31}
    {:book 4 :chapter 14 :verse 25 :word-count 26}
    {:book 4 :chapter 14 :verse 26 :word-count 10}
-   {:book 4 :chapter 14:verse 27 :word-count 24}
+   {:book 4 :chapter 14 :verse 27 :word-count 24}
    {:book 4 :chapter 14 :verse 28 :word-count 21}
    {:book 4 :chapter 14 :verse 29 :word-count 28}
    {:book 4 :chapter 14 :verse 30 :word-count 28}
@@ -4279,7 +4279,7 @@
    {:book 4 :chapter 16 :verse 10 :word-count 25}
    {:book 4 :chapter 16 :verse 11 :word-count 23}
    {:book 4 :chapter 16 :verse 12 :word-count 20}
-   {:book 4 :chapter 16:verse 13 :word-count 36}
+   {:book 4 :chapter 16 :verse 13 :word-count 36}
    {:book 4 :chapter 16 :verse 14 :word-count 36}
    {:book 4 :chapter 16 :verse 15 :word-count 31}
    {:book 4 :chapter 16 :verse 16 :word-count 21}
@@ -4351,7 +4351,7 @@
    {:book 4 :chapter 18 :verse 19 :word-count 47}
    {:book 4 :chapter 18 :verse 20 :word-count 34}
    {:book 4 :chapter 18 :verse 21 :word-count 28}
-   {:book 4 :chapter 18:verse 22 :word-count 20}
+   {:book 4 :chapter 18 :verse 22 :word-count 20}
    {:book 4 :chapter 18 :verse 23 :word-count 38}
    {:book 4 :chapter 18 :verse 24 :word-count 43}
    {:book 4 :chapter 18 :verse 25 :word-count 7}
@@ -4423,7 +4423,7 @@
    {:book 4 :chapter 21 :verse 8 :word-count 27}
    {:book 4 :chapter 21 :verse 9 :word-count 27}
    {:book 4 :chapter 21 :verse 10 :word-count 11}
-   {:book 4 :chapter 21 :verse 11:word-count 20}
+   {:book 4 :chapter 21 :verse 11 :word-count 20}
    {:book 4 :chapter 21 :verse 12 :word-count 12}
    {:book 4 :chapter 21 :verse 13 :word-count 40}
    {:book 4 :chapter 21 :verse 14 :word-count 21}
@@ -4880,7 +4880,7 @@
    {:book 4 :chapter 33 :verse 44 :word-count 15}
    {:book 4 :chapter 33 :verse 45 :word-count 10}
    {:book 4 :chapter 33 :verse 46 :word-count 10}
-   {:book 4 :chapter 33 :verse 47:word-count 15}
+   {:book 4 :chapter 33 :verse 47 :word-count 15}
    {:book 4 :chapter 33 :verse 48 :word-count 21}
    {:book 4 :chapter 33 :verse 49 :word-count 16}
    {:book 4 :chapter 33 :verse 50 :word-count 17}
@@ -4977,7 +4977,7 @@
    {:book 5 :chapter 1 :verse 9 :word-count 16}
    {:book 5 :chapter 1 :verse 10 :word-count 19}
    {:book 5 :chapter 1 :verse 11 :word-count 26}
-   {:book 5:chapter 1 :verse 12 :word-count 15}
+   {:book 5 :chapter 1 :verse 12 :word-count 15}
    {:book 5 :chapter 1 :verse 13 :word-count 17}
    {:book 5 :chapter 1 :verse 14 :word-count 16}
    {:book 5 :chapter 1 :verse 15 :word-count 36}
@@ -5124,7 +5124,7 @@
    {:book 5 :chapter 4 :verse 44 :word-count 12}
    {:book 5 :chapter 4 :verse 45 :word-count 23}
    {:book 5 :chapter 4 :verse 46 :word-count 36}
-   {:book 5 :chapter 4:verse 47 :word-count 30}
+   {:book 5 :chapter 4 :verse 47 :word-count 30}
    {:book 5 :chapter 4 :verse 48 :word-count 21}
    {:book 5 :chapter 4 :verse 49 :word-count 25}
    {:book 5 :chapter 5 :verse 1 :word-count 35}
@@ -5149,7 +5149,7 @@
    {:book 5 :chapter 5 :verse 20 :word-count 10}
    {:book 5 :chapter 5 :verse 21 :word-count 37}
    {:book 5 :chapter 5 :verse 22 :word-count 48}
-   {:book 5:chapter 5 :verse 23 :word-count 36}
+   {:book 5 :chapter 5 :verse 23 :word-count 36}
    {:book 5 :chapter 5 :verse 24 :word-count 41}
    {:book 5 :chapter 5 :verse 25 :word-count 28}
    {:book 5 :chapter 5 :verse 26 :word-count 30}
@@ -5416,7 +5416,7 @@
    {:book 5 :chapter 15 :verse 21 :word-count 28}
    {:book 5 :chapter 15 :verse 22 :word-count 25}
    {:book 5 :chapter 15 :verse 23 :word-count 17}
-   {:book 5:chapter 16 :verse 1 :word-count 31}
+   {:book 5 :chapter 16 :verse 1 :word-count 31}
    {:book 5 :chapter 16 :verse 2 :word-count 32}
    {:book 5 :chapter 16 :verse 3 :word-count 51}
    {:book 5 :chapter 16 :verse 4 :word-count 35}
@@ -5464,7 +5464,7 @@
    {:book 5 :chapter 18 :verse 4 :word-count 23}
    {:book 5 :chapter 18 :verse 5 :word-count 30}
    {:book 5 :chapter 18 :verse 6 :word-count 30}
-   {:book 5 :chapter 18:verse 7 :word-count 23}
+   {:book 5 :chapter 18 :verse 7 :word-count 23}
    {:book 5 :chapter 18 :verse 8 :word-count 18}
    {:book 5 :chapter 18 :verse 9 :word-count 26}
    {:book 5 :chapter 18 :verse 10 :word-count 31}
@@ -5536,7 +5536,7 @@
    {:book 5 :chapter 21 :verse 13 :word-count 46}
    {:book 5 :chapter 21 :verse 14 :word-count 37}
    {:book 5 :chapter 21 :verse 15 :word-count 33}
-   {:book 5 :chapter 21 :verse 16:word-count 39}
+   {:book 5 :chapter 21 :verse 16 :word-count 39}
    {:book 5 :chapter 21 :verse 17 :word-count 37}
    {:book 5 :chapter 21 :verse 18 :word-count 34}
    {:book 5 :chapter 21 :verse 19 :word-count 30}
@@ -5560,7 +5560,7 @@
    {:book 5 :chapter 22 :verse 14 :word-count 32}
    {:book 5 :chapter 22 :verse 15 :word-count 29}
    {:book 5 :chapter 22 :verse 16 :word-count 25}
-   {:book 5 :chapter 22 :verse 17:word-count 41}
+   {:book 5 :chapter 22 :verse 17 :word-count 41}
    {:book 5 :chapter 22 :verse 18 :word-count 13}
    {:book 5 :chapter 22 :verse 19 :word-count 46}
    {:book 5 :chapter 22 :verse 20 :word-count 17}
@@ -5754,7 +5754,7 @@
    {:book 5 :chapter 28 :verse 65 :word-count 39}
    {:book 5 :chapter 28 :verse 66 :word-count 23}
    {:book 5 :chapter 28 :verse 67 :word-count 39}
-   {:book 5 :chapter 28 :verse 68:word-count 44}
+   {:book 5 :chapter 28 :verse 68 :word-count 44}
    {:book 5 :chapter 29 :verse 1 :word-count 35}
    {:book 5 :chapter 29 :verse 2 :word-count 37}
    {:book 5 :chapter 29 :verse 3 :word-count 13}
@@ -5778,7 +5778,7 @@
    {:book 5 :chapter 29 :verse 21 :word-count 31}
    {:book 5 :chapter 29 :verse 22 :word-count 41}
    {:book 5 :chapter 29 :verse 23 :word-count 39}
-   {:book 5 :chapter 29 :verse 24:word-count 22}
+   {:book 5 :chapter 29 :verse 24 :word-count 22}
    {:book 5 :chapter 29 :verse 25 :word-count 34}
    {:book 5 :chapter 29 :verse 26 :word-count 23}
    {:book 5 :chapter 29 :verse 27 :word-count 21}
@@ -5898,7 +5898,7 @@
    {:book 5 :chapter 33 :verse 10 :word-count 23}
    {:book 5 :chapter 33 :verse 11 :word-count 28}
    {:book 5 :chapter 33 :verse 12 :word-count 24}
-   {:book 5 :chapter 33 :verse 13:word-count 25}
+   {:book 5 :chapter 33 :verse 13 :word-count 25}
    {:book 5 :chapter 33 :verse 14 :word-count 14}
    {:book 5 :chapter 33 :verse 15 :word-count 15}
    {:book 5 :chapter 33 :verse 16 :word-count 39}
@@ -5922,7 +5922,7 @@
    {:book 5 :chapter 34 :verse 5 :word-count 21}
    {:book 5 :chapter 34 :verse 6 :word-count 26}
    {:book 5 :chapter 34 :verse 7 :word-count 16}
-   {:book 5 :chapter 34 :verse 8:word-count 26}
+   {:book 5 :chapter 34 :verse 8 :word-count 26}
    {:book 5 :chapter 34 :verse 9 :word-count 36}
    {:book 5 :chapter 34 :verse 10 :word-count 19}
    {:book 5 :chapter 34 :verse 11 :word-count 34}
@@ -6021,7 +6021,7 @@
    {:book 6 :chapter 5 :verse 9 :word-count 30}
    {:book 6 :chapter 5 :verse 10 :word-count 28}
    {:book 6 :chapter 5 :verse 11 :word-count 23}
-   {:book 6 :chapter 5:verse 12 :word-count 39}
+   {:book 6 :chapter 5 :verse 12 :word-count 39}
    {:book 6 :chapter 5 :verse 13 :word-count 44}
    {:book 6 :chapter 5 :verse 14 :word-count 42}
    {:book 6 :chapter 5 :verse 15 :word-count 30}
@@ -6240,7 +6240,7 @@
    {:book 6 :chapter 13 :verse 8 :word-count 34}
    {:book 6 :chapter 13 :verse 9 :word-count 34}
    {:book 6 :chapter 13 :verse 10 :word-count 22}
-   {:book 6 :chapter 13:verse 11 :word-count 19}
+   {:book 6 :chapter 13 :verse 11 :word-count 19}
    {:book 6 :chapter 13 :verse 12 :word-count 31}
    {:book 6 :chapter 13 :verse 13 :word-count 27}
    {:book 6 :chapter 13 :verse 14 :word-count 28}
@@ -6312,7 +6312,7 @@
    {:book 6 :chapter 15 :verse 32 :word-count 12}
    {:book 6 :chapter 15 :verse 33 :word-count 7}
    {:book 6 :chapter 15 :verse 34 :word-count 4}
-   {:book 6 :chapter 15 :verse 35:word-count 4}
+   {:book 6 :chapter 15 :verse 35 :word-count 4}
    {:book 6 :chapter 15 :verse 36 :word-count 9}
    {:book 6 :chapter 15 :verse 37 :word-count 3}
    {:book 6 :chapter 15 :verse 38 :word-count 3}
@@ -6701,7 +6701,7 @@
    {:book 7 :chapter 4 :verse 23 :word-count 16}
    {:book 7 :chapter 4 :verse 24 :word-count 25}
    {:book 7 :chapter 5 :verse 1 :word-count 12}
-   {:book 7 :chapter 5 :verse 2:word-count 17}
+   {:book 7 :chapter 5 :verse 2 :word-count 17}
    {:book 7 :chapter 5 :verse 3 :word-count 24}
    {:book 7 :chapter 5 :verse 4 :word-count 27}
    {:book 7 :chapter 5 :verse 5 :word-count 15}
@@ -6849,7 +6849,7 @@
    {:book 7 :chapter 9 :verse 16 :word-count 35}
    {:book 7 :chapter 9 :verse 17 :word-count 18}
    {:book 7 :chapter 9 :verse 18 :word-count 42}
-   {:book 7 :chapter 9:verse 19 :word-count 29}
+   {:book 7 :chapter 9 :verse 19 :word-count 29}
    {:book 7 :chapter 9 :verse 20 :word-count 33}
    {:book 7 :chapter 9 :verse 21 :word-count 18}
    {:book 7 :chapter 9 :verse 22 :word-count 6}
@@ -7042,7 +7042,7 @@
    {:book 7 :chapter 16 :verse 14 :word-count 52}
    {:book 7 :chapter 16 :verse 15 :word-count 37}
    {:book 7 :chapter 16 :verse 16 :word-count 21}
-   {:book 7 :chapter 16 :verse 17:word-count 53}
+   {:book 7 :chapter 16 :verse 17 :word-count 53}
    {:book 7 :chapter 16 :verse 18 :word-count 49}
    {:book 7 :chapter 16 :verse 19 :word-count 34}
    {:book 7 :chapter 16 :verse 20 :word-count 40}
@@ -7066,7 +7066,7 @@
    {:book 7 :chapter 17 :verse 7 :word-count 23}
    {:book 7 :chapter 17 :verse 8 :word-count 36}
    {:book 7 :chapter 17 :verse 9 :word-count 35}
-   {:book 7 :chapter 17 :verse 10:word-count 41}
+   {:book 7 :chapter 17 :verse 10 :word-count 41}
    {:book 7 :chapter 17 :verse 11 :word-count 22}
    {:book 7 :chapter 17 :verse 12 :word-count 19}
    {:book 7 :chapter 17 :verse 13 :word-count 19}
@@ -7507,7 +7507,7 @@
    {:book 9 :chapter 10 :verse 9 :word-count 22}
    {:book 9 :chapter 10 :verse 10 :word-count 25}
    {:book 9 :chapter 10 :verse 11 :word-count 34}
-   {:book 9 :chapter 10 :verse 12:word-count 23}
+   {:book 9 :chapter 10 :verse 12 :word-count 23}
    {:book 9 :chapter 10 :verse 13 :word-count 11}
    {:book 9 :chapter 10 :verse 14 :word-count 34}
    {:book 9 :chapter 10 :verse 15 :word-count 12}
@@ -7628,7 +7628,7 @@
    {:book 9 :chapter 14 :verse 39 :word-count 32}
    {:book 9 :chapter 14 :verse 40 :word-count 36}
    {:book 9 :chapter 14 :verse 41 :word-count 56}
-   {:book 9 :chapter 14 :verse 42:word-count 16}
+   {:book 9 :chapter 14 :verse 42 :word-count 16}
    {:book 9 :chapter 14 :verse 43 :word-count 37}
    {:book 9 :chapter 14 :verse 44 :word-count 16}
    {:book 9 :chapter 14 :verse 45 :word-count 55}
@@ -7700,7 +7700,7 @@
    {:book 9 :chapter 17 :verse 1 :word-count 26}
    {:book 9 :chapter 17 :verse 2 :word-count 26}
    {:book 9 :chapter 17 :verse 3 :word-count 26}
-   {:book 9 :chapter 17 :verse 4:word-count 24}
+   {:book 9 :chapter 17 :verse 4 :word-count 24}
    {:book 9 :chapter 17 :verse 5 :word-count 30}
    {:book 9 :chapter 17 :verse 6 :word-count 17}
    {:book 9 :chapter 17 :verse 7 :word-count 26}
@@ -7796,7 +7796,7 @@
    {:book 9 :chapter 19 :verse 9 :word-count 28}
    {:book 9 :chapter 19 :verse 10 :word-count 32}
    {:book 9 :chapter 19 :verse 11 :word-count 37}
-   {:book 9 :chapter 19 :verse 12:word-count 14}
+   {:book 9 :chapter 19 :verse 12 :word-count 14}
    {:book 9 :chapter 19 :verse 13 :word-count 26}
    {:book 9 :chapter 19 :verse 14 :word-count 13}
    {:book 9 :chapter 19 :verse 15 :word-count 22}
@@ -7820,7 +7820,7 @@
    {:book 9 :chapter 20 :verse 9 :word-count 29}
    {:book 9 :chapter 20 :verse 10 :word-count 15}
    {:book 9 :chapter 20 :verse 11 :word-count 21}
-   {:book 9 :chapter 20 :verse 12:word-count 46}
+   {:book 9 :chapter 20 :verse 12 :word-count 46}
    {:book 9 :chapter 20 :verse 13 :word-count 50}
    {:book 9 :chapter 20 :verse 14 :word-count 18}
    {:book 9 :chapter 20 :verse 15 :word-count 30}
@@ -7868,7 +7868,7 @@
    {:book 9 :chapter 21 :verse 15 :word-count 25}
    {:book 9 :chapter 22 :verse 1 :word-count 28}
    {:book 9 :chapter 22 :verse 2 :word-count 37}
-   {:book 9 :chapter 22 :verse 3:word-count 36}
+   {:book 9 :chapter 22 :verse 3 :word-count 36}
    {:book 9 :chapter 22 :verse 4 :word-count 23}
    {:book 9 :chapter 22 :verse 5 :word-count 31}
    {:book 9 :chapter 22 :verse 6 :word-count 40}
@@ -7916,7 +7916,7 @@
    {:book 9 :chapter 23 :verse 25 :word-count 41}
    {:book 9 :chapter 23 :verse 26 :word-count 45}
    {:book 9 :chapter 23 :verse 27 :word-count 19}
-   {:book 9 :chapter 23 :verse 28:word-count 21}
+   {:book 9 :chapter 23 :verse 28 :word-count 21}
    {:book 9 :chapter 23 :verse 29 :word-count 13}
    {:book 9 :chapter 24 :verse 1 :word-count 18}
    {:book 9 :chapter 24 :verse 2 :word-count 25}
@@ -7988,7 +7988,7 @@
    {:book 9 :chapter 26 :verse 2 :word-count 26}
    {:book 9 :chapter 26 :verse 3 :word-count 35}
    {:book 9 :chapter 26 :verse 4 :word-count 10}
-   {:book 9 :chapter 26 :verse 5:word-count 44}
+   {:book 9 :chapter 26 :verse 5 :word-count 44}
    {:book 9 :chapter 26 :verse 6 :word-count 36}
    {:book 9 :chapter 26 :verse 7 :word-count 36}
    {:book 9 :chapter 26 :verse 8 :word-count 37}
@@ -8012,7 +8012,7 @@
    {:book 9 :chapter 27 :verse 1 :word-count 56}
    {:book 9 :chapter 27 :verse 2 :word-count 25}
    {:book 9 :chapter 27 :verse 3 :word-count 31}
-   {:book 9 :chapter 27 :verse 4:word-count 17}
+   {:book 9 :chapter 27 :verse 4 :word-count 17}
    {:book 9 :chapter 27 :verse 5 :word-count 42}
    {:book 9 :chapter 27 :verse 6 :word-count 19}
    {:book 9 :chapter 27 :verse 7 :word-count 21}
@@ -8301,7 +8301,7 @@
    {:book 10 :chapter 8 :verse 11 :word-count 23}
    {:book 10 :chapter 8 :verse 12 :word-count 21}
    {:book 10 :chapter 8 :verse 13 :word-count 20}
-   {:book 10 :chapter 8 :verse 14:word-count 29}
+   {:book 10 :chapter 8 :verse 14 :word-count 29}
    {:book 10 :chapter 8 :verse 15 :word-count 16}
    {:book 10 :chapter 8 :verse 16 :word-count 17}
    {:book 10 :chapter 8 :verse 17 :word-count 18}
@@ -8325,7 +8325,7 @@
    {:book 10 :chapter 10 :verse 4 :word-count 28}
    {:book 10 :chapter 10 :verse 5 :word-count 31}
    {:book 10 :chapter 10 :verse 6 :word-count 44}
-   {:book 10 :chapter 10 :verse 7:word-count 17}
+   {:book 10 :chapter 10 :verse 7 :word-count 17}
    {:book 10 :chapter 10 :verse 8 :word-count 39}
    {:book 10 :chapter 10 :verse 9 :word-count 32}
    {:book 10 :chapter 10 :verse 10 :word-count 21}
@@ -8396,7 +8396,7 @@
    {:book 10 :chapter 12 :verse 29 :word-count 18}
    {:book 10 :chapter 12 :verse 30 :word-count 47}
    {:book 10 :chapter 12 :verse 31 :word-count 51}
-   {:book 10:chapter 13 :verse 1 :word-count 21}
+   {:book 10 :chapter 13 :verse 1 :word-count 21}
    {:book 10 :chapter 13 :verse 2 :word-count 31}
    {:book 10 :chapter 13 :verse 3 :word-count 22}
    {:book 10 :chapter 13 :verse 4 :word-count 34}
@@ -8842,7 +8842,7 @@
    {:book 11 :chapter 1 :verse 44 :word-count 34}
    {:book 11 :chapter 1 :verse 45 :word-count 38}
    {:book 11 :chapter 1 :verse 46 :word-count 6}
-   {:book 11 :chapter 1 :verse 47:word-count 40}
+   {:book 11 :chapter 1 :verse 47 :word-count 40}
    {:book 11 :chapter 1 :verse 48 :word-count 29}
    {:book 11 :chapter 1 :verse 49 :word-count 15}
    {:book 11 :chapter 1 :verse 50 :word-count 18}
@@ -8866,7 +8866,7 @@
    {:book 11 :chapter 2 :verse 15 :word-count 35}
    {:book 11 :chapter 2 :verse 16 :word-count 19}
    {:book 11 :chapter 2 :verse 17 :word-count 19}
-   {:book 11 :chapter 2 :verse 18:word-count 12}
+   {:book 11 :chapter 2 :verse 18 :word-count 12}
    {:book 11 :chapter 2 :verse 19 :word-count 47}
    {:book 11 :chapter 2 :verse 20 :word-count 33}
    {:book 11 :chapter 2 :verse 21 :word-count 15}
@@ -9107,7 +9107,7 @@
    {:book 11 :chapter 8 :verse 40 :word-count 20}
    {:book 11 :chapter 8 :verse 41 :word-count 20}
    {:book 11 :chapter 8 :verse 42 :word-count 25}
-   {:book 11 :chapter 8 :verse 43:word-count 56}
+   {:book 11 :chapter 8 :verse 43 :word-count 56}
    {:book 11 :chapter 8 :verse 44 :word-count 40}
    {:book 11 :chapter 8 :verse 45 :word-count 13}
    {:book 11 :chapter 8 :verse 46 :word-count 41}
@@ -9366,7 +9366,7 @@
    {:book 11 :chapter 16 :verse 1 :word-count 16}
    {:book 11 :chapter 16 :verse 2 :word-count 40}
    {:book 11 :chapter 16 :verse 3 :word-count 25}
-   {:book 11 :chapter 16 :verse 4:word-count 29}
+   {:book 11 :chapter 16 :verse 4 :word-count 29}
    {:book 11 :chapter 16 :verse 5 :word-count 30}
    {:book 11 :chapter 16 :verse 6 :word-count 19}
    {:book 11 :chapter 16 :verse 7 :word-count 58}
@@ -9437,7 +9437,7 @@
    {:book 11 :chapter 18 :verse 14 :word-count 17}
    {:book 11 :chapter 18 :verse 15 :word-count 21}
    {:book 11 :chapter 18 :verse 16 :word-count 15}
-   {:book 11:chapter 18 :verse 17 :word-count 15}
+   {:book 11 :chapter 18 :verse 17 :word-count 15}
    {:book 11 :chapter 18 :verse 18 :word-count 28}
    {:book 11 :chapter 18 :verse 19 :word-count 29}
    {:book 11 :chapter 18 :verse 20 :word-count 17}
@@ -9554,7 +9554,7 @@
    {:book 11 :chapter 21 :verse 21 :word-count 26}
    {:book 11 :chapter 21 :verse 22 :word-count 42}
    {:book 11 :chapter 21 :verse 23 :word-count 17}
-   {:book 11:chapter 21 :verse 24 :word-count 30}
+   {:book 11 :chapter 21 :verse 24 :word-count 30}
    {:book 11 :chapter 21 :verse 25 :word-count 24}
    {:book 11 :chapter 21 :verse 26 :word-count 23}
    {:book 11 :chapter 21 :verse 27 :word-count 26}
@@ -9721,7 +9721,7 @@
    {:book 12 :chapter 4 :verse 35 :word-count 33}
    {:book 12 :chapter 4 :verse 36 :word-count 25}
    {:book 12 :chapter 4 :verse 37 :word-count 20}
-   {:book 12 :chapter 4 :verse 38:word-count 44}
+   {:book 12 :chapter 4 :verse 38 :word-count 44}
    {:book 12 :chapter 4 :verse 39 :word-count 42}
    {:book 12 :chapter 4 :verse 40 :word-count 37}
    {:book 12 :chapter 4 :verse 41 :word-count 32}
@@ -9745,7 +9745,7 @@
    {:book 12 :chapter 5 :verse 15 :word-count 46}
    {:book 12 :chapter 5 :verse 16 :word-count 25}
    {:book 12 :chapter 5 :verse 17 :word-count 37}
-   {:book 12 :chapter 5 :verse 18:word-count 51}
+   {:book 12 :chapter 5 :verse 18 :word-count 51}
    {:book 12 :chapter 5 :verse 19 :word-count 16}
    {:book 12 :chapter 5 :verse 20 :word-count 42}
    {:book 12 :chapter 5 :verse 21 :word-count 26}
@@ -9866,7 +9866,7 @@
    {:book 12 :chapter 9 :verse 26 :word-count 47}
    {:book 12 :chapter 9 :verse 27 :word-count 48}
    {:book 12 :chapter 9 :verse 28 :word-count 23}
-   {:book 12 :chapter 9 :verse 29:word-count 16}
+   {:book 12 :chapter 9 :verse 29 :word-count 16}
    {:book 12 :chapter 9 :verse 30 :word-count 24}
    {:book 12 :chapter 9 :verse 31 :word-count 17}
    {:book 12 :chapter 9 :verse 32 :word-count 25}
@@ -10007,7 +10007,7 @@
    {:book 12 :chapter 14 :verse 27 :word-count 31}
    {:book 12 :chapter 14 :verse 28 :word-count 45}
    {:book 12 :chapter 14 :verse 29 :word-count 18}
-   {:book 12 :chapter 15 :verse 1:word-count 20}
+   {:book 12 :chapter 15 :verse 1 :word-count 20}
    {:book 12 :chapter 15 :verse 2 :word-count 24}
    {:book 12 :chapter 15 :verse 3 :word-count 21}
    {:book 12 :chapter 15 :verse 4 :word-count 19}
@@ -10031,7 +10031,7 @@
    {:book 12 :chapter 15 :verse 22 :word-count 14}
    {:book 12 :chapter 15 :verse 23 :word-count 26}
    {:book 12 :chapter 15 :verse 24 :word-count 32}
-   {:book 12:chapter 15 :verse 25 :word-count 46}
+   {:book 12 :chapter 15 :verse 25 :word-count 46}
    {:book 12 :chapter 15 :verse 26 :word-count 28}
    {:book 12 :chapter 15 :verse 27 :word-count 26}
    {:book 12 :chapter 15 :verse 28 :word-count 31}
@@ -10078,7 +10078,7 @@
    {:book 12 :chapter 17 :verse 11 :word-count 31}
    {:book 12 :chapter 17 :verse 12 :word-count 17}
    {:book 12 :chapter 17 :verse 13 :word-count 48}
-   {:book 12:chapter 17 :verse 14 :word-count 22}
+   {:book 12 :chapter 17 :verse 14 :word-count 22}
    {:book 12 :chapter 17 :verse 15 :word-count 51}
    {:book 12 :chapter 17 :verse 16 :word-count 35}
    {:book 12 :chapter 17 :verse 17 :word-count 31}
@@ -10171,7 +10171,7 @@
    {:book 12 :chapter 19 :verse 26 :word-count 32}
    {:book 12 :chapter 19 :verse 27 :word-count 18}
    {:book 12 :chapter 19 :verse 28 :word-count 41}
-   {:book 12 :chapter 19 :verse 29:word-count 40}
+   {:book 12 :chapter 19 :verse 29 :word-count 40}
    {:book 12 :chapter 19 :verse 30 :word-count 18}
    {:book 12 :chapter 19 :verse 31 :word-count 25}
    {:book 12 :chapter 19 :verse 32 :word-count 37}
@@ -10384,7 +10384,7 @@
    {:book 13 :chapter 1 :verse 48 :word-count 13}
    {:book 13 :chapter 1 :verse 49 :word-count 12}
    {:book 13 :chapter 1 :verse 50 :word-count 29}
-   {:book 13 :chapter 1 :verse 51:word-count 11}
+   {:book 13 :chapter 1 :verse 51 :word-count 11}
    {:book 13 :chapter 1 :verse 52 :word-count 3}
    {:book 13 :chapter 1 :verse 53 :word-count 3}
    {:book 13 :chapter 1 :verse 54 :word-count 9}
@@ -10674,7 +10674,7 @@
    {:book 13 :chapter 8 :verse 15 :word-count 3}
    {:book 13 :chapter 8 :verse 16 :word-count 8}
    {:book 13 :chapter 8 :verse 17 :word-count 4}
-   {:book 13 :chapter 8 :verse 18:word-count 9}
+   {:book 13 :chapter 8 :verse 18 :word-count 9}
    {:book 13 :chapter 8 :verse 19 :word-count 3}
    {:book 13 :chapter 8 :verse 20 :word-count 3}
    {:book 13 :chapter 8 :verse 21 :word-count 9}
@@ -10746,7 +10746,7 @@
    {:book 13 :chapter 10 :verse 3 :word-count 18}
    {:book 13 :chapter 10 :verse 4 :word-count 41}
    {:book 13 :chapter 10 :verse 5 :word-count 17}
-   {:book 13 :chapter 10 :verse 6:word-count 14}
+   {:book 13 :chapter 10 :verse 6 :word-count 14}
    {:book 13 :chapter 10 :verse 7 :word-count 40}
    {:book 13 :chapter 10 :verse 8 :word-count 21}
    {:book 13 :chapter 10 :verse 9 :word-count 32}
@@ -10864,7 +10864,7 @@
    {:book 13 :chapter 14 :verse 6 :word-count 3}
    {:book 13 :chapter 14 :verse 7 :word-count 4}
    {:book 13 :chapter 14 :verse 8 :word-count 32}
-   {:book 13 :chapter 14 :verse 9:word-count 14}
+   {:book 13 :chapter 14 :verse 9 :word-count 14}
    {:book 13 :chapter 14 :verse 10 :word-count 35}
    {:book 13 :chapter 14 :verse 11 :word-count 37}
    {:book 13 :chapter 14 :verse 12 :word-count 14}
@@ -10888,7 +10888,7 @@
    {:book 13 :chapter 15 :verse 13 :word-count 27}
    {:book 13 :chapter 15 :verse 14 :word-count 20}
    {:book 13 :chapter 15 :verse 15 :word-count 25}
-   {:book 13:chapter 15 :verse 16 :word-count 33}
+   {:book 13 :chapter 15 :verse 16 :word-count 33}
    {:book 13 :chapter 15 :verse 17 :word-count 31}
    {:book 13 :chapter 15 :verse 18 :word-count 27}
    {:book 13 :chapter 15 :verse 19 :word-count 11}
@@ -11052,7 +11052,7 @@
    {:book 13 :chapter 22 :verse 4 :word-count 17}
    {:book 13 :chapter 22 :verse 5 :word-count 49}
    {:book 13 :chapter 22 :verse 6 :word-count 21}
-   {:book 13 :chapter 22:verse 7 :word-count 24}
+   {:book 13 :chapter 22 :verse 7 :word-count 24}
    {:book 13 :chapter 22 :verse 8 :word-count 41}
    {:book 13 :chapter 22 :verse 9 :word-count 43}
    {:book 13 :chapter 22 :verse 10 :word-count 29}
@@ -11099,7 +11099,7 @@
    {:book 13 :chapter 23 :verse 32 :word-count 32}
    {:book 13 :chapter 24 :verse 1 :word-count 18}
    {:book 13 :chapter 24 :verse 2 :word-count 19}
-   {:book 13 :chapter 24:verse 3 :word-count 28}
+   {:book 13 :chapter 24 :verse 3 :word-count 28}
    {:book 13 :chapter 24 :verse 4 :word-count 38}
    {:book 13 :chapter 24 :verse 5 :word-count 27}
    {:book 13 :chapter 24 :verse 6 :word-count 57}
@@ -11123,7 +11123,7 @@
    {:book 13 :chapter 24 :verse 24 :word-count 11}
    {:book 13 :chapter 24 :verse 25 :word-count 11}
    {:book 13 :chapter 24 :verse 26 :word-count 12}
-   {:book 13:chapter 24 :verse 27 :word-count 11}
+   {:book 13 :chapter 24 :verse 27 :word-count 11}
    {:book 13 :chapter 24 :verse 28 :word-count 7}
    {:book 13 :chapter 24 :verse 29 :word-count 7}
    {:book 13 :chapter 24 :verse 30 :word-count 20}
@@ -11193,7 +11193,7 @@
    {:book 13 :chapter 26 :verse 32 :word-count 42}
    {:book 13 :chapter 27 :verse 1 :word-count 47}
    {:book 13 :chapter 27 :verse 2 :word-count 21}
-   {:book 13 :chapter 27 :verse 3:word-count 19}
+   {:book 13 :chapter 27 :verse 3 :word-count 19}
    {:book 13 :chapter 27 :verse 4 :word-count 18}
    {:book 13 :chapter 27 :verse 5 :word-count 21}
    {:book 13 :chapter 27 :verse 6 :word-count 27}
@@ -11361,7 +11361,7 @@
    {:book 14 :chapter 5 :verse 8 :word-count 25}
    {:book 14 :chapter 5 :verse 9 :word-count 37}
    {:book 14 :chapter 5 :verse 10 :word-count 33}
-   {:book 14:chapter 5 :verse 11 :word-count 25}
+   {:book 14 :chapter 5 :verse 11 :word-count 25}
    {:book 14 :chapter 5 :verse 12 :word-count 33}
    {:book 14 :chapter 5 :verse 13 :word-count 62}
    {:book 14 :chapter 5 :verse 14 :word-count 24}
@@ -11433,7 +11433,7 @@
    {:book 14 :chapter 8 :verse 2 :word-count 18}
    {:book 14 :chapter 8 :verse 3 :word-count 8}
    {:book 14 :chapter 8 :verse 4 :word-count 16}
-   {:book 14 :chapter 8:verse 5 :word-count 15}
+   {:book 14 :chapter 8 :verse 5 :word-count 15}
    {:book 14 :chapter 8 :verse 6 :word-count 41}
    {:book 14 :chapter 8 :verse 7 :word-count 23}
    {:book 14 :chapter 8 :verse 8 :word-count 31}
@@ -12046,7 +12046,7 @@
    {:book 14 :chapter 34 :verse 27 :word-count 46}
    {:book 14 :chapter 34 :verse 28 :word-count 45}
    {:book 14 :chapter 34 :verse 29 :word-count 14}
-   {:book 14 :chapter 34 :verse 30:word-count 60}
+   {:book 14 :chapter 34 :verse 30 :word-count 60}
    {:book 14 :chapter 34 :verse 31 :word-count 51}
    {:book 14 :chapter 34 :verse 32 :word-count 32}
    {:book 14 :chapter 34 :verse 33 :word-count 48}
@@ -12070,7 +12070,7 @@
    {:book 14 :chapter 35 :verse 18 :word-count 51}
    {:book 14 :chapter 35 :verse 19 :word-count 13}
    {:book 14 :chapter 35 :verse 20 :word-count 29}
-   {:book 14:chapter 35 :verse 21 :word-count 54}
+   {:book 14 :chapter 35 :verse 21 :word-count 54}
    {:book 14 :chapter 35 :verse 22 :word-count 40}
    {:book 14 :chapter 35 :verse 23 :word-count 21}
    {:book 14 :chapter 35 :verse 24 :word-count 40}
@@ -12479,7 +12479,7 @@
    {:book 16 :chapter 5 :verse 10 :word-count 21}
    {:book 16 :chapter 5 :verse 11 :word-count 32}
    {:book 16 :chapter 5 :verse 12 :word-count 33}
-   {:book 16 :chapter 5:verse 13 :word-count 57}
+   {:book 16 :chapter 5 :verse 13 :word-count 57}
    {:book 16 :chapter 5 :verse 14 :word-count 43}
    {:book 16 :chapter 5 :verse 15 :word-count 45}
    {:book 16 :chapter 5 :verse 16 :word-count 24}
@@ -12503,7 +12503,7 @@
    {:book 16 :chapter 6 :verse 15 :word-count 16}
    {:book 16 :chapter 6 :verse 16 :word-count 37}
    {:book 16 :chapter 6 :verse 17 :word-count 19}
-   {:book 16 :chapter 6:verse 18 :word-count 38}
+   {:book 16 :chapter 6 :verse 18 :word-count 38}
    {:book 16 :chapter 6 :verse 19 :word-count 24}
    {:book 16 :chapter 7 :verse 1 :word-count 25}
    {:book 16 :chapter 7 :verse 2 :word-count 26}
@@ -12600,7 +12600,7 @@
    {:book 16 :chapter 9 :verse 2 :word-count 20}
    {:book 16 :chapter 9 :verse 3 :word-count 40}
    {:book 16 :chapter 9 :verse 4 :word-count 28}
-   {:book 16:chapter 9 :verse 5 :word-count 38}
+   {:book 16 :chapter 9 :verse 5 :word-count 38}
    {:book 16 :chapter 9 :verse 6 :word-count 47}
    {:book 16 :chapter 9 :verse 7 :word-count 24}
    {:book 16 :chapter 9 :verse 8 :word-count 44}
@@ -12813,7 +12813,7 @@
    {:book 17 :chapter 2 :verse 2 :word-count 19}
    {:book 17 :chapter 2 :verse 3 :word-count 47}
    {:book 17 :chapter 2 :verse 4 :word-count 22}
-   {:book 17 :chapter 2 :verse 5:word-count 25}
+   {:book 17 :chapter 2 :verse 5 :word-count 25}
    {:book 17 :chapter 2 :verse 6 :word-count 25}
    {:book 17 :chapter 2 :verse 7 :word-count 48}
    {:book 17 :chapter 2 :verse 8 :word-count 45}
@@ -12886,7 +12886,7 @@
    {:book 17 :chapter 6 :verse 6 :word-count 38}
    {:book 17 :chapter 6 :verse 7 :word-count 15}
    {:book 17 :chapter 6 :verse 8 :word-count 27}
-   {:book 17:chapter 6 :verse 9 :word-count 60}
+   {:book 17 :chapter 6 :verse 9 :word-count 60}
    {:book 17 :chapter 6 :verse 10 :word-count 37}
    {:book 17 :chapter 6 :verse 11 :word-count 38}
    {:book 17 :chapter 6 :verse 12 :word-count 19}
@@ -12982,7 +12982,7 @@
    {:book 18 :chapter 2 :verse 4 :word-count 21}
    {:book 18 :chapter 2 :verse 5 :word-count 20}
    {:book 18 :chapter 2 :verse 6 :word-count 16}
-   {:book 18 :chapter 2 :verse 7:word-count 28}
+   {:book 18 :chapter 2 :verse 7 :word-count 28}
    {:book 18 :chapter 2 :verse 8 :word-count 19}
    {:book 18 :chapter 2 :verse 9 :word-count 17}
    {:book 18 :chapter 2 :verse 10 :word-count 37}
@@ -13199,7 +13199,7 @@
    {:book 18 :chapter 11 :verse 3 :word-count 14}
    {:book 18 :chapter 11 :verse 4 :word-count 14}
    {:book 18 :chapter 11 :verse 5 :word-count 12}
-   {:book 18 :chapter 11:verse 6 :word-count 28}
+   {:book 18 :chapter 11 :verse 6 :word-count 28}
    {:book 18 :chapter 11 :verse 7 :word-count 18}
    {:book 18 :chapter 11 :verse 8 :word-count 14}
    {:book 18 :chapter 11 :verse 9 :word-count 12}
@@ -13364,7 +13364,7 @@
    {:book 18 :chapter 17 :verse 16 :word-count 16}
    {:book 18 :chapter 18 :verse 1 :word-count 7}
    {:book 18 :chapter 18 :verse 2 :word-count 13}
-   {:book 18:chapter 18 :verse 3 :word-count 13}
+   {:book 18 :chapter 18 :verse 3 :word-count 13}
    {:book 18 :chapter 18 :verse 4 :word-count 23}
    {:book 18 :chapter 18 :verse 5 :word-count 18}
    {:book 18 :chapter 18 :verse 6 :word-count 15}
@@ -13387,7 +13387,7 @@
    {:book 18 :chapter 19 :verse 2 :word-count 13}
    {:book 18 :chapter 19 :verse 3 :word-count 16}
    {:book 18 :chapter 19 :verse 4 :word-count 15}
-   {:book 18 :chapter 19 :verse 5:word-count 15}
+   {:book 18 :chapter 19 :verse 5 :word-count 15}
    {:book 18 :chapter 19 :verse 6 :word-count 16}
    {:book 18 :chapter 19 :verse 7 :word-count 19}
    {:book 18 :chapter 19 :verse 8 :word-count 19}
@@ -13716,7 +13716,7 @@
    {:book 18 :chapter 31 :verse 40 :word-count 17}
    {:book 18 :chapter 32 :verse 1 :word-count 16}
    {:book 18 :chapter 32 :verse 2 :word-count 29}
-   {:book 18 :chapter 32 :verse 3:word-count 25}
+   {:book 18 :chapter 32 :verse 3 :word-count 25}
    {:book 18 :chapter 32 :verse 4 :word-count 14}
    {:book 18 :chapter 32 :verse 5 :word-count 20}
    {:book 18 :chapter 32 :verse 6 :word-count 31}
@@ -13951,7 +13951,7 @@
    {:book 18 :chapter 39 :verse 29 :word-count 14}
    {:book 18 :chapter 39 :verse 30 :word-count 14}
    {:book 18 :chapter 40 :verse 1 :word-count 6}
-   {:book 18 :chapter 40 :verse 2:word-count 16}
+   {:book 18 :chapter 40 :verse 2 :word-count 16}
    {:book 18 :chapter 40 :verse 3 :word-count 7}
    {:book 18 :chapter 40 :verse 4 :word-count 18}
    {:book 18 :chapter 40 :verse 5 :word-count 16}
@@ -14095,7 +14095,7 @@
    {:book 19 :chapter 7 :verse 12 :word-count 18}
    {:book 19 :chapter 7 :verse 13 :word-count 13}
    {:book 19 :chapter 7 :verse 14 :word-count 16}
-   {:book 19:chapter 7 :verse 15 :word-count 16}
+   {:book 19 :chapter 7 :verse 15 :word-count 16}
    {:book 19 :chapter 7 :verse 16 :word-count 15}
    {:book 19 :chapter 7 :verse 17 :word-count 26}
    {:book 19 :chapter 8 :verse 1 :word-count 21}
@@ -14544,7 +14544,7 @@
    {:book 19 :chapter 37 :verse 6 :word-count 15}
    {:book 19 :chapter 37 :verse 7 :word-count 29}
    {:book 19 :chapter 37 :verse 8 :word-count 14}
-   {:book 19 :chapter 37:verse 9 :word-count 18}
+   {:book 19 :chapter 37 :verse 9 :word-count 18}
    {:book 19 :chapter 37 :verse 10 :word-count 23}
    {:book 19 :chapter 37 :verse 11 :word-count 13}
    {:book 19 :chapter 37 :verse 12 :word-count 12}
@@ -14733,7 +14733,7 @@
    {:book 19 :chapter 48 :verse 11 :word-count 15}
    {:book 19 :chapter 48 :verse 12 :word-count 9}
    {:book 19 :chapter 48 :verse 13 :word-count 15}
-   {:book 19:chapter 48 :verse 14 :word-count 14}
+   {:book 19 :chapter 48 :verse 14 :word-count 14}
    {:book 19 :chapter 49 :verse 1 :word-count 11}
    {:book 19 :chapter 49 :verse 2 :word-count 8}
    {:book 19 :chapter 49 :verse 3 :word-count 13}
@@ -14756,7 +14756,7 @@
    {:book 19 :chapter 49 :verse 20 :word-count 13}
    {:book 19 :chapter 50 :verse 1 :word-count 20}
    {:book 19 :chapter 50 :verse 2 :word-count 10}
-   {:book 19 :chapter 50 :verse 3:word-count 19}
+   {:book 19 :chapter 50 :verse 3 :word-count 19}
    {:book 19 :chapter 50 :verse 4 :word-count 16}
    {:book 19 :chapter 50 :verse 5 :word-count 14}
    {:book 19 :chapter 50 :verse 6 :word-count 10}
@@ -14993,7 +14993,7 @@
    {:book 19 :chapter 68 :verse 5 :word-count 14}
    {:book 19 :chapter 68 :verse 6 :word-count 22}
    {:book 19 :chapter 68 :verse 7 :word-count 15}
-   {:book 19 :chapter 68:verse 8 :word-count 20}
+   {:book 19 :chapter 68 :verse 8 :word-count 20}
    {:book 19 :chapter 68 :verse 9 :word-count 15}
    {:book 19 :chapter 68 :verse 10 :word-count 17}
    {:book 19 :chapter 68 :verse 11 :word-count 15}
@@ -15205,7 +15205,7 @@
    {:book 19 :chapter 78 :verse 4 :word-count 30}
    {:book 19 :chapter 78 :verse 5 :word-count 22}
    {:book 19 :chapter 78 :verse 6 :word-count 19}
-   {:book 19:chapter 78 :verse 7 :word-count 20}
+   {:book 19 :chapter 78 :verse 7 :word-count 20}
    {:book 19 :chapter 78 :verse 8 :word-count 28}
    {:book 19 :chapter 78 :verse 9 :word-count 13}
    {:book 19 :chapter 78 :verse 10 :word-count 14}
@@ -15394,7 +15394,7 @@
    {:book 19 :chapter 87 :verse 4 :word-count 23}
    {:book 19 :chapter 87 :verse 5 :word-count 24}
    {:book 19 :chapter 87 :verse 6 :word-count 13}
-   {:book 19 :chapter 87 :verse 7:word-count 11}
+   {:book 19 :chapter 87 :verse 7 :word-count 11}
    {:book 19 :chapter 88 :verse 1 :word-count 14}
    {:book 19 :chapter 88 :verse 2 :word-count 12}
    {:book 19 :chapter 88 :verse 3 :word-count 14}
@@ -15441,7 +15441,7 @@
    {:book 19 :chapter 89 :verse 26 :word-count 17}
    {:book 19 :chapter 89 :verse 27 :word-count 15}
    {:book 19 :chapter 89 :verse 28 :word-count 17}
-   {:book 19 :chapter 89 :verse 29:word-count 15}
+   {:book 19 :chapter 89 :verse 29 :word-count 15}
    {:book 19 :chapter 89 :verse 30 :word-count 14}
    {:book 19 :chapter 89 :verse 31 :word-count 11}
    {:book 19 :chapter 89 :verse 32 :word-count 14}
@@ -15488,7 +15488,7 @@
    {:book 19 :chapter 91 :verse 4 :word-count 22}
    {:book 19 :chapter 91 :verse 5 :word-count 16}
    {:book 19 :chapter 91 :verse 6 :word-count 14}
-   {:book 19 :chapter 91 :verse 7:word-count 20}
+   {:book 19 :chapter 91 :verse 7 :word-count 20}
    {:book 19 :chapter 91 :verse 8 :word-count 14}
    {:book 19 :chapter 91 :verse 9 :word-count 16}
    {:book 19 :chapter 91 :verse 10 :word-count 14}
@@ -15699,7 +15699,7 @@
    {:book 19 :chapter 105 :verse 3 :word-count 15}
    {:book 19 :chapter 105 :verse 4 :word-count 10}
    {:book 19 :chapter 105 :verse 5 :word-count 15}
-   {:book 19 :chapter 105 :verse 6:word-count 12}
+   {:book 19 :chapter 105 :verse 6 :word-count 12}
    {:book 19 :chapter 105 :verse 7 :word-count 13}
    {:book 19 :chapter 105 :verse 8 :word-count 14}
    {:book 19 :chapter 105 :verse 9 :word-count 12}
@@ -15768,7 +15768,7 @@
    {:book 19 :chapter 106 :verse 27 :word-count 14}
    {:book 19 :chapter 106 :verse 28 :word-count 16}
    {:book 19 :chapter 106 :verse 29 :word-count 16}
-   {:book 19 :chapter 106:verse 30 :word-count 11}
+   {:book 19 :chapter 106 :verse 30 :word-count 11}
    {:book 19 :chapter 106 :verse 31 :word-count 13}
    {:book 19 :chapter 106 :verse 32 :word-count 17}
    {:book 19 :chapter 106 :verse 33 :word-count 13}
@@ -16021,7 +16021,7 @@
    {:book 19 :chapter 119 :verse 33 :word-count 17}
    {:book 19 :chapter 119 :verse 34 :word-count 16}
    {:book 19 :chapter 119 :verse 35 :word-count 13}
-   {:book 19 :chapter 119 :verse 36:word-count 11}
+   {:book 19 :chapter 119 :verse 36 :word-count 11}
    {:book 19 :chapter 119 :verse 37 :word-count 15}
    {:book 19 :chapter 119 :verse 38 :word-count 11}
    {:book 19 :chapter 119 :verse 39 :word-count 12}
@@ -16412,7 +16412,7 @@
    {:book 19 :chapter 145 :verse 1 :word-count 15}
    {:book 19 :chapter 145 :verse 2 :word-count 13}
    {:book 19 :chapter 145 :verse 3 :word-count 14}
-   {:book 19 :chapter 145 :verse 4:word-count 14}
+   {:book 19 :chapter 145 :verse 4 :word-count 14}
    {:book 19 :chapter 145 :verse 5 :word-count 15}
    {:book 19 :chapter 145 :verse 6 :word-count 16}
    {:book 19 :chapter 145 :verse 7 :word-count 17}
@@ -16435,7 +16435,7 @@
    {:book 19 :chapter 146 :verse 3 :word-count 17}
    {:book 19 :chapter 146 :verse 4 :word-count 16}
    {:book 19 :chapter 146 :verse 5 :word-count 18}
-   {:book 19 :chapter 146 :verse 6:word-count 17}
+   {:book 19 :chapter 146 :verse 6 :word-count 17}
    {:book 19 :chapter 146 :verse 7 :word-count 17}
    {:book 19 :chapter 146 :verse 8 :word-count 22}
    {:book 19 :chapter 146 :verse 9 :word-count 23}
@@ -17076,7 +17076,7 @@
    {:book 20 :chapter 20 :verse 29 :word-count 18}
    {:book 20 :chapter 20 :verse 30 :word-count 12}
    {:book 20 :chapter 21 :verse 1 :word-count 20}
-   {:book 20 :chapter 21 :verse 2:word-count 17}
+   {:book 20 :chapter 21 :verse 2 :word-count 17}
    {:book 20 :chapter 21 :verse 3 :word-count 13}
    {:book 20 :chapter 21 :verse 4 :word-count 13}
    {:book 20 :chapter 21 :verse 5 :word-count 18}
@@ -17477,7 +17477,7 @@
    {:book 21 :chapter 4 :verse 3 :word-count 24}
    {:book 21 :chapter 4 :verse 4 :word-count 28}
    {:book 21 :chapter 4 :verse 5 :word-count 10}
-   {:book 21 :chapter 4:verse 6 :word-count 17}
+   {:book 21 :chapter 4 :verse 6 :word-count 17}
    {:book 21 :chapter 4 :verse 7 :word-count 7}
    {:book 21 :chapter 4 :verse 8 :word-count 50}
    {:book 21 :chapter 4 :verse 9 :word-count 14}
@@ -17549,7 +17549,7 @@
    {:book 21 :chapter 7 :verse 27 :word-count 21}
    {:book 21 :chapter 7 :verse 28 :word-count 28}
    {:book 21 :chapter 7 :verse 29 :word-count 17}
-   {:book 21 :chapter 8 :verse 1:word-count 28}
+   {:book 21 :chapter 8 :verse 1 :word-count 28}
    {:book 21 :chapter 8 :verse 2 :word-count 12}
    {:book 21 :chapter 8 :verse 3 :word-count 23}
    {:book 21 :chapter 8 :verse 4 :word-count 18}
@@ -17767,7 +17767,7 @@
    {:book 23 :chapter 1 :verse 19 :word-count 14}
    {:book 23 :chapter 1 :verse 20 :word-count 21}
    {:book 23 :chapter 1 :verse 21 :word-count 21}
-   {:book 23:chapter 1 :verse 22 :word-count 11}
+   {:book 23 :chapter 1 :verse 22 :word-count 11}
    {:book 23 :chapter 1 :verse 23 :word-count 33}
    {:book 23 :chapter 1 :verse 24 :word-count 27}
    {:book 23 :chapter 1 :verse 25 :word-count 21}
@@ -17791,7 +17791,7 @@
    {:book 23 :chapter 2 :verse 12 :word-count 26}
    {:book 23 :chapter 2 :verse 13 :word-count 17}
    {:book 23 :chapter 2 :verse 14 :word-count 11}
-   {:book 23:chapter 2 :verse 15 :word-count 9}
+   {:book 23 :chapter 2 :verse 15 :word-count 9}
    {:book 23 :chapter 2 :verse 16 :word-count 12}
    {:book 23 :chapter 2 :verse 17 :word-count 28}
    {:book 23 :chapter 2 :verse 18 :word-count 7}
@@ -18007,7 +18007,7 @@
    {:book 23 :chapter 13 :verse 6 :word-count 17}
    {:book 23 :chapter 13 :verse 7 :word-count 12}
    {:book 23 :chapter 13 :verse 8 :word-count 32}
-   {:book 23 :chapter 13 :verse 9:word-count 26}
+   {:book 23 :chapter 13 :verse 9 :word-count 26}
    {:book 23 :chapter 13 :verse 10 :word-count 30}
    {:book 23 :chapter 13 :verse 11 :word-count 34}
    {:book 23 :chapter 13 :verse 12 :word-count 16}
@@ -18337,7 +18337,7 @@
    {:book 23 :chapter 30 :verse 25 :word-count 27}
    {:book 23 :chapter 30 :verse 26 :word-count 50}
    {:book 23 :chapter 30 :verse 27 :word-count 32}
-   {:book 23 :chapter 30:verse 28 :word-count 36}
+   {:book 23 :chapter 30 :verse 28 :word-count 36}
    {:book 23 :chapter 30 :verse 29 :word-count 43}
    {:book 23 :chapter 30 :verse 30 :word-count 37}
    {:book 23 :chapter 30 :verse 31 :word-count 17}
@@ -18361,7 +18361,7 @@
    {:book 23 :chapter 32 :verse 7 :word-count 27}
    {:book 23 :chapter 32 :verse 8 :word-count 14}
    {:book 23 :chapter 32 :verse 9 :word-count 19}
-   {:book 23:chapter 32 :verse 10 :word-count 23}
+   {:book 23 :chapter 32 :verse 10 :word-count 23}
    {:book 23 :chapter 32 :verse 11 :word-count 22}
    {:book 23 :chapter 32 :verse 12 :word-count 11}
    {:book 23 :chapter 32 :verse 13 :word-count 22}
@@ -18502,7 +18502,7 @@
    {:book 23 :chapter 38 :verse 17 :word-count 34}
    {:book 23 :chapter 38 :verse 18 :word-count 24}
    {:book 23 :chapter 38 :verse 19 :word-count 21}
-   {:book 23:chapter 38 :verse 20 :word-count 26}
+   {:book 23 :chapter 38 :verse 20 :word-count 26}
    {:book 23 :chapter 38 :verse 21 :word-count 21}
    {:book 23 :chapter 38 :verse 22 :word-count 19}
    {:book 23 :chapter 39 :verse 1 :word-count 31}
@@ -18572,7 +18572,7 @@
    {:book 23 :chapter 41 :verse 26 :word-count 33}
    {:book 23 :chapter 41 :verse 27 :word-count 22}
    {:book 23 :chapter 41 :verse 28 :word-count 21}
-   {:book 23 :chapter 41 :verse 29:word-count 16}
+   {:book 23 :chapter 41 :verse 29 :word-count 16}
    {:book 23 :chapter 42 :verse 1 :word-count 28}
    {:book 23 :chapter 42 :verse 2 :word-count 17}
    {:book 23 :chapter 42 :verse 3 :word-count 22}
@@ -18808,7 +18808,7 @@
    {:book 23 :chapter 53 :verse 2 :word-count 38}
    {:book 23 :chapter 53 :verse 3 :word-count 32}
    {:book 23 :chapter 53 :verse 4 :word-count 20}
-   {:book 23:chapter 53 :verse 5 :word-count 29}
+   {:book 23 :chapter 53 :verse 5 :word-count 29}
    {:book 23 :chapter 53 :verse 6 :word-count 26}
    {:book 23 :chapter 53 :verse 7 :word-count 38}
    {:book 23 :chapter 53 :verse 8 :word-count 34}
@@ -18855,7 +18855,7 @@
    {:book 23 :chapter 56 :verse 7 :word-count 42}
    {:book 23 :chapter 56 :verse 8 :word-count 21}
    {:book 23 :chapter 56 :verse 9 :word-count 15}
-   {:book 23 :chapter 56:verse 10 :word-count 23}
+   {:book 23 :chapter 56 :verse 10 :word-count 23}
    {:book 23 :chapter 56 :verse 11 :word-count 34}
    {:book 23 :chapter 56 :verse 12 :word-count 24}
    {:book 23 :chapter 57 :verse 1 :word-count 29}
@@ -19116,7 +19116,7 @@
    {:book 24 :chapter 3 :verse 19 :word-count 39}
    {:book 24 :chapter 3 :verse 20 :word-count 23}
    {:book 24 :chapter 3 :verse 21 :word-count 28}
-   {:book 24 :chapter 3:verse 22 :word-count 21}
+   {:book 24 :chapter 3 :verse 22 :word-count 21}
    {:book 24 :chapter 3 :verse 23 :word-count 22}
    {:book 24 :chapter 3 :verse 24 :word-count 25}
    {:book 24 :chapter 3 :verse 25 :word-count 45}
@@ -19140,7 +19140,7 @@
    {:book 24 :chapter 4 :verse 18 :word-count 24}
    {:book 24 :chapter 4 :verse 19 :word-count 35}
    {:book 24 :chapter 4 :verse 20 :word-count 22}
-   {:book 24 :chapter 4:verse 21 :word-count 14}
+   {:book 24 :chapter 4 :verse 21 :word-count 14}
    {:book 24 :chapter 4 :verse 22 :word-count 30}
    {:book 24 :chapter 4 :verse 23 :word-count 22}
    {:book 24 :chapter 4 :verse 24 :word-count 18}
@@ -19260,7 +19260,7 @@
    {:book 24 :chapter 8 :verse 12 :word-count 40}
    {:book 24 :chapter 8 :verse 13 :word-count 36}
    {:book 24 :chapter 8 :verse 14 :word-count 42}
-   {:book 24 :chapter 8 :verse 15:word-count 16}
+   {:book 24 :chapter 8 :verse 15 :word-count 16}
    {:book 24 :chapter 8 :verse 16 :word-count 41}
    {:book 24 :chapter 8 :verse 17 :word-count 22}
    {:book 24 :chapter 8 :verse 18 :word-count 14}
@@ -19284,7 +19284,7 @@
    {:book 24 :chapter 9 :verse 14 :word-count 18}
    {:book 24 :chapter 9 :verse 15 :word-count 27}
    {:book 24 :chapter 9 :verse 16 :word-count 28}
-   {:book 24 :chapter 9 :verse 17:word-count 22}
+   {:book 24 :chapter 9 :verse 17 :word-count 22}
    {:book 24 :chapter 9 :verse 18 :word-count 24}
    {:book 24 :chapter 9 :verse 19 :word-count 30}
    {:book 24 :chapter 9 :verse 20 :word-count 31}
@@ -19567,7 +19567,7 @@
    {:book 24 :chapter 22 :verse 18 :word-count 39}
    {:book 24 :chapter 22 :verse 19 :word-count 18}
    {:book 24 :chapter 22 :verse 20 :word-count 24}
-   {:book 24:chapter 22 :verse 21 :word-count 29}
+   {:book 24 :chapter 22 :verse 21 :word-count 29}
    {:book 24 :chapter 22 :verse 22 :word-count 26}
    {:book 24 :chapter 22 :verse 23 :word-count 25}
    {:book 24 :chapter 22 :verse 24 :word-count 29}
@@ -19825,7 +19825,7 @@
    {:book 24 :chapter 31 :verse 39 :word-count 19}
    {:book 24 :chapter 31 :verse 40 :word-count 45}
    {:book 24 :chapter 32 :verse 1 :word-count 25}
-   {:book 24:chapter 32 :verse 2 :word-count 36}
+   {:book 24 :chapter 32 :verse 2 :word-count 36}
    {:book 24 :chapter 32 :verse 3 :word-count 38}
    {:book 24 :chapter 32 :verse 4 :word-count 41}
    {:book 24 :chapter 32 :verse 5 :word-count 29}
@@ -20201,7 +20201,7 @@
    {:book 24 :chapter 48 :verse 26 :word-count 26}
    {:book 24 :chapter 48 :verse 27 :word-count 22}
    {:book 24 :chapter 48 :verse 28 :word-count 27}
-   {:book 24 :chapter 48:verse 29 :word-count 26}
+   {:book 24 :chapter 48 :verse 29 :word-count 26}
    {:book 24 :chapter 48 :verse 30 :word-count 15}
    {:book 24 :chapter 48 :verse 31 :word-count 18}
    {:book 24 :chapter 48 :verse 32 :word-count 35}
@@ -20366,7 +20366,7 @@
    {:book 24 :chapter 51 :verse 58 :word-count 39}
    {:book 24 :chapter 51 :verse 59 :word-count 36}
    {:book 24 :chapter 51 :verse 60 :word-count 21}
-   {:book 24:chapter 51 :verse 61 :word-count 17}
+   {:book 24 :chapter 51 :verse 61 :word-count 17}
    {:book 24 :chapter 51 :verse 62 :word-count 33}
    {:book 24 :chapter 51 :verse 63 :word-count 20}
    {:book 24 :chapter 51 :verse 64 :word-count 31}
@@ -20581,7 +20581,7 @@
    {:book 26 :chapter 1 :verse 21 :word-count 35}
    {:book 26 :chapter 1 :verse 22 :word-count 23}
    {:book 26 :chapter 1 :verse 23 :word-count 22}
-   {:book 26 :chapter 1:verse 24 :word-count 42}
+   {:book 26 :chapter 1 :verse 24 :word-count 42}
    {:book 26 :chapter 1 :verse 25 :word-count 21}
    {:book 26 :chapter 1 :verse 26 :word-count 33}
    {:book 26 :chapter 1 :verse 27 :word-count 50}
@@ -20653,7 +20653,7 @@
    {:book 26 :chapter 5 :verse 11 :word-count 40}
    {:book 26 :chapter 5 :verse 12 :word-count 46}
    {:book 26 :chapter 5 :verse 13 :word-count 38}
-   {:book 26 :chapter 5 :verse 14:word-count 27}
+   {:book 26 :chapter 5 :verse 14 :word-count 27}
    {:book 26 :chapter 5 :verse 15 :word-count 39}
    {:book 26 :chapter 5 :verse 16 :word-count 36}
    {:book 26 :chapter 5 :verse 17 :word-count 39}
@@ -21057,7 +21057,7 @@
    {:book 26 :chapter 21 :verse 15 :word-count 30}
    {:book 26 :chapter 21 :verse 16 :word-count 15}
    {:book 26 :chapter 21 :verse 17 :word-count 17}
-   {:book 26:chapter 21 :verse 18 :word-count 9}
+   {:book 26 :chapter 21 :verse 18 :word-count 9}
    {:book 26 :chapter 21 :verse 19 :word-count 43}
    {:book 26 :chapter 21 :verse 20 :word-count 20}
    {:book 26 :chapter 21 :verse 21 :word-count 35}
@@ -21222,7 +21222,7 @@
    {:book 26 :chapter 27 :verse 2 :word-count 10}
    {:book 26 :chapter 27 :verse 3 :word-count 33}
    {:book 26 :chapter 27 :verse 4 :word-count 15}
-   {:book 26 :chapter 27:verse 5 :word-count 22}
+   {:book 26 :chapter 27 :verse 5 :word-count 22}
    {:book 26 :chapter 27 :verse 6 :word-count 22}
    {:book 26 :chapter 27 :verse 7 :word-count 24}
    {:book 26 :chapter 27 :verse 8 :word-count 21}
@@ -21412,7 +21412,7 @@
    {:book 26 :chapter 33 :verse 31 :word-count 44}
    {:book 26 :chapter 33 :verse 32 :word-count 34}
    {:book 26 :chapter 33 :verse 33 :word-count 16}
-   {:book 26:chapter 34 :verse 1 :word-count 8}
+   {:book 26 :chapter 34 :verse 1 :word-count 8}
    {:book 26 :chapter 34 :verse 2 :word-count 38}
    {:book 26 :chapter 34 :verse 3 :word-count 22}
    {:book 26 :chapter 34 :verse 4 :word-count 41}
@@ -21435,7 +21435,7 @@
    {:book 26 :chapter 34 :verse 21 :word-count 22}
    {:book 26 :chapter 34 :verse 22 :word-count 20}
    {:book 26 :chapter 34 :verse 23 :word-count 25}
-   {:book 26 :chapter 34 :verse 24:word-count 24}
+   {:book 26 :chapter 34 :verse 24 :word-count 24}
    {:book 26 :chapter 34 :verse 25 :word-count 30}
    {:book 26 :chapter 34 :verse 26 :word-count 30}
    {:book 26 :chapter 34 :verse 27 :word-count 53}
@@ -21576,7 +21576,7 @@
    {:book 26 :chapter 39 :verse 27 :word-count 29}
    {:book 26 :chapter 39 :verse 28 :word-count 39}
    {:book 26 :chapter 39 :verse 29 :word-count 25}
-   {:book 26 :chapter 40 :verse 1:word-count 49}
+   {:book 26 :chapter 40 :verse 1 :word-count 49}
    {:book 26 :chapter 40 :verse 2 :word-count 32}
    {:book 26 :chapter 40 :verse 3 :word-count 33}
    {:book 26 :chapter 40 :verse 4 :word-count 53}
@@ -21600,7 +21600,7 @@
    {:book 26 :chapter 40 :verse 22 :word-count 40}
    {:book 26 :chapter 40 :verse 23 :word-count 28}
    {:book 26 :chapter 40 :verse 24 :word-count 32}
-   {:book 26:chapter 40 :verse 25 :word-count 25}
+   {:book 26 :chapter 40 :verse 25 :word-count 25}
    {:book 26 :chapter 40 :verse 26 :word-count 27}
    {:book 26 :chapter 40 :verse 27 :word-count 25}
    {:book 26 :chapter 40 :verse 28 :word-count 27}
@@ -21623,7 +21623,7 @@
    {:book 26 :chapter 40 :verse 45 :word-count 20}
    {:book 26 :chapter 40 :verse 46 :word-count 39}
    {:book 26 :chapter 40 :verse 47 :word-count 25}
-   {:book 26 :chapter 40:verse 48 :word-count 43}
+   {:book 26 :chapter 40 :verse 48 :word-count 43}
    {:book 26 :chapter 40 :verse 49 :word-count 34}
    {:book 26 :chapter 41 :verse 1 :word-count 22}
    {:book 26 :chapter 41 :verse 2 :word-count 36}
@@ -21954,7 +21954,7 @@
    {:book 27 :chapter 4 :verse 16 :word-count 26}
    {:book 27 :chapter 4 :verse 17 :word-count 50}
    {:book 27 :chapter 4 :verse 18 :word-count 46}
-   {:book 27 :chapter 4 :verse 19:word-count 52}
+   {:book 27 :chapter 4 :verse 19 :word-count 52}
    {:book 27 :chapter 4 :verse 20 :word-count 27}
    {:book 27 :chapter 4 :verse 21 :word-count 33}
    {:book 27 :chapter 4 :verse 22 :word-count 28}
@@ -22050,7 +22050,7 @@
    {:book 27 :chapter 7 :verse 16 :word-count 30}
    {:book 27 :chapter 7 :verse 17 :word-count 14}
    {:book 27 :chapter 7 :verse 18 :word-count 19}
-   {:book 27 :chapter 7 :verse 19:word-count 44}
+   {:book 27 :chapter 7 :verse 19 :word-count 44}
    {:book 27 :chapter 7 :verse 20 :word-count 43}
    {:book 27 :chapter 7 :verse 21 :word-count 14}
    {:book 27 :chapter 7 :verse 22 :word-count 27}
@@ -22074,7 +22074,7 @@
    {:book 27 :chapter 8 :verse 12 :word-count 32}
    {:book 27 :chapter 8 :verse 13 :word-count 46}
    {:book 27 :chapter 8 :verse 14 :word-count 20}
-   {:book 27 :chapter 8 :verse 15:word-count 25}
+   {:book 27 :chapter 8 :verse 15 :word-count 25}
    {:book 27 :chapter 8 :verse 16 :word-count 22}
    {:book 27 :chapter 8 :verse 17 :word-count 39}
    {:book 27 :chapter 8 :verse 18 :word-count 28}
@@ -22482,7 +22482,7 @@
    {:book 30 :chapter 2 :verse 1 :word-count 29}
    {:book 30 :chapter 2 :verse 2 :word-count 30}
    {:book 30 :chapter 2 :verse 3 :word-count 21}
-   {:book 30:chapter 2 :verse 4 :word-count 45}
+   {:book 30 :chapter 2 :verse 4 :word-count 45}
    {:book 30 :chapter 2 :verse 5 :word-count 16}
    {:book 30 :chapter 2 :verse 6 :word-count 32}
    {:book 30 :chapter 2 :verse 7 :word-count 40}
@@ -22724,7 +22724,7 @@
    {:book 33 :chapter 4 :verse 2 :word-count 58}
    {:book 33 :chapter 4 :verse 3 :word-count 42}
    {:book 33 :chapter 4 :verse 4 :word-count 31}
-   {:book 33:chapter 4 :verse 5 :word-count 27}
+   {:book 33 :chapter 4 :verse 5 :word-count 27}
    {:book 33 :chapter 4 :verse 6 :word-count 25}
    {:book 33 :chapter 4 :verse 7 :word-count 33}
    {:book 33 :chapter 4 :verse 8 :word-count 29}
@@ -23160,7 +23160,7 @@
    {:book 38 :chapter 12 :verse 11 :word-count 21}
    {:book 38 :chapter 12 :verse 12 :word-count 36}
    {:book 38 :chapter 12 :verse 13 :word-count 26}
-   {:book 38:chapter 12 :verse 14 :word-count 15}
+   {:book 38 :chapter 12 :verse 14 :word-count 15}
    {:book 38 :chapter 13 :verse 1 :word-count 26}
    {:book 38 :chapter 13 :verse 2 :word-count 44}
    {:book 38 :chapter 13 :verse 3 :word-count 45}
@@ -23304,7 +23304,7 @@
    {:book 40 :chapter 3 :verse 8 :word-count 6}
    {:book 40 :chapter 3 :verse 9 :word-count 30}
    {:book 40 :chapter 3 :verse 10 :word-count 29}
-   {:book 40 :chapter 3:verse 11 :word-count 36}
+   {:book 40 :chapter 3 :verse 11 :word-count 36}
    {:book 40 :chapter 3 :verse 12 :word-count 30}
    {:book 40 :chapter 3 :verse 13 :word-count 15}
    {:book 40 :chapter 3 :verse 14 :word-count 19}
@@ -23352,7 +23352,7 @@
    {:book 40 :chapter 5 :verse 14 :word-count 16}
    {:book 40 :chapter 5 :verse 15 :word-count 25}
    {:book 40 :chapter 5 :verse 16 :word-count 28}
-   {:book 40 :chapter 5 :verse 17:word-count 25}
+   {:book 40 :chapter 5 :verse 17 :word-count 25}
    {:book 40 :chapter 5 :verse 18 :word-count 27}
    {:book 40 :chapter 5 :verse 19 :word-count 42}
    {:book 40 :chapter 5 :verse 20 :word-count 22}
@@ -23685,7 +23685,7 @@
    {:book 40 :chapter 13 :verse 42 :word-count 18}
    {:book 40 :chapter 13 :verse 43 :word-count 21}
    {:book 40 :chapter 13 :verse 44 :word-count 34}
-   {:book 40 :chapter 13 :verse 45:word-count 14}
+   {:book 40 :chapter 13 :verse 45 :word-count 14}
    {:book 40 :chapter 13 :verse 46 :word-count 18}
    {:book 40 :chapter 13 :verse 47 :word-count 21}
    {:book 40 :chapter 13 :verse 48 :word-count 22}
@@ -23756,7 +23756,7 @@
    {:book 40 :chapter 15 :verse 19 :word-count 16}
    {:book 40 :chapter 15 :verse 20 :word-count 16}
    {:book 40 :chapter 15 :verse 21 :word-count 15}
-   {:book 40:chapter 15 :verse 22 :word-count 30}
+   {:book 40 :chapter 15 :verse 22 :word-count 30}
    {:book 40 :chapter 15 :verse 23 :word-count 26}
    {:book 40 :chapter 15 :verse 24 :word-count 15}
    {:book 40 :chapter 15 :verse 25 :word-count 11}
@@ -23967,7 +23967,7 @@
    {:book 40 :chapter 21 :verse 39 :word-count 14}
    {:book 40 :chapter 21 :verse 40 :word-count 15}
    {:book 40 :chapter 21 :verse 41 :word-count 30}
-   {:book 40:chapter 21 :verse 42 :word-count 32}
+   {:book 40 :chapter 21 :verse 42 :word-count 32}
    {:book 40 :chapter 21 :verse 43 :word-count 22}
    {:book 40 :chapter 21 :verse 44 :word-count 23}
    {:book 40 :chapter 21 :verse 45 :word-count 18}
@@ -23990,7 +23990,7 @@
    {:book 40 :chapter 22 :verse 16 :word-count 41}
    {:book 40 :chapter 22 :verse 17 :word-count 16}
    {:book 40 :chapter 22 :verse 18 :word-count 15}
-   {:book 40 :chapter 22 :verse 19:word-count 13}
+   {:book 40 :chapter 22 :verse 19 :word-count 13}
    {:book 40 :chapter 22 :verse 20 :word-count 11}
    {:book 40 :chapter 22 :verse 21 :word-count 25}
    {:book 40 :chapter 22 :verse 22 :word-count 13}
@@ -24084,7 +24084,7 @@
    {:book 40 :chapter 24 :verse 26 :word-count 30}
    {:book 40 :chapter 24 :verse 27 :word-count 25}
    {:book 40 :chapter 24 :verse 28 :word-count 9}
-   {:book 40 :chapter 24:verse 29 :word-count 36}
+   {:book 40 :chapter 24 :verse 29 :word-count 36}
    {:book 40 :chapter 24 :verse 30 :word-count 41}
    {:book 40 :chapter 24 :verse 31 :word-count 30}
    {:book 40 :chapter 24 :verse 32 :word-count 25}
@@ -24224,7 +24224,7 @@
    {:book 40 :chapter 26 :verse 69 :word-count 25}
    {:book 40 :chapter 26 :verse 70 :word-count 15}
    {:book 40 :chapter 26 :verse 71 :word-count 26}
-   {:book 40 :chapter 26 :verse 72:word-count 14}
+   {:book 40 :chapter 26 :verse 72 :word-count 14}
    {:book 40 :chapter 26 :verse 73 :word-count 24}
    {:book 40 :chapter 26 :verse 74 :word-count 23}
    {:book 40 :chapter 26 :verse 75 :word-count 24}
@@ -24438,7 +24438,7 @@
    {:book 41 :chapter 4 :verse 14 :word-count 5}
    {:book 41 :chapter 4 :verse 15 :word-count 29}
    {:book 41 :chapter 4 :verse 16 :word-count 22}
-   {:book 41 :chapter 4 :verse 17:word-count 27}
+   {:book 41 :chapter 4 :verse 17 :word-count 27}
    {:book 41 :chapter 4 :verse 18 :word-count 15}
    {:book 41 :chapter 4 :verse 19 :word-count 27}
    {:book 41 :chapter 4 :verse 20 :word-count 28}
@@ -24558,7 +24558,7 @@
    {:book 41 :chapter 6 :verse 50 :word-count 25}
    {:book 41 :chapter 6 :verse 51 :word-count 17}
    {:book 41 :chapter 6 :verse 52 :word-count 13}
-   {:book 41 :chapter 6:verse 53 :word-count 16}
+   {:book 41 :chapter 6 :verse 53 :word-count 16}
    {:book 41 :chapter 6 :verse 54 :word-count 13}
    {:book 41 :chapter 6 :verse 55 :word-count 22}
    {:book 41 :chapter 6 :verse 56 :word-count 38}
@@ -24582,7 +24582,7 @@
    {:book 41 :chapter 7 :verse 19 :word-count 18}
    {:book 41 :chapter 7 :verse 20 :word-count 13}
    {:book 41 :chapter 7 :verse 21 :word-count 17}
-   {:book 41 :chapter 7:verse 22 :word-count 8}
+   {:book 41 :chapter 7 :verse 22 :word-count 8}
    {:book 41 :chapter 7 :verse 23 :word-count 12}
    {:book 41 :chapter 7 :verse 24 :word-count 33}
    {:book 41 :chapter 7 :verse 25 :word-count 22}
@@ -24630,7 +24630,7 @@
    {:book 41 :chapter 8 :verse 30 :word-count 11}
    {:book 41 :chapter 8 :verse 31 :word-count 37}
    {:book 41 :chapter 8 :verse 32 :word-count 15}
-   {:book 41 :chapter 8:verse 33 :word-count 33}
+   {:book 41 :chapter 8 :verse 33 :word-count 33}
    {:book 41 :chapter 8 :verse 34 :word-count 31}
    {:book 41 :chapter 8 :verse 35 :word-count 23}
    {:book 41 :chapter 8 :verse 36 :word-count 16}
@@ -24654,7 +24654,7 @@
    {:book 41 :chapter 9 :verse 16 :word-count 11}
    {:book 41 :chapter 9 :verse 17 :word-count 23}
    {:book 41 :chapter 9 :verse 18 :word-count 33}
-   {:book 41 :chapter 9:verse 19 :word-count 27}
+   {:book 41 :chapter 9 :verse 19 :word-count 27}
    {:book 41 :chapter 9 :verse 20 :word-count 31}
    {:book 41 :chapter 9 :verse 21 :word-count 18}
    {:book 41 :chapter 9 :verse 22 :word-count 27}
@@ -24842,7 +24842,7 @@
    {:book 41 :chapter 13 :verse 28 :word-count 25}
    {:book 41 :chapter 13 :verse 29 :word-count 19}
    {:book 41 :chapter 13 :verse 30 :word-count 17}
-   {:book 41 :chapter 13 :verse 31:word-count 13}
+   {:book 41 :chapter 13 :verse 31 :word-count 13}
    {:book 41 :chapter 13 :verse 32 :word-count 23}
    {:book 41 :chapter 13 :verse 33 :word-count 15}
    {:book 41 :chapter 13 :verse 34 :word-count 30}
@@ -25223,7 +25223,7 @@
    {:book 42 :chapter 5 :verse 20 :word-count 14}
    {:book 42 :chapter 5 :verse 21 :word-count 23}
    {:book 42 :chapter 5 :verse 22 :word-count 15}
-   {:book 42 :chapter 5:verse 23 :word-count 16}
+   {:book 42 :chapter 5 :verse 23 :word-count 16}
    {:book 42 :chapter 5 :verse 24 :word-count 35}
    {:book 42 :chapter 5 :verse 25 :word-count 21}
    {:book 42 :chapter 5 :verse 26 :word-count 21}
@@ -25247,7 +25247,7 @@
    {:book 42 :chapter 6 :verse 5 :word-count 14}
    {:book 42 :chapter 6 :verse 6 :word-count 20}
    {:book 42 :chapter 6 :verse 7 :word-count 27}
-   {:book 42 :chapter 6:verse 8 :word-count 25}
+   {:book 42 :chapter 6 :verse 8 :word-count 25}
    {:book 42 :chapter 6 :verse 9 :word-count 28}
    {:book 42 :chapter 6 :verse 10 :word-count 24}
    {:book 42 :chapter 6 :verse 11 :word-count 17}
@@ -25391,7 +25391,7 @@
    {:book 42 :chapter 8 :verse 50 :word-count 17}
    {:book 42 :chapter 8 :verse 51 :word-count 29}
    {:book 42 :chapter 8 :verse 52 :word-count 21}
-   {:book 42:chapter 8 :verse 53 :word-count 10}
+   {:book 42 :chapter 8 :verse 53 :word-count 10}
    {:book 42 :chapter 8 :verse 54 :word-count 11}
    {:book 42 :chapter 8 :verse 55 :word-count 21}
    {:book 42 :chapter 8 :verse 56 :word-count 16}
@@ -25439,7 +25439,7 @@
    {:book 42 :chapter 9 :verse 42 :word-count 31}
    {:book 42 :chapter 9 :verse 43 :word-count 24}
    {:book 42 :chapter 9 :verse 44 :word-count 21}
-   {:book 42:chapter 9 :verse 45 :word-count 30}
+   {:book 42 :chapter 9 :verse 45 :word-count 30}
    {:book 42 :chapter 9 :verse 46 :word-count 13}
    {:book 42 :chapter 9 :verse 47 :word-count 17}
    {:book 42 :chapter 9 :verse 48 :word-count 36}
@@ -25556,7 +25556,7 @@
    {:book 42 :chapter 12 :verse 1 :word-count 37}
    {:book 42 :chapter 12 :verse 2 :word-count 16}
    {:book 42 :chapter 12 :verse 3 :word-count 28}
-   {:book 42 :chapter 12 :verse 4:word-count 23}
+   {:book 42 :chapter 12 :verse 4 :word-count 23}
    {:book 42 :chapter 12 :verse 5 :word-count 27}
    {:book 42 :chapter 12 :verse 6 :word-count 17}
    {:book 42 :chapter 12 :verse 7 :word-count 20}
@@ -26026,7 +26026,7 @@
    {:book 42 :chapter 22 :verse 66 :word-count 29}
    {:book 42 :chapter 22 :verse 67 :word-count 20}
    {:book 42 :chapter 22 :verse 68 :word-count 9}
-   {:book 42 :chapter 22:verse 69 :word-count 20}
+   {:book 42 :chapter 22 :verse 69 :word-count 20}
    {:book 42 :chapter 22 :verse 70 :word-count 21}
    {:book 42 :chapter 22 :verse 71 :word-count 18}
    {:book 42 :chapter 23 :verse 1 :word-count 12}
@@ -26120,7 +26120,7 @@
    {:book 42 :chapter 24 :verse 34 :word-count 11}
    {:book 42 :chapter 24 :verse 35 :word-count 22}
    {:book 42 :chapter 24 :verse 36 :word-count 19}
-   {:book 42:chapter 24 :verse 37 :word-count 12}
+   {:book 42 :chapter 24 :verse 37 :word-count 12}
    {:book 42 :chapter 24 :verse 38 :word-count 17}
    {:book 42 :chapter 24 :verse 39 :word-count 30}
    {:book 42 :chapter 24 :verse 40 :word-count 14}
@@ -26192,7 +26192,7 @@
    {:book 43 :chapter 2 :verse 1 :word-count 19}
    {:book 43 :chapter 2 :verse 2 :word-count 10}
    {:book 43 :chapter 2 :verse 3 :word-count 16}
-   {:book 43 :chapter 2 :verse 4:word-count 20}
+   {:book 43 :chapter 2 :verse 4 :word-count 20}
    {:book 43 :chapter 2 :verse 5 :word-count 11}
    {:book 43 :chapter 2 :verse 6 :word-count 20}
    {:book 43 :chapter 2 :verse 7 :word-count 18}
@@ -26216,7 +26216,7 @@
    {:book 43 :chapter 2 :verse 25 :word-count 17}
    {:book 43 :chapter 3 :verse 1 :word-count 15}
    {:book 43 :chapter 3 :verse 2 :word-count 37}
-   {:book 43 :chapter 3 :verse 3:word-count 21}
+   {:book 43 :chapter 3 :verse 3 :word-count 21}
    {:book 43 :chapter 3 :verse 4 :word-count 27}
    {:book 43 :chapter 3 :verse 5 :word-count 24}
    {:book 43 :chapter 3 :verse 6 :word-count 19}
@@ -26240,7 +26240,7 @@
    {:book 43 :chapter 3 :verse 24 :word-count 9}
    {:book 43 :chapter 3 :verse 25 :word-count 14}
    {:book 43 :chapter 3 :verse 26 :word-count 32}
-   {:book 43 :chapter 3 :verse 27:word-count 16}
+   {:book 43 :chapter 3 :verse 27 :word-count 16}
    {:book 43 :chapter 3 :verse 28 :word-count 20}
    {:book 43 :chapter 3 :verse 29 :word-count 33}
    {:book 43 :chapter 3 :verse 30 :word-count 7}
@@ -26312,7 +26312,7 @@
    {:book 43 :chapter 5 :verse 7 :word-count 32}
    {:book 43 :chapter 5 :verse 8 :word-count 12}
    {:book 43 :chapter 5 :verse 9 :word-count 20}
-   {:book 43 :chapter 5 :verse 10:word-count 27}
+   {:book 43 :chapter 5 :verse 10 :word-count 27}
    {:book 43 :chapter 5 :verse 11 :word-count 20}
    {:book 43 :chapter 5 :verse 12 :word-count 17}
    {:book 43 :chapter 5 :verse 13 :word-count 25}
@@ -26408,7 +26408,7 @@
    {:book 43 :chapter 6 :verse 56 :word-count 16}
    {:book 43 :chapter 6 :verse 57 :word-count 25}
    {:book 43 :chapter 6 :verse 58 :word-count 26}
-   {:book 43 :chapter 6:verse 59 :word-count 12}
+   {:book 43 :chapter 6 :verse 59 :word-count 12}
    {:book 43 :chapter 6 :verse 60 :word-count 19}
    {:book 43 :chapter 6 :verse 61 :word-count 21}
    {:book 43 :chapter 6 :verse 62 :word-count 17}
@@ -26480,7 +26480,7 @@
    {:book 43 :chapter 8 :verse 4 :word-count 15}
    {:book 43 :chapter 8 :verse 5 :word-count 16}
    {:book 43 :chapter 8 :verse 6 :word-count 27}
-   {:book 43 :chapter 8:verse 7 :word-count 31}
+   {:book 43 :chapter 8 :verse 7 :word-count 31}
    {:book 43 :chapter 8 :verse 8 :word-count 11}
    {:book 43 :chapter 8 :verse 9 :word-count 27}
    {:book 43 :chapter 8 :verse 10 :word-count 16}
@@ -26528,7 +26528,7 @@
    {:book 43 :chapter 8 :verse 52 :word-count 32}
    {:book 43 :chapter 8 :verse 53 :word-count 21}
    {:book 43 :chapter 8 :verse 54 :word-count 25}
-   {:book 43:chapter 8 :verse 55 :word-count 37}
+   {:book 43 :chapter 8 :verse 55 :word-count 37}
    {:book 43 :chapter 8 :verse 56 :word-count 16}
    {:book 43 :chapter 8 :verse 57 :word-count 18}
    {:book 43 :chapter 8 :verse 58 :word-count 15}
@@ -26975,7 +26975,7 @@
    {:book 43 :chapter 20 :verse 13 :word-count 29}
    {:book 43 :chapter 20 :verse 14 :word-count 19}
    {:book 43 :chapter 20 :verse 15 :word-count 43}
-   {:book 43:chapter 20 :verse 16 :word-count 17}
+   {:book 43 :chapter 20 :verse 16 :word-count 17}
    {:book 43 :chapter 20 :verse 17 :word-count 42}
    {:book 43 :chapter 20 :verse 18 :word-count 21}
    {:book 43 :chapter 20 :verse 19 :word-count 39}
@@ -27046,7 +27046,7 @@
    {:book 44 :chapter 1 :verse 18 :word-count 27}
    {:book 44 :chapter 1 :verse 19 :word-count 26}
    {:book 44 :chapter 1 :verse 20 :word-count 27}
-   {:book 44 :chapter 1:verse 21 :word-count 23}
+   {:book 44 :chapter 1 :verse 21 :word-count 23}
    {:book 44 :chapter 1 :verse 22 :word-count 28}
    {:book 44 :chapter 1 :verse 23 :word-count 15}
    {:book 44 :chapter 1 :verse 24 :word-count 22}
@@ -27070,7 +27070,7 @@
    {:book 44 :chapter 2 :verse 8 :word-count 32}
    {:book 44 :chapter 2 :verse 9 :word-count 25}
    {:book 44 :chapter 2 :verse 9 :word-count 33}
-   {:book 44 :chapter 2 :verse 10:word-count 19}
+   {:book 44 :chapter 2 :verse 10 :word-count 19}
    {:book 44 :chapter 2 :verse 10 :word-count 18}
    {:book 44 :chapter 2 :verse 11 :word-count 35}
    {:book 44 :chapter 2 :verse 11 :word-count 10}
@@ -27239,7 +27239,7 @@
    {:book 44 :chapter 6 :verse 2 :word-count 24}
    {:book 44 :chapter 6 :verse 3 :word-count 25}
    {:book 44 :chapter 6 :verse 4 :word-count 29}
-   {:book 44:chapter 6 :verse 5 :word-count 19}
+   {:book 44 :chapter 6 :verse 5 :word-count 19}
    {:book 44 :chapter 6 :verse 6 :word-count 20}
    {:book 44 :chapter 6 :verse 7 :word-count 23}
    {:book 44 :chapter 6 :verse 8 :word-count 34}
@@ -27263,7 +27263,7 @@
    {:book 44 :chapter 6 :verse 26 :word-count 20}
    {:book 44 :chapter 7 :verse 1 :word-count 18}
    {:book 44 :chapter 7 :verse 2 :word-count 24}
-   {:book 44:chapter 7 :verse 3 :word-count 25}
+   {:book 44 :chapter 7 :verse 3 :word-count 25}
    {:book 44 :chapter 7 :verse 4 :word-count 29}
    {:book 44 :chapter 7 :verse 5 :word-count 19}
    {:book 44 :chapter 7 :verse 6 :word-count 20}
@@ -27311,7 +27311,7 @@
    {:book 44 :chapter 8 :verse 22 :word-count 28}
    {:book 44 :chapter 8 :verse 23 :word-count 15}
    {:book 44 :chapter 8 :verse 24 :word-count 22}
-   {:book 44:chapter 8 :verse 25 :word-count 20}
+   {:book 44 :chapter 8 :verse 25 :word-count 20}
    {:book 44 :chapter 8 :verse 26 :word-count 20}
    {:book 44 :chapter 9 :verse 1 :word-count 18}
    {:book 44 :chapter 9 :verse 2 :word-count 24}
@@ -27335,7 +27335,7 @@
    {:book 44 :chapter 9 :verse 20 :word-count 27}
    {:book 44 :chapter 9 :verse 21 :word-count 23}
    {:book 44 :chapter 9 :verse 22 :word-count 28}
-   {:book 44:chapter 9 :verse 23 :word-count 15}
+   {:book 44 :chapter 9 :verse 23 :word-count 15}
    {:book 44 :chapter 9 :verse 24 :word-count 22}
    {:book 44 :chapter 9 :verse 25 :word-count 20}
    {:book 44 :chapter 9 :verse 26 :word-count 20}
@@ -28071,7 +28071,7 @@
    {:book 45 :chapter 9 :verse 9 :word-count 21}
    {:book 45 :chapter 9 :verse 10 :word-count 17}
    {:book 45 :chapter 9 :verse 11 :word-count 32}
-   {:book 45:chapter 9 :verse 12 :word-count 9}
+   {:book 45 :chapter 9 :verse 12 :word-count 9}
    {:book 45 :chapter 9 :verse 13 :word-count 11}
    {:book 45 :chapter 9 :verse 14 :word-count 14}
    {:book 45 :chapter 9 :verse 15 :word-count 24}
@@ -28189,7 +28189,7 @@
    {:book 45 :chapter 14 :verse 2 :word-count 14}
    {:book 45 :chapter 14 :verse 3 :word-count 30}
    {:book 45 :chapter 14 :verse 4 :word-count 36}
-   {:book 45:chapter 14 :verse 5 :word-count 25}
+   {:book 45 :chapter 14 :verse 5 :word-count 25}
    {:book 45 :chapter 14 :verse 6 :word-count 45}
    {:book 45 :chapter 14 :verse 7 :word-count 14}
    {:book 45 :chapter 14 :verse 8 :word-count 31}
@@ -28283,7 +28283,7 @@
    {:book 46 :chapter 1 :verse 14 :word-count 13}
    {:book 46 :chapter 1 :verse 15 :word-count 13}
    {:book 46 :chapter 1 :verse 16 :word-count 19}
-   {:book 46 :chapter 1:verse 17 :word-count 30}
+   {:book 46 :chapter 1 :verse 17 :word-count 30}
    {:book 46 :chapter 1 :verse 18 :word-count 26}
    {:book 46 :chapter 1 :verse 19 :word-count 20}
    {:book 46 :chapter 1 :verse 20 :word-count 28}
@@ -28499,7 +28499,7 @@
    {:book 46 :chapter 10 :verse 26 :word-count 10}
    {:book 46 :chapter 10 :verse 27 :word-count 30}
    {:book 46 :chapter 10 :verse 28 :word-count 32}
-   {:book 46 :chapter 10:verse 29 :word-count 19}
+   {:book 46 :chapter 10 :verse 29 :word-count 19}
    {:book 46 :chapter 10 :verse 30 :word-count 17}
    {:book 46 :chapter 10 :verse 31 :word-count 17}
    {:book 46 :chapter 10 :verse 32 :word-count 14}
@@ -28593,7 +28593,7 @@
    {:book 46 :chapter 14 :verse 9 :word-count 29}
    {:book 46 :chapter 14 :verse 10 :word-count 14}
    {:book 46 :chapter 14 :verse 11 :word-count 26}
-   {:book 46 :chapter 14:verse 12 :word-count 20}
+   {:book 46 :chapter 14 :verse 12 :word-count 20}
    {:book 46 :chapter 14 :verse 13 :word-count 14}
    {:book 46 :chapter 14 :verse 14 :word-count 15}
    {:book 46 :chapter 14 :verse 15 :word-count 34}
@@ -28663,7 +28663,7 @@
    {:book 46 :chapter 15 :verse 39 :word-count 24}
    {:book 46 :chapter 15 :verse 40 :word-count 26}
    {:book 46 :chapter 15 :verse 41 :word-count 26}
-   {:book 46 :chapter 15 :verse 42:word-count 19}
+   {:book 46 :chapter 15 :verse 42 :word-count 19}
    {:book 46 :chapter 15 :verse 43 :word-count 20}
    {:book 46 :chapter 15 :verse 44 :word-count 24}
    {:book 46 :chapter 15 :verse 45 :word-count 19}
@@ -28880,7 +28880,7 @@
    {:book 47 :chapter 10 :verse 2 :word-count 35}
    {:book 47 :chapter 10 :verse 3 :word-count 16}
    {:book 47 :chapter 10 :verse 4 :word-count 18}
-   {:book 47 :chapter 10 :verse 5:word-count 21}
+   {:book 47 :chapter 10 :verse 5 :word-count 21}
    {:book 47 :chapter 10 :verse 6 :word-count 11}
    {:book 47 :chapter 10 :verse 7 :word-count 29}
    {:book 47 :chapter 10 :verse 8 :word-count 30}
@@ -29023,7 +29023,7 @@
    {:book 48 :chapter 3 :verse 14 :word-count 24}
    {:book 48 :chapter 3 :verse 15 :word-count 24}
    {:book 48 :chapter 3 :verse 16 :word-count 32}
-   {:book 48 :chapter 3:verse 17 :word-count 28}
+   {:book 48 :chapter 3 :verse 17 :word-count 28}
    {:book 48 :chapter 3 :verse 18 :word-count 23}
    {:book 48 :chapter 3 :verse 19 :word-count 33}
    {:book 48 :chapter 3 :verse 20 :word-count 11}
@@ -29095,7 +29095,7 @@
    {:book 48 :chapter 5 :verse 26 :word-count 11}
    {:book 48 :chapter 6 :verse 1 :word-count 29}
    {:book 48 :chapter 6 :verse 2 :word-count 11}
-   {:book 48 :chapter 6 :verse 3:word-count 14}
+   {:book 48 :chapter 6 :verse 3 :word-count 14}
    {:book 48 :chapter 6 :verse 4 :word-count 24}
    {:book 48 :chapter 6 :verse 5 :word-count 9}
    {:book 48 :chapter 6 :verse 6 :word-count 16}
@@ -29313,7 +29313,7 @@
    {:book 50 :chapter 2 :verse 14 :word-count 7}
    {:book 50 :chapter 2 :verse 15 :word-count 30}
    {:book 50 :chapter 2 :verse 16 :word-count 29}
-   {:book 50:chapter 2 :verse 17 :word-count 27}
+   {:book 50 :chapter 2 :verse 17 :word-count 27}
    {:book 50 :chapter 2 :verse 18 :word-count 10}
    {:book 50 :chapter 2 :verse 19 :word-count 23}
    {:book 50 :chapter 2 :verse 20 :word-count 15}
@@ -29385,7 +29385,7 @@
    {:book 51 :chapter 1 :verse 12 :word-count 19}
    {:book 51 :chapter 1 :verse 13 :word-count 19}
    {:book 51 :chapter 1 :verse 14 :word-count 9}
-   {:book 51 :chapter 1:verse 15 :word-count 13}
+   {:book 51 :chapter 1 :verse 15 :word-count 13}
    {:book 51 :chapter 1 :verse 16 :word-count 31}
    {:book 51 :chapter 1 :verse 17 :word-count 13}
    {:book 51 :chapter 1 :verse 18 :word-count 26}
@@ -29409,7 +29409,7 @@
    {:book 51 :chapter 2 :verse 7 :word-count 19}
    {:book 51 :chapter 2 :verse 8 :word-count 31}
    {:book 51 :chapter 2 :verse 9 :word-count 10}
-   {:book 51 :chapter 2:verse 10 :word-count 16}
+   {:book 51 :chapter 2 :verse 10 :word-count 16}
    {:book 51 :chapter 2 :verse 11 :word-count 25}
    {:book 51 :chapter 2 :verse 12 :word-count 29}
    {:book 51 :chapter 2 :verse 13 :word-count 26}
@@ -29771,7 +29771,7 @@
    {:book 55 :chapter 3 :verse 10 :word-count 20}
    {:book 55 :chapter 3 :verse 11 :word-count 26}
    {:book 55 :chapter 3 :verse 12 :word-count 15}
-   {:book 55 :chapter 3 :verse 13:word-count 16}
+   {:book 55 :chapter 3 :verse 13 :word-count 16}
    {:book 55 :chapter 3 :verse 14 :word-count 20}
    {:book 55 :chapter 3 :verse 15 :word-count 26}
    {:book 55 :chapter 3 :verse 16 :word-count 20}
@@ -29844,7 +29844,7 @@
    {:book 56 :chapter 3 :verse 13 :word-count 18}
    {:book 56 :chapter 3 :verse 14 :word-count 23}
    {:book 56 :chapter 3 :verse 15 :word-count 21}
-   {:book 57:chapter 1 :verse 1 :word-count 15}
+   {:book 57 :chapter 1 :verse 1 :word-count 15}
    {:book 57 :chapter 1 :verse 2 :word-count 15}
    {:book 57 :chapter 1 :verse 3 :word-count 14}
    {:book 57 :chapter 1 :verse 4 :word-count 12}
@@ -29868,7 +29868,7 @@
    {:book 57 :chapter 1 :verse 22 :word-count 25}
    {:book 57 :chapter 1 :verse 23 :word-count 11}
    {:book 57 :chapter 1 :verse 24 :word-count 11}
-   {:book 57:chapter 1 :verse 25 :word-count 11}
+   {:book 57 :chapter 1 :verse 25 :word-count 11}
    {:book 58 :chapter 1 :verse 1 :word-count 17}
    {:book 58 :chapter 1 :verse 2 :word-count 28}
    {:book 58 :chapter 1 :verse 3 :word-count 44}
@@ -29916,7 +29916,7 @@
    {:book 58 :chapter 3 :verse 13 :word-count 25}
    {:book 58 :chapter 3 :verse 14 :word-count 19}
    {:book 58 :chapter 3 :verse 15 :word-count 18}
-   {:book 58 :chapter 3:verse 16 :word-count 20}
+   {:book 58 :chapter 3 :verse 16 :word-count 20}
    {:book 58 :chapter 3 :verse 17 :word-count 22}
    {:book 58 :chapter 3 :verse 18 :word-count 19}
    {:book 58 :chapter 3 :verse 19 :word-count 12}
@@ -30060,7 +30060,7 @@
    {:book 58 :chapter 10 :verse 19 :word-count 16}
    {:book 58 :chapter 10 :verse 20 :word-count 19}
    {:book 58 :chapter 10 :verse 21 :word-count 12}
-   {:book 58 :chapter 10:verse 22 :word-count 29}
+   {:book 58 :chapter 10 :verse 22 :word-count 29}
    {:book 58 :chapter 10 :verse 23 :word-count 17}
    {:book 58 :chapter 10 :verse 24 :word-count 15}
    {:book 58 :chapter 10 :verse 25 :word-count 26}
@@ -30274,7 +30274,7 @@
    {:book 59 :chapter 5 :verse 12 :word-count 38}
    {:book 59 :chapter 5 :verse 13 :word-count 15}
    {:book 59 :chapter 5 :verse 14 :word-count 30}
-   {:book 59 :chapter 5:verse 15 :word-count 29}
+   {:book 59 :chapter 5 :verse 15 :word-count 29}
    {:book 59 :chapter 5 :verse 16 :word-count 30}
    {:book 59 :chapter 5 :verse 17 :word-count 32}
    {:book 59 :chapter 5 :verse 18 :word-count 14}
@@ -30370,7 +30370,7 @@
    {:book 60 :chapter 4 :verse 16 :word-count 20}
    {:book 60 :chapter 4 :verse 17 :word-count 34}
    {:book 60 :chapter 4 :verse 18 :word-count 15}
-   {:book 60 :chapter 4 :verse 19:word-count 19}
+   {:book 60 :chapter 4 :verse 19 :word-count 19}
    {:book 60 :chapter 5 :verse 1 :word-count 33}
    {:book 60 :chapter 5 :verse 2 :word-count 27}
    {:book 60 :chapter 5 :verse 3 :word-count 13}
@@ -30660,7 +30660,7 @@
    {:book 66 :chapter 3 :verse 5 :word-count 36}
    {:book 66 :chapter 3 :verse 6 :word-count 15}
    {:book 66 :chapter 3 :verse 7 :word-count 38}
-   {:book 66:chapter 3 :verse 8 :word-count 41}
+   {:book 66 :chapter 3 :verse 8 :word-count 41}
    {:book 66 :chapter 3 :verse 9 :word-count 41}
    {:book 66 :chapter 3 :verse 10 :word-count 33}
    {:book 66 :chapter 3 :verse 11 :word-count 17}
@@ -31007,4 +31007,4 @@
    {:book 66 :chapter 22 :verse 18 :word-count 29}
    {:book 66 :chapter 22 :verse 19 :word-count 36}
    {:book 66 :chapter 22 :verse 20 :word-count 16}
-   {:book 66 :chapter 22 :verse 21 :word-count 10})
+   {:book 66 :chapter 22 :verse 21 :word-count 10}])
