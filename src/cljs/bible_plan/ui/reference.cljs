@@ -1,7 +1,8 @@
 (ns bible-plan.ui.reference
   (:require    [dommy.core           :as dom]
                [bible-plan.reference :as ref]
-               [clojure.string       :as string])
+               [clojure.string       :as string]
+               titlecase)
 
   (:use-macros [dommy.macros :only [sel1 sel node deftemplate]]))
 
@@ -16,4 +17,4 @@
   )
 
 (deftemplate ->li [day]
-  [:li (string/join ", " (map ref/->str day))])
+  [:li (string/join ", " (map (comp titlecase/->titlecase ref/->str) day))])
