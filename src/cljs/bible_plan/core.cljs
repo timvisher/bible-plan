@@ -2,12 +2,13 @@
   (:require    [goog.date.DateTime]
                [goog.i18n.DateTimeFormat.Format]
                [goog.i18n.DateTimeFormat]
-               [dommy.core :as dom]
-               [bible-plan.mcheyne :as mcheyne]
-               [bible-plan.reference :as ref])
+               [dommy.core              :as dom]
+               [bible-plan.plan.mcheyne :as mcheyne]
+               [bible-plan.ui.reference :as ref-ui])
+
   (:use-macros [dommy.macros :only [sel sel1]]))
 
-(dom/listen! (sel1 (keyword "input[name=plan]")) :change (fn [e] (dom/replace-contents! (sel1 :#base-plan) (map ref/->li mcheyne/mcheyne))))
+(dom/listen! (sel1 (keyword "input[name=plan]")) :change (fn [e] (dom/replace-contents! (sel1 :#base-plan) (map ref-ui/->li mcheyne/mcheyne))))
 
 
 (comment

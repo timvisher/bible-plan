@@ -25,6 +25,9 @@
 (deftest ->str-start-and-end-when-ascending
   (is (= "Am. 1-Jon. 3" (ref/->str {:start {:book 30 :chapter 1} :end {:book 32 :chapter 3}}))))
 
+(deftest ->str-bug-1
+  (is (= "Gn. 35-36" (ref/->str {:start {:book 1 :chapter 35} :end {:book 1 :chapter 36} :kind "family"}))))
+
 (deftest ->str-start-and-end-when-verses-not-ascending
   (is (thrown-with-msg? js/Error #"reference<" (ref/->str {:start {:book 30 :chapter 1 :verse 15} :end {:book 30 :chapter 1 :verse 1}}))))
 
@@ -38,6 +41,8 @@
   (is (not (ref/reference< {:book 30 :chapter 1}  {:book 30 :chapter 1 :verse 15}))))
 
 (comment
+  (in-ns 'bible-plan.reference-test)
+  
   (t/test-ns 'bible-plan.reference-test)
 
   @t/registered-tests

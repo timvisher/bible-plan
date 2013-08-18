@@ -1,5 +1,5 @@
 (ns bible-plan.core
-  (:require [bible-plan.mcheyne]
+  (:require [bible-plan.plan.mcheyne]
             [clj-time.core :as time]
             [clj-time.format :as time-format]
             [clojure.string :as string]
@@ -38,7 +38,7 @@
   )
 
 (comment
-  (first (filter #(some (fn [plan-day] (and (:start plan-day) (:end plan-day))) %) bible-plan.mcheyne/mcheyne))
+  (first (filter #(some (fn [plan-day] (and (:start plan-day) (:end plan-day))) %) bible-plan.plan.mcheyne/mcheyne))
   [{:kind "family", :start {:book "genesis", :chapter 9}, :end {:book "genesis", :chapter 10}}
    {:kind "family", :start {:book "matthew", :chapter 9}}
    {:kind "secret", :start {:book "ezra", :chapter 9}}

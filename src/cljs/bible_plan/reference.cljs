@@ -1,10 +1,6 @@
 (ns bible-plan.reference
-  (:require    [dommy.core         :as dom]
-               [bible-plan.mcheyne :as mcheyne]
-               [bible-plan.bible   :as bible]
-               [clojure.string     :as string])
-
-  (:use-macros [dommy.macros :only [sel1 sel node deftemplate]]))
+  (:require    [bible-plan.bible   :as bible]
+               [clojure.string     :as string]))
 
 (defn reference< [reference & references]
   {:pre [#(every? :book (into [reference] references))]}
@@ -22,14 +18,6 @@
              (apply = chapters)
              (every? identity verses)
              (apply < verses)))))
-
-(comment
-  (dom/append! (sel1 :#base-plan) (->li {:start {:book 1 :chapter 1}}))
-
-  (dom/replace-contents! (sel1 :#base-plan) (map ->li mcheyne/mcheyne))
-
-  (dom/listen! (sel1 (keyword "input[name=plan]")) :change (fn [e] (.log js/console e)))
-  )
 
 (defn ->book-str [{:keys [book chapter] :as reference}]
   {:pre [book]}
@@ -60,13 +48,20 @@
 
 (defn compound->str [start end]
   {:pre [(reference< start end)]}
-  (let [{s-book :book s-chapter :chapter s-verse :verse :or {s-chapter 1 s-verse 1}} start
-        {e-book :book e-chapter :chapter e-verse :verse :or {e-chapter 1 e-verse 1}} end]
-    (cond (and (= s-book e-book) (= s-chapter e-chapter) (not= s-verse e-verse))
+  (let [{s-book :book s-chapter :chapter s-verse :verse} start
+        {e-book :book e-chapter :chapter e-verse :verse} end]
+    (def ^:dynamic *charnock* [s-book e-book s-chapter e-chapter s-verse e-verse])
+    (cond ;; {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 1 :verse 32}}
+          (and (= s-book e-book) (= s-chapter e-chapter) (not= s-verse e-verse))
           (str (string/capitalize (->book-str start)) ". " (->chapter-str start) "." s-verse "-" e-verse)
 
+          ;; {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 2 :verse 32}}
           (and (= s-book e-book) (not= s-chapter e-chapter) (not= s-verse e-verse))
           (str (string/capitalize (->book-str start)) ". " (->chapter-str start) "." s-verse "-" (->chapter-str end) "." e-verse)
+
+          ;; {:start {:book 1 :chapter 35} :end {:book 1 :chapter 36}}
+          (and (= s-book e-book) (not= s-chapter e-chapter) (nil? s-verse) (nil? e-verse))
+          (str (string/capitalize (->book-str start)) ". " (->chapter-str start) "-" (->chapter-str end))
 
           :default
           (str (single->str start) "-" (single->str end)))))
@@ -77,5 +72,7 @@
     (compound->str start end)
     (single->str start)))
 
-(deftemplate ->li [day]
-  [:li (string/join ", " (map ->str day))])
+(comment
+  (->str {:start {:book 1 :chapter 35} :end {:book 1 :chapter 36} :kind "family"})
+  *charnock*
+  )
