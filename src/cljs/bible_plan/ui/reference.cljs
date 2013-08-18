@@ -2,6 +2,7 @@
   (:require    [dommy.core           :as dom]
                [bible-plan.reference :as ref]
                [clojure.string       :as string]
+               time-ui
                titlecase)
 
   (:use-macros [dommy.macros :only [sel1 sel node deftemplate]]))
@@ -18,3 +19,11 @@
 
 (deftemplate ->li [day]
   [:li (string/join ", " (map (comp titlecase/->titlecase ref/->str) day))])
+
+(deftemplate ->td [reference]
+  [:td (titlecase/->titlecase (ref/->str reference))])
+
+(deftemplate ->tr [date day]
+  [:tr
+   (time-ui/->td date)
+   (map ->td day)])
