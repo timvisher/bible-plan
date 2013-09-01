@@ -1,9 +1,16 @@
 (ns time-ui
   (:require [goog.date.DateTime]
+            [goog.date.Interval]
             [goog.i18n.DateTimeFormat.Format]
             [goog.i18n.DateTimeFormat])
 
   (:use-macros [dommy.macros :only [node deftemplate]]))
+
+(defn now []
+  (goog.date/DateTime.))
+
+(defn days-from [date]
+  )
 
 (defn ->td [date]
   (let [long-date-formatter (goog.i18n/DateTimeFormat. goog.i18n.DateTimeFormat.Format.LONG_DATE)
@@ -13,7 +20,7 @@
 
 (comment
 
-  (.-textContent (->td (goog.date/DateTime.)))
+  (.-textContent (->td (.add (goog.date/DateTime.) (goog.date/Interval. 0 0 1))))
 
   (let [long-date-formatter (goog.i18n/DateTimeFormat. goog.i18n.DateTimeFormat.Format.LONG_DATE)
         now                 (goog.date/DateTime.)
