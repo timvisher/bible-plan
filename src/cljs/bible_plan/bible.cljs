@@ -1,5 +1,7 @@
 (ns bible-plan.bible)
 
+;; Pull abbreviations from here: http://www.bibletechnologies.net/201.dsp#body.1_div.24
+
 (def bible
   {1  {:name "genesis" :abbreviation "gn"}
    2  {:name "exodus" :abbreviation "ex"}
