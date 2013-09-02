@@ -6,6 +6,10 @@
 
   (:use-macros [dommy.macros :only [node deftemplate]]))
 
+(comment
+  (in-ns 'time-ui)
+  )
+
 (defn now []
   (goog.date/DateTime.))
 
@@ -30,7 +34,36 @@
         formatted-now       (.format long-date-formatter date)]
     (node [:td (date->long-format date)])))
 
+(def days-of-week {:sunday    0
+                   :monday    1
+                   :tuesday   2
+                   :wednesday 3
+                   :thursday  4
+                   :friday    5
+                   :saturday  6})
+
+(defn day-is [day-of-week date]
+  (= (day-of-week days-of-week) (.getDay date)))
+
+(defn day-in [days-of-week date]
+  (some identity ((apply juxt (map #(partial day-is %) days-of-week)) date)))
+
 (comment
+  
+
+  (day-in [:sunday :tuesday :wednesday] (now))
+  ((juxt (partial day-is :sunday) (partial day-is :monday) (partial day-is :tuesday) (partial day-is :wednesday)) (now))
+  ((partial day-is :sunday) (now))
+  
+
+  (take 20 (filter (complement (partial day-is :sunday)) (days-from-now)))
+
+  (.getDay (now))
+
+  days-of-week
+
+
+  (+ 1 1)
 
   (take 5 (days-from-now))
 
@@ -60,6 +93,5 @@
 
   (set! (.-textContent (aget (goog.dom/getElementsByTagNameAndClass "h1") 0)) "Ohai, Whitefield!")
   (.log js/console "h1")
-
 
 )
