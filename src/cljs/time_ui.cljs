@@ -14,8 +14,8 @@
   (goog.date/DateTime.))
 
 (defn inc-date-by-day [date]
-  (doto date
-    (.add (goog.date/Interval. 0 0 1))))
+  (.clone (doto date
+     (.add (goog.date/Interval. 0 0 1)))))
 
 (defn days-from [date]
   (iterate inc-date-by-day date))
@@ -46,15 +46,19 @@
   (= (day-of-week days-of-week) (.getDay date)))
 
 (defn day-in [days-of-week date]
-  (some identity ((apply juxt (map #(partial day-is %) days-of-week)) date)))
+  (and days-of-week
+       (not (empty? days-of-week))
+       (some identity ((apply juxt (map #(partial day-is %) days-of-week)) date))))
 
 (comment
-  
 
-  (day-in [:sunday :tuesday :wednesday] (now))
+  (day-in [:sunday :tuesday :wednesday :monday] (now))
+  (day-in [] (now))
+  (in-ns 'time-ui)
   ((juxt (partial day-is :sunday) (partial day-is :monday) (partial day-is :tuesday) (partial day-is :wednesday)) (now))
   ((partial day-is :sunday) (now))
-  
+
+  (set! (.-checked (sel1 (keyword "input[name=plan]:checked"))) false)
 
   (take 20 (filter (complement (partial day-is :sunday)) (days-from-now)))
 
