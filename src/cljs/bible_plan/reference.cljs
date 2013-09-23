@@ -36,7 +36,7 @@
 (defn single->str [{:keys [book chapter verse] :as reference}]
   {:pre [(or (and book chapter verse)
              (and book chapter (not verse))
-             (and book (not chapter verse)))]}
+             (and book (not (and chapter verse))))]}
   (cond (and book chapter verse)
         (str (string/capitalize (->book-str reference)) ". " (->chapter-str reference) "." (->verse-str reference))
 
