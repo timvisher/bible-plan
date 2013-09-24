@@ -18,10 +18,10 @@
                        :cljsbuild    {:builds [{:source-paths ["src/cljs"]
                                                 :compiler     {:pretty-print  true
                                                                :output-to     "resources/public/bible-plan.js"
-                                                               :optimizations :whitespace
-                                                               :source-map    "resources/public/bible-plan.js.map"}}
-                                               {:source-paths ["src/cljs"]
-                                                :compiler     {:pretty-print  true
-                                                               :output-to     "advanced/resources/public/bible-plan.js"
-                                                               :optimizations :advanced
-                                                               :source-map    "advanced/resources/public/bible-plan.js.map"}}]}}})
+                                                               :optimizations :whitespace}}
+                                               ;; {:source-paths ["src/cljs"]
+                                               ;;  :compiler     {:pretty-print  true
+                                               ;;                 :output-to     "advanced/resources/public/bible-plan.js"
+                                               ;;                 :optimizations :advanced
+                                               ;;                 :source-map    "advanced/resources/public/bible-plan.js.map"}}
+                                               ]}}})
