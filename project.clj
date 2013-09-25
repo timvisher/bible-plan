@@ -6,14 +6,13 @@
   :source-paths ["src/clj" "src/cljs"]
   :dependencies [[org.clojure/clojure             "1.5.1"]
                  [org.clojure/clojurescript       "0.0-1896"]
-                 [com.cemerick/piggieback         "0.1.0"]
-                 [clj-time                        "0.5.1"]
-                 [com.draines/postal              "1.10.4"]
                  [prismatic/dommy                 "0.1.1"]
+                 [ring                            "1.2.0"]
+                 [compojure                       "1.1.5"]
+                 [enlive                          "1.1.1"]
                  [com.cemerick/clojurescript.test "0.0.4"]]
-  :profiles     {:dev {:repl-options {:init-ns          piggieback-server
-                                      :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
-                       :plugins      [[com.cemerick/austin "0.1.0"]
+  :profiles     {:dev {:repl-options {:init-ns          whitespace-server}
+                       :plugins      [[com.cemerick/austin "0.1.1"]
                                       [lein-cljsbuild      "0.3.3"]]
                        :cljsbuild    {:builds [{:source-paths   ["src/cljs"]
                                                 :notify-command ["terminal-notifier"
