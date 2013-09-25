@@ -15,13 +15,31 @@
                                       :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
                        :plugins      [[com.cemerick/austin "0.1.0"]
                                       [lein-cljsbuild      "0.3.3"]]
-                       :cljsbuild    {:builds [{:source-paths ["src/cljs"]
-                                                :compiler     {:pretty-print  true
-                                                               :output-to     "resources/public/bible-plan.js"
-                                                               :optimizations :whitespace}}
-                                               ;; {:source-paths ["src/cljs"]
-                                               ;;  :compiler     {:pretty-print  true
-                                               ;;                 :output-to     "advanced/resources/public/bible-plan.js"
-                                               ;;                 :optimizations :advanced
-                                               ;;                 :source-map    "advanced/resources/public/bible-plan.js.map"}}
-                                               ]}}})
+                       :cljsbuild    {:builds [{:source-paths   ["src/cljs"]
+                                                :notify-command ["terminal-notifier"
+                                                                 "-title"
+                                                                 "bible-plan"
+                                                                 "-subtitle"
+                                                                 "whitespace"
+                                                                 "-group"
+                                                                 "bible-plan-build"
+                                                                 "-activate"
+                                                                 "com.googlecode.iTerm2"
+                                                                 "-message"]
+                                                :compiler       {:pretty-print  true
+                                                                 :output-to     "resources/public/bible-plan.js"
+                                                                 :optimizations :whitespace}}
+                                               {:source-paths   ["src/cljs"]
+                                                :notify-command ["terminal-notifier"
+                                                                 "-title"
+                                                                 "bible-plan"
+                                                                 "-subtitle"
+                                                                 "advanced"
+                                                                 "-group"
+                                                                 "bible-plan-build"
+                                                                 "-activate"
+                                                                 "com.googlecode.iTerm2"
+                                                                 "-message"]
+                                                :compiler       {:pretty-print  false
+                                                                 :output-to     "advanced/resources/public/bible-plan.js"
+                                                                 :optimizations :advanced}}]}}})
