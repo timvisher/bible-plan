@@ -1,7 +1,10 @@
 (ns piggieback-server
-  (:require [cljs.repl.browser]))
-
-(cemerick.piggieback/cljs-repl
- :repl-env
- (doto (cljs.repl.browser/repl-env :port 9000)
-   cljs.repl/-setup))
+  (:require [cljs.repl.browser   :refer :all]
+            [cljs.repl           :refer :all]
+            [cemerick.piggieback :refer :all]))
+(comment
+  (cljs-repl
+   :repl-env
+   (doto (repl-env :port 9000)
+     -setup))
+  )
