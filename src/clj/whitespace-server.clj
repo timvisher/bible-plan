@@ -6,21 +6,30 @@
             ring.adapter.jetty
             [clojure.java.io :as io]))
 
+(defn index-page []
+  (io/resource "index.html"))
+
 (enlive/deftemplate page
-  (io/resource "index.html")
+  (index-page)
   []
   [:body] (enlive/append
            (enlive/html [:script (browser-connected-repl-js)])))
 
-(defroutes site
+(defroutes whitespace-site
+  (resources "/" :root "public/whitespace")
+  (GET "/" req (page)))
+
+(defroutes advanced-site
   (resources "/")
-  (GET "/*" req (page)))
+  (GET "/*" req (index-page)))
 
 (defn run
   []
-  (defonce ^:private server
-    (ring.adapter.jetty/run-jetty #'site {:port 8080 :join? false}))
-  server)
+  (defonce ^:private whitespace-server
+    (ring.adapter.jetty/run-jetty #'whitespace-site {:port 8080 :join? false}))
+  (defonce ^:private advanced-server
+    (ring.adapter.jetty/run-jetty #'advanced-site {:port 8081 :join? false}))
+  [whitespace-server advanced-server])
 
 (comment
   (run)
