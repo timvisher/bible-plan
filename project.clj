@@ -11,7 +11,7 @@
                  [compojure                       "1.1.5"]
                  [enlive                          "1.1.1"]
                  [com.cemerick/clojurescript.test "0.0.4"]]
-  :profiles     {:dev {:repl-options {:init-ns          whitespace-server}
+  :profiles     {:dev {:repl-options {:init-ns dev-server}
                        :plugins      [[com.cemerick/austin "0.1.1"]
                                       [lein-cljsbuild      "0.3.3"]]
                        :cljsbuild    {:builds [{:source-paths   ["src/cljs"]
@@ -26,7 +26,7 @@
                                                                  "com.googlecode.iTerm2"
                                                                  "-message"]
                                                 :compiler       {:pretty-print  true
-                                                                 :output-to     "resources/public/bible-plan.js"
+                                                                 :output-to     "resources/public/whitespace/bible-plan.js"
                                                                  :optimizations :whitespace}}
                                                {:source-paths   ["src/cljs"]
                                                 :notify-command ["terminal-notifier"
@@ -40,5 +40,5 @@
                                                                  "com.googlecode.iTerm2"
                                                                  "-message"]
                                                 :compiler       {:pretty-print  false
-                                                                 :output-to     "advanced/resources/public/bible-plan.js"
+                                                                 :output-to     "resources/public/bible-plan.js"
                                                                  :optimizations :advanced}}]}}})
