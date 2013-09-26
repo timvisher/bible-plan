@@ -20,13 +20,7 @@
            (enlive/html [:script (browser-connected-repl-js)])))
 
 (defroutes whitespace-site
-  ;; (resources "/" :root "public/whitespace")
-  ;; Why the heck doesn't the above work?
-  (-> (GET "/*" {{resource-path :*} :route-params}
-           (ring.util.response/resource-response (str "public/whitespace/" resource-path)))
-      (ring.middleware.file-info/wrap-file-info nil)
-      (ring.middleware.content-type/wrap-content-type nil)
-      (ring.middleware.head/wrap-head))
+  (resources "/" {:root "public/whitespace"})
   (GET "/" req (page)))
 
 (defroutes advanced-site
