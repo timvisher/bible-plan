@@ -4,6 +4,10 @@
             [compojure.route        :refer (resources)]
             [compojure.core         :refer (GET defroutes)]
             ring.adapter.jetty
+            ring.middleware.content-type
+            ring.middleware.file-info
+            ring.middleware.head
+            ring.util.response
             [clojure.java.io :as io]))
 
 (defn index-page []
@@ -16,7 +20,13 @@
            (enlive/html [:script (browser-connected-repl-js)])))
 
 (defroutes whitespace-site
-  (resources "/" :root "public/whitespace")
+  ;; (resources "/" :root "public/whitespace")
+  ;; Why the heck doesn't the above work?
+  (-> (GET "/*" {{resource-path :*} :route-params}
+           (ring.util.response/resource-response (str "public/whitespace/" resource-path)))
+      (ring.middleware.file-info/wrap-file-info nil)
+      (ring.middleware.content-type/wrap-content-type nil)
+      (ring.middleware.head/wrap-head))
   (GET "/" req (page)))
 
 (defroutes advanced-site
