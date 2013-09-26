@@ -2,7 +2,8 @@
   (:require    [dommy.core              :as dom]
                [bible-plan.plan.mcheyne :as mcheyne]
                [bible-plan.ui.reference :as ref-ui]
-               [bible-plan.ui.plan      :as plan-ui])
+               [bible-plan.ui.plan      :as plan-ui]
+               clojure.browser.repl)
 
   (:use-macros [dommy.macros :only [sel sel1]]))
 
