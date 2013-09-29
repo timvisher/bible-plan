@@ -10,12 +10,12 @@
   )
 
 (defn hide-plan []
-  (dom/add-class! (sel1 :#base-plan) :hidden))
+  (dom/add-class! (sel1 :#plan) :hidden))
 
 (defn show-plan [plan days]
   {:pre [(= (count plan) (count days))]}
-  (dom/replace-contents! (sel1 :#base-plan) (map ref-ui/->tr days plan))
-  (dom/remove-class! (sel1 :#base-plan) :hidden))
+  (dom/replace-contents! (sel1 :#plan) (map ref-ui/->tr days plan))
+  (dom/remove-class! (sel1 :#plan) :hidden))
 
 (defn calc-plan [e]
   (if (sel1 (keyword "input[name=plan]:checked"))
@@ -27,10 +27,16 @@
       (show-plan plan days))))
 
 (comment
-  (dom/replace-contents! (sel1 :#base-plan) [])
+  (.-value (sel1 (keyword "input[name=books-at-a-time]:checked")))
+  )
+
+(comment
+  (dom/replace-contents! (sel1 :#plan) [])
   (toggle-plan nil)
 
   (calc-plan nil)
+
+  (in-ns 'bible-plan.ui.plan)
 
   (second *charnock*)
 
