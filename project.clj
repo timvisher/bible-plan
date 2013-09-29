@@ -5,7 +5,7 @@
                  :url "http://www.eclipse.org/legal/epl-v10.html"}
   :source-paths ["src/clj" "src/cljs"]
   :dependencies [[org.clojure/clojure             "1.5.1"]
-                 [org.clojure/clojurescript       "0.0-1896"]
+                 [org.clojure/clojurescript       "0.0-1909"]
                  [prismatic/dommy                 "0.1.1"]
                  [ring                            "1.2.0"]
                  [compojure                       "1.1.5"]
