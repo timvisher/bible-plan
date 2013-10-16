@@ -13,17 +13,18 @@
 (defn hide-plan []
   (dom/add-class! (sel1 :#plan) :hidden))
 
-(defn show-plan [plan-dom-content]
-  (console/log "Showing plan!")
-  (dom/replace-contents! (sel1 :#plan) plan-dom-content)
-  (dom/remove-class! (sel1 :#plan) :hidden))
-
 (defn log-pr [object]
   (console/log (pr-str object)))
 
+(defn show-plan! [plan-dom-content]
+  (console/log "Showing plan:")
+  (log-pr plan-dom-content)
+  (dom/replace-contents! (sel1 :#plan) plan-dom-content)
+  (dom/remove-class! (sel1 :#plan) :hidden))
+
 (defn plan-state->plan-options []
   (let [base-plan             (keyword (.-value (sel1 (keyword "input[name=plan]:checked"))))
-        available-days        (time-ui/days-from-now)
+        available-dates       (time-ui/days-from-now)
         skip-days             (map (fn day-input->keyword [day-input]
                                      (keyword (.-value day-input)))
                                    (sel (keyword "input[name=skip-day]:checked")))
@@ -33,10 +34,10 @@
                                 nil)
         books-at-a-time?      (= "yes" books-at-a-time?-raw)]
     (let [plan-options {:base-plan        base-plan
-                        :available-days   available-days
+                        :available-dates  available-dates
                         :skip-days        skip-days
                         :books-at-a-time? books-at-a-time?}]
-      (log-pr (update-in plan-options [:available-days] (partial take 50)))
+      (log-pr (update-in plan-options [:available-dates] (partial take 50)))
       plan-options)))
 
 (deftemplate plan-day->tr [{:keys [readings date] :as plan-day}]
@@ -45,6 +46,8 @@
    (map ref-ui/->td readings)])
 
 (defn plan->dom-content [the-plan]
+  (console/log "Generating DOM content")
+  (log-pr the-plan)
   (map plan-day->tr the-plan))
 
 (defn re-show-plan [e]
@@ -52,7 +55,7 @@
     (let [plan-options     (plan-state->plan-options)
           the-plan         (plan/calculate-plan plan-options)
           plan-dom-content (plan->dom-content the-plan)]
-      (show-plan plan-dom-content))))
+      (show-plan! plan-dom-content))))
 
 (comment
   (in-ns 'bible-plan.ui.plan)

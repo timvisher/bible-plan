@@ -34813,27 +34813,28 @@ goog.require("time_ui");
 bible_plan.ui.plan.hide_plan = function hide_plan() {
   return dommy.core.add_class_BANG_.call(null, document.getElementById("plan"), new cljs.core.Keyword(null, "hidden", "hidden", 4091384092))
 };
-bible_plan.ui.plan.show_plan = function show_plan(plan_dom_content) {
-  shodan.console.log.call(null, "Showing plan!");
-  dommy.core.replace_contents_BANG_.call(null, document.getElementById("plan"), plan_dom_content);
-  return dommy.core.remove_class_BANG_.call(null, document.getElementById("plan"), new cljs.core.Keyword(null, "hidden", "hidden", 4091384092))
-};
 bible_plan.ui.plan.log_pr = function log_pr(object) {
   return shodan.console.log.call(null, cljs.core.pr_str.call(null, object))
 };
+bible_plan.ui.plan.show_plan_BANG_ = function show_plan_BANG_(plan_dom_content) {
+  shodan.console.log.call(null, "Showing plan:");
+  bible_plan.ui.plan.log_pr.call(null, plan_dom_content);
+  dommy.core.replace_contents_BANG_.call(null, document.getElementById("plan"), plan_dom_content);
+  return dommy.core.remove_class_BANG_.call(null, document.getElementById("plan"), new cljs.core.Keyword(null, "hidden", "hidden", 4091384092))
+};
 bible_plan.ui.plan.plan_state__GT_plan_options = function plan_state__GT_plan_options() {
   var base_plan = cljs.core.keyword.call(null, document.querySelector(dommy.core.selector.call(null, cljs.core.keyword.call(null, "input[name\x3dplan]:checked"))).value);
-  var available_days = time_ui.days_from_now.call(null);
-  var skip_days = cljs.core.map.call(null, function(base_plan, available_days) {
+  var available_dates = time_ui.days_from_now.call(null);
+  var skip_days = cljs.core.map.call(null, function(base_plan, available_dates) {
     return function day_input__GT_keyword(day_input) {
       return cljs.core.keyword.call(null, day_input.value)
     }
-  }(base_plan, available_days), dommy.utils.__GT_Array.call(null, document.querySelectorAll(dommy.core.selector.call(null, cljs.core.keyword.call(null, "input[name\x3dskip-day]:checked")))));
+  }(base_plan, available_dates), dommy.utils.__GT_Array.call(null, document.querySelectorAll(dommy.core.selector.call(null, cljs.core.keyword.call(null, "input[name\x3dskip-day]:checked")))));
   var books_at_a_time_QMARK__node = document.querySelector(dommy.core.selector.call(null, cljs.core.keyword.call(null, "input[name\x3dbooks-at-a-time]:checked")));
   var books_at_a_time_QMARK__raw = cljs.core.truth_(books_at_a_time_QMARK__node) ? books_at_a_time_QMARK__node.value : null;
   var books_at_a_time_QMARK_ = cljs.core._EQ_.call(null, "yes", books_at_a_time_QMARK__raw);
-  var plan_options = cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "base-plan", "base-plan", 3446158359), base_plan, new cljs.core.Keyword(null, "available-days", "available-days", 3208302669), available_days, new cljs.core.Keyword(null, "skip-days", "skip-days", 3061888855), skip_days, new cljs.core.Keyword(null, "books-at-a-time?", "books-at-a-time?", 761096577), books_at_a_time_QMARK_], true);
-  bible_plan.ui.plan.log_pr.call(null, cljs.core.update_in.call(null, plan_options, cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "available-days", "available-days", 3208302669)], true), cljs.core.partial.call(null, cljs.core.take, 50)));
+  var plan_options = cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "base-plan", "base-plan", 3446158359), base_plan, new cljs.core.Keyword(null, "available-dates", "available-dates", 4615740915), available_dates, new cljs.core.Keyword(null, "skip-days", "skip-days", 3061888855), skip_days, new cljs.core.Keyword(null, "books-at-a-time?", "books-at-a-time?", 761096577), books_at_a_time_QMARK_], true);
+  bible_plan.ui.plan.log_pr.call(null, cljs.core.update_in.call(null, plan_options, cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "available-dates", "available-dates", 4615740915)], true), cljs.core.partial.call(null, cljs.core.take, 50)));
   return plan_options
 };
 bible_plan.ui.plan.plan_day__GT_tr = function plan_day__GT_tr(p__5800) {
@@ -34848,6 +34849,8 @@ bible_plan.ui.plan.plan_day__GT_tr = function plan_day__GT_tr(p__5800) {
   return dom5804
 };
 bible_plan.ui.plan.plan__GT_dom_content = function plan__GT_dom_content(the_plan) {
+  shodan.console.log.call(null, "Generating DOM content");
+  bible_plan.ui.plan.log_pr.call(null, the_plan);
   return cljs.core.map.call(null, bible_plan.ui.plan.plan_day__GT_tr, the_plan)
 };
 bible_plan.ui.plan.re_show_plan = function re_show_plan(e) {
@@ -34855,7 +34858,7 @@ bible_plan.ui.plan.re_show_plan = function re_show_plan(e) {
     var plan_options = bible_plan.ui.plan.plan_state__GT_plan_options.call(null);
     var the_plan = bible_plan.plan.calculate_plan.call(null, plan_options);
     var plan_dom_content = bible_plan.ui.plan.plan__GT_dom_content.call(null, the_plan);
-    return bible_plan.ui.plan.show_plan.call(null, plan_dom_content)
+    return bible_plan.ui.plan.show_plan_BANG_.call(null, plan_dom_content)
   }else {
     return null
   }
