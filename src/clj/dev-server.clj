@@ -31,12 +31,14 @@
     (ring.adapter.jetty/run-jetty #'advanced-site {:port 8081 :join? false}))
   [whitespace-server advanced-server])
 
+(run)
+
+(def repl-env (reset! cemerick.austin.repls/browser-repl-env
+                      (cemerick.austin/repl-env)))
+
 (comment
-  (run)
-
-  (def repl-env (reset! cemerick.austin.repls/browser-repl-env
-                        (cemerick.austin/repl-env)))
-
   ;; Only run after you've loaded the page
   (cemerick.austin.repls/cljs-repl repl-env)
+
+  (js/alert "Salut!")
   )

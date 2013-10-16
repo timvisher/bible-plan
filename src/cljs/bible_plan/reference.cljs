@@ -1,6 +1,5 @@
 (ns bible-plan.reference
-  (:require    [bible-plan.bible   :as bible]
-               [clojure.string     :as string]))
+  (:require [clojure.string :as string]))
 
 (defn reference< [reference & references]
   {:pre [#(every? :book (into [reference] references))]}
@@ -22,8 +21,8 @@
 (defn ->book-str [{:keys [book chapter] :as reference}]
   {:pre [book]}
   (if (not chapter)
-    (get-in bible/bible [book :name])
-    (get-in bible/bible [book :abbreviation])))
+    (get-in js/bible_plan_bibles.bible.bible [book :name])
+    (get-in js/bible_plan_bibles.bible.bible [book :abbreviation])))
 
 (defn ->chapter-str [{:keys [chapter] :as reference}]
   {:pre [chapter]}
@@ -36,15 +35,19 @@
 (defn single->str [{:keys [book chapter verse] :as reference}]
   {:pre [(or (and book chapter verse)
              (and book chapter (not verse))
-             (and book (not (and chapter verse))))]}
-  (cond (and book chapter verse)
-        (str (string/capitalize (->book-str reference)) ". " (->chapter-str reference) "." (->verse-str reference))
+             (and book (not (and chapter verse))))
+         (every? number? (vals reference))]}
+  ;; TODO: Each of these should be calls to format
+  (str book chapter verse)
+  ;; (cond (and book chapter verse)
+  ;;       (str (string/capitalize (->book-str reference)) ". " (->chapter-str reference) "." (->verse-str reference))
 
-        (and book chapter)
-        (str (string/capitalize (->book-str reference)) ". " (->chapter-str reference))
+  ;;       (and book chapter)
+  ;;       (str (string/capitalize (->book-str reference)) ". " (->chapter-str reference))
 
-        book
-        (string/capitalize (->book-str reference))))
+  ;;       book
+  ;;       (string/capitalize (->book-str reference)))
+  )
 
 (defn compound->str [start end]
   {:pre [(reference< start end)]}

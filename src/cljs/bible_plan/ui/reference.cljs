@@ -22,8 +22,3 @@
 
 (deftemplate ->td [reference]
   [:td (titlecase/->titlecase (ref/->str reference))])
-
-(deftemplate ->tr [date day]
-  [:tr
-   (time-ui/->td date)
-   (map ->td day)])
