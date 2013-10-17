@@ -41,16 +41,14 @@
              (and book (not (and chapter verse))))
          (every? number? (vals reference))]}
   ;; TODO: Each of these should be calls to format
-  (str book chapter verse)
-  ;; (cond (and book chapter verse)
-  ;;       (str (string/capitalize (->book-str reference)) ". " (->chapter-str reference) "." (->verse-str reference))
+  (cond (and book chapter verse)
+        (str (string/capitalize (->book-str reference)) ". " (->chapter-str reference) "." (->verse-str reference))
 
-  ;;       (and book chapter)
-  ;;       (str (string/capitalize (->book-str reference)) ". " (->chapter-str reference))
+        (and book chapter)
+        (str (string/capitalize (->book-str reference)) ". " (->chapter-str reference))
 
-  ;;       book
-  ;;       (string/capitalize (->book-str reference)))
-  )
+        book
+        (string/capitalize (->book-str reference))))
 
 (defn compound->str [start end]
   {:pre [(reference< start end)]}
