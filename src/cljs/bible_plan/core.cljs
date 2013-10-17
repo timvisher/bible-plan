@@ -20,7 +20,7 @@
   (dom/listen! books-at-a-time-node :change plan-ui/re-show-plan))
 
 (doseq [books-at-a-time-node (sel (keyword "input[name=books-at-a-time]"))]
-  (dom/listen! books-at-a-time-node :change plan-ui/calc-plan))
+  (dom/listen! books-at-a-time-node :change plan-ui/re-show-plan))
 
 (comment
   (dom/event-listeners (sel1 (keyword "input[name=plan]")))

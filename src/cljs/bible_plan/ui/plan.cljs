@@ -17,8 +17,6 @@
   (console/log (pr-str object)))
 
 (defn show-plan! [plan-dom-content]
-  (console/log "Showing plan:")
-  (log-pr plan-dom-content)
   (dom/replace-contents! (sel1 :#plan) plan-dom-content)
   (dom/remove-class! (sel1 :#plan) :hidden))
 
@@ -33,12 +31,10 @@
                                 (.-value books-at-a-time?-node)
                                 nil)
         books-at-a-time?      (= "yes" books-at-a-time?-raw)]
-    (let [plan-options {:base-plan        base-plan
-                        :available-dates  available-dates
-                        :skip-days        skip-days
-                        :books-at-a-time? books-at-a-time?}]
-      (log-pr (update-in plan-options [:available-dates] (partial take 50)))
-      plan-options)))
+    {:base-plan        base-plan
+     :available-dates  available-dates
+     :skip-days        skip-days
+     :books-at-a-time? books-at-a-time?}))
 
 (deftemplate plan-day->tr [{:keys [readings date] :as plan-day}]
   [:tr
@@ -46,8 +42,6 @@
    (map ref-ui/->td readings)])
 
 (defn plan->dom-content [the-plan]
-  (console/log "Generating DOM content")
-  (log-pr the-plan)
   (map plan-day->tr the-plan))
 
 (defn re-show-plan [e]
