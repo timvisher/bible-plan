@@ -13,7 +13,7 @@
   (let [dates (take (count (base-plan plans)) (filter (complement (partial time-ui/day-in skip-days)) available-dates))]
     (map (fn [readings date]
            {:readings readings
-            :day      date})
+            :date      date})
          (base-plan plans)
          dates)))
 
