@@ -1,5 +1,8 @@
 (ns bible-plan.reference
-  (:require [clojure.string :as string]))
+  (:require [clojure.string :as string]
+            [cljs.reader    :as reader]))
+
+(def bible (cljs.reader/read-string js/bible_edn))
 
 (defn reference< [reference & references]
   {:pre [#(every? :book (into [reference] references))]}
@@ -21,8 +24,8 @@
 (defn ->book-str [{:keys [book chapter] :as reference}]
   {:pre [book]}
   (if (not chapter)
-    (get-in js/bible_plan_bibles.bible.bible [book :name])
-    (get-in js/bible_plan_bibles.bible.bible [book :abbreviation])))
+    (get-in bible [book :name])
+    (get-in bible [book :abbreviation])))
 
 (defn ->chapter-str [{:keys [chapter] :as reference}]
   {:pre [chapter]}

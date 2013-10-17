@@ -28,6 +28,7 @@
                                                                  "-message"]
                                                 :compiler       {:pretty-print  true
                                                                  :output-to     "resources/public/whitespace/js/bible-plan.js"
+                                                                 :output-dir    "target/whitespace"
                                                                  :externs       ["externs/bible-plan-bibles-externs.js"]
                                                                  :optimizations :whitespace}}
                                                {:source-paths   ["src/cljs"]
@@ -43,5 +44,6 @@
                                                                  "-message"]
                                                 :compiler       {:pretty-print  false
                                                                  :output-to     "resources/public/js/bible-plan.js"
+                                                                 :output-dir    "target/advanced"
                                                                  :externs       ["externs/bible-plan-bibles-externs.js"]
                                                                  :optimizations :advanced}}]}}})
