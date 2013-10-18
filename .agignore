@@ -1,0 +1,5 @@
+target/
+out/
+repl/
+resources/*/js/
+sync/
