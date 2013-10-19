@@ -97,9 +97,8 @@
         :book))
 
 (defn contiguous-ascending-ints? [int-1 & ints]
-  ;; {:pre [(number? int-1)
-  ;;        (every? number? ints)]}
-  (def *piper* [int-1 ints])
+  {:pre [(number? int-1)
+         (every? number? ints)]}
   (loop [[this-int & next-ints] (into [int-1] ints)]
     (if (not (first next-ints))
       true
@@ -122,18 +121,6 @@
 
 (def specificity> (specificity-comparator-fn >))
 
-(defn lower-specificities [specificity]
-  (let [specificity-weight (specificity-weight specificity)]
-    (filter (partial specificity> specificity) verse-specificities)))
-
-(defn verses [reference]
-  (let [verses [(:start reference)]
-        end    (:end reference)
-        verses (if end
-                 (conj verses end)
-                 verses)]
-    verses))
-
 (defn join-points [references]
   (reduce (fn [start-segments reference-part]
             (if (:end reference-part)
@@ -147,19 +134,13 @@
                   []
                   references)))
 
+(defn lower-specificities [specificity]
+  (let [specificity-weight (specificity-weight specificity)]
+    (filter (partial specificity> specificity) verse-specificities)))
+
 (defn lower-specificities-equal? [specificity verses]
   (let [lower-specificities (lower-specificities specificity)]
     (apply = (map (apply juxt lower-specificities) verses))))
-
-(defn specificity-range [specificity reference]
-  (let [specificity-range-start (get-in reference [:start specificity])
-        specificity-range-end   (get-in reference [:end specificity])]
-    (if specificity-range-end
-      (range specificity-range-start (+ 1 specificity-range-end))
-      [specificity-range-start])))
-
-(defn specifity-ranges-contiguous? [specificity references]
-  )
 
 (defn contiguous? [reference & references]
   {:pre [(apply reference< reference references)]}

@@ -33559,10 +33559,13 @@ bible_plan.reference.min_verse = function min_verse(p__5944) {
 };
 bible_plan.reference.reference_LT_ = function() {
   var reference_LT___delegate = function(reference, references) {
-    if(cljs.core.every_QMARK_.call(null, cljs.core.comp.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), new cljs.core.Keyword(null, "start", "start", 1123661780)), cljs.core.into.call(null, cljs.core.PersistentVector.fromArray([reference], true), references))) {
+    if(cljs.core.truth_(cljs.core.comp.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), new cljs.core.Keyword(null, "start", "start", 1123661780)).call(null, reference))) {
     }else {
-      throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "every?", "every?", 1363110461, null), cljs.core.list(new cljs.core.Symbol(null, "comp", "comp", -1637472056, null), new cljs.core.Keyword(null, "book", "book", 1016933979), new cljs.core.Keyword(null, "start", "start", 1123661780)), cljs.core.list(new cljs.core.Symbol(null, "into", "into", -1637294055, null), cljs.core.PersistentVector.fromArray([new cljs.core.Symbol(null, 
-      "reference", "reference", 1729280260, null)], true), new cljs.core.Symbol(null, "references", "references", -255581119, null)))))].join(""));
+      throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(cljs.core.list(new cljs.core.Symbol(null, "comp", "comp", -1637472056, null), new cljs.core.Keyword(null, "book", "book", 1016933979), new cljs.core.Keyword(null, "start", "start", 1123661780)), new cljs.core.Symbol(null, "reference", "reference", 1729280260, null))))].join(""));
+    }
+    if(cljs.core.every_QMARK_.call(null, cljs.core.comp.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), new cljs.core.Keyword(null, "start", "start", 1123661780)), references)) {
+    }else {
+      throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "every?", "every?", 1363110461, null), cljs.core.list(new cljs.core.Symbol(null, "comp", "comp", -1637472056, null), new cljs.core.Keyword(null, "book", "book", 1016933979), new cljs.core.Keyword(null, "start", "start", 1123661780)), new cljs.core.Symbol(null, "references", "references", -255581119, null))))].join(""));
     }
     var references__$1 = cljs.core.into.call(null, cljs.core.PersistentVector.fromArray([reference], true), references);
     var vec__5948 = cljs.core.juxt.call(null, cljs.core.partial.call(null, cljs.core.map, cljs.core.comp.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), bible_plan.reference.max_verse)), cljs.core.partial.call(null, cljs.core.map, cljs.core.comp.call(null, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), bible_plan.reference.max_verse)), cljs.core.partial.call(null, cljs.core.map, cljs.core.comp.call(null, new cljs.core.Keyword(null, "verse", "verse", 1126001831), 
@@ -33864,7 +33867,7 @@ bible_plan.reference.__GT_str = function __GT_str(p__5966) {
     return bible_plan.reference.single__GT_str.call(null, start)
   }
 };
-bible_plan.reference.verse_specifity = function verse_specifity(p__5969) {
+bible_plan.reference.verse_specificity = function verse_specificity(p__5969) {
   var map__5971 = p__5969;
   var map__5971__$1 = cljs.core.seq_QMARK_.call(null, map__5971) ? cljs.core.apply.call(null, cljs.core.hash_map, map__5971) : map__5971;
   var verse = cljs.core.get.call(null, map__5971__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
@@ -33964,34 +33967,28 @@ bible_plan.reference.specificity_comparator_fn = function specificity_comparator
 };
 bible_plan.reference.specificity_LT_ = bible_plan.reference.specificity_comparator_fn.call(null, cljs.core._LT_);
 bible_plan.reference.specificity_GT_ = bible_plan.reference.specificity_comparator_fn.call(null, cljs.core._GT_);
+bible_plan.reference.join_points = function join_points(references) {
+  return cljs.core.reduce.call(null, function(start_segments, reference_part) {
+    if(cljs.core.truth_((new cljs.core.Keyword(null, "end", "end", 1014004813)).call(null, reference_part))) {
+      return cljs.core.conj.call(null, start_segments, cljs.core.PersistentVector.fromArray([(new cljs.core.Keyword(null, "end", "end", 1014004813)).call(null, reference_part)], true))
+    }else {
+      return cljs.core.update_in.call(null, start_segments, cljs.core.PersistentVector.fromArray([cljs.core.count.call(null, start_segments) - 1], true), cljs.core.conj, (new cljs.core.Keyword(null, "start", "start", 1123661780)).call(null, reference_part))
+    }
+  }, cljs.core.PersistentVector.fromArray([cljs.core.PersistentVector.EMPTY], true), cljs.core.reduce.call(null, function(start_and_ends, reference) {
+    if(cljs.core.truth_((new cljs.core.Keyword(null, "end", "end", 1014004813)).call(null, reference))) {
+      return cljs.core.conj.call(null, cljs.core.conj.call(null, start_and_ends, cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), (new cljs.core.Keyword(null, "start", "start", 1123661780)).call(null, reference)], true)), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "end", "end", 1014004813), (new cljs.core.Keyword(null, "end", "end", 1014004813)).call(null, reference)], true))
+    }else {
+      return cljs.core.conj.call(null, start_and_ends, reference)
+    }
+  }, cljs.core.PersistentVector.EMPTY, references))
+};
 bible_plan.reference.lower_specificities = function lower_specificities(specificity) {
   var specificity_weight = bible_plan.reference.specificity_weight.call(null, specificity);
   return cljs.core.filter.call(null, cljs.core.partial.call(null, bible_plan.reference.specificity_GT_, specificity), bible_plan.reference.verse_specificities)
 };
-bible_plan.reference.verses = function verses(reference) {
-  var verses__$1 = cljs.core.PersistentVector.fromArray([(new cljs.core.Keyword(null, "start", "start", 1123661780)).call(null, reference)], true);
-  var end = (new cljs.core.Keyword(null, "end", "end", 1014004813)).call(null, reference);
-  var verses__$2 = cljs.core.truth_(end) ? cljs.core.conj.call(null, verses__$1, end) : verses__$1;
-  return verses__$2
-};
-bible_plan.reference.join_points = function join_points(references) {
-  return cljs.core.partition.call(null, 2, cljs.core.reduce.call(null, cljs.core.into, cljs.core.PersistentVector.EMPTY, cljs.core.map.call(null, bible_plan.reference.verses, references)))
-};
 bible_plan.reference.lower_specificities_equal_QMARK_ = function lower_specificities_equal_QMARK_(specificity, verses) {
   var lower_specificities = bible_plan.reference.lower_specificities.call(null, specificity);
   return cljs.core.apply.call(null, cljs.core._EQ_, cljs.core.map.call(null, cljs.core.apply.call(null, cljs.core.juxt, lower_specificities), verses))
-};
-bible_plan.reference.specificity_range = function specificity_range(specificity, reference) {
-  var specificity_range_start = cljs.core.get_in.call(null, reference, cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), specificity], true));
-  var specificity_range_end = cljs.core.get_in.call(null, reference, cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "end", "end", 1014004813), specificity], true));
-  if(cljs.core.truth_(specificity_range_end)) {
-    return cljs.core.range.call(null, specificity_range_start, 1 + specificity_range_end)
-  }else {
-    return cljs.core.PersistentVector.fromArray([specificity_range_start], true)
-  }
-};
-bible_plan.reference.specifity_ranges_contiguous_QMARK_ = function specifity_ranges_contiguous_QMARK_(specificity, references) {
-  return null
 };
 bible_plan.reference.contiguous_QMARK_ = function() {
   var contiguous_QMARK___delegate = function(reference, references) {
@@ -34002,17 +33999,17 @@ bible_plan.reference.contiguous_QMARK_ = function() {
     var references__$1 = cljs.core.into.call(null, cljs.core.PersistentVector.fromArray([reference], true), references);
     var join_points = bible_plan.reference.join_points.call(null, references__$1);
     var and__3941__auto__ = cljs.core.every_QMARK_.call(null, function(join_point) {
-      return cljs.core.apply.call(null, cljs.core._EQ_, cljs.core.map.call(null, bible_plan.reference.verse_specifity, join_point))
+      return cljs.core.apply.call(null, cljs.core._EQ_, cljs.core.map.call(null, bible_plan.reference.verse_specificity, join_point))
     }, join_points);
     if(and__3941__auto__) {
       var and__3941__auto____$1 = cljs.core.every_QMARK_.call(null, function(join_point) {
-        var specificity = bible_plan.reference.verse_specifity.call(null, cljs.core.first.call(null, join_point));
+        var specificity = bible_plan.reference.verse_specificity.call(null, cljs.core.first.call(null, join_point));
         return bible_plan.reference.lower_specificities_equal_QMARK_.call(null, specificity, join_point)
       }, join_points);
       if(and__3941__auto____$1) {
         return cljs.core.every_QMARK_.call(null, function(join_point) {
-          var specificity = bible_plan.reference.verse_specifity.call(null, cljs.core.first.call(null, join_point));
-          return cljs.core.apply.call(null, bible_plan.reference.contiguous_ascending_ints_QMARK_, cljs.core.map.call(null, bible_plan.reference.verse_specifity, join_point))
+          var specificity = bible_plan.reference.verse_specificity.call(null, cljs.core.first.call(null, join_point));
+          return cljs.core.apply.call(null, bible_plan.reference.contiguous_ascending_ints_QMARK_, cljs.core.map.call(null, specificity, join_point))
         }, join_points)
       }else {
         return and__3941__auto____$1
@@ -34693,7 +34690,6 @@ bible_plan.plan.order_by_book = function order_by_book(number_of_reading_days, p
   var raw_plan_by_book = cljs.core.reduce.call(null, cljs.core.into, cljs.core.PersistentVector.EMPTY, cljs.core.map.call(null, cljs.core.partial.call(null, cljs.core.get, book_readings), book_order));
   var raw_reading_days = cljs.core.partition_all.call(null, cljs.core.count.call(null, raw_plan_by_book) / number_of_reading_days, raw_plan_by_book);
   var grouped_reading_days = cljs.core.map.call(null, bible_plan.plan.group_reading_day, raw_reading_days);
-  var _ = bible_plan.plan._STAR_charnock_STAR_ = grouped_reading_days;
   var coalesced_reading_days = cljs.core.map.call(null, bible_plan.plan.coalesce_reading_day, grouped_reading_days);
   return grouped_reading_days
 };
