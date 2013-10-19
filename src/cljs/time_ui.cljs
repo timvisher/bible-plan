@@ -1,6 +1,8 @@
 (ns time-ui
-  (:require [goog.date.DateTime]
+  (:require [goog.date.Date]
+            [goog.date.DateTime]
             [goog.date.Interval]
+            [goog.date.DateRange]
             [goog.i18n.DateTimeFormat.Format]
             [goog.i18n.DateTimeFormat])
 
@@ -14,11 +16,29 @@
   (goog.date.DateTime.))
 
 (defn inc-date-by-day [date]
-  (.clone (doto date
-     (.add (goog.date.Interval. 0 0 1)))))
+  (doto (.clone date)
+    (.add (goog.date.Interval. 0 0 1))))
+
+(defn dec-date-by-day [date]
+  (doto (.clone date)
+    (.add (goog.date.Interval. 0 0 -1))))
+
+(defn inc-date-by-year [date]
+  (doto (.clone date)
+    (.add (goog.date.Interval. 1))))
+
+(defn date>= [date-1 date-2]
+  (<= 0 (goog.date.Date/compare date-1 date-2)))
+
+(defn date> [date-1 date-2]
+  (< 0 (goog.date.Date/compare date-1 date-2)))
 
 (defn days-from [date]
   (iterate inc-date-by-day date))
+
+(defn date-range [start-date end-date]
+  (let [all-days (days-from start-date)]
+    (take-while (partial date> end-date) all-days)))
 
 (defn days-from-now []
   (days-from (now)))

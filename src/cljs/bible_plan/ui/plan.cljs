@@ -22,6 +22,7 @@
 
 (defn plan-state->plan-options []
   (let [base-plan             (keyword (.-value (sel1 (keyword "input[name=plan]:checked"))))
+        ;; TODO: this should truncate out to the number of days between now and the end date goal
         available-dates       (time-ui/days-from-now)
         skip-days             (map (fn day-input->keyword [day-input]
                                      (keyword (.-value day-input)))
