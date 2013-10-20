@@ -6,26 +6,61 @@
 
 (def plans {:mcheyne mcheyne/mcheyne})
 
+(defn annotate-plan-readings-with-days [plan]
+  (map (fn [day-number readings]
+         (map (fn [reading]
+                (assoc reading :day day-number))
+              readings))
+       (range)
+       plan))
+
+(defn reading-day-> [annotated-reading annotated-reading-day]
+                   (let [reading-day-day-number ((comp :day first) annotated-reading-day)
+                         reading-day-number     (:day annotated-reading)]
+                     (> reading-day-number reading-day-day-number)))
+
+(defn reading-book? [book reading-day]
+  (some (fn start-or-end-in-book? [{{s-book :book} :start {e-book :book} :end}]
+          (some (partial = book) [s-book e-book]))
+        reading-day))
+
+(defn readings-for-book-in-reading-day [book reading-day]
+  (some (fn start-or-end-in-book? [{{s-book :book} :start {e-book :book} :end :as reading}]
+          (if (some (partial = book) [s-book e-book])
+            reading))
+        reading-day))
+
+(defn contiguous-readings-from [annotated-plan annotated-reading]
+  (let [available-reading-days       (drop-while (partial reading-day-> annotated-reading) annotated-plan)
+        annotated-reading-book       (get-in annotated-reading [:start :book])
+        contiguous-book-reading-days (take-while (partial reading-book? annotated-reading-book) available-reading-days)
+        readings-for-book            (map (partial readings-for-book-in-reading-day annotated-reading-book) contiguous-book-reading-days)]
+    readings-for-book))
+
 (defn book-order [plan]
-  (loop [[reading & next-readings] (reduce into [] plan)
-         seen                                #{}
-         book-order                          []]
-    (if (not reading)
-      book-order
-      (let [reading-book (get-in reading [:start :book])]
-        (if (not (seen reading-book))
-          (recur next-readings (conj seen reading-book) (conj book-order reading-book))
-          (recur next-readings seen book-order))))))
+  (let [annotated-plan     (map (fn [reading-day]
+                                  (map #(select-keys % [:start :end :day]) reading-day))
+                                (annotate-plan-readings-with-days plan))
+        annotated-readings (reduce into [] annotated-plan)]
+    (loop [[annotated-reading & next-annotated-readings] annotated-readings
+           processed-readings                            #{}
+           book-order                                    []]
+      (if (not annotated-reading)
+        book-order
+        (if (processed-readings annotated-reading)
+          (recur next-annotated-readings processed-readings book-order)
+          (let [contiguous-readings (contiguous-readings-from annotated-plan annotated-reading)]
+            (recur next-annotated-readings (into processed-readings contiguous-readings) (conj book-order (get-in annotated-reading [:start :book])))))))))
 
 (defn book-readings [plan]
-  (loop [[reading & next-readings] (reduce into [] plan)
-         book-readings             {}]
-    (if (not reading)
-      book-readings
-      (let [reading-book (get-in reading [:start :book])]
-        (if (get book-readings reading-book)
-          (recur next-readings (update-in book-readings [reading-book] conj reading))
-          (recur next-readings (assoc book-readings reading-book [reading])))))))
+  (let [readings (reduce into [] plan)]
+    (apply hash-map
+           (reduce into []
+                   (map (fn [[book readings]]
+                          [book (distinct (map #(select-keys % [:start :end]) readings))])
+                        (group-by (fn reading-start-book [reading]
+                                    (get-in reading [:start :book]))
+                                  readings))))))
 
 (defn group-reading-day [raw-reading-day]
   (group-by (comp :book :start) raw-reading-day))
@@ -41,7 +76,9 @@
   (let [book-order             (book-order plan)
         book-readings          (book-readings plan)
         raw-plan-by-book       (reduce into [] (map (partial get book-readings) book-order))
+        _ (def *carson* raw-plan-by-book)
         raw-reading-days       (partition-all (/ (count raw-plan-by-book) number-of-reading-days) raw-plan-by-book)
+        _ (def *whitefield* raw-reading-days)
         grouped-reading-days   (map group-reading-day raw-reading-days)
         _ (def *charnock* grouped-reading-days)
         coalesced-reading-days (map coalesce-reading-day grouped-reading-days)]
