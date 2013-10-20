@@ -13,8 +13,8 @@
   start-verse)
 
 (defn reference< [reference & references]
-  {:pre [((comp :book :start) reference)
-         (every? (comp :book :start) references)]}
+  {:pre [(get-in reference [:start :book])
+         (every? #(get-in % [:start :book]) references)]}
   (let [references              (into [reference] references)
         [books chapters verses] ((juxt (partial map (comp :book max-verse))
                                        (partial map (comp :chapter max-verse))
@@ -113,8 +113,8 @@
                          :verse   3})
 
 (defn specificity-comparator-fn [clojure-comparator-fn]
-  (fn [specificity & specificities]
-    (let [specificities (into [specificity] specificities)]
+  (fn [& specificities]
+    (if specificities
       (apply clojure-comparator-fn (map specificity-weight specificities)))))
 
 (def specificity< (specificity-comparator-fn <))
@@ -142,21 +142,31 @@
   (let [lower-specificities (lower-specificities specificity)]
     (apply = (map (apply juxt lower-specificities) verses))))
 
-(defn contiguous? [reference & references]
-  {:pre [(apply reference< reference references)]}
-  (let [references  (into [reference] references)
-        join-points (join-points references)]
-    (and (every? (fn [join-point]
-                   (apply = (map verse-specificity join-point)))
-                 join-points)
-         (every? (fn [join-point]
-                   (let [specificity (verse-specificity (first join-point))]
-                     (lower-specificities-equal? specificity join-point)))
-                 join-points)
-         (every? (fn [join-point]
-                   (let [specificity (verse-specificity (first join-point))]
-                     (apply contiguous-ascending-ints? (map specificity join-point))))
-                 join-points))))
+(defn verses [reference]
+  (let [{:keys [start end]} reference
+        verses [start]
+        verses (if end
+                 (conj verses end)
+                 verses)]
+    verses))
+
+(defn highest-common-verse-specificity [& verses]
+  (if verses
+    (let [highest-distinct-specificities (distinct (map verse-specificity verses))]
+      (first (sort specificity< highest-distinct-specificities)))))
+
+(defn contiguous? [& references]
+  {:pre [(apply reference< references)]}
+  (if references
+    (let [join-points (join-points references)]
+      (and (every? (fn [join-point]
+                     (let [specificity (apply highest-common-verse-specificity join-point)]
+                       (lower-specificities-equal? specificity join-point)))
+                   join-points)
+           (every? (fn [join-point]
+                     (let [specificity (apply highest-common-verse-specificity join-point)]
+                       (apply contiguous-ascending-ints? (map specificity join-point))))
+                   join-points)))))
 
 (defn merge-refs [start-ref end-ref]
   {:pre [(reference< start-ref end-ref)]}
