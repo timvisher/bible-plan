@@ -3,9 +3,9 @@
             [cljs.reader    :as reader]
             [clojure.set    :as set]))
 
-(def bible (cljs.reader/read-string js/bible_edn))
+(def bible (cljs.reader/read-string js/bible_plan.edn.bibles.esv))
 
-(def verses (cljs.reader/read-string js/verses_edn))
+(def verses (cljs.reader/read-string js/bible_plan.edn.verses.esv))
 
 (defn max-verse [{start-verse :start end-verse :end :as reference}]
   {:pre [start-verse]}
@@ -175,21 +175,28 @@
   (let [specificity (verse-specificity verse)]
     (conj (lower-specificities specificity) specificity)))
 
-(defn masked-> [mask verse & verses]
-  (if verses
-    (let [verses        (into [verse] verses)
-          masked-verses (distinct (map #(select-keys % mask) verses))]
-      (loop [[current-specificity & next-specificities] (sort specificity< mask)]
-        (if (not current-specificity)
-          false
-          (if (and (not (apply = (distinct (map current-specificity masked-verses))))
-                   (apply > (distinct (map current-specificity masked-verses))))
-            true
-            (recur next-specificities)))))
-    verse))
+(defn masked-comparator-fn [clojure-comparator-fn]
+  (fn [mask verse & verses]
+    (if verses
+      (let [verses        (into [verse] verses)
+            masked-verses (distinct (map #(select-keys % mask) verses))]
+        (loop [[current-specificity & next-specificities] (sort specificity< mask)]
+          (if (not current-specificity)
+            false
+            (if (apply clojure-comparator-fn (distinct (map current-specificity masked-verses)))
+              true
+              (recur next-specificities)))))
+      verse)))
+
+(def masked-> (masked-comparator-fn >))
+
+(def masked->= (masked-comparator-fn >=))
 
 (defn reference-verse-range [{:keys [start end] :as reference}]
-  (let [verse-range (drop-while (partial masked-> (->mask start) start) verses)]
+  (let [verse-range (drop-while (partial masked-> (->mask start) start) verses)
+        verse-range (if end
+                      (take-while (partial masked->= (->mask end) end) verse-range)
+                      verse-range)]
     verse-range))
 
 (defn overlapping? [reference-1 reference-2]
@@ -205,7 +212,7 @@
 
 (defn disjoint-refs? [& references]
   (if references
-    (every? (partial none-overlap references) references)))
+    (every? (partial none-overlap? references) references)))
 
 (defn merge-refs [start-ref end-ref]
   {:pre [(reference< start-ref end-ref)]}

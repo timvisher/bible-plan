@@ -1,10 +1,9 @@
 (ns bible-plan.plan
-  (:require [bible-plan.plan.mcheyne :as mcheyne]
-            [bible-plan.reference    :as ref]
+  (:require [bible-plan.reference :as ref]
             time-ui
-            [shodan.console          :as console]))
+            [shodan.console       :as console]))
 
-(def plans {:mcheyne mcheyne/mcheyne})
+(def plans {:mcheyne (cljs.reader/read-string js/bible_plan.edn.plans.mcheyne)})
 
 (defn annotate-plan-readings-with-days [plan]
   (map (fn [day-number readings]
