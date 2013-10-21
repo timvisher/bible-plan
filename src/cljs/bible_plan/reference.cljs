@@ -1,8 +1,11 @@
 (ns bible-plan.reference
   (:require [clojure.string :as string]
-            [cljs.reader    :as reader]))
+            [cljs.reader    :as reader]
+            [clojure.set    :as set]))
 
 (def bible (cljs.reader/read-string js/bible_edn))
+
+(def verses (cljs.reader/read-string js/verses_edn))
 
 (defn max-verse [{start-verse :start end-verse :end :as reference}]
   {:pre [start-verse]}
@@ -142,7 +145,7 @@
   (let [lower-specificities (lower-specificities specificity)]
     (apply = (map (apply juxt lower-specificities) verses))))
 
-(defn verses [reference]
+(defn ->verses [reference]
   (let [{:keys [start end]} reference
         verses [start]
         verses (if end
@@ -167,6 +170,42 @@
                      (let [specificity (apply highest-common-verse-specificity join-point)]
                        (apply contiguous-ascending-ints? (map specificity join-point))))
                    join-points)))))
+
+(defn ->mask [verse]
+  (let [specificity (verse-specificity verse)]
+    (conj (lower-specificities specificity) specificity)))
+
+(defn masked-> [mask verse & verses]
+  (if verses
+    (let [verses        (into [verse] verses)
+          masked-verses (distinct (map #(select-keys % mask) verses))]
+      (loop [[current-specificity & next-specificities] (sort specificity< mask)]
+        (if (not current-specificity)
+          false
+          (if (and (not (apply = (distinct (map current-specificity masked-verses))))
+                   (apply > (distinct (map current-specificity masked-verses))))
+            true
+            (recur next-specificities)))))
+    verse))
+
+(defn reference-verse-range [{:keys [start end] :as reference}]
+  (let [verse-range (drop-while (partial masked-> (->mask start) start) verses)]
+    verse-range))
+
+(defn overlapping? [reference-1 reference-2]
+  (and (not (= reference-1 reference-2))
+       (let [{start-1 :start end-1 :end} reference-1
+             {start-2 :start end-2 :end} reference-2]
+         )))
+
+(defn none-overlap? [references reference]
+  (some (fn [other-reference]
+          (overlapping? other-reference reference))
+        references))
+
+(defn disjoint-refs? [& references]
+  (if references
+    (every? (partial none-overlap references) references)))
 
 (defn merge-refs [start-ref end-ref]
   {:pre [(reference< start-ref end-ref)]}
