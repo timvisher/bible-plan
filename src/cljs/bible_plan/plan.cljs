@@ -51,28 +51,27 @@
           (let [contiguous-readings (contiguous-readings-from annotated-plan annotated-reading)]
             (recur next-annotated-readings (into processed-readings contiguous-readings) (conj book-order (get-in annotated-reading [:start :book])))))))))
 
+(defn update-vals [the-map update-fn]
+  (into {} (for [[k v] the-map] [k (update-fn v)])))
+
+(defn group-into-ascending-readings [readings]
+  (reduce (fn [ascending-readings reference]
+            (if (ref/reference< (last (nth ascending-readings (- (count ascending-readings) 1))) reference)
+              (update-in ascending-readings [(- (count ascending-readings) 1)] conj reference)
+              (conj ascending-readings [reference])))
+          [[(first readings)]]
+          (rest readings)))
+
 (defn book-readings [plan]
-  {:post [(every? (fn [[_ book-readings]]
-                    (apply ref/disjoint-refs? book-readings))
-                  %)]}
-  ;; FIXME: bugged for Psalms.
-  ;;
-  ;; Does not account for occurence of overlapping reading days.
-  ;;
-  ;; In the case of Psalms. 86 is read twice, but on the one occasion
-  ;; it is read alone, and on another it's read 86-87
-  ;;
-  ;; Distincting is broken here because {:start {:book 19 :chapter
-  ;; 86}} is distinct from {:start {:book 19 :chapter 86} :end {:book
-  ;; 19 :chapter 87}}
-  (let [readings (reduce into [] plan)]
-    (apply hash-map
-           (reduce into []
-                   (map (fn [[book readings]]
-                          [book (distinct (map #(select-keys % [:start :end]) readings))])
-                        (group-by (fn reading-start-book [reading]
-                                    (get-in reading [:start :book]))
-                                  readings))))))
+  {:post [;; (every? (fn [[_ book-readings]]
+          ;;           (apply ref/disjoint-refs? book-readings))
+          ;;         %)
+          ]}
+  (let [readings          (reduce into [] plan)
+        raw-book-readings (group-by (fn reading-start-book [reading]
+                                      (get-in reading [:start :book]))
+                                    readings)]
+    (update-vals raw-book-readings group-into-ascending-readings)))
 
 (defn group-reading-day [raw-reading-day]
   (group-by (comp :book :start) raw-reading-day))
