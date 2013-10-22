@@ -158,6 +158,13 @@
     (let [highest-distinct-specificities (distinct (map verse-specificity verses))]
       (first (sort specificity< highest-distinct-specificities)))))
 
+(defn common-specificities [& verses]
+  (if verses
+    (let [specificities-set (into #{} verse-specificities)]
+      (apply min-key count (map (fn [verse-keys]
+                                  (filter specificities-set verse-keys))
+                                (map keys verses))))))
+
 (defn contiguous? [& references]
   {:pre [(apply reference< references)]}
   (if references
@@ -171,72 +178,41 @@
                        (apply contiguous-ascending-ints? (map specificity join-point))))
                    join-points)))))
 
-(defn ->mask [verse]
-  (let [specificity (verse-specificity verse)]
-    (conj (lower-specificities specificity) specificity)))
+(defn masked-> [verse-1 verse-2]
+  (let [verses [verse-1 verse-2]]
+    (or (and (every? :book verses)
+             (apply > (map :book verses)))
+        (and (every? :book verses)
+             (every? :chapter verses)
+             (apply = (map :book verses))
+             (apply > (map :chapter verses)))
+        (and (every? :book verses)
+             (every? :chapter verses)
+             (every? :verse verses)
+             (apply = (map :book verses))
+             (apply = (map :chapter verses))
+             (apply > (map :verse verses))))))
 
-(defn masked-comparator [clojure-comparator-fn mask verse & verses]
-  (if verses
-    (let [verses (distinct (map #(select-keys % mask) (into [verse] verses)))]
-      (loop [[current-specificity & next-specificities] (sort specificity< mask)]
-        (if (or (not next-specificities)
-                (not (apply = (distinct (map current-specificity verses)))))
-          (apply clojure-comparator-fn (distinct (map current-specificity verses)))
-          (recur next-specificities))))
-    (clojure-comparator-fn verse)))
+(defn masked-= [verse-1 verse-2]
+  (let [verses [verse-1 verse-2]]
+    (apply = (map (apply juxt (apply common-specificities verses)) verses))))
 
-(defn masked->
-  ([mask verse-1 verse-2]
-     (let [books    (map :book [verse-1 verse-2])
-           chapters (map :chapter [verse-1 verse-2])
-           verses   (map :verse [verse-1 verse-2])]
-       (cond (= [:book :chapter :verse] mask)
-             (or (apply > books)
-                 (and (apply = books)
-                      (apply > chapters))
-                 (and (apply = books)
-                      (apply = chapters)
-                      (apply > verses)))
-
-             (= [:book :chapter] mask)
-             (and (apply = books)
-                  (apply > chapters))
-
-             (= [:book] mask)
-             (apply > books))))
-  ([mask verse-1 verse-2 & verses]
-     (if verses
-       (let [verses (into [verse-1 verse-2] verses)]
-         (every? (fn [verses]
-                   {:pre [(= 2 (count verses))]}
-                   (apply masked-> mask verses))
-                 (partition 2 1 verses)))
-       (masked-> mask verse-1 verse-2))))
-
-(defn masked-= [mask verse & verses]
-  (if verses
-    (apply = (map #(select-key % mask) (into [verse] verses)))
-    (= verse)))
-
-(def masked->= [mask verse & verses]
-  (if verses
-    (let [verses (into [verse] verses)]
-      (or (apply masked-= mask verses)
-          (apply masked-> mask verses)))
-    (>= verse)))
+(defn masked->= [verse-1 verse-2]
+  (let [verses [verse-1 verse-2]]
+    (or (apply masked-= verses)
+        (apply masked-> verses))))
 
 (defn reference-verse-range [{:keys [start end] :as reference}]
-  (let [verse-range (drop-while (partial masked-> (->mask start) start) verses)
+  (let [verse-range (drop-while (partial masked-> start) verses)
         verse-range (if end
-                      (take-while (partial masked->= (->mask end) end) verse-range)
-                      (take-while (partial masked-= (->mask start) start) verse-range))]
+                      (take-while (partial masked->= end) verse-range)
+                      (take-while (partial masked-= start) verse-range))]
     verse-range))
 
 (defn overlapping? [reference-1 reference-2]
-  (and (not (= reference-1 reference-2))
-       (let [{start-1 :start end-1 :end} reference-1
-             {start-2 :start end-2 :end} reference-2]
-         )))
+  (let [reference-1-range (reference-verse-range reference-1)
+        reference-2-range (reference-verse-range reference-2)]
+    (not (empty? (set/intersection (into #{} reference-1-range) (into #{} reference-2-range))))))
 
 (defn none-overlap? [references reference]
   (some (fn [other-reference]
