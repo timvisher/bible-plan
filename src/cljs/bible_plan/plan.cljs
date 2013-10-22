@@ -122,7 +122,7 @@
                                  raw-reading-days)
         grouped-reading-days   (map group-reading-day fixed-raw-reading-days)
         coalesced-reading-days (map coalesce-reading-day grouped-reading-days)]
-    fixed-raw-reading-days))
+    coalesced-reading-days))
 
 (defn calculate-plan [{:keys [base-plan start-date end-date skip-days books-at-a-time?] :as plan-options}]
   {:pre [base-plan
