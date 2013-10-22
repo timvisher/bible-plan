@@ -82,15 +82,47 @@
            (reduce ref/merge-refs (get grouped-reading-day reading-book-group)))
          books)))
 
+(defn raw-plan-by-book [book-readings book-order]
+  (loop [raw-plan            []
+         book-readings       book-readings
+         [book & next-books] book-order]
+    (if book
+      (let [current-book-readings (first (get book-readings book))
+            next-book-readings    (update-in book-readings [book] rest)]
+        (recur (into raw-plan current-book-readings) next-book-readings next-books))
+      raw-plan)))
+
+(defn partition-all-balanced [n coll]
+  (if (= (.floor js/Math n) n)
+    (partition-all n coll)
+    (loop [rest-coll-items  coll
+           partitioned-coll []
+           step-size        (.floor js/Math n)
+           sub-1-part       (rem n 1)
+           make-up          sub-1-part]
+      (if (seq rest-coll-items)
+        (recur (drop (+ step-size (.floor js/Math make-up)) rest-coll-items)
+               (conj partitioned-coll (take (+ step-size (.floor js/Math make-up)) rest-coll-items))
+               step-size
+               sub-1-part
+               (+ sub-1-part (rem make-up 1)))
+        partitioned-coll))))
+
+(defn combine-last-two-items [coll]
+  (conj (into [] (take (- (count coll) 2) coll)) (apply concat (drop (- (count coll) 2) coll))))
+
 (defn order-by-book [number-of-reading-days plan]
   (console/log "Ordering by book")
   (let [book-order             (book-order plan)
         book-readings          (book-readings plan)
-        raw-plan-by-book       (reduce into [] (map (partial get book-readings) book-order))
-        raw-reading-days       (partition-all (/ (count raw-plan-by-book) number-of-reading-days) raw-plan-by-book)
-        grouped-reading-days   (map group-reading-day raw-reading-days)
+        raw-plan-by-book       (raw-plan-by-book book-readings book-order)
+        raw-reading-days       (partition-all-balanced (/ (count raw-plan-by-book) number-of-reading-days) raw-plan-by-book)
+        fixed-raw-reading-days (if (> (count raw-reading-days) number-of-reading-days)
+                                 (combine-last-two-items raw-reading-days)
+                                 raw-reading-days)
+        grouped-reading-days   (map group-reading-day fixed-raw-reading-days)
         coalesced-reading-days (map coalesce-reading-day grouped-reading-days)]
-    grouped-reading-days))
+    fixed-raw-reading-days))
 
 (defn calculate-plan [{:keys [base-plan start-date end-date skip-days books-at-a-time?] :as plan-options}]
   {:pre [base-plan
