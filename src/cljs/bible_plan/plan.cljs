@@ -52,6 +52,19 @@
             (recur next-annotated-readings (into processed-readings contiguous-readings) (conj book-order (get-in annotated-reading [:start :book])))))))))
 
 (defn book-readings [plan]
+  {:post [(every? (fn [[_ book-readings]]
+                    (apply ref/disjoint-refs? book-readings))
+                  %)]}
+  ;; FIXME: bugged for Psalms.
+  ;;
+  ;; Does not account for occurence of overlapping reading days.
+  ;;
+  ;; In the case of Psalms. 86 is read twice, but on the one occasion
+  ;; it is read alone, and on another it's read 86-87
+  ;;
+  ;; Distincting is broken here because {:start {:book 19 :chapter
+  ;; 86}} is distinct from {:start {:book 19 :chapter 86} :end {:book
+  ;; 19 :chapter 87}}
   (let [readings (reduce into [] plan)]
     (apply hash-map
            (reduce into []
@@ -75,11 +88,8 @@
   (let [book-order             (book-order plan)
         book-readings          (book-readings plan)
         raw-plan-by-book       (reduce into [] (map (partial get book-readings) book-order))
-        _ (def *carson* raw-plan-by-book)
         raw-reading-days       (partition-all (/ (count raw-plan-by-book) number-of-reading-days) raw-plan-by-book)
-        _ (def *whitefield* raw-reading-days)
         grouped-reading-days   (map group-reading-day raw-reading-days)
-        _ (def *charnock* grouped-reading-days)
         coalesced-reading-days (map coalesce-reading-day grouped-reading-days)]
     grouped-reading-days))
 

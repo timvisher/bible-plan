@@ -1,7 +1,8 @@
 (ns bible-plan.reference
   (:require [clojure.string :as string]
             [cljs.reader    :as reader]
-            [clojure.set    :as set]))
+            [clojure.set    :as set]
+            [shodan.console :as console]))
 
 (def bible (cljs.reader/read-string js/bible_plan.edn.bibles.esv))
 
@@ -66,7 +67,6 @@
   {:pre [(reference< start end)]}
   (let [{s-book :book s-chapter :chapter s-verse :verse} start
         {e-book :book e-chapter :chapter e-verse :verse} end]
-    (def ^:dynamic *charnock* [s-book e-book s-chapter e-chapter s-verse e-verse])
     (cond ;; {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 1 :verse 32}}
      (and (= s-book e-book) (= s-chapter e-chapter) (not= s-verse e-verse))
      (str (string/capitalize (->book-str start)) ". " (->chapter-str start) "." s-verse "-" e-verse)
@@ -175,28 +175,61 @@
   (let [specificity (verse-specificity verse)]
     (conj (lower-specificities specificity) specificity)))
 
-(defn masked-comparator-fn [clojure-comparator-fn]
-  (fn [mask verse & verses]
-    (if verses
-      (let [verses        (into [verse] verses)
-            masked-verses (distinct (map #(select-keys % mask) verses))]
-        (loop [[current-specificity & next-specificities] (sort specificity< mask)]
-          (if (not current-specificity)
-            false
-            (if (apply clojure-comparator-fn (distinct (map current-specificity masked-verses)))
-              true
-              (recur next-specificities)))))
-      verse)))
+(defn masked-comparator [clojure-comparator-fn mask verse & verses]
+  (if verses
+    (let [verses (distinct (map #(select-keys % mask) (into [verse] verses)))]
+      (loop [[current-specificity & next-specificities] (sort specificity< mask)]
+        (if (or (not next-specificities)
+                (not (apply = (distinct (map current-specificity verses)))))
+          (apply clojure-comparator-fn (distinct (map current-specificity verses)))
+          (recur next-specificities))))
+    (clojure-comparator-fn verse)))
 
-(def masked-> (masked-comparator-fn >))
+(defn masked->
+  ([mask verse-1 verse-2]
+     (let [books    (map :book [verse-1 verse-2])
+           chapters (map :chapter [verse-1 verse-2])
+           verses   (map :verse [verse-1 verse-2])]
+       (cond (= [:book :chapter :verse] mask)
+             (or (apply > books)
+                 (and (apply = books)
+                      (apply > chapters))
+                 (and (apply = books)
+                      (apply = chapters)
+                      (apply > verses)))
 
-(def masked->= (masked-comparator-fn >=))
+             (= [:book :chapter] mask)
+             (and (apply = books)
+                  (apply > chapters))
+
+             (= [:book] mask)
+             (apply > books))))
+  ([mask verse-1 verse-2 & verses]
+     (if verses
+       (let [verses (into [verse-1 verse-2] verses)]
+         (every? (fn [verses]
+                   {:pre [(= 2 (count verses))]}
+                   (apply masked-> mask verses))
+                 (partition 2 1 verses)))
+       (masked-> mask verse-1 verse-2))))
+
+(defn masked-= [mask verse & verses]
+  (if verses
+    (apply = (map #(select-key % mask) (into [verse] verses)))
+    (= verse)))
+
+(def masked->= [mask verse & verses]
+  (if verses
+    (let [verses (into [verse] verses)]
+      (or (apply masked-= mask verses)
+          (apply masked-> mask verses)))
+    (>= verse)))
 
 (defn reference-verse-range [{:keys [start end] :as reference}]
   (let [verse-range (drop-while (partial masked-> (->mask start) start) verses)
         verse-range (if end
                       (take-while (partial masked->= (->mask end) end) verse-range)
-                      verse-range)]
+                      (take-while (partial masked-= (->mask start) start) verse-range))]
     verse-range))
 
 (defn overlapping? [reference-1 reference-2]
@@ -222,5 +255,4 @@
 
 (comment
   (->str {:start {:book 1 :chapter 35} :end {:book 1 :chapter 36} :kind "family"})
-  *charnock*
   )
