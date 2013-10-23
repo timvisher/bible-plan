@@ -5,6 +5,6 @@ then
   mkdir -p sync/staging
 fi
 
-rsync -avq --delete $(find resources -type f -maxdepth 1) $(find resources/public/whitespace -type f) sync/staging
+rsync -av --delete $(find resources -type f -maxdepth 1) resources/public/whitespace/js sync/staging
 
-s3cmd sync sync/staging/ s3://staging.bibleplan.twonegatives.com/
+aws s3 --profile p_s3 sync --delete sync/staging/ s3://staging.bibleplan.twonegatives.com/
