@@ -22,6 +22,10 @@
 
 (defroutes advanced-site
   (resources "/")
+  (resources "/edn" {:root "edn"})
+  (GET "/js/resources/public/js/bible-plan.js.map"
+       req
+       (clojure.java.io/file "resources" "public" "js" "bible-plan.js.map"))
   (GET "/" req (index-page)))
 
 (defn run

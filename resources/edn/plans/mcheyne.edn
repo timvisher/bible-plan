@@ -1458,3 +1458,11 @@
   {:kind "family" :start {:book 66 :chapter 22}}
   {:kind "secret" :start {:book 39 :chapter 4}}
   {:kind "secret" :start {:book 43 :chapter 21}}]]
+
+;; contains {:kind "family", :start {:verse 38, :book 19, :chapter 78}}
+;; this won't work. need to introduce something along the lines
+;; of :end :ff which is handled specially
+
+;; Local Variables:
+;; mode: fundamental
+;; End:
