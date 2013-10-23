@@ -35304,16 +35304,16 @@ goog.provide("time_ui");
 goog.require("cljs.core");
 goog.require("goog.i18n.DateTimeFormat");
 goog.require("goog.i18n.DateTimeFormat.Format");
-goog.require("goog.date.weekDay");
-goog.require("goog.date.weekDay");
+goog.require("goog.i18n.DateTimeSymbols");
+goog.require("goog.i18n.DateTimeSymbols");
 goog.require("goog.date.DateRange");
 goog.require("goog.date.Interval");
 goog.require("goog.date.DateTime");
 goog.require("goog.date.Date");
-time_ui.weekdays = cljs.core.PersistentArrayMap.fromArray([goog.date.weekDay.MON, new cljs.core.Keyword(null, "monday", "monday", 4240368770), goog.date.weekDay.TUE, new cljs.core.Keyword(null, "tuesday", "tuesday", 4331527615), goog.date.weekDay.WED, new cljs.core.Keyword(null, "wednesday", "wednesday", 2407434952), goog.date.weekDay.THU, new cljs.core.Keyword(null, "thursday", "thursday", 2585959756), goog.date.weekDay.FRI, new cljs.core.Keyword(null, "friday", "friday", 4042586321), goog.date.weekDay.SAT, 
-new cljs.core.Keyword(null, "saturday", "saturday", 3194669867), goog.date.weekDay.SUN, new cljs.core.Keyword(null, "sunday", "sunday", 4417684802)], true);
+time_ui.weekdays = cljs.core.PersistentArrayMap.fromArray(["Monday", new cljs.core.Keyword(null, "monday", "monday", 4240368770), "Tuesday", new cljs.core.Keyword(null, "tuesday", "tuesday", 4331527615), "Wednesday", new cljs.core.Keyword(null, "wednesday", "wednesday", 2407434952), "Thursday", new cljs.core.Keyword(null, "thursday", "thursday", 2585959756), "Friday", new cljs.core.Keyword(null, "friday", "friday", 4042586321), "Saturday", new cljs.core.Keyword(null, "saturday", "saturday", 3194669867), 
+"Sunday", new cljs.core.Keyword(null, "sunday", "sunday", 4417684802)], true);
 time_ui.day = function day(date) {
-  return time_ui.weekdays.call(null, date.getDay())
+  return cljs.core.get.call(null, time_ui.weekdays, cljs.core.get.call(null, goog.i18n.DateTimeSymbols.WEEKDAYS, date.getDay()))
 };
 time_ui.now = function now() {
   return new goog.date.DateTime
