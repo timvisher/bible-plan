@@ -3,6 +3,7 @@
             [goog.date.DateTime]
             [goog.date.Interval]
             [goog.date.DateRange]
+            [goog.date.weekDay :as g-week-day]
             [goog.i18n.DateTimeFormat.Format]
             [goog.i18n.DateTimeFormat])
 
@@ -11,6 +12,17 @@
 (comment
   (in-ns 'time-ui)
   )
+
+(def weekdays {g-week-day/MON :monday
+               g-week-day/TUE :tuesday
+               g-week-day/WED :wednesday
+               g-week-day/THU :thursday
+               g-week-day/FRI :friday
+               g-week-day/SAT :saturday
+               g-week-day/SUN :sunday})
+
+(defn day [date]
+  (weekdays (.getDay date)))
 
 (defn now []
   (goog.date.DateTime.))

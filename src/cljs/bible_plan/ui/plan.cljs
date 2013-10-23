@@ -24,16 +24,16 @@
   (let [base-plan             (keyword (.-value (sel1 (keyword "input[name=plan]:checked"))))
         ;; TODO: this should truncate out to the number of days between now and the end date goal
         available-dates       (time-ui/days-from-now)
-        skip-days             (map (fn day-input->keyword [day-input]
-                                     (keyword (.-value day-input)))
-                                   (sel (keyword "input[name=skip-day]:checked")))
+        skip-days             (into #{}
+                                    (map (fn day-input->keyword [day-input]
+                                           (keyword (.-value day-input)))
+                                         (sel (keyword "input[name=skip-day]:checked"))))
         books-at-a-time?-node (sel1 (keyword "input[name=books-at-a-time]:checked"))
         books-at-a-time?-raw  (if books-at-a-time?-node
                                 (.-value books-at-a-time?-node)
                                 nil)
         books-at-a-time?      (= "yes" books-at-a-time?-raw)]
     {:base-plan        base-plan
-     :available-dates  available-dates
      :skip-days        skip-days
      :books-at-a-time? books-at-a-time?}))
 

@@ -134,13 +134,13 @@
         end-date   (if end-date
                      end-date
                      (time-ui/inc-date-by-year start-date))
-        dates      (filter (complement (partial time-ui/day-in skip-days)) (time-ui/date-range start-date (time-ui/inc-date-by-day end-date)))
+        dates      (filter (comp (complement (or skip-days #{})) time-ui/day) (time-ui/date-range start-date end-date))
         the-plan   (if books-at-a-time?
                      (order-by-book (count dates) the-plan)
                      the-plan)]
     (map (fn [readings date]
            {:readings readings
-            :date      date})
+            :date     date})
          the-plan
          dates)))
 
