@@ -124,6 +124,17 @@
         coalesced-reading-days (map coalesce-reading-day grouped-reading-days)]
     coalesced-reading-days))
 
+(defn order-by-plan [number-of-reading-days plan]
+  (let [raw-reading-days       (map (fn [reading-days]
+                                      (reduce into reading-days))
+                                    (partition-all-balanced (/ (count plan) number-of-reading-days) plan))
+        fixed-raw-reading-days (if (> (count plan) number-of-reading-days)
+                                 (combine-last-two-items raw-reading-days)
+                                 raw-reading-days)
+        grouped-reading-days   (map group-reading-day fixed-raw-reading-days)
+        coalesced-reading-days (map coalesce-reading-day grouped-reading-days)]
+    coalesced-reading-days))
+
 (defn calculate-plan [{:keys [base-plan start-date end-date skip-days books-at-a-time?] :as plan-options}]
   {:pre [base-plan
          (base-plan plans)]}
@@ -137,7 +148,7 @@
         dates      (filter (comp (complement (or skip-days #{})) time-ui/day) (time-ui/date-range start-date end-date))
         the-plan   (if books-at-a-time?
                      (order-by-book (count dates) the-plan)
-                     the-plan)]
+                     (order-by-plan (count dates) the-plan))]
     (map (fn [readings date]
            {:readings readings
             :date     date})
