@@ -39599,3 +39599,4 @@ while(true) {
   break
 }
 ;
+//@ sourceMappingURL=resources/public/whitespace/js/bible-plan.js.map

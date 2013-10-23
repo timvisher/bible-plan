@@ -18,6 +18,9 @@
 (defroutes whitespace-site
   (resources "/" {:root "public/whitespace"})
   (resources "/edn" {:root "edn"})
+  (GET "/js/resources/public/whitespace/js/bible-plan.js.map"
+       req
+       (clojure.java.io/file "resources" "public" "whitespace" "js" "bible-plan.js.map"))
   (GET "/" req (page)))
 
 (defroutes advanced-site

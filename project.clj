@@ -29,6 +29,7 @@
                                                                  "-message"]
                                                 :compiler       {:pretty-print  true
                                                                  :output-to     "resources/public/whitespace/js/bible-plan.js"
+                                                                 :source-map    "resources/public/whitespace/js/bible-plan.js.map"
                                                                  :output-dir    "target/whitespace"
                                                                  :externs       ["externs/bible-plan-bibles-externs.js"]
                                                                  :optimizations :whitespace}}
