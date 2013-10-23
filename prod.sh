@@ -5,6 +5,8 @@ then
   mkdir -p sync/prod
 fi
 
-rsync -av --delete $(find resources -type f -maxdepth 1) resources/public/js sync/prod
+rsync -av --delete resources/*.html resources/edn resources/public/js sync/prod
+
+sed -i '' 's|resources/public/js/||' sync/prod/js/bible-plan.js
 
 aws s3 --profile p_s3 sync --delete sync/prod/ s3://bibleplan.twonegatives.com/
