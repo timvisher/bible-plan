@@ -11,7 +11,8 @@
                  [compojure                       "1.1.5"]
                  [enlive                          "1.1.1"]
                  [com.cemerick/clojurescript.test "0.0.4"]
-                 [shodan                          "0.1.0"]]
+                 [shodan                          "0.1.0"]
+                 [com.twonegatives/cljs-ajax      "0.2.1"]]
   :profiles     {:dev {;; :repl-options {:init-ns dev-server}
                        :plugins      [[com.cemerick/austin "0.1.1"]
                                       [lein-cljsbuild      "0.3.4"]]
@@ -44,6 +45,7 @@
                                                                  "-message"]
                                                 :compiler       {:pretty-print  false
                                                                  :output-to     "resources/public/js/bible-plan.js"
+                                                                 :source-map    "resources/public/js/bible-plan.js.map"
                                                                  :output-dir    "target/advanced"
                                                                  :externs       ["externs/bible-plan-bibles-externs.js"]
                                                                  :optimizations :advanced}}]}}})

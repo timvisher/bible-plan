@@ -2,11 +2,52 @@
   (:require [clojure.string :as string]
             [cljs.reader    :as reader]
             [clojure.set    :as set]
-            [shodan.console :as console]))
+            [shodan.console :as console]
+            [ajax.core      :as ajax :refer [ajax-request]]))
 
-(def bible (cljs.reader/read-string js/bible_plan.edn.bibles.esv))
+(def bibles (atom {}))
 
-(def verse-maps (cljs.reader/read-string js/bible_plan.edn.verse_maps.esv))
+(defn assoc-bible [name bible-data]
+  (swap! bibles assoc name bible-data))
+
+(defn load-bibles []
+  (ajax-request "/edn/bibles/bibles.edn"
+                :get
+                {:handler (fn load-available-bibles [[ok bible-names]]
+                            (when ok
+                              (doseq [bible-name bible-names]
+                                (console/log (str "Loading bible: " bible-name))
+                                (ajax-request (str "/edn/bibles/" (name bible-name) ".edn")
+                                              :get
+                                              {:handler (fn [[ok bible-data]]
+                                                          (if ok
+                                                            (assoc-bible bible-name bible-data)))
+                                               :format (ajax/edn-format)}))))
+                 :format (ajax/edn-format)}))
+
+(load-bibles)
+
+(def verse-maps (atom {}))
+
+(defn assoc-verse-map [name verse-map-data]
+  (swap! verse-maps assoc name verse-map-data))
+
+(defn load-verse-maps []
+  (ajax-request "/edn/verse-maps/verse-maps.edn"
+                :get
+                {:handler (fn load-available-verse-maps [[ok verse-map-names]]
+                            (when ok
+                              (doseq [verse-map-name verse-map-names]
+                                (console/log (str "Loading verse-map: " verse-map-name))
+                                (ajax-request (str "/edn/verse-maps/" (name verse-map-name) ".edn")
+                                              :get
+                                              {:handler (fn [[ok verse-map-data]]
+                                                          (if ok
+                                                            (assoc-verse-map verse-map-name verse-map-data)))
+                                               :format (ajax/edn-format)}))))
+                 :format (ajax/edn-format)}))
+
+(load-verse-maps)
 
 (defn max-verse-map [{start-verse-map :start end-verse-map :end :as reference}]
   {:pre [start-verse-map]}
@@ -62,8 +103,8 @@
 (defn ->book-str [{:keys [book chapter] :as verse-map}]
   {:pre [book]}
   (if (not chapter)
-    (get-in bible [book :name])
-    (get-in bible [book :abbreviation])))
+    (get-in (:esv @bibles) [book :name])
+    (get-in (:esv @bibles) [book :abbreviation])))
 
 (defn ->chapter-str [{:keys [chapter] :as verse-map}]
   {:pre [chapter]}
@@ -202,7 +243,7 @@
         (apply masked-> verse-maps))))
 
 (defn reference-verse-map-range [{:keys [start end] :as reference}]
-  (let [verse-map-range (drop-while (partial masked-> start) verse-maps)
+  (let [verse-map-range (drop-while (partial masked-> start) (:esv @verse-maps))
         verse-map-range (if end
                       (take-while (partial masked->= end) verse-map-range)
                       (take-while (partial masked-= start) verse-map-range))]

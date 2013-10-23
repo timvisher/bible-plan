@@ -17,11 +17,12 @@
 
 (defroutes whitespace-site
   (resources "/" {:root "public/whitespace"})
+  (resources "/edn" {:root "edn"})
   (GET "/" req (page)))
 
 (defroutes advanced-site
   (resources "/")
-  (GET "/*" req (index-page)))
+  (GET "/" req (index-page)))
 
 (defn run
   []

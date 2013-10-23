@@ -1,9 +1,30 @@
 (ns bible-plan.plan
   (:require [bible-plan.reference :as ref]
             time-ui
-            [shodan.console       :as console]))
+            [shodan.console       :as console]
+            [ajax.core            :as ajax :refer [ajax-request]]))
 
-(def plans {:mcheyne (cljs.reader/read-string js/bible_plan.edn.plans.mcheyne)})
+(def plans (atom {}))
+
+(defn assoc-plan [name plan-data]
+  (swap! plans assoc name plan-data))
+
+(defn load-plans []
+  (ajax-request "/edn/plans/plans.edn"
+                :get
+                {:handler (fn load-available-plans [[ok plan-names]]
+                            (when ok
+                              (doseq [plan-name plan-names]
+                                (console/log (str "Loading plan: " plan-name))
+                                (ajax-request (str "/edn/plans/" (name plan-name) ".edn")
+                                              :get
+                                              {:handler (fn [[ok plan-data]]
+                                                          (if ok
+                                                            (assoc-plan plan-name plan-data)))
+                                               :format (ajax/edn-format)}))))
+                 :format (ajax/edn-format)}))
+
+(load-plans)
 
 (defn annotate-plan-readings-with-days [plan]
   (map (fn [day-number readings]
@@ -137,8 +158,8 @@
 
 (defn calculate-plan [{:keys [base-plan start-date end-date skip-days books-at-a-time?] :as plan-options}]
   {:pre [base-plan
-         (base-plan plans)]}
-  (let [the-plan   (base-plan plans)
+         (base-plan @plans)]}
+  (let [the-plan   (base-plan @plans)
         start-date (if start-date
                      start-date
                      (time-ui/now))
