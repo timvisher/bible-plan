@@ -1,82 +1,117 @@
 (ns bible-plan.reference
-  (:require [clojure.string :as string]
-            [cljs.reader    :as reader]))
+  (:require [clojure.string       :as string]
+            [cljs.reader          :as reader]
+            [clojure.set          :as set]
+            [shodan.console       :as console]
+            [bible-plan.verse-map :as verse-map]
+            [ajax.core            :as ajax :refer [ajax-request]]))
 
-(def bible (cljs.reader/read-string js/bible_edn))
+(defn ->verse-maps [reference]
+  (let [{:keys [start end]} reference
+        verse-maps [start]
+        verse-maps (if end
+                 (conj verse-maps end)
+                 verse-maps)]
+    verse-maps))
 
 (defn reference< [reference & references]
-  {:pre [#(every? :book (into [reference] references))]}
-  (let [references              (into [reference] references)
-        [books chapters verses] ((juxt (partial map :book)
-                                       (partial map :chapter)
-                                       (partial map :verse))
-                                 references)]
-    (or (apply < books)
-        (and (apply = books)
-             (every? identity chapters)
-             (apply < chapters))
-        (and (apply = books)
-             (every? identity chapters)
-             (apply = chapters)
-             (every? identity verses)
-             (apply < verses)))))
+  {:pre [(get-in reference [:start :book])
+         (every? #(get-in % [:start :book]) references)]}
+  (apply verse-map/< (reduce into [] (map ->verse-maps (into [reference] references)))))
 
-(defn ->book-str [{:keys [book chapter] :as reference}]
-  {:pre [book]}
-  (if (not chapter)
-    (get-in bible [book :name])
-    (get-in bible [book :abbreviation])))
+(defn reference? [{:keys [start end] :as reference}]
+  (and (verse-map/verse-map? start)
+       (if end
+         (and (verse-map/verse-map? end)
+              (verse-map/< start end))
+         true)))
 
-(defn ->chapter-str [{:keys [chapter] :as reference}]
-  {:pre [chapter]}
-  chapter)
+(defn single->str [{:keys [start] :as reference}]
+  {:pre [(reference? reference)]}
+  (verse-map/->book-chapter?-verse?-str start))
 
-(defn ->verse-str [{:keys [verse] :as reference}]
-  {:pre [verse]}
-  verse)
+(defn compound->str [{:keys [start end] :as reference}]
+  {:pre [(reference? reference)
+         end]}
+  (let [{s-book :book s-chapter :chapter s-verse :verse :as start-verse-map} start
+        {e-book :book e-chapter :chapter e-verse :verse :as end-verse-map}   end]
+    (let [verse-string               (str (verse-map/->book-chapter?-verse?-str start-verse-map) "-")
+          lowest-unequal-specificity (verse-map/lowest-unequal-specificity end-verse-map start-verse-map)
+          shown-specificities        (apply vector (drop-while (fn [specificity]
+                                                                 (verse-map/specificity< specificity lowest-unequal-specificity))
+                                                               verse-map/verse-map-specificities))
+]
+      (str verse-string ((verse-map/->str-fn shown-specificities) end-verse-map)))))
 
-(defn single->str [{:keys [book chapter verse] :as reference}]
-  {:pre [(or (and book chapter verse)
-             (and book chapter (not verse))
-             (and book (not (and chapter verse))))
-         (every? number? (vals reference))]}
-  ;; TODO: Each of these should be calls to format
-  (cond (and book chapter verse)
-        (str (string/capitalize (->book-str reference)) ". " (->chapter-str reference) "." (->verse-str reference))
+(defn ->str [{start-verse-map :start end-verse-map :end :as reference}]
+  {:pre [(reference? reference)]}
+  (def *whee* :whee)
+  (if (and start-verse-map end-verse-map)
+    (compound->str reference)
+    (single->str reference)))
 
-        (and book chapter)
-        (str (string/capitalize (->book-str reference)) ". " (->chapter-str reference))
+(defn contiguous-ascending-ints? [int-1 & ints]
+  {:pre [(number? int-1)
+         (every? number? ints)]}
+  (loop [[this-int & next-ints] (into [int-1] ints)]
+    (if (not (first next-ints))
+      true
+      (if (= (+ 1 this-int) (first next-ints))
+        (recur next-ints)
+        false))))
 
-        book
-        (string/capitalize (->book-str reference))))
+(defn join-points [references]
+  (reduce (fn [start-segments reference-part]
+            (if (:end reference-part)
+              (conj start-segments [(:end reference-part)])
+              (update-in start-segments [(- (count start-segments) 1)] conj (:start reference-part))))
+          [[]]
+          (reduce (fn [start-and-ends reference]
+                    (if (:end reference)
+                      (conj (conj start-and-ends {:start (:start reference)}) {:end (:end reference)})
+                      (conj start-and-ends reference)))
+                  []
+                  references)))
 
-(defn compound->str [start end]
-  {:pre [(reference< start end)]}
-  (let [{s-book :book s-chapter :chapter s-verse :verse} start
-        {e-book :book e-chapter :chapter e-verse :verse} end]
-    (def ^:dynamic *charnock* [s-book e-book s-chapter e-chapter s-verse e-verse])
-    (cond ;; {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 1 :verse 32}}
-          (and (= s-book e-book) (= s-chapter e-chapter) (not= s-verse e-verse))
-          (str (string/capitalize (->book-str start)) ". " (->chapter-str start) "." s-verse "-" e-verse)
+(defn contiguous? [& references]
+  {:pre [(apply reference< references)]}
+  (if references
+    (let [join-points (join-points references)]
+      (and (every? (fn [join-point]
+                     (let [specificity (apply verse-map/highest-common-verse-map-specificity join-point)]
+                       (verse-map/lower-specificities-equal? specificity join-point)))
+                   join-points)
+           (every? (fn [join-point]
+                     (let [specificity (apply verse-map/highest-common-verse-map-specificity join-point)]
+                       (apply contiguous-ascending-ints? (map specificity join-point))))
+                   join-points)))))
 
-          ;; {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 2 :verse 32}}
-          (and (= s-book e-book) (not= s-chapter e-chapter) (not= s-verse e-verse))
-          (str (string/capitalize (->book-str start)) ". " (->chapter-str start) "." s-verse "-" (->chapter-str end) "." e-verse)
+(defn reference-verse-map-range [{:keys [start end] :as reference}]
+  {:pre [(reference? reference)
+         end]}
+  (verse-map/verse-map-range start end))
 
-          ;; {:start {:book 1 :chapter 35} :end {:book 1 :chapter 36}}
-          (and (= s-book e-book) (not= s-chapter e-chapter) (nil? s-verse) (nil? e-verse))
-          (str (string/capitalize (->book-str start)) ". " (->chapter-str start) "-" (->chapter-str end))
+(defn overlapping? [reference-1 reference-2]
+  (let [reference-1-range (reference-verse-map-range reference-1)
+        reference-2-range (reference-verse-map-range reference-2)]
+    (not (empty? (set/intersection (into #{} reference-1-range) (into #{} reference-2-range))))))
 
-          :default
-          (str (single->str start) "-" (single->str end)))))
+(defn none-overlap? [references reference]
+  (some (fn [other-reference]
+          (overlapping? other-reference reference))
+        references))
 
-(defn ->str [{:keys [start end] :as reference}]
-  {:pre [(:book start)]}
-  (if (and start end)
-    (compound->str start end)
-    (single->str start)))
+(defn disjoint-refs? [& references]
+  (if references
+    (every? (partial none-overlap? references) references)))
+
+(defn merge-refs [start-ref end-ref]
+  {:pre [(reference< start-ref end-ref)]}
+  (if (contiguous? start-ref end-ref)
+    (let [sorted-verse-maps (sort verse-map/< (reduce into [] (map ->verse-maps [start-ref end-ref])))]
+      {:start (first sorted-verse-maps) :end (last sorted-verse-maps)})
+    [start-ref end-ref]))
 
 (comment
   (->str {:start {:book 1 :chapter 35} :end {:book 1 :chapter 36} :kind "family"})
-  *charnock*
   )

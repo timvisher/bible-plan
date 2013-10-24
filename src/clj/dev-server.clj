@@ -17,11 +17,25 @@
 
 (defroutes whitespace-site
   (resources "/" {:root "public/whitespace"})
+  (resources "/edn" {:root "edn"})
+  (GET "/js/resources/public/whitespace/js/bible-plan.js.map"
+       req
+       (clojure.java.io/file "resources" "public" "whitespace" "js" "bible-plan.js.map"))
+  (GET "*.cljs"
+       req
+       (clojure.java.io/file (:uri req)))
   (GET "/" req (page)))
 
 (defroutes advanced-site
   (resources "/")
-  (GET "/*" req (index-page)))
+  (resources "/edn" {:root "edn"})
+  (GET "/js/resources/public/js/bible-plan.js.map"
+       req
+       (clojure.java.io/file "resources" "public" "js" "bible-plan.js.map"))
+  (GET "*.cljs"
+       req
+       (clojure.java.io/file (:uri req)))
+  (GET "/" req (index-page)))
 
 (defn run
   []
@@ -35,6 +49,8 @@
 
 (def repl-env (reset! cemerick.austin.repls/browser-repl-env
                       (cemerick.austin/repl-env)))
+
+;; (def repl-env (reset! cemerick.austin.repls/browser-repl-env nil))
 
 (comment
   ;; Only run after you've loaded the page

@@ -21,4 +21,4 @@
   [:li (string/join ", " (map (comp titlecase/->titlecase ref/->str) day))])
 
 (deftemplate ->td [reference]
-  [:td (titlecase/->titlecase (ref/->str reference))])
+  [:td (ref/->str reference)])

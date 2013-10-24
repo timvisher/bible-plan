@@ -1,6 +1,5 @@
 (ns bible-plan.core
   (:require    [dommy.core              :as dom]
-               [bible-plan.plan.mcheyne :as mcheyne]
                [bible-plan.ui.reference :as ref-ui]
                [bible-plan.ui.plan      :as plan-ui]
                clojure.browser.repl)
@@ -19,11 +18,12 @@
 (doseq [books-at-a-time-node (sel (keyword "input[name=books-at-a-time]"))]
   (dom/listen! books-at-a-time-node :change plan-ui/re-show-plan))
 
+(doseq [books-at-a-time-node (sel (keyword "input[name=books-at-a-time]"))]
+  (dom/listen! books-at-a-time-node :change plan-ui/re-show-plan))
+
 (comment
   (dom/event-listeners (sel1 (keyword "input[name=plan]")))
   (dom/unlisten! (sel1 (keyword "input[name=plan]")) :change plan-ui/show-plan)
-
-  (plan-ui/show-plan mcheyne/mcheyne nil)
 
   (in-ns 'bible-plan.core)
 

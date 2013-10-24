@@ -17,28 +17,25 @@
   (console/log (pr-str object)))
 
 (defn show-plan! [plan-dom-content]
-  (console/log "Showing plan:")
-  (log-pr plan-dom-content)
   (dom/replace-contents! (sel1 :#plan) plan-dom-content)
   (dom/remove-class! (sel1 :#plan) :hidden))
 
 (defn plan-state->plan-options []
   (let [base-plan             (keyword (.-value (sel1 (keyword "input[name=plan]:checked"))))
+        ;; TODO: this should truncate out to the number of days between now and the end date goal
         available-dates       (time-ui/days-from-now)
-        skip-days             (map (fn day-input->keyword [day-input]
-                                     (keyword (.-value day-input)))
-                                   (sel (keyword "input[name=skip-day]:checked")))
+        skip-days             (into #{}
+                                    (map (fn day-input->keyword [day-input]
+                                           (keyword (.-value day-input)))
+                                         (sel (keyword "input[name=skip-day]:checked"))))
         books-at-a-time?-node (sel1 (keyword "input[name=books-at-a-time]:checked"))
         books-at-a-time?-raw  (if books-at-a-time?-node
                                 (.-value books-at-a-time?-node)
                                 nil)
         books-at-a-time?      (= "yes" books-at-a-time?-raw)]
-    (let [plan-options {:base-plan        base-plan
-                        :available-dates  available-dates
-                        :skip-days        skip-days
-                        :books-at-a-time? books-at-a-time?}]
-      (log-pr (update-in plan-options [:available-dates] (partial take 50)))
-      plan-options)))
+    {:base-plan        base-plan
+     :skip-days        skip-days
+     :books-at-a-time? books-at-a-time?}))
 
 (deftemplate plan-day->tr [{:keys [readings date] :as plan-day}]
   [:tr
@@ -46,8 +43,6 @@
    (map ref-ui/->td readings)])
 
 (defn plan->dom-content [the-plan]
-  (console/log "Generating DOM content")
-  (log-pr the-plan)
   (map plan-day->tr the-plan))
 
 (defn re-show-plan [e]
