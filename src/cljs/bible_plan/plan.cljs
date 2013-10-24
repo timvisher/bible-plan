@@ -95,13 +95,15 @@
     (update-vals raw-book-readings group-into-ascending-readings)))
 
 (defn group-reading-day [raw-reading-day]
-  (group-by (comp :book :start) raw-reading-day))
+  (let [original-order   (distinct (map (comp :book :start) raw-reading-day))
+        grouped-readings (group-by (comp :book :start) raw-reading-day)]
+    {:book-order    original-order
+     :book-readings grouped-readings}))
 
-(defn coalesce-reading-day [grouped-reading-day]
-  (let [books (keys grouped-reading-day)]
-    (map (fn merge-reading-book-group [reading-book-group]
-           (reduce ref/merge-refs (get grouped-reading-day reading-book-group)))
-         books)))
+(defn coalesce-reading-day [{:keys [book-order book-readings] :as grouped-reading-day}]
+  (map (fn merge-reading-book-group [reading-book-group]
+         (reduce ref/merge-refs (get book-readings reading-book-group)))
+       book-order))
 
 (defn raw-plan-by-book [book-readings book-order]
   (loop [raw-plan            []

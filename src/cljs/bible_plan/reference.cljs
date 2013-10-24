@@ -1,61 +1,10 @@
 (ns bible-plan.reference
-  (:require [clojure.string :as string]
-            [cljs.reader    :as reader]
-            [clojure.set    :as set]
-            [shodan.console :as console]
-            [ajax.core      :as ajax :refer [ajax-request]]))
-
-(def bibles (atom {}))
-
-(defn assoc-bible [name bible-data]
-  (swap! bibles assoc name bible-data))
-
-(defn load-bibles []
-  (ajax-request "/edn/bibles/bibles.edn"
-                :get
-                {:handler (fn load-available-bibles [[ok bible-names]]
-                            (when ok
-                              (doseq [bible-name bible-names]
-                                (console/log (str "Loading bible: " bible-name))
-                                (ajax-request (str "/edn/bibles/" (name bible-name) ".edn")
-                                              :get
-                                              {:handler (fn [[ok bible-data]]
-                                                          (if ok
-                                                            (assoc-bible bible-name bible-data)))
-                                               :format (ajax/edn-format)}))))
-                 :format (ajax/edn-format)}))
-
-(load-bibles)
-
-(def verse-maps (atom {}))
-
-(defn assoc-verse-map [name verse-map-data]
-  (swap! verse-maps assoc name verse-map-data))
-
-(defn load-verse-maps []
-  (ajax-request "/edn/verse-maps/verse-maps.edn"
-                :get
-                {:handler (fn load-available-verse-maps [[ok verse-map-names]]
-                            (when ok
-                              (doseq [verse-map-name verse-map-names]
-                                (console/log (str "Loading verse-map: " verse-map-name))
-                                (ajax-request (str "/edn/verse-maps/" (name verse-map-name) ".edn")
-                                              :get
-                                              {:handler (fn [[ok verse-map-data]]
-                                                          (if ok
-                                                            (assoc-verse-map verse-map-name verse-map-data)))
-                                               :format (ajax/edn-format)}))))
-                 :format (ajax/edn-format)}))
-
-(load-verse-maps)
-
-(defn max-verse-map [{start-verse-map :start end-verse-map :end :as reference}]
-  {:pre [start-verse-map]}
-  (or end-verse-map start-verse-map))
-
-(defn min-verse-map [{start-verse-map :start end-verse-map :end :as reference}]
-  {:pre [start-verse-map]}
-  start-verse-map)
+  (:require [clojure.string       :as string]
+            [cljs.reader          :as reader]
+            [clojure.set          :as set]
+            [shodan.console       :as console]
+            [bible-plan.verse-map :as verse-map]
+            [ajax.core            :as ajax :refer [ajax-request]]))
 
 (defn ->verse-maps [reference]
   (let [{:keys [start end]} reference
@@ -65,94 +14,41 @@
                  verse-maps)]
     verse-maps))
 
-(defn verse-map-specificity [{:keys [book chapter verse] :as verse-map}]
-  {:pre [book]}
-  (cond verse
-        :verse
-
-        chapter
-        :chapter
-
-        book
-        :book))
-
-(defn common-specificities [& verse-maps]
-  (if verse-maps
-    (let [verse-map-specificities (map verse-map-specificity verse-maps)
-          specificities-set (into #{} verse-map-specificities)]
-      (apply min-key count (map (fn [verse-map-keys]
-                                  (filter specificities-set verse-map-keys))
-                                (map keys verse-maps))))))
-
-(defn ->comparable-verse [{:keys [book chapter verse] :as verse-map}]
-  {:pre [book]}
-  [book (or chapter 0) (or verse 0)])
-
-(defn verse-map< [{:keys [book chapter verse] :as verse-map} & verse-maps]
-  (let [verse-maps        (into [verse-map] verse-maps)
-        comparison-pairs  (partition 2 1 (map ->comparable-verse verse-maps))]
-    (every? (fn [comparison-pair]
-              (> 0 (apply compare comparison-pair)))
-            comparison-pairs)))
-
 (defn reference< [reference & references]
   {:pre [(get-in reference [:start :book])
          (every? #(get-in % [:start :book]) references)]}
-  (apply verse-map< (reduce into [] (map ->verse-maps (into [reference] references)))))
+  (apply verse-map/< (reduce into [] (map ->verse-maps (into [reference] references)))))
 
-(defn ->book-str [{:keys [book chapter] :as verse-map}]
-  {:pre [book]}
-  (if (not chapter)
-    (get-in (:esv @bibles) [book :name])
-    (get-in (:esv @bibles) [book :abbreviation])))
+(defn reference? [{:keys [start end] :as reference}]
+  (and (verse-map/verse-map? start)
+       (if end
+         (and (verse-map/verse-map? end)
+              (verse-map/< start end))
+         true)))
 
-(defn ->chapter-str [{:keys [chapter] :as verse-map}]
-  {:pre [chapter]}
-  chapter)
+(defn single->str [{:keys [start] :as reference}]
+  {:pre [(reference? reference)]}
+  (verse-map/->book-chapter?-verse?-str start))
 
-(defn ->verse-str [{:keys [verse] :as verse-map}]
-  {:pre [verse]}
-  verse)
-
-(defn single->str [{:keys [book chapter verse] :as verse-map}]
-  {:pre [(or (and book chapter verse)
-             (and book chapter (not verse))
-             (and book (not (and chapter verse))))
-         (every? number? (vals verse-map))]}
-  ;; TODO: Each of these should be calls to format
-  (cond (and book chapter verse)
-        (str (string/capitalize (->book-str verse-map)) ". " (->chapter-str verse-map) "." (->verse-str verse-map))
-
-        (and book chapter)
-        (str (string/capitalize (->book-str verse-map)) ". " (->chapter-str verse-map))
-
-        book
-        (string/capitalize (->book-str verse-map))))
-
-(defn compound->str [start-verse-map end]
-  {:pre [(verse-map< start-verse-map end)]}
-  (let [{s-book :book s-chapter :chapter s-verse :verse} start-verse-map
-        {e-book :book e-chapter :chapter e-verse :verse} end]
-    (cond ;; {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 1 :verse 32}}
-     (and (= s-book e-book) (= s-chapter e-chapter) (not= s-verse e-verse))
-     (str (string/capitalize (->book-str start-verse-map)) ". " (->chapter-str start-verse-map) "." s-verse "-" e-verse)
-
-     ;; {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 2 :verse 32}}
-     (and (= s-book e-book) (not= s-chapter e-chapter) (not= s-verse e-verse))
-     (str (string/capitalize (->book-str start-verse-map)) ". " (->chapter-str start-verse-map) "." s-verse "-" (->chapter-str end) "." e-verse)
-
-     ;; {:start {:book 1 :chapter 35} :end {:book 1 :chapter 36}}
-     (and (= s-book e-book) (not= s-chapter e-chapter) (nil? s-verse) (nil? e-verse))
-     (str (string/capitalize (->book-str start-verse-map)) ". " (->chapter-str start-verse-map) "-" (->chapter-str end))
-
-     :default
-     (str (single->str start-verse-map) "-" (single->str end)))))
+(defn compound->str [{:keys [start end] :as reference}]
+  {:pre [(reference? reference)
+         end]}
+  (let [{s-book :book s-chapter :chapter s-verse :verse :as start-verse-map} start
+        {e-book :book e-chapter :chapter e-verse :verse :as end-verse-map}   end]
+    (let [verse-string               (str (verse-map/->book-chapter?-verse?-str start-verse-map) "-")
+          lowest-unequal-specificity (verse-map/lowest-unequal-specificity end-verse-map start-verse-map)
+          shown-specificities        (apply vector (drop-while (fn [specificity]
+                                                                 (verse-map/specificity< specificity lowest-unequal-specificity))
+                                                               verse-map/verse-map-specificities))
+]
+      (str verse-string ((verse-map/->str-fn shown-specificities) end-verse-map)))))
 
 (defn ->str [{start-verse-map :start end-verse-map :end :as reference}]
-  {:pre [(:book start-verse-map)]}
+  {:pre [(reference? reference)]}
+  (def *whee* :whee)
   (if (and start-verse-map end-verse-map)
-    (compound->str start-verse-map end-verse-map)
-    (single->str start-verse-map)))
+    (compound->str reference)
+    (single->str reference)))
 
 (defn contiguous-ascending-ints? [int-1 & ints]
   {:pre [(number? int-1)
@@ -163,21 +59,6 @@
       (if (= (+ 1 this-int) (first next-ints))
         (recur next-ints)
         false))))
-
-(def verse-map-specificities [:book :chapter :verse])
-
-(def specificity-weight {:book    1
-                         :chapter 2
-                         :verse   3})
-
-(defn specificity-comparator-fn [clojure-comparator-fn]
-  (fn [& specificities]
-    (if specificities
-      (apply clojure-comparator-fn (map specificity-weight specificities)))))
-
-(def specificity< (specificity-comparator-fn <))
-
-(def specificity> (specificity-comparator-fn >))
 
 (defn join-points [references]
   (reduce (fn [start-segments reference-part]
@@ -192,62 +73,23 @@
                   []
                   references)))
 
-(defn lower-specificities [specificity]
-  (let [specificity-weight (specificity-weight specificity)]
-    (filter (partial specificity> specificity) verse-map-specificities)))
-
-(defn lower-specificities-equal? [specificity verse-maps]
-  (let [lower-specificities (lower-specificities specificity)]
-    (apply = (map (apply juxt lower-specificities) verse-maps))))
-
-(defn highest-common-verse-map-specificity [& verse-maps]
-  (if verse-maps
-    (let [highest-distinct-specificities (distinct (map verse-map-specificity verse-maps))]
-      (first (sort specificity< highest-distinct-specificities)))))
-
 (defn contiguous? [& references]
   {:pre [(apply reference< references)]}
   (if references
     (let [join-points (join-points references)]
       (and (every? (fn [join-point]
-                     (let [specificity (apply highest-common-verse-map-specificity join-point)]
-                       (lower-specificities-equal? specificity join-point)))
+                     (let [specificity (apply verse-map/highest-common-verse-map-specificity join-point)]
+                       (verse-map/lower-specificities-equal? specificity join-point)))
                    join-points)
            (every? (fn [join-point]
-                     (let [specificity (apply highest-common-verse-map-specificity join-point)]
+                     (let [specificity (apply verse-map/highest-common-verse-map-specificity join-point)]
                        (apply contiguous-ascending-ints? (map specificity join-point))))
                    join-points)))))
 
-(defn masked-> [verse-map-1 verse-map-2]
-  (let [verse-maps [verse-map-1 verse-map-2]]
-    (or (and (every? :book verse-maps)
-             (apply > (map :book verse-maps)))
-        (and (every? :book verse-maps)
-             (every? :chapter verse-maps)
-             (apply = (map :book verse-maps))
-             (apply > (map :chapter verse-maps)))
-        (and (every? :book verse-maps)
-             (every? :chapter verse-maps)
-             (every? :verse verse-maps)
-             (apply = (map :book verse-maps))
-             (apply = (map :chapter verse-maps))
-             (apply > (map :verse verse-maps))))))
-
-(defn masked-= [verse-map-1 verse-map-2]
-  (let [verse-maps [verse-map-1 verse-map-2]]
-    (apply = (map (apply juxt (apply common-specificities verse-maps)) verse-maps))))
-
-(defn masked->= [verse-map-1 verse-map-2]
-  (let [verse-maps [verse-map-1 verse-map-2]]
-    (or (apply masked-= verse-maps)
-        (apply masked-> verse-maps))))
-
 (defn reference-verse-map-range [{:keys [start end] :as reference}]
-  (let [verse-map-range (drop-while (partial masked-> start) (:esv @verse-maps))
-        verse-map-range (if end
-                      (take-while (partial masked->= end) verse-map-range)
-                      (take-while (partial masked-= start) verse-map-range))]
-    verse-map-range))
+  {:pre [(reference? reference)
+         end]}
+  (verse-map/verse-map-range start end))
 
 (defn overlapping? [reference-1 reference-2]
   (let [reference-1-range (reference-verse-map-range reference-1)
@@ -266,7 +108,8 @@
 (defn merge-refs [start-ref end-ref]
   {:pre [(reference< start-ref end-ref)]}
   (if (contiguous? start-ref end-ref)
-    {:start (min-verse-map start-ref) :end (max-verse-map end-ref)}
+    (let [sorted-verse-maps (sort verse-map/< (reduce into [] (map ->verse-maps [start-ref end-ref])))]
+      {:start (first sorted-verse-maps) :end (last sorted-verse-maps)})
     [start-ref end-ref]))
 
 (comment

@@ -12,7 +12,7 @@
                  [enlive                          "1.1.1"]
                  [com.cemerick/clojurescript.test "0.0.4"]
                  [shodan                          "0.1.0"]
-                 [com.twonegatives/cljs-ajax      "0.2.1"]]
+                 [cljs-ajax                       "0.2.1"]]
   :profiles     {:dev {;; :repl-options {:init-ns dev-server}
                        :plugins      [[com.cemerick/austin "0.1.1"]
                                       [lein-cljsbuild      "0.3.4"]]
