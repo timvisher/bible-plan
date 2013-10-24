@@ -179,7 +179,7 @@
   {:kind "secret" :start {:book 18 :chapter 13}}
   {:kind "secret" :start {:book 46 :chapter 1}}]
  [{:kind "family" :start {:book 1 :chapter 48}}
-  {:kind "family" :start {:verse 39 :book 42 :chapter 1}}
+  {:kind "family" :start {:verse 39 :book 42 :chapter 1} :end {:book 42 :chapter 1 :verse 80}}
   {:kind "secret" :start {:book 18 :chapter 14}}
   {:kind "secret" :start {:book 46 :chapter 2}}]
  [{:kind "family" :start {:book 1 :chapter 49}}
