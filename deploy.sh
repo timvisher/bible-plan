@@ -16,6 +16,4 @@ fi
 
 rsync -av --delete resources/*.html resources/edn resources/public/js sync
 
-sed -i '' 's|^//@.*$||' sync/js/bible-plan.js
-
 aws s3 --profile p_s3 sync --delete sync/ s3://$bucket/

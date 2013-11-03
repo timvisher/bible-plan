@@ -56,5 +56,5 @@
   ;; Only run after you've loaded the page
   (cemerick.austin.repls/cljs-repl repl-env)
 
-  (js/alert "Salut!")
+  (js/alert "Charnock!")
   )

@@ -499,6 +499,19 @@ goog.base = function(me, opt_methodName, var_args) {
 goog.scope = function(fn) {
   fn.call(goog.global)
 };
+goog.provide("goog.debug.Error");
+goog.debug.Error = function(opt_msg) {
+  if(Error.captureStackTrace) {
+    Error.captureStackTrace(this, goog.debug.Error)
+  }else {
+    this.stack = (new Error).stack || ""
+  }
+  if(opt_msg) {
+    this.message = String(opt_msg)
+  }
+};
+goog.inherits(goog.debug.Error, Error);
+goog.debug.Error.prototype.name = "CustomError";
 goog.provide("goog.string");
 goog.provide("goog.string.Unicode");
 goog.string.Unicode = {NBSP:"\u00a0"};
@@ -939,19 +952,6 @@ goog.string.parseInt = function(value) {
   }
   return NaN
 };
-goog.provide("goog.debug.Error");
-goog.debug.Error = function(opt_msg) {
-  if(Error.captureStackTrace) {
-    Error.captureStackTrace(this, goog.debug.Error)
-  }else {
-    this.stack = (new Error).stack || ""
-  }
-  if(opt_msg) {
-    this.message = String(opt_msg)
-  }
-};
-goog.inherits(goog.debug.Error, Error);
-goog.debug.Error.prototype.name = "CustomError";
 goog.provide("goog.asserts");
 goog.provide("goog.asserts.AssertionError");
 goog.require("goog.debug.Error");
@@ -29809,6 +29809,2195 @@ goog.async.Delay.prototype.doAction_ = function() {
     this.listener_.call(this.handler_)
   }
 };
+goog.provide("bible_plan.plan.mcheyne");
+goog.require("cljs.core");
+bible_plan.plan.mcheyne.mcheyne = cljs.core.PersistentVector.fromArray([cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 15, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 15, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 15, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 15, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 15, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 15, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 15, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 15, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), 
+new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 15, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 15, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 16, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 16, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 16, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 16, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 16, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 16, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 16, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 16, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 16, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 16, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 16, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 16, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 16, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 17, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 17, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 17, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 17, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 29], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 17, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 30], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 17, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 17, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 32], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 17, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 33], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 17, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 17, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 34], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 35], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 36], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 37], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 38], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 39], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 40], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 41], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 42], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 43], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 44], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 45], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 46], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 47], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 1, new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"verse", "verse", 1126001831), 38, new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 48], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 39, new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 49], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 50], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"verse", "verse", 1126001831), 21, new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 29], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", 
+"verse", 1126001831), 22, new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], 
+true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 30], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 
+1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 32], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 33], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 34], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 35], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 36], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 37], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 38], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 39], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 40], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 41], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 18, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 42], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 48, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 48, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 48, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 29], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 48, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 30], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 48, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 48, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 32], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 49, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 33], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 49, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 34], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 49, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 35], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 49, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 36], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 49, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 37], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 49, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 38], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 50, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 39], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 50, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 2, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 40], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 50, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 50, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 51, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 51, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 51, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 51, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 52, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 52, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 52, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 52, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 52, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 53, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 53, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 29], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 53, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 30], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 54, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 20, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 54, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 21, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 54, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 21, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 54, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 21, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 54, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 21, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 54, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 29], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 21, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 55, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 30], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 21, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 55, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 21, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 55, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 32], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 21, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 55, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 33], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 21, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 56, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 3, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 34], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 21, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 56, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 35], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 21, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 56, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 36], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 21, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 57, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 37], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 22, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 38], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 22, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 39], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 22, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 40], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 41], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 22, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 42], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 43], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 22, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 44], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 22, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 45], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 22, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 46], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 47], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 22, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 48], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 49], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 50], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 51], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 52], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 54], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 
+1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 55], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 59, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 56], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 57], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 7, new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 59, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 58], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 59], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 8, new cljs.core.Keyword(null, "book", "book", 1016933979), 
+23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 4, new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 59, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 60], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 61], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 5, new cljs.core.Keyword(null, "book", "book", 1016933979), 
+23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 59, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], 
+true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 62], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 63], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 59, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 64], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 65], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 60, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 66], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 67], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 60, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 68], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 60, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 69], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 60, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 70], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 71], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 17], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 60, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, 
+"kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 72], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 61, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 29], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 73], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 61, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 30], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 74], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 61, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 75], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 76], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 62, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 32], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 77], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 62, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 33], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 1, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 78], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 37, 
+new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 78], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, 
+"kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 62, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 34], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 38, new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 78], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 62, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 35], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 79], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 62, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 4, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 36], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 80], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 63, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 81], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 82], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 29], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 64, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 83], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 84], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 30], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 65, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 85], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 86], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 87], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 32], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 88], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 33], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 89], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 34], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 90], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 35], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 91], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 36], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 92], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 93], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 37], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 94], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 38], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 95], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+96], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 39], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 97], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 98], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 40], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 99], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+101], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 41], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 102], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 42], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 103], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 43], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 104], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 44], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 105], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 45], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 106], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 46], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 107], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 47], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 108], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 109], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 48], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 110], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 111], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 49], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 112], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 113], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 50], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 114], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 115], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 51], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 116], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 52], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 117], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+118], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 53], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 19, new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 1, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 24, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 54], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", 
+"verse", 1126001831), 20, new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 25, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 48, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 
+1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 55], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 29], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 49, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 72, new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 56], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 30], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 73, new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 96, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 57], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 97, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 120, 
+new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 58], true), new cljs.core.Keyword(null, 
+"kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 32], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 121, new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 144, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 59], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 33], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 5, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 34], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 145, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 176, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 60], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 120], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 122], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 61], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 123], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 125], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 62], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 126], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 128], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 63], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 129], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 131], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 64], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 5, new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"verse", "verse", 1126001831), 5, new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+132], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 134], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 
+1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 65], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], 
+true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 6, new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 135], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 136], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 23, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 66], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 137], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 138], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 139], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 140], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 141], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 142], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 143], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 144], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 145], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 146], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+147], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 148], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 149], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+150], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 6, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 40, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), 
+new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 11, new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 12, new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 29], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 30], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 41, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 32], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 33], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 34], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 7, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 35], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], 
+true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 8, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 36], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 45], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 8, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 37], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 8, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 8, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 44, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 38], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 39], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], 
+true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 40], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 41], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 42], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 43], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 44], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 46], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 47], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 48], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 49], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 50], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 29], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], 
+true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 51], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 30], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 24, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 52], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 25, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 32], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 25, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 33], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 45, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 25, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 34], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 25, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 35], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 25, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 36], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 37], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 38], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 39], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 40], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 41], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 42], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 43], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 44], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 45], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 29], true), 
+new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 30], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 46], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 47], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 9, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 48], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 49], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 50], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 51], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 52], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 54], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 46, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 55], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 56], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 57], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 58], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 59], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 60], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 61], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 62], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 63], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 64], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 65], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], 
+true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 66], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 
+1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 67], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, 
+"kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 68], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 69], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 70], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 71], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], 
+true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 72], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 73], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 74], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 47, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 75], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 76], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 48, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 77], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 48, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 29], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 1, new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 78], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 37, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 78], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 48, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 30], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 38, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 78], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 10, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 48, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 79], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 48, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 32], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 80], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 48, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 33], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 81], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 82], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 49, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 34], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 83], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 84], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 49, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+35], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 85], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 49, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 36], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 86], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 49, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 37], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 87], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 88], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 49, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 38], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 89], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 49, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 39], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 90], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 50, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 40], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 91], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 50, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 41], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 92], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 93], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 50, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 42], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 94], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 50, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 43], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 95], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 96], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 51, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 44], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 97], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 98], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 51, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 45], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 99], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 101], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 51, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 46], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 102], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 51, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 47], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 103], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 52, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 26, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 48], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 104], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 52, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 27, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 105], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 52, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 27, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 106], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 52, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 27, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 107], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 11, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 52, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 27, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 108], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 109], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 53, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 27, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 110], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 111], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], 
+true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 53, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 27, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 112], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 
+1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 113], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, 
+"kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 53, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 27, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 114], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 115], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 54, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 27, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 116], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 54, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 27, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 117], true), new cljs.core.Keyword(null, "end", "end", 1014004813), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 118], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 54, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 27, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 1, new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 24, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 54, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 27, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 25, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 48, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 54, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 27, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 49, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 72, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 54, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 28, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 73, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 96, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 55, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 28, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 97, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 120, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 55, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 28, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 28, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 121, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 144, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 
+1752919999), 119], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 55, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 28, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 28, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"verse", "verse", 1126001831), 145, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 176, new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 119], true), new cljs.core.Keyword(null, "kind", 
+"kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 55, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 28, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 120], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 122], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 56, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 28, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 123], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 125], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 56, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 28, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 126], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 128], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 56, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 28, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 129], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 131], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], 
+true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 57, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 28, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 132], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 
+1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 134], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, 
+"kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 28, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 135], true), new cljs.core.Keyword(null, "end", "end", 
+1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 136], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 28, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 137], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 138], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 28, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 139], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 29, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 140], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 141], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 29, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 142], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 29, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 143], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 12, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 30, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 144], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 30, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 145], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), 
+new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 30, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 146], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 147], 
+true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 30, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 148], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 19, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 150], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 30, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 1, new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+1], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 38, new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 30, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 39, new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 58, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 30, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), 
+new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+59, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 30, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 59, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 30, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 59, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 31, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 59, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 32, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 59, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 32, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 60, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 32, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 60, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 32, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 60, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 33, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 60, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 33, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), 
+new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+60, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 33, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 61, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 33, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 61, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 33, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 13, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 29], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 61, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 33, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 62, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 33, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 62, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 34, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 62, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 34, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), 
+new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 11, new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 62, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 34, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 12, new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+62, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 35, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 63, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 35, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 64, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 35, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 65, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 36, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 36, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 42, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 36, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 37, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 37, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 
+1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), 
+new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 5], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 22], true), 
+new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 23], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 6], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 24], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 7], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 25], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 8], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 26], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 9], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 27], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 
+14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 28], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 10], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 29], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 11], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 30], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 12], true), new cljs.core.Keyword(null, "end", "end", 1014004813), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 1, new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 15], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", 
+"book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 31], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), 
+"family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "verse", "verse", 1126001831), 2, new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 13], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 16], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 
+1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 32], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], 
+true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 38, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 14], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 17], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 33], true), 
+new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 39, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 1], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", 
+"chapter", 1752919999), 18], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 34], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), 
+cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"book", "book", 1016933979), 39, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 19], true), new cljs.core.Keyword(null, "kind", "kind", 
+1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 35], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", 
+"start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 39, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 3], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 20], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true), cljs.core.PersistentVector.fromArray([cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 14, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 36], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 66, new cljs.core.Keyword(null, 
+"chapter", "chapter", 1752919999), 22], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "family"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 39, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 4], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, 
+"start", "start", 1123661780), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 43, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 21], true), new cljs.core.Keyword(null, "kind", "kind", 1017196294), "secret"], true)], true)], true);
+goog.provide("cljs.reader");
+goog.require("cljs.core");
+goog.require("goog.string");
+goog.require("goog.string");
+cljs.reader.PushbackReader = {};
+cljs.reader.read_char = function read_char(reader) {
+  if(function() {
+    var and__3941__auto__ = reader;
+    if(and__3941__auto__) {
+      return reader.cljs$reader$PushbackReader$read_char$arity$1
+    }else {
+      return and__3941__auto__
+    }
+  }()) {
+    return reader.cljs$reader$PushbackReader$read_char$arity$1(reader)
+  }else {
+    var x__3502__auto__ = reader == null ? null : reader;
+    return function() {
+      var or__3943__auto__ = cljs.reader.read_char[goog.typeOf(x__3502__auto__)];
+      if(or__3943__auto__) {
+        return or__3943__auto__
+      }else {
+        var or__3943__auto____$1 = cljs.reader.read_char["_"];
+        if(or__3943__auto____$1) {
+          return or__3943__auto____$1
+        }else {
+          throw cljs.core.missing_protocol.call(null, "PushbackReader.read-char", reader);
+        }
+      }
+    }().call(null, reader)
+  }
+};
+cljs.reader.unread = function unread(reader, ch) {
+  if(function() {
+    var and__3941__auto__ = reader;
+    if(and__3941__auto__) {
+      return reader.cljs$reader$PushbackReader$unread$arity$2
+    }else {
+      return and__3941__auto__
+    }
+  }()) {
+    return reader.cljs$reader$PushbackReader$unread$arity$2(reader, ch)
+  }else {
+    var x__3502__auto__ = reader == null ? null : reader;
+    return function() {
+      var or__3943__auto__ = cljs.reader.unread[goog.typeOf(x__3502__auto__)];
+      if(or__3943__auto__) {
+        return or__3943__auto__
+      }else {
+        var or__3943__auto____$1 = cljs.reader.unread["_"];
+        if(or__3943__auto____$1) {
+          return or__3943__auto____$1
+        }else {
+          throw cljs.core.missing_protocol.call(null, "PushbackReader.unread", reader);
+        }
+      }
+    }().call(null, reader, ch)
+  }
+};
+goog.provide("cljs.reader.StringPushbackReader");
+cljs.reader.StringPushbackReader = function(s, buffer, idx) {
+  this.s = s;
+  this.buffer = buffer;
+  this.idx = idx
+};
+cljs.reader.StringPushbackReader.cljs$lang$type = true;
+cljs.reader.StringPushbackReader.cljs$lang$ctorStr = "cljs.reader/StringPushbackReader";
+cljs.reader.StringPushbackReader.cljs$lang$ctorPrWriter = function(this__3443__auto__, writer__3444__auto__, opt__3445__auto__) {
+  return cljs.core._write.call(null, writer__3444__auto__, "cljs.reader/StringPushbackReader")
+};
+cljs.reader.StringPushbackReader.prototype.cljs$reader$PushbackReader$ = true;
+cljs.reader.StringPushbackReader.prototype.cljs$reader$PushbackReader$read_char$arity$1 = function(reader) {
+  var self__ = this;
+  if(self__.buffer.length === 0) {
+    self__.idx = self__.idx + 1;
+    return self__.s[self__.idx]
+  }else {
+    return self__.buffer.pop()
+  }
+};
+cljs.reader.StringPushbackReader.prototype.cljs$reader$PushbackReader$unread$arity$2 = function(reader, ch) {
+  var self__ = this;
+  return self__.buffer.push(ch)
+};
+cljs.reader.__GT_StringPushbackReader = function __GT_StringPushbackReader(s, buffer, idx) {
+  return new cljs.reader.StringPushbackReader(s, buffer, idx)
+};
+cljs.reader.push_back_reader = function push_back_reader(s) {
+  return new cljs.reader.StringPushbackReader(s, [], -1)
+};
+cljs.reader.whitespace_QMARK_ = function whitespace_QMARK_(ch) {
+  var or__3943__auto__ = goog.string.isBreakingWhitespace(ch);
+  if(cljs.core.truth_(or__3943__auto__)) {
+    return or__3943__auto__
+  }else {
+    return"," === ch
+  }
+};
+cljs.reader.numeric_QMARK_ = function numeric_QMARK_(ch) {
+  return goog.string.isNumeric(ch)
+};
+cljs.reader.comment_prefix_QMARK_ = function comment_prefix_QMARK_(ch) {
+  return";" === ch
+};
+cljs.reader.number_literal_QMARK_ = function number_literal_QMARK_(reader, initch) {
+  var or__3943__auto__ = cljs.reader.numeric_QMARK_.call(null, initch);
+  if(or__3943__auto__) {
+    return or__3943__auto__
+  }else {
+    var and__3941__auto__ = function() {
+      var or__3943__auto____$1 = "+" === initch;
+      if(or__3943__auto____$1) {
+        return or__3943__auto____$1
+      }else {
+        return"-" === initch
+      }
+    }();
+    if(cljs.core.truth_(and__3941__auto__)) {
+      return cljs.reader.numeric_QMARK_.call(null, function() {
+        var next_ch = cljs.reader.read_char.call(null, reader);
+        cljs.reader.unread.call(null, reader, next_ch);
+        return next_ch
+      }())
+    }else {
+      return and__3941__auto__
+    }
+  }
+};
+cljs.reader.reader_error = function() {
+  var reader_error__delegate = function(rdr, msg) {
+    throw new Error(cljs.core.apply.call(null, cljs.core.str, msg));
+  };
+  var reader_error = function(rdr, var_args) {
+    var msg = null;
+    if(arguments.length > 1) {
+      msg = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1), 0)
+    }
+    return reader_error__delegate.call(this, rdr, msg)
+  };
+  reader_error.cljs$lang$maxFixedArity = 1;
+  reader_error.cljs$lang$applyTo = function(arglist__8918) {
+    var rdr = cljs.core.first(arglist__8918);
+    var msg = cljs.core.rest(arglist__8918);
+    return reader_error__delegate(rdr, msg)
+  };
+  reader_error.cljs$core$IFn$_invoke$arity$variadic = reader_error__delegate;
+  return reader_error
+}();
+cljs.reader.macro_terminating_QMARK_ = function macro_terminating_QMARK_(ch) {
+  var and__3941__auto__ = !(ch === "#");
+  if(and__3941__auto__) {
+    var and__3941__auto____$1 = !(ch === "'");
+    if(and__3941__auto____$1) {
+      var and__3941__auto____$2 = !(ch === ":");
+      if(and__3941__auto____$2) {
+        return cljs.reader.macros.call(null, ch)
+      }else {
+        return and__3941__auto____$2
+      }
+    }else {
+      return and__3941__auto____$1
+    }
+  }else {
+    return and__3941__auto__
+  }
+};
+cljs.reader.read_token = function read_token(rdr, initch) {
+  var sb = new goog.string.StringBuffer(initch);
+  var ch = cljs.reader.read_char.call(null, rdr);
+  while(true) {
+    if(function() {
+      var or__3943__auto__ = ch == null;
+      if(or__3943__auto__) {
+        return or__3943__auto__
+      }else {
+        var or__3943__auto____$1 = cljs.reader.whitespace_QMARK_.call(null, ch);
+        if(or__3943__auto____$1) {
+          return or__3943__auto____$1
+        }else {
+          return cljs.reader.macro_terminating_QMARK_.call(null, ch)
+        }
+      }
+    }()) {
+      cljs.reader.unread.call(null, rdr, ch);
+      return sb.toString()
+    }else {
+      var G__8919 = function() {
+        sb.append(ch);
+        return sb
+      }();
+      var G__8920 = cljs.reader.read_char.call(null, rdr);
+      sb = G__8919;
+      ch = G__8920;
+      continue
+    }
+    break
+  }
+};
+cljs.reader.skip_line = function skip_line(reader, _) {
+  while(true) {
+    var ch = cljs.reader.read_char.call(null, reader);
+    if(function() {
+      var or__3943__auto__ = ch === "n";
+      if(or__3943__auto__) {
+        return or__3943__auto__
+      }else {
+        var or__3943__auto____$1 = ch === "r";
+        if(or__3943__auto____$1) {
+          return or__3943__auto____$1
+        }else {
+          return ch == null
+        }
+      }
+    }()) {
+      return reader
+    }else {
+      continue
+    }
+    break
+  }
+};
+cljs.reader.int_pattern = cljs.core.re_pattern.call(null, "([-+]?)(?:(0)|([1-9][0-9]*)|0[xX]([0-9A-Fa-f]+)|0([0-7]+)|([1-9][0-9]?)[rR]([0-9A-Za-z]+)|0[0-9]+)(N)?");
+cljs.reader.ratio_pattern = cljs.core.re_pattern.call(null, "([-+]?[0-9]+)/([0-9]+)");
+cljs.reader.float_pattern = cljs.core.re_pattern.call(null, "([-+]?[0-9]+(\\.[0-9]*)?([eE][-+]?[0-9]+)?)(M)?");
+cljs.reader.symbol_pattern = cljs.core.re_pattern.call(null, "[:]?([^0-9/].*/)?([^0-9/][^/]*)");
+cljs.reader.re_find_STAR_ = function re_find_STAR_(re, s) {
+  var matches = re.exec(s);
+  if(matches == null) {
+    return null
+  }else {
+    if(matches.length === 1) {
+      return matches[0]
+    }else {
+      return matches
+    }
+  }
+};
+cljs.reader.match_int = function match_int(s) {
+  var groups = cljs.reader.re_find_STAR_.call(null, cljs.reader.int_pattern, s);
+  var group3 = groups[2];
+  if(!function() {
+    var or__3943__auto__ = group3 == null;
+    if(or__3943__auto__) {
+      return or__3943__auto__
+    }else {
+      return group3.length < 1
+    }
+  }()) {
+    return 0
+  }else {
+    var negate = "-" === groups[1] ? -1 : 1;
+    var a = cljs.core.truth_(groups[3]) ? [groups[3], 10] : cljs.core.truth_(groups[4]) ? [groups[4], 16] : cljs.core.truth_(groups[5]) ? [groups[5], 8] : cljs.core.truth_(groups[7]) ? [groups[7], parseInt(groups[7])] : new cljs.core.Keyword(null, "default", "default", 2558708147) ? [null, null] : null;
+    var n = a[0];
+    var radix = a[1];
+    if(n == null) {
+      return null
+    }else {
+      return negate * parseInt(n, radix)
+    }
+  }
+};
+cljs.reader.match_ratio = function match_ratio(s) {
+  var groups = cljs.reader.re_find_STAR_.call(null, cljs.reader.ratio_pattern, s);
+  var numinator = groups[1];
+  var denominator = groups[2];
+  return parseInt(numinator) / parseInt(denominator)
+};
+cljs.reader.match_float = function match_float(s) {
+  return parseFloat(s)
+};
+cljs.reader.re_matches_STAR_ = function re_matches_STAR_(re, s) {
+  var matches = re.exec(s);
+  if(function() {
+    var and__3941__auto__ = !(matches == null);
+    if(and__3941__auto__) {
+      return matches[0] === s
+    }else {
+      return and__3941__auto__
+    }
+  }()) {
+    if(matches.length === 1) {
+      return matches[0]
+    }else {
+      return matches
+    }
+  }else {
+    return null
+  }
+};
+cljs.reader.match_number = function match_number(s) {
+  if(cljs.core.truth_(cljs.reader.re_matches_STAR_.call(null, cljs.reader.int_pattern, s))) {
+    return cljs.reader.match_int.call(null, s)
+  }else {
+    if(cljs.core.truth_(cljs.reader.re_matches_STAR_.call(null, cljs.reader.ratio_pattern, s))) {
+      return cljs.reader.match_ratio.call(null, s)
+    }else {
+      if(cljs.core.truth_(cljs.reader.re_matches_STAR_.call(null, cljs.reader.float_pattern, s))) {
+        return cljs.reader.match_float.call(null, s)
+      }else {
+        return null
+      }
+    }
+  }
+};
+cljs.reader.escape_char_map = function escape_char_map(c) {
+  if(c === "t") {
+    return"\t"
+  }else {
+    if(c === "r") {
+      return"\r"
+    }else {
+      if(c === "n") {
+        return"\n"
+      }else {
+        if(c === "\\") {
+          return"\\"
+        }else {
+          if(c === '"') {
+            return'"'
+          }else {
+            if(c === "b") {
+              return"\b"
+            }else {
+              if(c === "f") {
+                return"\f"
+              }else {
+                if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
+                  return null
+                }else {
+                  return null
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+};
+cljs.reader.read_2_chars = function read_2_chars(reader) {
+  return(new goog.string.StringBuffer(cljs.reader.read_char.call(null, reader), cljs.reader.read_char.call(null, reader))).toString()
+};
+cljs.reader.read_4_chars = function read_4_chars(reader) {
+  return(new goog.string.StringBuffer(cljs.reader.read_char.call(null, reader), cljs.reader.read_char.call(null, reader), cljs.reader.read_char.call(null, reader), cljs.reader.read_char.call(null, reader))).toString()
+};
+cljs.reader.unicode_2_pattern = cljs.core.re_pattern.call(null, "[0-9A-Fa-f]{2}");
+cljs.reader.unicode_4_pattern = cljs.core.re_pattern.call(null, "[0-9A-Fa-f]{4}");
+cljs.reader.validate_unicode_escape = function validate_unicode_escape(unicode_pattern, reader, escape_char, unicode_str) {
+  if(cljs.core.truth_(cljs.core.re_matches.call(null, unicode_pattern, unicode_str))) {
+    return unicode_str
+  }else {
+    return cljs.reader.reader_error.call(null, reader, "Unexpected unicode escape \\", escape_char, unicode_str)
+  }
+};
+cljs.reader.make_unicode_char = function make_unicode_char(code_str) {
+  var code = parseInt(code_str, 16);
+  return String.fromCharCode(code)
+};
+cljs.reader.escape_char = function escape_char(buffer, reader) {
+  var ch = cljs.reader.read_char.call(null, reader);
+  var mapresult = cljs.reader.escape_char_map.call(null, ch);
+  if(cljs.core.truth_(mapresult)) {
+    return mapresult
+  }else {
+    if(ch === "x") {
+      return cljs.reader.make_unicode_char.call(null, cljs.reader.validate_unicode_escape.call(null, cljs.reader.unicode_2_pattern, reader, ch, cljs.reader.read_2_chars.call(null, reader)))
+    }else {
+      if(ch === "u") {
+        return cljs.reader.make_unicode_char.call(null, cljs.reader.validate_unicode_escape.call(null, cljs.reader.unicode_4_pattern, reader, ch, cljs.reader.read_4_chars.call(null, reader)))
+      }else {
+        if(cljs.reader.numeric_QMARK_.call(null, ch)) {
+          return String.fromCharCode(ch)
+        }else {
+          if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
+            return cljs.reader.reader_error.call(null, reader, "Unexpected unicode escape \\", ch)
+          }else {
+            return null
+          }
+        }
+      }
+    }
+  }
+};
+cljs.reader.read_past = function read_past(pred, rdr) {
+  var ch = cljs.reader.read_char.call(null, rdr);
+  while(true) {
+    if(cljs.core.truth_(pred.call(null, ch))) {
+      var G__8921 = cljs.reader.read_char.call(null, rdr);
+      ch = G__8921;
+      continue
+    }else {
+      return ch
+    }
+    break
+  }
+};
+cljs.reader.read_delimited_list = function read_delimited_list(delim, rdr, recursive_QMARK_) {
+  var a = cljs.core.transient$.call(null, cljs.core.PersistentVector.EMPTY);
+  while(true) {
+    var ch = cljs.reader.read_past.call(null, cljs.reader.whitespace_QMARK_, rdr);
+    if(cljs.core.truth_(ch)) {
+    }else {
+      cljs.reader.reader_error.call(null, rdr, "EOF while reading")
+    }
+    if(delim === ch) {
+      return cljs.core.persistent_BANG_.call(null, a)
+    }else {
+      var temp__4090__auto__ = cljs.reader.macros.call(null, ch);
+      if(cljs.core.truth_(temp__4090__auto__)) {
+        var macrofn = temp__4090__auto__;
+        var mret = macrofn.call(null, rdr, ch);
+        var G__8922 = mret === rdr ? a : cljs.core.conj_BANG_.call(null, a, mret);
+        a = G__8922;
+        continue
+      }else {
+        cljs.reader.unread.call(null, rdr, ch);
+        var o = cljs.reader.read.call(null, rdr, true, null, recursive_QMARK_);
+        var G__8923 = o === rdr ? a : cljs.core.conj_BANG_.call(null, a, o);
+        a = G__8923;
+        continue
+      }
+    }
+    break
+  }
+};
+cljs.reader.not_implemented = function not_implemented(rdr, ch) {
+  return cljs.reader.reader_error.call(null, rdr, "Reader for ", ch, " not implemented yet")
+};
+cljs.reader.read_dispatch = function read_dispatch(rdr, _) {
+  var ch = cljs.reader.read_char.call(null, rdr);
+  var dm = cljs.reader.dispatch_macros.call(null, ch);
+  if(cljs.core.truth_(dm)) {
+    return dm.call(null, rdr, _)
+  }else {
+    var temp__4090__auto__ = cljs.reader.maybe_read_tagged_type.call(null, rdr, ch);
+    if(cljs.core.truth_(temp__4090__auto__)) {
+      var obj = temp__4090__auto__;
+      return obj
+    }else {
+      return cljs.reader.reader_error.call(null, rdr, "No dispatch macro for ", ch)
+    }
+  }
+};
+cljs.reader.read_unmatched_delimiter = function read_unmatched_delimiter(rdr, ch) {
+  return cljs.reader.reader_error.call(null, rdr, "Unmached delimiter ", ch)
+};
+cljs.reader.read_list = function read_list(rdr, _) {
+  return cljs.core.apply.call(null, cljs.core.list, cljs.reader.read_delimited_list.call(null, ")", rdr, true))
+};
+cljs.reader.read_comment = cljs.reader.skip_line;
+cljs.reader.read_vector = function read_vector(rdr, _) {
+  return cljs.reader.read_delimited_list.call(null, "]", rdr, true)
+};
+cljs.reader.read_map = function read_map(rdr, _) {
+  var l = cljs.reader.read_delimited_list.call(null, "}", rdr, true);
+  if(cljs.core.odd_QMARK_.call(null, cljs.core.count.call(null, l))) {
+    cljs.reader.reader_error.call(null, rdr, "Map literal must contain an even number of forms")
+  }else {
+  }
+  return cljs.core.apply.call(null, cljs.core.hash_map, l)
+};
+cljs.reader.read_number = function read_number(reader, initch) {
+  var buffer = new goog.string.StringBuffer(initch);
+  var ch = cljs.reader.read_char.call(null, reader);
+  while(true) {
+    if(cljs.core.truth_(function() {
+      var or__3943__auto__ = ch == null;
+      if(or__3943__auto__) {
+        return or__3943__auto__
+      }else {
+        var or__3943__auto____$1 = cljs.reader.whitespace_QMARK_.call(null, ch);
+        if(or__3943__auto____$1) {
+          return or__3943__auto____$1
+        }else {
+          return cljs.reader.macros.call(null, ch)
+        }
+      }
+    }())) {
+      cljs.reader.unread.call(null, reader, ch);
+      var s = buffer.toString();
+      var or__3943__auto__ = cljs.reader.match_number.call(null, s);
+      if(cljs.core.truth_(or__3943__auto__)) {
+        return or__3943__auto__
+      }else {
+        return cljs.reader.reader_error.call(null, reader, "Invalid number format [", s, "]")
+      }
+    }else {
+      var G__8924 = function() {
+        buffer.append(ch);
+        return buffer
+      }();
+      var G__8925 = cljs.reader.read_char.call(null, reader);
+      buffer = G__8924;
+      ch = G__8925;
+      continue
+    }
+    break
+  }
+};
+cljs.reader.read_string_STAR_ = function read_string_STAR_(reader, _) {
+  var buffer = new goog.string.StringBuffer;
+  var ch = cljs.reader.read_char.call(null, reader);
+  while(true) {
+    if(ch == null) {
+      return cljs.reader.reader_error.call(null, reader, "EOF while reading")
+    }else {
+      if("\\" === ch) {
+        var G__8926 = function() {
+          buffer.append(cljs.reader.escape_char.call(null, buffer, reader));
+          return buffer
+        }();
+        var G__8927 = cljs.reader.read_char.call(null, reader);
+        buffer = G__8926;
+        ch = G__8927;
+        continue
+      }else {
+        if('"' === ch) {
+          return buffer.toString()
+        }else {
+          if(new cljs.core.Keyword(null, "default", "default", 2558708147)) {
+            var G__8928 = function() {
+              buffer.append(ch);
+              return buffer
+            }();
+            var G__8929 = cljs.reader.read_char.call(null, reader);
+            buffer = G__8928;
+            ch = G__8929;
+            continue
+          }else {
+            return null
+          }
+        }
+      }
+    }
+    break
+  }
+};
+cljs.reader.special_symbols = function special_symbols(t, not_found) {
+  if(t === "nil") {
+    return null
+  }else {
+    if(t === "true") {
+      return true
+    }else {
+      if(t === "false") {
+        return false
+      }else {
+        if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
+          return not_found
+        }else {
+          return null
+        }
+      }
+    }
+  }
+};
+cljs.reader.read_symbol = function read_symbol(reader, initch) {
+  var token = cljs.reader.read_token.call(null, reader, initch);
+  if(cljs.core.truth_(goog.string.contains(token, "/"))) {
+    return cljs.core.symbol.call(null, cljs.core.subs.call(null, token, 0, token.indexOf("/")), cljs.core.subs.call(null, token, token.indexOf("/") + 1, token.length))
+  }else {
+    return cljs.reader.special_symbols.call(null, token, cljs.core.symbol.call(null, token))
+  }
+};
+cljs.reader.read_keyword = function read_keyword(reader, initch) {
+  var token = cljs.reader.read_token.call(null, reader, cljs.reader.read_char.call(null, reader));
+  var a = cljs.reader.re_matches_STAR_.call(null, cljs.reader.symbol_pattern, token);
+  var token__$1 = a[0];
+  var ns = a[1];
+  var name = a[2];
+  if(cljs.core.truth_(function() {
+    var or__3943__auto__ = function() {
+      var and__3941__auto__ = !(void 0 === ns);
+      if(and__3941__auto__) {
+        return ns.substring(ns.length - 2, ns.length) === ":/"
+      }else {
+        return and__3941__auto__
+      }
+    }();
+    if(cljs.core.truth_(or__3943__auto__)) {
+      return or__3943__auto__
+    }else {
+      var or__3943__auto____$1 = name[name.length - 1] === ":";
+      if(or__3943__auto____$1) {
+        return or__3943__auto____$1
+      }else {
+        return!(token__$1.indexOf("::", 1) === -1)
+      }
+    }
+  }())) {
+    return cljs.reader.reader_error.call(null, reader, "Invalid token: ", token__$1)
+  }else {
+    if(function() {
+      var and__3941__auto__ = !(ns == null);
+      if(and__3941__auto__) {
+        return ns.length > 0
+      }else {
+        return and__3941__auto__
+      }
+    }()) {
+      return cljs.core.keyword.call(null, ns.substring(0, ns.indexOf("/")), name)
+    }else {
+      return cljs.core.keyword.call(null, token__$1)
+    }
+  }
+};
+cljs.reader.desugar_meta = function desugar_meta(f) {
+  if(f instanceof cljs.core.Symbol) {
+    return cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "tag", "tag", 1014018828), f], true)
+  }else {
+    if(typeof f === "string") {
+      return cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "tag", "tag", 1014018828), f], true)
+    }else {
+      if(f instanceof cljs.core.Keyword) {
+        return cljs.core.PersistentArrayMap.fromArray([f, true], true)
+      }else {
+        if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
+          return f
+        }else {
+          return null
+        }
+      }
+    }
+  }
+};
+cljs.reader.wrapping_reader = function wrapping_reader(sym) {
+  return function(rdr, _) {
+    return cljs.core.list.call(null, sym, cljs.reader.read.call(null, rdr, true, null, true))
+  }
+};
+cljs.reader.throwing_reader = function throwing_reader(msg) {
+  return function(rdr, _) {
+    return cljs.reader.reader_error.call(null, rdr, msg)
+  }
+};
+cljs.reader.read_meta = function read_meta(rdr, _) {
+  var m = cljs.reader.desugar_meta.call(null, cljs.reader.read.call(null, rdr, true, null, true));
+  if(cljs.core.map_QMARK_.call(null, m)) {
+  }else {
+    cljs.reader.reader_error.call(null, rdr, "Metadata must be Symbol,Keyword,String or Map")
+  }
+  var o = cljs.reader.read.call(null, rdr, true, null, true);
+  if(function() {
+    var G__8931 = o;
+    if(G__8931) {
+      if(function() {
+        var or__3943__auto__ = G__8931.cljs$lang$protocol_mask$partition0$ & 262144;
+        if(or__3943__auto__) {
+          return or__3943__auto__
+        }else {
+          return G__8931.cljs$core$IWithMeta$
+        }
+      }()) {
+        return true
+      }else {
+        if(!G__8931.cljs$lang$protocol_mask$partition0$) {
+          return cljs.core.type_satisfies_.call(null, cljs.core.IWithMeta, G__8931)
+        }else {
+          return false
+        }
+      }
+    }else {
+      return cljs.core.type_satisfies_.call(null, cljs.core.IWithMeta, G__8931)
+    }
+  }()) {
+    return cljs.core.with_meta.call(null, o, cljs.core.merge.call(null, cljs.core.meta.call(null, o), m))
+  }else {
+    return cljs.reader.reader_error.call(null, rdr, "Metadata can only be applied to IWithMetas")
+  }
+};
+cljs.reader.read_set = function read_set(rdr, _) {
+  return cljs.core.set.call(null, cljs.reader.read_delimited_list.call(null, "}", rdr, true))
+};
+cljs.reader.read_regex = function read_regex(rdr, ch) {
+  return cljs.core.re_pattern.call(null, cljs.reader.read_string_STAR_.call(null, rdr, ch))
+};
+cljs.reader.read_discard = function read_discard(rdr, _) {
+  cljs.reader.read.call(null, rdr, true, null, true);
+  return rdr
+};
+cljs.reader.macros = function macros(c) {
+  if(c === '"') {
+    return cljs.reader.read_string_STAR_
+  }else {
+    if(c === ":") {
+      return cljs.reader.read_keyword
+    }else {
+      if(c === ";") {
+        return cljs.reader.not_implemented
+      }else {
+        if(c === "'") {
+          return cljs.reader.wrapping_reader.call(null, new cljs.core.Symbol(null, "quote", "quote", -1532577739, null))
+        }else {
+          if(c === "@") {
+            return cljs.reader.wrapping_reader.call(null, new cljs.core.Symbol(null, "deref", "deref", -1545057749, null))
+          }else {
+            if(c === "^") {
+              return cljs.reader.read_meta
+            }else {
+              if(c === "`") {
+                return cljs.reader.not_implemented
+              }else {
+                if(c === "~") {
+                  return cljs.reader.not_implemented
+                }else {
+                  if(c === "(") {
+                    return cljs.reader.read_list
+                  }else {
+                    if(c === ")") {
+                      return cljs.reader.read_unmatched_delimiter
+                    }else {
+                      if(c === "[") {
+                        return cljs.reader.read_vector
+                      }else {
+                        if(c === "]") {
+                          return cljs.reader.read_unmatched_delimiter
+                        }else {
+                          if(c === "{") {
+                            return cljs.reader.read_map
+                          }else {
+                            if(c === "}") {
+                              return cljs.reader.read_unmatched_delimiter
+                            }else {
+                              if(c === "\\") {
+                                return cljs.reader.read_char
+                              }else {
+                                if(c === "#") {
+                                  return cljs.reader.read_dispatch
+                                }else {
+                                  if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
+                                    return null
+                                  }else {
+                                    return null
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+};
+cljs.reader.dispatch_macros = function dispatch_macros(s) {
+  if(s === "{") {
+    return cljs.reader.read_set
+  }else {
+    if(s === "\x3c") {
+      return cljs.reader.throwing_reader.call(null, "Unreadable form")
+    }else {
+      if(s === '"') {
+        return cljs.reader.read_regex
+      }else {
+        if(s === "!") {
+          return cljs.reader.read_comment
+        }else {
+          if(s === "_") {
+            return cljs.reader.read_discard
+          }else {
+            if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
+              return null
+            }else {
+              return null
+            }
+          }
+        }
+      }
+    }
+  }
+};
+cljs.reader.read = function read(reader, eof_is_error, sentinel, is_recursive) {
+  while(true) {
+    var ch = cljs.reader.read_char.call(null, reader);
+    if(ch == null) {
+      if(cljs.core.truth_(eof_is_error)) {
+        return cljs.reader.reader_error.call(null, reader, "EOF while reading")
+      }else {
+        return sentinel
+      }
+    }else {
+      if(cljs.reader.whitespace_QMARK_.call(null, ch)) {
+        var G__8932 = reader;
+        var G__8933 = eof_is_error;
+        var G__8934 = sentinel;
+        var G__8935 = is_recursive;
+        reader = G__8932;
+        eof_is_error = G__8933;
+        sentinel = G__8934;
+        is_recursive = G__8935;
+        continue
+      }else {
+        if(cljs.reader.comment_prefix_QMARK_.call(null, ch)) {
+          var G__8936 = cljs.reader.read_comment.call(null, reader, ch);
+          var G__8937 = eof_is_error;
+          var G__8938 = sentinel;
+          var G__8939 = is_recursive;
+          reader = G__8936;
+          eof_is_error = G__8937;
+          sentinel = G__8938;
+          is_recursive = G__8939;
+          continue
+        }else {
+          if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
+            var f = cljs.reader.macros.call(null, ch);
+            var res = cljs.core.truth_(f) ? f.call(null, reader, ch) : cljs.reader.number_literal_QMARK_.call(null, reader, ch) ? cljs.reader.read_number.call(null, reader, ch) : new cljs.core.Keyword(null, "else", "else", 1017020587) ? cljs.reader.read_symbol.call(null, reader, ch) : null;
+            if(res === reader) {
+              var G__8940 = reader;
+              var G__8941 = eof_is_error;
+              var G__8942 = sentinel;
+              var G__8943 = is_recursive;
+              reader = G__8940;
+              eof_is_error = G__8941;
+              sentinel = G__8942;
+              is_recursive = G__8943;
+              continue
+            }else {
+              return res
+            }
+          }else {
+            return null
+          }
+        }
+      }
+    }
+    break
+  }
+};
+cljs.reader.read_string = function read_string(s) {
+  var r = cljs.reader.push_back_reader.call(null, s);
+  return cljs.reader.read.call(null, r, true, null, false)
+};
+cljs.reader.zero_fill_right_and_truncate = function zero_fill_right_and_truncate(s, width) {
+  if(cljs.core._EQ_.call(null, width, cljs.core.count.call(null, s))) {
+    return s
+  }else {
+    if(width < cljs.core.count.call(null, s)) {
+      return cljs.core.subs.call(null, s, 0, width)
+    }else {
+      if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
+        var b = new goog.string.StringBuffer(s);
+        while(true) {
+          if(b.getLength() < width) {
+            var G__8944 = b.append("0");
+            b = G__8944;
+            continue
+          }else {
+            return b.toString()
+          }
+          break
+        }
+      }else {
+        return null
+      }
+    }
+  }
+};
+cljs.reader.divisible_QMARK_ = function divisible_QMARK_(num, div) {
+  return cljs.core.mod.call(null, num, div) === 0
+};
+cljs.reader.indivisible_QMARK_ = function indivisible_QMARK_(num, div) {
+  return cljs.core.not.call(null, cljs.reader.divisible_QMARK_.call(null, num, div))
+};
+cljs.reader.leap_year_QMARK_ = function leap_year_QMARK_(year) {
+  var and__3941__auto__ = cljs.reader.divisible_QMARK_.call(null, year, 4);
+  if(cljs.core.truth_(and__3941__auto__)) {
+    var or__3943__auto__ = cljs.reader.indivisible_QMARK_.call(null, year, 100);
+    if(cljs.core.truth_(or__3943__auto__)) {
+      return or__3943__auto__
+    }else {
+      return cljs.reader.divisible_QMARK_.call(null, year, 400)
+    }
+  }else {
+    return and__3941__auto__
+  }
+};
+cljs.reader.days_in_month = function() {
+  var dim_norm = cljs.core.PersistentVector.fromArray([null, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], true);
+  var dim_leap = cljs.core.PersistentVector.fromArray([null, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], true);
+  return function(month, leap_year_QMARK_) {
+    return cljs.core.get.call(null, cljs.core.truth_(leap_year_QMARK_) ? dim_leap : dim_norm, month)
+  }
+}();
+cljs.reader.timestamp_regex = /(\d\d\d\d)(?:-(\d\d)(?:-(\d\d)(?:[T](\d\d)(?::(\d\d)(?::(\d\d)(?:[.](\d+))?)?)?)?)?)?(?:[Z]|([-+])(\d\d):(\d\d))?/;
+cljs.reader.parse_int = function parse_int(s) {
+  var n = parseInt(s);
+  if(cljs.core.not.call(null, isNaN(n))) {
+    return n
+  }else {
+    return null
+  }
+};
+cljs.reader.check = function check(low, n, high, msg) {
+  if(function() {
+    var and__3941__auto__ = low <= n;
+    if(and__3941__auto__) {
+      return n <= high
+    }else {
+      return and__3941__auto__
+    }
+  }()) {
+  }else {
+    cljs.reader.reader_error.call(null, null, [cljs.core.str(msg), cljs.core.str(" Failed:  "), cljs.core.str(low), cljs.core.str("\x3c\x3d"), cljs.core.str(n), cljs.core.str("\x3c\x3d"), cljs.core.str(high)].join(""))
+  }
+  return n
+};
+cljs.reader.parse_and_validate_timestamp = function parse_and_validate_timestamp(s) {
+  var vec__8946 = cljs.core.re_matches.call(null, cljs.reader.timestamp_regex, s);
+  var _ = cljs.core.nth.call(null, vec__8946, 0, null);
+  var years = cljs.core.nth.call(null, vec__8946, 1, null);
+  var months = cljs.core.nth.call(null, vec__8946, 2, null);
+  var days = cljs.core.nth.call(null, vec__8946, 3, null);
+  var hours = cljs.core.nth.call(null, vec__8946, 4, null);
+  var minutes = cljs.core.nth.call(null, vec__8946, 5, null);
+  var seconds = cljs.core.nth.call(null, vec__8946, 6, null);
+  var fraction = cljs.core.nth.call(null, vec__8946, 7, null);
+  var offset_sign = cljs.core.nth.call(null, vec__8946, 8, null);
+  var offset_hours = cljs.core.nth.call(null, vec__8946, 9, null);
+  var offset_minutes = cljs.core.nth.call(null, vec__8946, 10, null);
+  var v = vec__8946;
+  if(cljs.core.not.call(null, v)) {
+    return cljs.reader.reader_error.call(null, null, [cljs.core.str("Unrecognized date/time syntax: "), cljs.core.str(s)].join(""))
+  }else {
+    var years__$1 = cljs.reader.parse_int.call(null, years);
+    var months__$1 = function() {
+      var or__3943__auto__ = cljs.reader.parse_int.call(null, months);
+      if(cljs.core.truth_(or__3943__auto__)) {
+        return or__3943__auto__
+      }else {
+        return 1
+      }
+    }();
+    var days__$1 = function() {
+      var or__3943__auto__ = cljs.reader.parse_int.call(null, days);
+      if(cljs.core.truth_(or__3943__auto__)) {
+        return or__3943__auto__
+      }else {
+        return 1
+      }
+    }();
+    var hours__$1 = function() {
+      var or__3943__auto__ = cljs.reader.parse_int.call(null, hours);
+      if(cljs.core.truth_(or__3943__auto__)) {
+        return or__3943__auto__
+      }else {
+        return 0
+      }
+    }();
+    var minutes__$1 = function() {
+      var or__3943__auto__ = cljs.reader.parse_int.call(null, minutes);
+      if(cljs.core.truth_(or__3943__auto__)) {
+        return or__3943__auto__
+      }else {
+        return 0
+      }
+    }();
+    var seconds__$1 = function() {
+      var or__3943__auto__ = cljs.reader.parse_int.call(null, seconds);
+      if(cljs.core.truth_(or__3943__auto__)) {
+        return or__3943__auto__
+      }else {
+        return 0
+      }
+    }();
+    var fraction__$1 = function() {
+      var or__3943__auto__ = cljs.reader.parse_int.call(null, cljs.reader.zero_fill_right_and_truncate.call(null, fraction, 3));
+      if(cljs.core.truth_(or__3943__auto__)) {
+        return or__3943__auto__
+      }else {
+        return 0
+      }
+    }();
+    var offset_sign__$1 = cljs.core._EQ_.call(null, offset_sign, "-") ? -1 : 1;
+    var offset_hours__$1 = function() {
+      var or__3943__auto__ = cljs.reader.parse_int.call(null, offset_hours);
+      if(cljs.core.truth_(or__3943__auto__)) {
+        return or__3943__auto__
+      }else {
+        return 0
+      }
+    }();
+    var offset_minutes__$1 = function() {
+      var or__3943__auto__ = cljs.reader.parse_int.call(null, offset_minutes);
+      if(cljs.core.truth_(or__3943__auto__)) {
+        return or__3943__auto__
+      }else {
+        return 0
+      }
+    }();
+    var offset = offset_sign__$1 * (offset_hours__$1 * 60 + offset_minutes__$1);
+    return cljs.core.PersistentVector.fromArray([years__$1, cljs.reader.check.call(null, 1, months__$1, 12, "timestamp month field must be in range 1..12"), cljs.reader.check.call(null, 1, days__$1, cljs.reader.days_in_month.call(null, months__$1, cljs.reader.leap_year_QMARK_.call(null, years__$1)), "timestamp day field must be in range 1..last day in month"), cljs.reader.check.call(null, 0, hours__$1, 23, "timestamp hour field must be in range 0..23"), cljs.reader.check.call(null, 0, minutes__$1, 
+    59, "timestamp minute field must be in range 0..59"), cljs.reader.check.call(null, 0, seconds__$1, cljs.core._EQ_.call(null, minutes__$1, 59) ? 60 : 59, "timestamp second field must be in range 0..60"), cljs.reader.check.call(null, 0, fraction__$1, 999, "timestamp millisecond field must be in range 0..999"), offset], true)
+  }
+};
+cljs.reader.parse_timestamp = function parse_timestamp(ts) {
+  var temp__4090__auto__ = cljs.reader.parse_and_validate_timestamp.call(null, ts);
+  if(cljs.core.truth_(temp__4090__auto__)) {
+    var vec__8948 = temp__4090__auto__;
+    var years = cljs.core.nth.call(null, vec__8948, 0, null);
+    var months = cljs.core.nth.call(null, vec__8948, 1, null);
+    var days = cljs.core.nth.call(null, vec__8948, 2, null);
+    var hours = cljs.core.nth.call(null, vec__8948, 3, null);
+    var minutes = cljs.core.nth.call(null, vec__8948, 4, null);
+    var seconds = cljs.core.nth.call(null, vec__8948, 5, null);
+    var ms = cljs.core.nth.call(null, vec__8948, 6, null);
+    var offset = cljs.core.nth.call(null, vec__8948, 7, null);
+    return new Date(Date.UTC(years, months - 1, days, hours, minutes, seconds, ms) - offset * 60 * 1E3)
+  }else {
+    return cljs.reader.reader_error.call(null, null, [cljs.core.str("Unrecognized date/time syntax: "), cljs.core.str(ts)].join(""))
+  }
+};
+cljs.reader.read_date = function read_date(s) {
+  if(typeof s === "string") {
+    return cljs.reader.parse_timestamp.call(null, s)
+  }else {
+    return cljs.reader.reader_error.call(null, null, "Instance literal expects a string for its timestamp.")
+  }
+};
+cljs.reader.read_queue = function read_queue(elems) {
+  if(cljs.core.vector_QMARK_.call(null, elems)) {
+    return cljs.core.into.call(null, cljs.core.PersistentQueue.EMPTY, elems)
+  }else {
+    return cljs.reader.reader_error.call(null, null, "Queue literal expects a vector for its elements.")
+  }
+};
+cljs.reader.read_uuid = function read_uuid(uuid) {
+  if(typeof uuid === "string") {
+    return new cljs.core.UUID(uuid)
+  }else {
+    return cljs.reader.reader_error.call(null, null, "UUID literal expects a string as its representation.")
+  }
+};
+cljs.reader._STAR_tag_table_STAR_ = cljs.core.atom.call(null, cljs.core.PersistentArrayMap.fromArray(["inst", cljs.reader.read_date, "uuid", cljs.reader.read_uuid, "queue", cljs.reader.read_queue], true));
+cljs.reader._STAR_default_data_reader_fn_STAR_ = cljs.core.atom.call(null, null);
+cljs.reader.maybe_read_tagged_type = function maybe_read_tagged_type(rdr, initch) {
+  var tag = cljs.reader.read_symbol.call(null, rdr, initch);
+  var pfn = cljs.core.get.call(null, cljs.core.deref.call(null, cljs.reader._STAR_tag_table_STAR_), [cljs.core.str(tag)].join(""));
+  var dfn = cljs.core.deref.call(null, cljs.reader._STAR_default_data_reader_fn_STAR_);
+  if(cljs.core.truth_(pfn)) {
+    return pfn.call(null, cljs.reader.read.call(null, rdr, true, null, false))
+  }else {
+    if(cljs.core.truth_(dfn)) {
+      return dfn.call(null, tag, cljs.reader.read.call(null, rdr, true, null, false))
+    }else {
+      if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
+        return cljs.reader.reader_error.call(null, rdr, "Could not find tag parser for ", [cljs.core.str(tag)].join(""), " in ", cljs.core.pr_str.call(null, cljs.core.keys.call(null, cljs.core.deref.call(null, cljs.reader._STAR_tag_table_STAR_))))
+      }else {
+        return null
+      }
+    }
+  }
+};
+cljs.reader.register_tag_parser_BANG_ = function register_tag_parser_BANG_(tag, f) {
+  var tag__$1 = [cljs.core.str(tag)].join("");
+  var old_parser = cljs.core.get.call(null, cljs.core.deref.call(null, cljs.reader._STAR_tag_table_STAR_), tag__$1);
+  cljs.core.swap_BANG_.call(null, cljs.reader._STAR_tag_table_STAR_, cljs.core.assoc, tag__$1, f);
+  return old_parser
+};
+cljs.reader.deregister_tag_parser_BANG_ = function deregister_tag_parser_BANG_(tag) {
+  var tag__$1 = [cljs.core.str(tag)].join("");
+  var old_parser = cljs.core.get.call(null, cljs.core.deref.call(null, cljs.reader._STAR_tag_table_STAR_), tag__$1);
+  cljs.core.swap_BANG_.call(null, cljs.reader._STAR_tag_table_STAR_, cljs.core.dissoc, tag__$1);
+  return old_parser
+};
+cljs.reader.register_default_tag_parser_BANG_ = function register_default_tag_parser_BANG_(f) {
+  var old_parser = cljs.core.deref.call(null, cljs.reader._STAR_default_data_reader_fn_STAR_);
+  cljs.core.swap_BANG_.call(null, cljs.reader._STAR_default_data_reader_fn_STAR_, function(_) {
+    return f
+  });
+  return old_parser
+};
+cljs.reader.deregister_default_tag_parser_BANG_ = function deregister_default_tag_parser_BANG_() {
+  var old_parser = cljs.core.deref.call(null, cljs.reader._STAR_default_data_reader_fn_STAR_);
+  cljs.core.swap_BANG_.call(null, cljs.reader._STAR_default_data_reader_fn_STAR_, function(_) {
+    return null
+  });
+  return old_parser
+};
 goog.provide("goog.structs.Queue");
 goog.require("goog.array");
 goog.structs.Queue = function() {
@@ -31847,1091 +34036,6 @@ goog.net.XhrManager.Request.prototype.disposeInternal = function() {
   delete this.xhrEventCallback_;
   delete this.completeCallback_
 };
-goog.provide("cljs.reader");
-goog.require("cljs.core");
-goog.require("goog.string");
-goog.require("goog.string");
-cljs.reader.PushbackReader = {};
-cljs.reader.read_char = function read_char(reader) {
-  if(function() {
-    var and__3941__auto__ = reader;
-    if(and__3941__auto__) {
-      return reader.cljs$reader$PushbackReader$read_char$arity$1
-    }else {
-      return and__3941__auto__
-    }
-  }()) {
-    return reader.cljs$reader$PushbackReader$read_char$arity$1(reader)
-  }else {
-    var x__3502__auto__ = reader == null ? null : reader;
-    return function() {
-      var or__3943__auto__ = cljs.reader.read_char[goog.typeOf(x__3502__auto__)];
-      if(or__3943__auto__) {
-        return or__3943__auto__
-      }else {
-        var or__3943__auto____$1 = cljs.reader.read_char["_"];
-        if(or__3943__auto____$1) {
-          return or__3943__auto____$1
-        }else {
-          throw cljs.core.missing_protocol.call(null, "PushbackReader.read-char", reader);
-        }
-      }
-    }().call(null, reader)
-  }
-};
-cljs.reader.unread = function unread(reader, ch) {
-  if(function() {
-    var and__3941__auto__ = reader;
-    if(and__3941__auto__) {
-      return reader.cljs$reader$PushbackReader$unread$arity$2
-    }else {
-      return and__3941__auto__
-    }
-  }()) {
-    return reader.cljs$reader$PushbackReader$unread$arity$2(reader, ch)
-  }else {
-    var x__3502__auto__ = reader == null ? null : reader;
-    return function() {
-      var or__3943__auto__ = cljs.reader.unread[goog.typeOf(x__3502__auto__)];
-      if(or__3943__auto__) {
-        return or__3943__auto__
-      }else {
-        var or__3943__auto____$1 = cljs.reader.unread["_"];
-        if(or__3943__auto____$1) {
-          return or__3943__auto____$1
-        }else {
-          throw cljs.core.missing_protocol.call(null, "PushbackReader.unread", reader);
-        }
-      }
-    }().call(null, reader, ch)
-  }
-};
-goog.provide("cljs.reader.StringPushbackReader");
-cljs.reader.StringPushbackReader = function(s, buffer, idx) {
-  this.s = s;
-  this.buffer = buffer;
-  this.idx = idx
-};
-cljs.reader.StringPushbackReader.cljs$lang$type = true;
-cljs.reader.StringPushbackReader.cljs$lang$ctorStr = "cljs.reader/StringPushbackReader";
-cljs.reader.StringPushbackReader.cljs$lang$ctorPrWriter = function(this__3443__auto__, writer__3444__auto__, opt__3445__auto__) {
-  return cljs.core._write.call(null, writer__3444__auto__, "cljs.reader/StringPushbackReader")
-};
-cljs.reader.StringPushbackReader.prototype.cljs$reader$PushbackReader$ = true;
-cljs.reader.StringPushbackReader.prototype.cljs$reader$PushbackReader$read_char$arity$1 = function(reader) {
-  var self__ = this;
-  if(self__.buffer.length === 0) {
-    self__.idx = self__.idx + 1;
-    return self__.s[self__.idx]
-  }else {
-    return self__.buffer.pop()
-  }
-};
-cljs.reader.StringPushbackReader.prototype.cljs$reader$PushbackReader$unread$arity$2 = function(reader, ch) {
-  var self__ = this;
-  return self__.buffer.push(ch)
-};
-cljs.reader.__GT_StringPushbackReader = function __GT_StringPushbackReader(s, buffer, idx) {
-  return new cljs.reader.StringPushbackReader(s, buffer, idx)
-};
-cljs.reader.push_back_reader = function push_back_reader(s) {
-  return new cljs.reader.StringPushbackReader(s, [], -1)
-};
-cljs.reader.whitespace_QMARK_ = function whitespace_QMARK_(ch) {
-  var or__3943__auto__ = goog.string.isBreakingWhitespace(ch);
-  if(cljs.core.truth_(or__3943__auto__)) {
-    return or__3943__auto__
-  }else {
-    return"," === ch
-  }
-};
-cljs.reader.numeric_QMARK_ = function numeric_QMARK_(ch) {
-  return goog.string.isNumeric(ch)
-};
-cljs.reader.comment_prefix_QMARK_ = function comment_prefix_QMARK_(ch) {
-  return";" === ch
-};
-cljs.reader.number_literal_QMARK_ = function number_literal_QMARK_(reader, initch) {
-  var or__3943__auto__ = cljs.reader.numeric_QMARK_.call(null, initch);
-  if(or__3943__auto__) {
-    return or__3943__auto__
-  }else {
-    var and__3941__auto__ = function() {
-      var or__3943__auto____$1 = "+" === initch;
-      if(or__3943__auto____$1) {
-        return or__3943__auto____$1
-      }else {
-        return"-" === initch
-      }
-    }();
-    if(cljs.core.truth_(and__3941__auto__)) {
-      return cljs.reader.numeric_QMARK_.call(null, function() {
-        var next_ch = cljs.reader.read_char.call(null, reader);
-        cljs.reader.unread.call(null, reader, next_ch);
-        return next_ch
-      }())
-    }else {
-      return and__3941__auto__
-    }
-  }
-};
-cljs.reader.reader_error = function() {
-  var reader_error__delegate = function(rdr, msg) {
-    throw new Error(cljs.core.apply.call(null, cljs.core.str, msg));
-  };
-  var reader_error = function(rdr, var_args) {
-    var msg = null;
-    if(arguments.length > 1) {
-      msg = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1), 0)
-    }
-    return reader_error__delegate.call(this, rdr, msg)
-  };
-  reader_error.cljs$lang$maxFixedArity = 1;
-  reader_error.cljs$lang$applyTo = function(arglist__8918) {
-    var rdr = cljs.core.first(arglist__8918);
-    var msg = cljs.core.rest(arglist__8918);
-    return reader_error__delegate(rdr, msg)
-  };
-  reader_error.cljs$core$IFn$_invoke$arity$variadic = reader_error__delegate;
-  return reader_error
-}();
-cljs.reader.macro_terminating_QMARK_ = function macro_terminating_QMARK_(ch) {
-  var and__3941__auto__ = !(ch === "#");
-  if(and__3941__auto__) {
-    var and__3941__auto____$1 = !(ch === "'");
-    if(and__3941__auto____$1) {
-      var and__3941__auto____$2 = !(ch === ":");
-      if(and__3941__auto____$2) {
-        return cljs.reader.macros.call(null, ch)
-      }else {
-        return and__3941__auto____$2
-      }
-    }else {
-      return and__3941__auto____$1
-    }
-  }else {
-    return and__3941__auto__
-  }
-};
-cljs.reader.read_token = function read_token(rdr, initch) {
-  var sb = new goog.string.StringBuffer(initch);
-  var ch = cljs.reader.read_char.call(null, rdr);
-  while(true) {
-    if(function() {
-      var or__3943__auto__ = ch == null;
-      if(or__3943__auto__) {
-        return or__3943__auto__
-      }else {
-        var or__3943__auto____$1 = cljs.reader.whitespace_QMARK_.call(null, ch);
-        if(or__3943__auto____$1) {
-          return or__3943__auto____$1
-        }else {
-          return cljs.reader.macro_terminating_QMARK_.call(null, ch)
-        }
-      }
-    }()) {
-      cljs.reader.unread.call(null, rdr, ch);
-      return sb.toString()
-    }else {
-      var G__8919 = function() {
-        sb.append(ch);
-        return sb
-      }();
-      var G__8920 = cljs.reader.read_char.call(null, rdr);
-      sb = G__8919;
-      ch = G__8920;
-      continue
-    }
-    break
-  }
-};
-cljs.reader.skip_line = function skip_line(reader, _) {
-  while(true) {
-    var ch = cljs.reader.read_char.call(null, reader);
-    if(function() {
-      var or__3943__auto__ = ch === "n";
-      if(or__3943__auto__) {
-        return or__3943__auto__
-      }else {
-        var or__3943__auto____$1 = ch === "r";
-        if(or__3943__auto____$1) {
-          return or__3943__auto____$1
-        }else {
-          return ch == null
-        }
-      }
-    }()) {
-      return reader
-    }else {
-      continue
-    }
-    break
-  }
-};
-cljs.reader.int_pattern = cljs.core.re_pattern.call(null, "([-+]?)(?:(0)|([1-9][0-9]*)|0[xX]([0-9A-Fa-f]+)|0([0-7]+)|([1-9][0-9]?)[rR]([0-9A-Za-z]+)|0[0-9]+)(N)?");
-cljs.reader.ratio_pattern = cljs.core.re_pattern.call(null, "([-+]?[0-9]+)/([0-9]+)");
-cljs.reader.float_pattern = cljs.core.re_pattern.call(null, "([-+]?[0-9]+(\\.[0-9]*)?([eE][-+]?[0-9]+)?)(M)?");
-cljs.reader.symbol_pattern = cljs.core.re_pattern.call(null, "[:]?([^0-9/].*/)?([^0-9/][^/]*)");
-cljs.reader.re_find_STAR_ = function re_find_STAR_(re, s) {
-  var matches = re.exec(s);
-  if(matches == null) {
-    return null
-  }else {
-    if(matches.length === 1) {
-      return matches[0]
-    }else {
-      return matches
-    }
-  }
-};
-cljs.reader.match_int = function match_int(s) {
-  var groups = cljs.reader.re_find_STAR_.call(null, cljs.reader.int_pattern, s);
-  var group3 = groups[2];
-  if(!function() {
-    var or__3943__auto__ = group3 == null;
-    if(or__3943__auto__) {
-      return or__3943__auto__
-    }else {
-      return group3.length < 1
-    }
-  }()) {
-    return 0
-  }else {
-    var negate = "-" === groups[1] ? -1 : 1;
-    var a = cljs.core.truth_(groups[3]) ? [groups[3], 10] : cljs.core.truth_(groups[4]) ? [groups[4], 16] : cljs.core.truth_(groups[5]) ? [groups[5], 8] : cljs.core.truth_(groups[7]) ? [groups[7], parseInt(groups[7])] : new cljs.core.Keyword(null, "default", "default", 2558708147) ? [null, null] : null;
-    var n = a[0];
-    var radix = a[1];
-    if(n == null) {
-      return null
-    }else {
-      return negate * parseInt(n, radix)
-    }
-  }
-};
-cljs.reader.match_ratio = function match_ratio(s) {
-  var groups = cljs.reader.re_find_STAR_.call(null, cljs.reader.ratio_pattern, s);
-  var numinator = groups[1];
-  var denominator = groups[2];
-  return parseInt(numinator) / parseInt(denominator)
-};
-cljs.reader.match_float = function match_float(s) {
-  return parseFloat(s)
-};
-cljs.reader.re_matches_STAR_ = function re_matches_STAR_(re, s) {
-  var matches = re.exec(s);
-  if(function() {
-    var and__3941__auto__ = !(matches == null);
-    if(and__3941__auto__) {
-      return matches[0] === s
-    }else {
-      return and__3941__auto__
-    }
-  }()) {
-    if(matches.length === 1) {
-      return matches[0]
-    }else {
-      return matches
-    }
-  }else {
-    return null
-  }
-};
-cljs.reader.match_number = function match_number(s) {
-  if(cljs.core.truth_(cljs.reader.re_matches_STAR_.call(null, cljs.reader.int_pattern, s))) {
-    return cljs.reader.match_int.call(null, s)
-  }else {
-    if(cljs.core.truth_(cljs.reader.re_matches_STAR_.call(null, cljs.reader.ratio_pattern, s))) {
-      return cljs.reader.match_ratio.call(null, s)
-    }else {
-      if(cljs.core.truth_(cljs.reader.re_matches_STAR_.call(null, cljs.reader.float_pattern, s))) {
-        return cljs.reader.match_float.call(null, s)
-      }else {
-        return null
-      }
-    }
-  }
-};
-cljs.reader.escape_char_map = function escape_char_map(c) {
-  if(c === "t") {
-    return"\t"
-  }else {
-    if(c === "r") {
-      return"\r"
-    }else {
-      if(c === "n") {
-        return"\n"
-      }else {
-        if(c === "\\") {
-          return"\\"
-        }else {
-          if(c === '"') {
-            return'"'
-          }else {
-            if(c === "b") {
-              return"\b"
-            }else {
-              if(c === "f") {
-                return"\f"
-              }else {
-                if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
-                  return null
-                }else {
-                  return null
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-};
-cljs.reader.read_2_chars = function read_2_chars(reader) {
-  return(new goog.string.StringBuffer(cljs.reader.read_char.call(null, reader), cljs.reader.read_char.call(null, reader))).toString()
-};
-cljs.reader.read_4_chars = function read_4_chars(reader) {
-  return(new goog.string.StringBuffer(cljs.reader.read_char.call(null, reader), cljs.reader.read_char.call(null, reader), cljs.reader.read_char.call(null, reader), cljs.reader.read_char.call(null, reader))).toString()
-};
-cljs.reader.unicode_2_pattern = cljs.core.re_pattern.call(null, "[0-9A-Fa-f]{2}");
-cljs.reader.unicode_4_pattern = cljs.core.re_pattern.call(null, "[0-9A-Fa-f]{4}");
-cljs.reader.validate_unicode_escape = function validate_unicode_escape(unicode_pattern, reader, escape_char, unicode_str) {
-  if(cljs.core.truth_(cljs.core.re_matches.call(null, unicode_pattern, unicode_str))) {
-    return unicode_str
-  }else {
-    return cljs.reader.reader_error.call(null, reader, "Unexpected unicode escape \\", escape_char, unicode_str)
-  }
-};
-cljs.reader.make_unicode_char = function make_unicode_char(code_str) {
-  var code = parseInt(code_str, 16);
-  return String.fromCharCode(code)
-};
-cljs.reader.escape_char = function escape_char(buffer, reader) {
-  var ch = cljs.reader.read_char.call(null, reader);
-  var mapresult = cljs.reader.escape_char_map.call(null, ch);
-  if(cljs.core.truth_(mapresult)) {
-    return mapresult
-  }else {
-    if(ch === "x") {
-      return cljs.reader.make_unicode_char.call(null, cljs.reader.validate_unicode_escape.call(null, cljs.reader.unicode_2_pattern, reader, ch, cljs.reader.read_2_chars.call(null, reader)))
-    }else {
-      if(ch === "u") {
-        return cljs.reader.make_unicode_char.call(null, cljs.reader.validate_unicode_escape.call(null, cljs.reader.unicode_4_pattern, reader, ch, cljs.reader.read_4_chars.call(null, reader)))
-      }else {
-        if(cljs.reader.numeric_QMARK_.call(null, ch)) {
-          return String.fromCharCode(ch)
-        }else {
-          if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
-            return cljs.reader.reader_error.call(null, reader, "Unexpected unicode escape \\", ch)
-          }else {
-            return null
-          }
-        }
-      }
-    }
-  }
-};
-cljs.reader.read_past = function read_past(pred, rdr) {
-  var ch = cljs.reader.read_char.call(null, rdr);
-  while(true) {
-    if(cljs.core.truth_(pred.call(null, ch))) {
-      var G__8921 = cljs.reader.read_char.call(null, rdr);
-      ch = G__8921;
-      continue
-    }else {
-      return ch
-    }
-    break
-  }
-};
-cljs.reader.read_delimited_list = function read_delimited_list(delim, rdr, recursive_QMARK_) {
-  var a = cljs.core.transient$.call(null, cljs.core.PersistentVector.EMPTY);
-  while(true) {
-    var ch = cljs.reader.read_past.call(null, cljs.reader.whitespace_QMARK_, rdr);
-    if(cljs.core.truth_(ch)) {
-    }else {
-      cljs.reader.reader_error.call(null, rdr, "EOF while reading")
-    }
-    if(delim === ch) {
-      return cljs.core.persistent_BANG_.call(null, a)
-    }else {
-      var temp__4090__auto__ = cljs.reader.macros.call(null, ch);
-      if(cljs.core.truth_(temp__4090__auto__)) {
-        var macrofn = temp__4090__auto__;
-        var mret = macrofn.call(null, rdr, ch);
-        var G__8922 = mret === rdr ? a : cljs.core.conj_BANG_.call(null, a, mret);
-        a = G__8922;
-        continue
-      }else {
-        cljs.reader.unread.call(null, rdr, ch);
-        var o = cljs.reader.read.call(null, rdr, true, null, recursive_QMARK_);
-        var G__8923 = o === rdr ? a : cljs.core.conj_BANG_.call(null, a, o);
-        a = G__8923;
-        continue
-      }
-    }
-    break
-  }
-};
-cljs.reader.not_implemented = function not_implemented(rdr, ch) {
-  return cljs.reader.reader_error.call(null, rdr, "Reader for ", ch, " not implemented yet")
-};
-cljs.reader.read_dispatch = function read_dispatch(rdr, _) {
-  var ch = cljs.reader.read_char.call(null, rdr);
-  var dm = cljs.reader.dispatch_macros.call(null, ch);
-  if(cljs.core.truth_(dm)) {
-    return dm.call(null, rdr, _)
-  }else {
-    var temp__4090__auto__ = cljs.reader.maybe_read_tagged_type.call(null, rdr, ch);
-    if(cljs.core.truth_(temp__4090__auto__)) {
-      var obj = temp__4090__auto__;
-      return obj
-    }else {
-      return cljs.reader.reader_error.call(null, rdr, "No dispatch macro for ", ch)
-    }
-  }
-};
-cljs.reader.read_unmatched_delimiter = function read_unmatched_delimiter(rdr, ch) {
-  return cljs.reader.reader_error.call(null, rdr, "Unmached delimiter ", ch)
-};
-cljs.reader.read_list = function read_list(rdr, _) {
-  return cljs.core.apply.call(null, cljs.core.list, cljs.reader.read_delimited_list.call(null, ")", rdr, true))
-};
-cljs.reader.read_comment = cljs.reader.skip_line;
-cljs.reader.read_vector = function read_vector(rdr, _) {
-  return cljs.reader.read_delimited_list.call(null, "]", rdr, true)
-};
-cljs.reader.read_map = function read_map(rdr, _) {
-  var l = cljs.reader.read_delimited_list.call(null, "}", rdr, true);
-  if(cljs.core.odd_QMARK_.call(null, cljs.core.count.call(null, l))) {
-    cljs.reader.reader_error.call(null, rdr, "Map literal must contain an even number of forms")
-  }else {
-  }
-  return cljs.core.apply.call(null, cljs.core.hash_map, l)
-};
-cljs.reader.read_number = function read_number(reader, initch) {
-  var buffer = new goog.string.StringBuffer(initch);
-  var ch = cljs.reader.read_char.call(null, reader);
-  while(true) {
-    if(cljs.core.truth_(function() {
-      var or__3943__auto__ = ch == null;
-      if(or__3943__auto__) {
-        return or__3943__auto__
-      }else {
-        var or__3943__auto____$1 = cljs.reader.whitespace_QMARK_.call(null, ch);
-        if(or__3943__auto____$1) {
-          return or__3943__auto____$1
-        }else {
-          return cljs.reader.macros.call(null, ch)
-        }
-      }
-    }())) {
-      cljs.reader.unread.call(null, reader, ch);
-      var s = buffer.toString();
-      var or__3943__auto__ = cljs.reader.match_number.call(null, s);
-      if(cljs.core.truth_(or__3943__auto__)) {
-        return or__3943__auto__
-      }else {
-        return cljs.reader.reader_error.call(null, reader, "Invalid number format [", s, "]")
-      }
-    }else {
-      var G__8924 = function() {
-        buffer.append(ch);
-        return buffer
-      }();
-      var G__8925 = cljs.reader.read_char.call(null, reader);
-      buffer = G__8924;
-      ch = G__8925;
-      continue
-    }
-    break
-  }
-};
-cljs.reader.read_string_STAR_ = function read_string_STAR_(reader, _) {
-  var buffer = new goog.string.StringBuffer;
-  var ch = cljs.reader.read_char.call(null, reader);
-  while(true) {
-    if(ch == null) {
-      return cljs.reader.reader_error.call(null, reader, "EOF while reading")
-    }else {
-      if("\\" === ch) {
-        var G__8926 = function() {
-          buffer.append(cljs.reader.escape_char.call(null, buffer, reader));
-          return buffer
-        }();
-        var G__8927 = cljs.reader.read_char.call(null, reader);
-        buffer = G__8926;
-        ch = G__8927;
-        continue
-      }else {
-        if('"' === ch) {
-          return buffer.toString()
-        }else {
-          if(new cljs.core.Keyword(null, "default", "default", 2558708147)) {
-            var G__8928 = function() {
-              buffer.append(ch);
-              return buffer
-            }();
-            var G__8929 = cljs.reader.read_char.call(null, reader);
-            buffer = G__8928;
-            ch = G__8929;
-            continue
-          }else {
-            return null
-          }
-        }
-      }
-    }
-    break
-  }
-};
-cljs.reader.special_symbols = function special_symbols(t, not_found) {
-  if(t === "nil") {
-    return null
-  }else {
-    if(t === "true") {
-      return true
-    }else {
-      if(t === "false") {
-        return false
-      }else {
-        if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
-          return not_found
-        }else {
-          return null
-        }
-      }
-    }
-  }
-};
-cljs.reader.read_symbol = function read_symbol(reader, initch) {
-  var token = cljs.reader.read_token.call(null, reader, initch);
-  if(cljs.core.truth_(goog.string.contains(token, "/"))) {
-    return cljs.core.symbol.call(null, cljs.core.subs.call(null, token, 0, token.indexOf("/")), cljs.core.subs.call(null, token, token.indexOf("/") + 1, token.length))
-  }else {
-    return cljs.reader.special_symbols.call(null, token, cljs.core.symbol.call(null, token))
-  }
-};
-cljs.reader.read_keyword = function read_keyword(reader, initch) {
-  var token = cljs.reader.read_token.call(null, reader, cljs.reader.read_char.call(null, reader));
-  var a = cljs.reader.re_matches_STAR_.call(null, cljs.reader.symbol_pattern, token);
-  var token__$1 = a[0];
-  var ns = a[1];
-  var name = a[2];
-  if(cljs.core.truth_(function() {
-    var or__3943__auto__ = function() {
-      var and__3941__auto__ = !(void 0 === ns);
-      if(and__3941__auto__) {
-        return ns.substring(ns.length - 2, ns.length) === ":/"
-      }else {
-        return and__3941__auto__
-      }
-    }();
-    if(cljs.core.truth_(or__3943__auto__)) {
-      return or__3943__auto__
-    }else {
-      var or__3943__auto____$1 = name[name.length - 1] === ":";
-      if(or__3943__auto____$1) {
-        return or__3943__auto____$1
-      }else {
-        return!(token__$1.indexOf("::", 1) === -1)
-      }
-    }
-  }())) {
-    return cljs.reader.reader_error.call(null, reader, "Invalid token: ", token__$1)
-  }else {
-    if(function() {
-      var and__3941__auto__ = !(ns == null);
-      if(and__3941__auto__) {
-        return ns.length > 0
-      }else {
-        return and__3941__auto__
-      }
-    }()) {
-      return cljs.core.keyword.call(null, ns.substring(0, ns.indexOf("/")), name)
-    }else {
-      return cljs.core.keyword.call(null, token__$1)
-    }
-  }
-};
-cljs.reader.desugar_meta = function desugar_meta(f) {
-  if(f instanceof cljs.core.Symbol) {
-    return cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "tag", "tag", 1014018828), f], true)
-  }else {
-    if(typeof f === "string") {
-      return cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "tag", "tag", 1014018828), f], true)
-    }else {
-      if(f instanceof cljs.core.Keyword) {
-        return cljs.core.PersistentArrayMap.fromArray([f, true], true)
-      }else {
-        if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
-          return f
-        }else {
-          return null
-        }
-      }
-    }
-  }
-};
-cljs.reader.wrapping_reader = function wrapping_reader(sym) {
-  return function(rdr, _) {
-    return cljs.core.list.call(null, sym, cljs.reader.read.call(null, rdr, true, null, true))
-  }
-};
-cljs.reader.throwing_reader = function throwing_reader(msg) {
-  return function(rdr, _) {
-    return cljs.reader.reader_error.call(null, rdr, msg)
-  }
-};
-cljs.reader.read_meta = function read_meta(rdr, _) {
-  var m = cljs.reader.desugar_meta.call(null, cljs.reader.read.call(null, rdr, true, null, true));
-  if(cljs.core.map_QMARK_.call(null, m)) {
-  }else {
-    cljs.reader.reader_error.call(null, rdr, "Metadata must be Symbol,Keyword,String or Map")
-  }
-  var o = cljs.reader.read.call(null, rdr, true, null, true);
-  if(function() {
-    var G__8931 = o;
-    if(G__8931) {
-      if(function() {
-        var or__3943__auto__ = G__8931.cljs$lang$protocol_mask$partition0$ & 262144;
-        if(or__3943__auto__) {
-          return or__3943__auto__
-        }else {
-          return G__8931.cljs$core$IWithMeta$
-        }
-      }()) {
-        return true
-      }else {
-        if(!G__8931.cljs$lang$protocol_mask$partition0$) {
-          return cljs.core.type_satisfies_.call(null, cljs.core.IWithMeta, G__8931)
-        }else {
-          return false
-        }
-      }
-    }else {
-      return cljs.core.type_satisfies_.call(null, cljs.core.IWithMeta, G__8931)
-    }
-  }()) {
-    return cljs.core.with_meta.call(null, o, cljs.core.merge.call(null, cljs.core.meta.call(null, o), m))
-  }else {
-    return cljs.reader.reader_error.call(null, rdr, "Metadata can only be applied to IWithMetas")
-  }
-};
-cljs.reader.read_set = function read_set(rdr, _) {
-  return cljs.core.set.call(null, cljs.reader.read_delimited_list.call(null, "}", rdr, true))
-};
-cljs.reader.read_regex = function read_regex(rdr, ch) {
-  return cljs.core.re_pattern.call(null, cljs.reader.read_string_STAR_.call(null, rdr, ch))
-};
-cljs.reader.read_discard = function read_discard(rdr, _) {
-  cljs.reader.read.call(null, rdr, true, null, true);
-  return rdr
-};
-cljs.reader.macros = function macros(c) {
-  if(c === '"') {
-    return cljs.reader.read_string_STAR_
-  }else {
-    if(c === ":") {
-      return cljs.reader.read_keyword
-    }else {
-      if(c === ";") {
-        return cljs.reader.not_implemented
-      }else {
-        if(c === "'") {
-          return cljs.reader.wrapping_reader.call(null, new cljs.core.Symbol(null, "quote", "quote", -1532577739, null))
-        }else {
-          if(c === "@") {
-            return cljs.reader.wrapping_reader.call(null, new cljs.core.Symbol(null, "deref", "deref", -1545057749, null))
-          }else {
-            if(c === "^") {
-              return cljs.reader.read_meta
-            }else {
-              if(c === "`") {
-                return cljs.reader.not_implemented
-              }else {
-                if(c === "~") {
-                  return cljs.reader.not_implemented
-                }else {
-                  if(c === "(") {
-                    return cljs.reader.read_list
-                  }else {
-                    if(c === ")") {
-                      return cljs.reader.read_unmatched_delimiter
-                    }else {
-                      if(c === "[") {
-                        return cljs.reader.read_vector
-                      }else {
-                        if(c === "]") {
-                          return cljs.reader.read_unmatched_delimiter
-                        }else {
-                          if(c === "{") {
-                            return cljs.reader.read_map
-                          }else {
-                            if(c === "}") {
-                              return cljs.reader.read_unmatched_delimiter
-                            }else {
-                              if(c === "\\") {
-                                return cljs.reader.read_char
-                              }else {
-                                if(c === "#") {
-                                  return cljs.reader.read_dispatch
-                                }else {
-                                  if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
-                                    return null
-                                  }else {
-                                    return null
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-};
-cljs.reader.dispatch_macros = function dispatch_macros(s) {
-  if(s === "{") {
-    return cljs.reader.read_set
-  }else {
-    if(s === "\x3c") {
-      return cljs.reader.throwing_reader.call(null, "Unreadable form")
-    }else {
-      if(s === '"') {
-        return cljs.reader.read_regex
-      }else {
-        if(s === "!") {
-          return cljs.reader.read_comment
-        }else {
-          if(s === "_") {
-            return cljs.reader.read_discard
-          }else {
-            if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
-              return null
-            }else {
-              return null
-            }
-          }
-        }
-      }
-    }
-  }
-};
-cljs.reader.read = function read(reader, eof_is_error, sentinel, is_recursive) {
-  while(true) {
-    var ch = cljs.reader.read_char.call(null, reader);
-    if(ch == null) {
-      if(cljs.core.truth_(eof_is_error)) {
-        return cljs.reader.reader_error.call(null, reader, "EOF while reading")
-      }else {
-        return sentinel
-      }
-    }else {
-      if(cljs.reader.whitespace_QMARK_.call(null, ch)) {
-        var G__8932 = reader;
-        var G__8933 = eof_is_error;
-        var G__8934 = sentinel;
-        var G__8935 = is_recursive;
-        reader = G__8932;
-        eof_is_error = G__8933;
-        sentinel = G__8934;
-        is_recursive = G__8935;
-        continue
-      }else {
-        if(cljs.reader.comment_prefix_QMARK_.call(null, ch)) {
-          var G__8936 = cljs.reader.read_comment.call(null, reader, ch);
-          var G__8937 = eof_is_error;
-          var G__8938 = sentinel;
-          var G__8939 = is_recursive;
-          reader = G__8936;
-          eof_is_error = G__8937;
-          sentinel = G__8938;
-          is_recursive = G__8939;
-          continue
-        }else {
-          if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
-            var f = cljs.reader.macros.call(null, ch);
-            var res = cljs.core.truth_(f) ? f.call(null, reader, ch) : cljs.reader.number_literal_QMARK_.call(null, reader, ch) ? cljs.reader.read_number.call(null, reader, ch) : new cljs.core.Keyword(null, "else", "else", 1017020587) ? cljs.reader.read_symbol.call(null, reader, ch) : null;
-            if(res === reader) {
-              var G__8940 = reader;
-              var G__8941 = eof_is_error;
-              var G__8942 = sentinel;
-              var G__8943 = is_recursive;
-              reader = G__8940;
-              eof_is_error = G__8941;
-              sentinel = G__8942;
-              is_recursive = G__8943;
-              continue
-            }else {
-              return res
-            }
-          }else {
-            return null
-          }
-        }
-      }
-    }
-    break
-  }
-};
-cljs.reader.read_string = function read_string(s) {
-  var r = cljs.reader.push_back_reader.call(null, s);
-  return cljs.reader.read.call(null, r, true, null, false)
-};
-cljs.reader.zero_fill_right_and_truncate = function zero_fill_right_and_truncate(s, width) {
-  if(cljs.core._EQ_.call(null, width, cljs.core.count.call(null, s))) {
-    return s
-  }else {
-    if(width < cljs.core.count.call(null, s)) {
-      return cljs.core.subs.call(null, s, 0, width)
-    }else {
-      if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
-        var b = new goog.string.StringBuffer(s);
-        while(true) {
-          if(b.getLength() < width) {
-            var G__8944 = b.append("0");
-            b = G__8944;
-            continue
-          }else {
-            return b.toString()
-          }
-          break
-        }
-      }else {
-        return null
-      }
-    }
-  }
-};
-cljs.reader.divisible_QMARK_ = function divisible_QMARK_(num, div) {
-  return cljs.core.mod.call(null, num, div) === 0
-};
-cljs.reader.indivisible_QMARK_ = function indivisible_QMARK_(num, div) {
-  return cljs.core.not.call(null, cljs.reader.divisible_QMARK_.call(null, num, div))
-};
-cljs.reader.leap_year_QMARK_ = function leap_year_QMARK_(year) {
-  var and__3941__auto__ = cljs.reader.divisible_QMARK_.call(null, year, 4);
-  if(cljs.core.truth_(and__3941__auto__)) {
-    var or__3943__auto__ = cljs.reader.indivisible_QMARK_.call(null, year, 100);
-    if(cljs.core.truth_(or__3943__auto__)) {
-      return or__3943__auto__
-    }else {
-      return cljs.reader.divisible_QMARK_.call(null, year, 400)
-    }
-  }else {
-    return and__3941__auto__
-  }
-};
-cljs.reader.days_in_month = function() {
-  var dim_norm = cljs.core.PersistentVector.fromArray([null, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], true);
-  var dim_leap = cljs.core.PersistentVector.fromArray([null, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31], true);
-  return function(month, leap_year_QMARK_) {
-    return cljs.core.get.call(null, cljs.core.truth_(leap_year_QMARK_) ? dim_leap : dim_norm, month)
-  }
-}();
-cljs.reader.timestamp_regex = /(\d\d\d\d)(?:-(\d\d)(?:-(\d\d)(?:[T](\d\d)(?::(\d\d)(?::(\d\d)(?:[.](\d+))?)?)?)?)?)?(?:[Z]|([-+])(\d\d):(\d\d))?/;
-cljs.reader.parse_int = function parse_int(s) {
-  var n = parseInt(s);
-  if(cljs.core.not.call(null, isNaN(n))) {
-    return n
-  }else {
-    return null
-  }
-};
-cljs.reader.check = function check(low, n, high, msg) {
-  if(function() {
-    var and__3941__auto__ = low <= n;
-    if(and__3941__auto__) {
-      return n <= high
-    }else {
-      return and__3941__auto__
-    }
-  }()) {
-  }else {
-    cljs.reader.reader_error.call(null, null, [cljs.core.str(msg), cljs.core.str(" Failed:  "), cljs.core.str(low), cljs.core.str("\x3c\x3d"), cljs.core.str(n), cljs.core.str("\x3c\x3d"), cljs.core.str(high)].join(""))
-  }
-  return n
-};
-cljs.reader.parse_and_validate_timestamp = function parse_and_validate_timestamp(s) {
-  var vec__8946 = cljs.core.re_matches.call(null, cljs.reader.timestamp_regex, s);
-  var _ = cljs.core.nth.call(null, vec__8946, 0, null);
-  var years = cljs.core.nth.call(null, vec__8946, 1, null);
-  var months = cljs.core.nth.call(null, vec__8946, 2, null);
-  var days = cljs.core.nth.call(null, vec__8946, 3, null);
-  var hours = cljs.core.nth.call(null, vec__8946, 4, null);
-  var minutes = cljs.core.nth.call(null, vec__8946, 5, null);
-  var seconds = cljs.core.nth.call(null, vec__8946, 6, null);
-  var fraction = cljs.core.nth.call(null, vec__8946, 7, null);
-  var offset_sign = cljs.core.nth.call(null, vec__8946, 8, null);
-  var offset_hours = cljs.core.nth.call(null, vec__8946, 9, null);
-  var offset_minutes = cljs.core.nth.call(null, vec__8946, 10, null);
-  var v = vec__8946;
-  if(cljs.core.not.call(null, v)) {
-    return cljs.reader.reader_error.call(null, null, [cljs.core.str("Unrecognized date/time syntax: "), cljs.core.str(s)].join(""))
-  }else {
-    var years__$1 = cljs.reader.parse_int.call(null, years);
-    var months__$1 = function() {
-      var or__3943__auto__ = cljs.reader.parse_int.call(null, months);
-      if(cljs.core.truth_(or__3943__auto__)) {
-        return or__3943__auto__
-      }else {
-        return 1
-      }
-    }();
-    var days__$1 = function() {
-      var or__3943__auto__ = cljs.reader.parse_int.call(null, days);
-      if(cljs.core.truth_(or__3943__auto__)) {
-        return or__3943__auto__
-      }else {
-        return 1
-      }
-    }();
-    var hours__$1 = function() {
-      var or__3943__auto__ = cljs.reader.parse_int.call(null, hours);
-      if(cljs.core.truth_(or__3943__auto__)) {
-        return or__3943__auto__
-      }else {
-        return 0
-      }
-    }();
-    var minutes__$1 = function() {
-      var or__3943__auto__ = cljs.reader.parse_int.call(null, minutes);
-      if(cljs.core.truth_(or__3943__auto__)) {
-        return or__3943__auto__
-      }else {
-        return 0
-      }
-    }();
-    var seconds__$1 = function() {
-      var or__3943__auto__ = cljs.reader.parse_int.call(null, seconds);
-      if(cljs.core.truth_(or__3943__auto__)) {
-        return or__3943__auto__
-      }else {
-        return 0
-      }
-    }();
-    var fraction__$1 = function() {
-      var or__3943__auto__ = cljs.reader.parse_int.call(null, cljs.reader.zero_fill_right_and_truncate.call(null, fraction, 3));
-      if(cljs.core.truth_(or__3943__auto__)) {
-        return or__3943__auto__
-      }else {
-        return 0
-      }
-    }();
-    var offset_sign__$1 = cljs.core._EQ_.call(null, offset_sign, "-") ? -1 : 1;
-    var offset_hours__$1 = function() {
-      var or__3943__auto__ = cljs.reader.parse_int.call(null, offset_hours);
-      if(cljs.core.truth_(or__3943__auto__)) {
-        return or__3943__auto__
-      }else {
-        return 0
-      }
-    }();
-    var offset_minutes__$1 = function() {
-      var or__3943__auto__ = cljs.reader.parse_int.call(null, offset_minutes);
-      if(cljs.core.truth_(or__3943__auto__)) {
-        return or__3943__auto__
-      }else {
-        return 0
-      }
-    }();
-    var offset = offset_sign__$1 * (offset_hours__$1 * 60 + offset_minutes__$1);
-    return cljs.core.PersistentVector.fromArray([years__$1, cljs.reader.check.call(null, 1, months__$1, 12, "timestamp month field must be in range 1..12"), cljs.reader.check.call(null, 1, days__$1, cljs.reader.days_in_month.call(null, months__$1, cljs.reader.leap_year_QMARK_.call(null, years__$1)), "timestamp day field must be in range 1..last day in month"), cljs.reader.check.call(null, 0, hours__$1, 23, "timestamp hour field must be in range 0..23"), cljs.reader.check.call(null, 0, minutes__$1, 
-    59, "timestamp minute field must be in range 0..59"), cljs.reader.check.call(null, 0, seconds__$1, cljs.core._EQ_.call(null, minutes__$1, 59) ? 60 : 59, "timestamp second field must be in range 0..60"), cljs.reader.check.call(null, 0, fraction__$1, 999, "timestamp millisecond field must be in range 0..999"), offset], true)
-  }
-};
-cljs.reader.parse_timestamp = function parse_timestamp(ts) {
-  var temp__4090__auto__ = cljs.reader.parse_and_validate_timestamp.call(null, ts);
-  if(cljs.core.truth_(temp__4090__auto__)) {
-    var vec__8948 = temp__4090__auto__;
-    var years = cljs.core.nth.call(null, vec__8948, 0, null);
-    var months = cljs.core.nth.call(null, vec__8948, 1, null);
-    var days = cljs.core.nth.call(null, vec__8948, 2, null);
-    var hours = cljs.core.nth.call(null, vec__8948, 3, null);
-    var minutes = cljs.core.nth.call(null, vec__8948, 4, null);
-    var seconds = cljs.core.nth.call(null, vec__8948, 5, null);
-    var ms = cljs.core.nth.call(null, vec__8948, 6, null);
-    var offset = cljs.core.nth.call(null, vec__8948, 7, null);
-    return new Date(Date.UTC(years, months - 1, days, hours, minutes, seconds, ms) - offset * 60 * 1E3)
-  }else {
-    return cljs.reader.reader_error.call(null, null, [cljs.core.str("Unrecognized date/time syntax: "), cljs.core.str(ts)].join(""))
-  }
-};
-cljs.reader.read_date = function read_date(s) {
-  if(typeof s === "string") {
-    return cljs.reader.parse_timestamp.call(null, s)
-  }else {
-    return cljs.reader.reader_error.call(null, null, "Instance literal expects a string for its timestamp.")
-  }
-};
-cljs.reader.read_queue = function read_queue(elems) {
-  if(cljs.core.vector_QMARK_.call(null, elems)) {
-    return cljs.core.into.call(null, cljs.core.PersistentQueue.EMPTY, elems)
-  }else {
-    return cljs.reader.reader_error.call(null, null, "Queue literal expects a vector for its elements.")
-  }
-};
-cljs.reader.read_uuid = function read_uuid(uuid) {
-  if(typeof uuid === "string") {
-    return new cljs.core.UUID(uuid)
-  }else {
-    return cljs.reader.reader_error.call(null, null, "UUID literal expects a string as its representation.")
-  }
-};
-cljs.reader._STAR_tag_table_STAR_ = cljs.core.atom.call(null, cljs.core.PersistentArrayMap.fromArray(["inst", cljs.reader.read_date, "uuid", cljs.reader.read_uuid, "queue", cljs.reader.read_queue], true));
-cljs.reader._STAR_default_data_reader_fn_STAR_ = cljs.core.atom.call(null, null);
-cljs.reader.maybe_read_tagged_type = function maybe_read_tagged_type(rdr, initch) {
-  var tag = cljs.reader.read_symbol.call(null, rdr, initch);
-  var pfn = cljs.core.get.call(null, cljs.core.deref.call(null, cljs.reader._STAR_tag_table_STAR_), [cljs.core.str(tag)].join(""));
-  var dfn = cljs.core.deref.call(null, cljs.reader._STAR_default_data_reader_fn_STAR_);
-  if(cljs.core.truth_(pfn)) {
-    return pfn.call(null, cljs.reader.read.call(null, rdr, true, null, false))
-  }else {
-    if(cljs.core.truth_(dfn)) {
-      return dfn.call(null, tag, cljs.reader.read.call(null, rdr, true, null, false))
-    }else {
-      if(new cljs.core.Keyword(null, "else", "else", 1017020587)) {
-        return cljs.reader.reader_error.call(null, rdr, "Could not find tag parser for ", [cljs.core.str(tag)].join(""), " in ", cljs.core.pr_str.call(null, cljs.core.keys.call(null, cljs.core.deref.call(null, cljs.reader._STAR_tag_table_STAR_))))
-      }else {
-        return null
-      }
-    }
-  }
-};
-cljs.reader.register_tag_parser_BANG_ = function register_tag_parser_BANG_(tag, f) {
-  var tag__$1 = [cljs.core.str(tag)].join("");
-  var old_parser = cljs.core.get.call(null, cljs.core.deref.call(null, cljs.reader._STAR_tag_table_STAR_), tag__$1);
-  cljs.core.swap_BANG_.call(null, cljs.reader._STAR_tag_table_STAR_, cljs.core.assoc, tag__$1, f);
-  return old_parser
-};
-cljs.reader.deregister_tag_parser_BANG_ = function deregister_tag_parser_BANG_(tag) {
-  var tag__$1 = [cljs.core.str(tag)].join("");
-  var old_parser = cljs.core.get.call(null, cljs.core.deref.call(null, cljs.reader._STAR_tag_table_STAR_), tag__$1);
-  cljs.core.swap_BANG_.call(null, cljs.reader._STAR_tag_table_STAR_, cljs.core.dissoc, tag__$1);
-  return old_parser
-};
-cljs.reader.register_default_tag_parser_BANG_ = function register_default_tag_parser_BANG_(f) {
-  var old_parser = cljs.core.deref.call(null, cljs.reader._STAR_default_data_reader_fn_STAR_);
-  cljs.core.swap_BANG_.call(null, cljs.reader._STAR_default_data_reader_fn_STAR_, function(_) {
-    return f
-  });
-  return old_parser
-};
-cljs.reader.deregister_default_tag_parser_BANG_ = function deregister_default_tag_parser_BANG_() {
-  var old_parser = cljs.core.deref.call(null, cljs.reader._STAR_default_data_reader_fn_STAR_);
-  cljs.core.swap_BANG_.call(null, cljs.reader._STAR_default_data_reader_fn_STAR_, function(_) {
-    return null
-  });
-  return old_parser
-};
 goog.provide("ajax.core");
 goog.require("cljs.core");
 goog.require("goog.json.Serializer");
@@ -33381,78 +34485,78 @@ bible_plan.bible.assoc_bible = function assoc_bible(name, bible_data) {
   return cljs.core.swap_BANG_.call(null, bible_plan.bible.bibles, cljs.core.assoc, name, bible_data)
 };
 bible_plan.bible.load_bibles = function load_bibles() {
-  return ajax.core.ajax_request.call(null, "/edn/bibles/bibles.edn", new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function load_available_bibles(p__4796) {
-    var vec__4806 = p__4796;
-    var ok = cljs.core.nth.call(null, vec__4806, 0, null);
-    var bible_names = cljs.core.nth.call(null, vec__4806, 1, null);
+  return ajax.core.ajax_request.call(null, "/edn/bibles/bibles.edn", new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function load_available_bibles(p__4875) {
+    var vec__4885 = p__4875;
+    var ok = cljs.core.nth.call(null, vec__4885, 0, null);
+    var bible_names = cljs.core.nth.call(null, vec__4885, 1, null);
     if(cljs.core.truth_(ok)) {
-      var seq__4807 = cljs.core.seq.call(null, bible_names);
-      var chunk__4808 = null;
-      var count__4809 = 0;
-      var i__4810 = 0;
+      var seq__4886 = cljs.core.seq.call(null, bible_names);
+      var chunk__4887 = null;
+      var count__4888 = 0;
+      var i__4889 = 0;
       while(true) {
-        if(i__4810 < count__4809) {
-          var bible_name = cljs.core._nth.call(null, chunk__4808, i__4810);
+        if(i__4889 < count__4888) {
+          var bible_name = cljs.core._nth.call(null, chunk__4887, i__4889);
           shodan.console.log.call(null, [cljs.core.str("Loading bible: "), cljs.core.str(bible_name)].join(""));
-          ajax.core.ajax_request.call(null, [cljs.core.str("/edn/bibles/"), cljs.core.str(cljs.core.name.call(null, bible_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__4807, chunk__4808, count__4809, i__4810, bible_name) {
-            return function(p__4811) {
-              var vec__4812 = p__4811;
-              var ok__$1 = cljs.core.nth.call(null, vec__4812, 0, null);
-              var bible_data = cljs.core.nth.call(null, vec__4812, 1, null);
+          ajax.core.ajax_request.call(null, [cljs.core.str("/edn/bibles/"), cljs.core.str(cljs.core.name.call(null, bible_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__4886, chunk__4887, count__4888, i__4889, bible_name) {
+            return function(p__4890) {
+              var vec__4891 = p__4890;
+              var ok__$1 = cljs.core.nth.call(null, vec__4891, 0, null);
+              var bible_data = cljs.core.nth.call(null, vec__4891, 1, null);
               if(cljs.core.truth_(ok__$1)) {
                 return bible_plan.bible.assoc_bible.call(null, bible_name, bible_data)
               }else {
                 return null
               }
             }
-          }(seq__4807, chunk__4808, count__4809, i__4810, bible_name), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true));
-          var G__4815 = seq__4807;
-          var G__4816 = chunk__4808;
-          var G__4817 = count__4809;
-          var G__4818 = i__4810 + 1;
-          seq__4807 = G__4815;
-          chunk__4808 = G__4816;
-          count__4809 = G__4817;
-          i__4810 = G__4818;
+          }(seq__4886, chunk__4887, count__4888, i__4889, bible_name), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true));
+          var G__4894 = seq__4886;
+          var G__4895 = chunk__4887;
+          var G__4896 = count__4888;
+          var G__4897 = i__4889 + 1;
+          seq__4886 = G__4894;
+          chunk__4887 = G__4895;
+          count__4888 = G__4896;
+          i__4889 = G__4897;
           continue
         }else {
-          var temp__4092__auto__ = cljs.core.seq.call(null, seq__4807);
+          var temp__4092__auto__ = cljs.core.seq.call(null, seq__4886);
           if(temp__4092__auto__) {
-            var seq__4807__$1 = temp__4092__auto__;
-            if(cljs.core.chunked_seq_QMARK_.call(null, seq__4807__$1)) {
-              var c__3615__auto__ = cljs.core.chunk_first.call(null, seq__4807__$1);
-              var G__4819 = cljs.core.chunk_rest.call(null, seq__4807__$1);
-              var G__4820 = c__3615__auto__;
-              var G__4821 = cljs.core.count.call(null, c__3615__auto__);
-              var G__4822 = 0;
-              seq__4807 = G__4819;
-              chunk__4808 = G__4820;
-              count__4809 = G__4821;
-              i__4810 = G__4822;
+            var seq__4886__$1 = temp__4092__auto__;
+            if(cljs.core.chunked_seq_QMARK_.call(null, seq__4886__$1)) {
+              var c__3670__auto__ = cljs.core.chunk_first.call(null, seq__4886__$1);
+              var G__4898 = cljs.core.chunk_rest.call(null, seq__4886__$1);
+              var G__4899 = c__3670__auto__;
+              var G__4900 = cljs.core.count.call(null, c__3670__auto__);
+              var G__4901 = 0;
+              seq__4886 = G__4898;
+              chunk__4887 = G__4899;
+              count__4888 = G__4900;
+              i__4889 = G__4901;
               continue
             }else {
-              var bible_name = cljs.core.first.call(null, seq__4807__$1);
+              var bible_name = cljs.core.first.call(null, seq__4886__$1);
               shodan.console.log.call(null, [cljs.core.str("Loading bible: "), cljs.core.str(bible_name)].join(""));
-              ajax.core.ajax_request.call(null, [cljs.core.str("/edn/bibles/"), cljs.core.str(cljs.core.name.call(null, bible_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__4807, chunk__4808, count__4809, i__4810, bible_name, seq__4807__$1, temp__4092__auto__) {
-                return function(p__4813) {
-                  var vec__4814 = p__4813;
-                  var ok__$1 = cljs.core.nth.call(null, vec__4814, 0, null);
-                  var bible_data = cljs.core.nth.call(null, vec__4814, 1, null);
+              ajax.core.ajax_request.call(null, [cljs.core.str("/edn/bibles/"), cljs.core.str(cljs.core.name.call(null, bible_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__4886, chunk__4887, count__4888, i__4889, bible_name, seq__4886__$1, temp__4092__auto__) {
+                return function(p__4892) {
+                  var vec__4893 = p__4892;
+                  var ok__$1 = cljs.core.nth.call(null, vec__4893, 0, null);
+                  var bible_data = cljs.core.nth.call(null, vec__4893, 1, null);
                   if(cljs.core.truth_(ok__$1)) {
                     return bible_plan.bible.assoc_bible.call(null, bible_name, bible_data)
                   }else {
                     return null
                   }
                 }
-              }(seq__4807, chunk__4808, count__4809, i__4810, bible_name, seq__4807__$1, temp__4092__auto__), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true));
-              var G__4823 = cljs.core.next.call(null, seq__4807__$1);
-              var G__4824 = null;
-              var G__4825 = 0;
-              var G__4826 = 0;
-              seq__4807 = G__4823;
-              chunk__4808 = G__4824;
-              count__4809 = G__4825;
-              i__4810 = G__4826;
+              }(seq__4886, chunk__4887, count__4888, i__4889, bible_name, seq__4886__$1, temp__4092__auto__), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true));
+              var G__4902 = cljs.core.next.call(null, seq__4886__$1);
+              var G__4903 = null;
+              var G__4904 = 0;
+              var G__4905 = 0;
+              seq__4886 = G__4902;
+              chunk__4887 = G__4903;
+              count__4888 = G__4904;
+              i__4889 = G__4905;
               continue
             }
           }else {
@@ -33716,78 +34820,78 @@ bible_plan.verse_map.assoc_verse_map = function assoc_verse_map(name, verse_map_
   return cljs.core.swap_BANG_.call(null, bible_plan.verse_map.verse_maps, cljs.core.assoc, name, verse_map_data)
 };
 bible_plan.verse_map.load_verse_maps = function load_verse_maps() {
-  return ajax.core.ajax_request.call(null, "/edn/verse-maps/verse-maps.edn", new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function load_available_verse_maps(p__6720) {
-    var vec__6730 = p__6720;
-    var ok = cljs.core.nth.call(null, vec__6730, 0, null);
-    var verse_map_names = cljs.core.nth.call(null, vec__6730, 1, null);
+  return ajax.core.ajax_request.call(null, "/edn/verse-maps/verse-maps.edn", new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function load_available_verse_maps(p__6805) {
+    var vec__6815 = p__6805;
+    var ok = cljs.core.nth.call(null, vec__6815, 0, null);
+    var verse_map_names = cljs.core.nth.call(null, vec__6815, 1, null);
     if(cljs.core.truth_(ok)) {
-      var seq__6731 = cljs.core.seq.call(null, verse_map_names);
-      var chunk__6732 = null;
-      var count__6733 = 0;
-      var i__6734 = 0;
+      var seq__6816 = cljs.core.seq.call(null, verse_map_names);
+      var chunk__6817 = null;
+      var count__6818 = 0;
+      var i__6819 = 0;
       while(true) {
-        if(i__6734 < count__6733) {
-          var verse_map_name = cljs.core._nth.call(null, chunk__6732, i__6734);
+        if(i__6819 < count__6818) {
+          var verse_map_name = cljs.core._nth.call(null, chunk__6817, i__6819);
           shodan.console.log.call(null, [cljs.core.str("Loading verse-map: "), cljs.core.str(verse_map_name)].join(""));
-          ajax.core.ajax_request.call(null, [cljs.core.str("/edn/verse-maps/"), cljs.core.str(cljs.core.name.call(null, verse_map_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__6731, chunk__6732, count__6733, i__6734, verse_map_name) {
-            return function(p__6735) {
-              var vec__6736 = p__6735;
-              var ok__$1 = cljs.core.nth.call(null, vec__6736, 0, null);
-              var verse_map_data = cljs.core.nth.call(null, vec__6736, 1, null);
+          ajax.core.ajax_request.call(null, [cljs.core.str("/edn/verse-maps/"), cljs.core.str(cljs.core.name.call(null, verse_map_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__6816, chunk__6817, count__6818, i__6819, verse_map_name) {
+            return function(p__6820) {
+              var vec__6821 = p__6820;
+              var ok__$1 = cljs.core.nth.call(null, vec__6821, 0, null);
+              var verse_map_data = cljs.core.nth.call(null, vec__6821, 1, null);
               if(cljs.core.truth_(ok__$1)) {
                 return bible_plan.verse_map.assoc_verse_map.call(null, verse_map_name, verse_map_data)
               }else {
                 return null
               }
             }
-          }(seq__6731, chunk__6732, count__6733, i__6734, verse_map_name), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true));
-          var G__6739 = seq__6731;
-          var G__6740 = chunk__6732;
-          var G__6741 = count__6733;
-          var G__6742 = i__6734 + 1;
-          seq__6731 = G__6739;
-          chunk__6732 = G__6740;
-          count__6733 = G__6741;
-          i__6734 = G__6742;
+          }(seq__6816, chunk__6817, count__6818, i__6819, verse_map_name), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true));
+          var G__6824 = seq__6816;
+          var G__6825 = chunk__6817;
+          var G__6826 = count__6818;
+          var G__6827 = i__6819 + 1;
+          seq__6816 = G__6824;
+          chunk__6817 = G__6825;
+          count__6818 = G__6826;
+          i__6819 = G__6827;
           continue
         }else {
-          var temp__4092__auto__ = cljs.core.seq.call(null, seq__6731);
+          var temp__4092__auto__ = cljs.core.seq.call(null, seq__6816);
           if(temp__4092__auto__) {
-            var seq__6731__$1 = temp__4092__auto__;
-            if(cljs.core.chunked_seq_QMARK_.call(null, seq__6731__$1)) {
-              var c__3615__auto__ = cljs.core.chunk_first.call(null, seq__6731__$1);
-              var G__6743 = cljs.core.chunk_rest.call(null, seq__6731__$1);
-              var G__6744 = c__3615__auto__;
-              var G__6745 = cljs.core.count.call(null, c__3615__auto__);
-              var G__6746 = 0;
-              seq__6731 = G__6743;
-              chunk__6732 = G__6744;
-              count__6733 = G__6745;
-              i__6734 = G__6746;
+            var seq__6816__$1 = temp__4092__auto__;
+            if(cljs.core.chunked_seq_QMARK_.call(null, seq__6816__$1)) {
+              var c__3670__auto__ = cljs.core.chunk_first.call(null, seq__6816__$1);
+              var G__6828 = cljs.core.chunk_rest.call(null, seq__6816__$1);
+              var G__6829 = c__3670__auto__;
+              var G__6830 = cljs.core.count.call(null, c__3670__auto__);
+              var G__6831 = 0;
+              seq__6816 = G__6828;
+              chunk__6817 = G__6829;
+              count__6818 = G__6830;
+              i__6819 = G__6831;
               continue
             }else {
-              var verse_map_name = cljs.core.first.call(null, seq__6731__$1);
+              var verse_map_name = cljs.core.first.call(null, seq__6816__$1);
               shodan.console.log.call(null, [cljs.core.str("Loading verse-map: "), cljs.core.str(verse_map_name)].join(""));
-              ajax.core.ajax_request.call(null, [cljs.core.str("/edn/verse-maps/"), cljs.core.str(cljs.core.name.call(null, verse_map_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__6731, chunk__6732, count__6733, i__6734, verse_map_name, seq__6731__$1, temp__4092__auto__) {
-                return function(p__6737) {
-                  var vec__6738 = p__6737;
-                  var ok__$1 = cljs.core.nth.call(null, vec__6738, 0, null);
-                  var verse_map_data = cljs.core.nth.call(null, vec__6738, 1, null);
+              ajax.core.ajax_request.call(null, [cljs.core.str("/edn/verse-maps/"), cljs.core.str(cljs.core.name.call(null, verse_map_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__6816, chunk__6817, count__6818, i__6819, verse_map_name, seq__6816__$1, temp__4092__auto__) {
+                return function(p__6822) {
+                  var vec__6823 = p__6822;
+                  var ok__$1 = cljs.core.nth.call(null, vec__6823, 0, null);
+                  var verse_map_data = cljs.core.nth.call(null, vec__6823, 1, null);
                   if(cljs.core.truth_(ok__$1)) {
                     return bible_plan.verse_map.assoc_verse_map.call(null, verse_map_name, verse_map_data)
                   }else {
                     return null
                   }
                 }
-              }(seq__6731, chunk__6732, count__6733, i__6734, verse_map_name, seq__6731__$1, temp__4092__auto__), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true));
-              var G__6747 = cljs.core.next.call(null, seq__6731__$1);
-              var G__6748 = null;
-              var G__6749 = 0;
-              var G__6750 = 0;
-              seq__6731 = G__6747;
-              chunk__6732 = G__6748;
-              count__6733 = G__6749;
-              i__6734 = G__6750;
+              }(seq__6816, chunk__6817, count__6818, i__6819, verse_map_name, seq__6816__$1, temp__4092__auto__), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true));
+              var G__6832 = cljs.core.next.call(null, seq__6816__$1);
+              var G__6833 = null;
+              var G__6834 = 0;
+              var G__6835 = 0;
+              seq__6816 = G__6832;
+              chunk__6817 = G__6833;
+              count__6818 = G__6834;
+              i__6819 = G__6835;
               continue
             }
           }else {
@@ -33802,132 +34906,132 @@ bible_plan.verse_map.load_verse_maps = function load_verse_maps() {
   }, new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true))
 };
 bible_plan.verse_map.load_verse_maps.call(null);
-bible_plan.verse_map.verse_map_QMARK_ = function verse_map_QMARK_(p__6751) {
-  var map__6753 = p__6751;
-  var map__6753__$1 = cljs.core.seq_QMARK_.call(null, map__6753) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6753) : map__6753;
-  var maybe_verse_map = map__6753__$1;
-  var verse = cljs.core.get.call(null, map__6753__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
-  var chapter = cljs.core.get.call(null, map__6753__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
-  var book = cljs.core.get.call(null, map__6753__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
-  var and__3941__auto__ = function() {
-    var or__3943__auto__ = function() {
-      var and__3941__auto__ = book;
-      if(cljs.core.truth_(and__3941__auto__)) {
-        var and__3941__auto____$1 = chapter;
-        if(cljs.core.truth_(and__3941__auto____$1)) {
+bible_plan.verse_map.verse_map_QMARK_ = function verse_map_QMARK_(p__6836) {
+  var map__6838 = p__6836;
+  var map__6838__$1 = cljs.core.seq_QMARK_.call(null, map__6838) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6838) : map__6838;
+  var maybe_verse_map = map__6838__$1;
+  var verse = cljs.core.get.call(null, map__6838__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
+  var chapter = cljs.core.get.call(null, map__6838__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
+  var book = cljs.core.get.call(null, map__6838__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+  var and__2952__auto__ = function() {
+    var or__2961__auto__ = function() {
+      var and__2952__auto__ = book;
+      if(cljs.core.truth_(and__2952__auto__)) {
+        var and__2952__auto____$1 = chapter;
+        if(cljs.core.truth_(and__2952__auto____$1)) {
           return verse
         }else {
-          return and__3941__auto____$1
+          return and__2952__auto____$1
         }
       }else {
-        return and__3941__auto__
+        return and__2952__auto__
       }
     }();
-    if(cljs.core.truth_(or__3943__auto__)) {
-      return or__3943__auto__
+    if(cljs.core.truth_(or__2961__auto__)) {
+      return or__2961__auto__
     }else {
-      var or__3943__auto____$1 = function() {
-        var and__3941__auto__ = book;
-        if(cljs.core.truth_(and__3941__auto__)) {
-          var and__3941__auto____$1 = chapter;
-          if(cljs.core.truth_(and__3941__auto____$1)) {
+      var or__2961__auto____$1 = function() {
+        var and__2952__auto__ = book;
+        if(cljs.core.truth_(and__2952__auto__)) {
+          var and__2952__auto____$1 = chapter;
+          if(cljs.core.truth_(and__2952__auto____$1)) {
             return cljs.core.not.call(null, verse)
           }else {
-            return and__3941__auto____$1
+            return and__2952__auto____$1
           }
         }else {
-          return and__3941__auto__
+          return and__2952__auto__
         }
       }();
-      if(cljs.core.truth_(or__3943__auto____$1)) {
-        return or__3943__auto____$1
+      if(cljs.core.truth_(or__2961__auto____$1)) {
+        return or__2961__auto____$1
       }else {
-        var and__3941__auto__ = book;
-        if(cljs.core.truth_(and__3941__auto__)) {
+        var and__2952__auto__ = book;
+        if(cljs.core.truth_(and__2952__auto__)) {
           return cljs.core.not.call(null, function() {
-            var and__3941__auto____$1 = chapter;
-            if(cljs.core.truth_(and__3941__auto____$1)) {
+            var and__2952__auto____$1 = chapter;
+            if(cljs.core.truth_(and__2952__auto____$1)) {
               return verse
             }else {
-              return and__3941__auto____$1
+              return and__2952__auto____$1
             }
           }())
         }else {
-          return and__3941__auto__
+          return and__2952__auto__
         }
       }
     }
   }();
-  if(cljs.core.truth_(and__3941__auto__)) {
+  if(cljs.core.truth_(and__2952__auto__)) {
     return cljs.core.every_QMARK_.call(null, cljs.core.number_QMARK_, cljs.core.vals.call(null, maybe_verse_map))
   }else {
-    return and__3941__auto__
+    return and__2952__auto__
   }
 };
-bible_plan.verse_map.__GT_comparable_verse = function __GT_comparable_verse(p__6754) {
-  var map__6756 = p__6754;
-  var map__6756__$1 = cljs.core.seq_QMARK_.call(null, map__6756) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6756) : map__6756;
-  var verse_map = map__6756__$1;
-  var verse = cljs.core.get.call(null, map__6756__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
-  var chapter = cljs.core.get.call(null, map__6756__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
-  var book = cljs.core.get.call(null, map__6756__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+bible_plan.verse_map.__GT_comparable_verse = function __GT_comparable_verse(p__6839) {
+  var map__6841 = p__6839;
+  var map__6841__$1 = cljs.core.seq_QMARK_.call(null, map__6841) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6841) : map__6841;
+  var verse_map = map__6841__$1;
+  var verse = cljs.core.get.call(null, map__6841__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
+  var chapter = cljs.core.get.call(null, map__6841__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
+  var book = cljs.core.get.call(null, map__6841__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
   if(cljs.core.truth_(book)) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, new cljs.core.Symbol(null, "book", "book", -1637501790, null)))].join(""));
   }
   return cljs.core.PersistentVector.fromArray([book, function() {
-    var or__3943__auto__ = chapter;
-    if(cljs.core.truth_(or__3943__auto__)) {
-      return or__3943__auto__
+    var or__2961__auto__ = chapter;
+    if(cljs.core.truth_(or__2961__auto__)) {
+      return or__2961__auto__
     }else {
       return 0
     }
   }(), function() {
-    var or__3943__auto__ = verse;
-    if(cljs.core.truth_(or__3943__auto__)) {
-      return or__3943__auto__
+    var or__2961__auto__ = verse;
+    if(cljs.core.truth_(or__2961__auto__)) {
+      return or__2961__auto__
     }else {
       return 0
     }
   }()], true)
 };
 bible_plan.verse_map._LT_ = function() {
-  var _LT___delegate = function(p__6757, verse_maps) {
-    var map__6759 = p__6757;
-    var map__6759__$1 = cljs.core.seq_QMARK_.call(null, map__6759) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6759) : map__6759;
-    var verse_map = map__6759__$1;
-    var verse = cljs.core.get.call(null, map__6759__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
-    var chapter = cljs.core.get.call(null, map__6759__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
-    var book = cljs.core.get.call(null, map__6759__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+  var _LT___delegate = function(p__6842, verse_maps) {
+    var map__6844 = p__6842;
+    var map__6844__$1 = cljs.core.seq_QMARK_.call(null, map__6844) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6844) : map__6844;
+    var verse_map = map__6844__$1;
+    var verse = cljs.core.get.call(null, map__6844__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
+    var chapter = cljs.core.get.call(null, map__6844__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
+    var book = cljs.core.get.call(null, map__6844__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
     var verse_maps__$1 = cljs.core.into.call(null, cljs.core.PersistentVector.fromArray([verse_map], true), verse_maps);
     var comparison_pairs = cljs.core.partition.call(null, 2, 1, cljs.core.map.call(null, bible_plan.verse_map.__GT_comparable_verse, verse_maps__$1));
     return cljs.core.every_QMARK_.call(null, function(comparison_pair) {
       return 0 > cljs.core.apply.call(null, cljs.core.compare, comparison_pair)
     }, comparison_pairs)
   };
-  var _LT_ = function(p__6757, var_args) {
+  var _LT_ = function(p__6842, var_args) {
     var verse_maps = null;
     if(arguments.length > 1) {
       verse_maps = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1), 0)
     }
-    return _LT___delegate.call(this, p__6757, verse_maps)
+    return _LT___delegate.call(this, p__6842, verse_maps)
   };
   _LT_.cljs$lang$maxFixedArity = 1;
-  _LT_.cljs$lang$applyTo = function(arglist__6760) {
-    var p__6757 = cljs.core.first(arglist__6760);
-    var verse_maps = cljs.core.rest(arglist__6760);
-    return _LT___delegate(p__6757, verse_maps)
+  _LT_.cljs$lang$applyTo = function(arglist__6845) {
+    var p__6842 = cljs.core.first(arglist__6845);
+    var verse_maps = cljs.core.rest(arglist__6845);
+    return _LT___delegate(p__6842, verse_maps)
   };
   _LT_.cljs$core$IFn$_invoke$arity$variadic = _LT___delegate;
   return _LT_
 }();
-bible_plan.verse_map.verse_map_specificity = function verse_map_specificity(p__6761) {
-  var map__6763 = p__6761;
-  var map__6763__$1 = cljs.core.seq_QMARK_.call(null, map__6763) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6763) : map__6763;
-  var verse_map = map__6763__$1;
-  var verse = cljs.core.get.call(null, map__6763__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
-  var chapter = cljs.core.get.call(null, map__6763__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
-  var book = cljs.core.get.call(null, map__6763__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+bible_plan.verse_map.verse_map_specificity = function verse_map_specificity(p__6846) {
+  var map__6848 = p__6846;
+  var map__6848__$1 = cljs.core.seq_QMARK_.call(null, map__6848) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6848) : map__6848;
+  var verse_map = map__6848__$1;
+  var verse = cljs.core.get.call(null, map__6848__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
+  var chapter = cljs.core.get.call(null, map__6848__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
+  var book = cljs.core.get.call(null, map__6848__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
   if(cljs.core.truth_(book)) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, new cljs.core.Symbol(null, "book", "book", -1637501790, null)))].join(""));
@@ -33966,8 +35070,8 @@ bible_plan.verse_map.common_specificities = function() {
     return common_specificities__delegate.call(this, verse_maps)
   };
   common_specificities.cljs$lang$maxFixedArity = 0;
-  common_specificities.cljs$lang$applyTo = function(arglist__6764) {
-    var verse_maps = cljs.core.seq(arglist__6764);
+  common_specificities.cljs$lang$applyTo = function(arglist__6849) {
+    var verse_maps = cljs.core.seq(arglist__6849);
     return common_specificities__delegate(verse_maps)
   };
   common_specificities.cljs$core$IFn$_invoke$arity$variadic = common_specificities__delegate;
@@ -33977,27 +35081,27 @@ bible_plan.verse_map.verse_map_specificities = cljs.core.PersistentVector.fromAr
 bible_plan.verse_map.specificity_weight = cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book", "book", 1016933979), 1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), 2, new cljs.core.Keyword(null, "verse", "verse", 1126001831), 3], true);
 bible_plan.verse_map.specificity_comparator_fn = function specificity_comparator_fn(clojure_comparator_fn) {
   return function() {
-    var G__6765__delegate = function(specificities) {
+    var G__6850__delegate = function(specificities) {
       if(cljs.core.truth_(specificities)) {
         return cljs.core.apply.call(null, clojure_comparator_fn, cljs.core.map.call(null, bible_plan.verse_map.specificity_weight, specificities))
       }else {
         return null
       }
     };
-    var G__6765 = function(var_args) {
+    var G__6850 = function(var_args) {
       var specificities = null;
       if(arguments.length > 0) {
         specificities = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0), 0)
       }
-      return G__6765__delegate.call(this, specificities)
+      return G__6850__delegate.call(this, specificities)
     };
-    G__6765.cljs$lang$maxFixedArity = 0;
-    G__6765.cljs$lang$applyTo = function(arglist__6766) {
-      var specificities = cljs.core.seq(arglist__6766);
-      return G__6765__delegate(specificities)
+    G__6850.cljs$lang$maxFixedArity = 0;
+    G__6850.cljs$lang$applyTo = function(arglist__6851) {
+      var specificities = cljs.core.seq(arglist__6851);
+      return G__6850__delegate(specificities)
     };
-    G__6765.cljs$core$IFn$_invoke$arity$variadic = G__6765__delegate;
-    return G__6765
+    G__6850.cljs$core$IFn$_invoke$arity$variadic = G__6850__delegate;
+    return G__6850
   }()
 };
 bible_plan.verse_map.specificity_LT_ = bible_plan.verse_map.specificity_comparator_fn.call(null, cljs.core._LT_);
@@ -34027,8 +35131,8 @@ bible_plan.verse_map.highest_common_verse_map_specificity = function() {
     return highest_common_verse_map_specificity__delegate.call(this, verse_maps)
   };
   highest_common_verse_map_specificity.cljs$lang$maxFixedArity = 0;
-  highest_common_verse_map_specificity.cljs$lang$applyTo = function(arglist__6767) {
-    var verse_maps = cljs.core.seq(arglist__6767);
+  highest_common_verse_map_specificity.cljs$lang$applyTo = function(arglist__6852) {
+    var verse_maps = cljs.core.seq(arglist__6852);
     return highest_common_verse_map_specificity__delegate(verse_maps)
   };
   highest_common_verse_map_specificity.cljs$core$IFn$_invoke$arity$variadic = highest_common_verse_map_specificity__delegate;
@@ -34036,63 +35140,63 @@ bible_plan.verse_map.highest_common_verse_map_specificity = function() {
 }();
 bible_plan.verse_map.masked__GT_ = function masked__GT_(verse_map_1, verse_map_2) {
   var verse_maps = cljs.core.PersistentVector.fromArray([verse_map_1, verse_map_2], true);
-  var or__3943__auto__ = function() {
-    var and__3941__auto__ = cljs.core.every_QMARK_.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), verse_maps);
-    if(and__3941__auto__) {
+  var or__2961__auto__ = function() {
+    var and__2952__auto__ = cljs.core.every_QMARK_.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), verse_maps);
+    if(and__2952__auto__) {
       return cljs.core.apply.call(null, cljs.core._GT_, cljs.core.map.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), verse_maps))
     }else {
-      return and__3941__auto__
+      return and__2952__auto__
     }
   }();
-  if(cljs.core.truth_(or__3943__auto__)) {
-    return or__3943__auto__
+  if(cljs.core.truth_(or__2961__auto__)) {
+    return or__2961__auto__
   }else {
-    var or__3943__auto____$1 = function() {
-      var and__3941__auto__ = cljs.core.every_QMARK_.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), verse_maps);
-      if(and__3941__auto__) {
-        var and__3941__auto____$1 = cljs.core.every_QMARK_.call(null, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), verse_maps);
-        if(and__3941__auto____$1) {
-          var and__3941__auto____$2 = cljs.core.apply.call(null, cljs.core._EQ_, cljs.core.map.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), verse_maps));
-          if(cljs.core.truth_(and__3941__auto____$2)) {
+    var or__2961__auto____$1 = function() {
+      var and__2952__auto__ = cljs.core.every_QMARK_.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), verse_maps);
+      if(and__2952__auto__) {
+        var and__2952__auto____$1 = cljs.core.every_QMARK_.call(null, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), verse_maps);
+        if(and__2952__auto____$1) {
+          var and__2952__auto____$2 = cljs.core.apply.call(null, cljs.core._EQ_, cljs.core.map.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), verse_maps));
+          if(cljs.core.truth_(and__2952__auto____$2)) {
             return cljs.core.apply.call(null, cljs.core._GT_, cljs.core.map.call(null, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), verse_maps))
           }else {
-            return and__3941__auto____$2
+            return and__2952__auto____$2
           }
         }else {
-          return and__3941__auto____$1
+          return and__2952__auto____$1
         }
       }else {
-        return and__3941__auto__
+        return and__2952__auto__
       }
     }();
-    if(cljs.core.truth_(or__3943__auto____$1)) {
-      return or__3943__auto____$1
+    if(cljs.core.truth_(or__2961__auto____$1)) {
+      return or__2961__auto____$1
     }else {
-      var and__3941__auto__ = cljs.core.every_QMARK_.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), verse_maps);
-      if(and__3941__auto__) {
-        var and__3941__auto____$1 = cljs.core.every_QMARK_.call(null, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), verse_maps);
-        if(and__3941__auto____$1) {
-          var and__3941__auto____$2 = cljs.core.every_QMARK_.call(null, new cljs.core.Keyword(null, "verse", "verse", 1126001831), verse_maps);
-          if(and__3941__auto____$2) {
-            var and__3941__auto____$3 = cljs.core.apply.call(null, cljs.core._EQ_, cljs.core.map.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), verse_maps));
-            if(cljs.core.truth_(and__3941__auto____$3)) {
-              var and__3941__auto____$4 = cljs.core.apply.call(null, cljs.core._EQ_, cljs.core.map.call(null, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), verse_maps));
-              if(cljs.core.truth_(and__3941__auto____$4)) {
+      var and__2952__auto__ = cljs.core.every_QMARK_.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), verse_maps);
+      if(and__2952__auto__) {
+        var and__2952__auto____$1 = cljs.core.every_QMARK_.call(null, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), verse_maps);
+        if(and__2952__auto____$1) {
+          var and__2952__auto____$2 = cljs.core.every_QMARK_.call(null, new cljs.core.Keyword(null, "verse", "verse", 1126001831), verse_maps);
+          if(and__2952__auto____$2) {
+            var and__2952__auto____$3 = cljs.core.apply.call(null, cljs.core._EQ_, cljs.core.map.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), verse_maps));
+            if(cljs.core.truth_(and__2952__auto____$3)) {
+              var and__2952__auto____$4 = cljs.core.apply.call(null, cljs.core._EQ_, cljs.core.map.call(null, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999), verse_maps));
+              if(cljs.core.truth_(and__2952__auto____$4)) {
                 return cljs.core.apply.call(null, cljs.core._GT_, cljs.core.map.call(null, new cljs.core.Keyword(null, "verse", "verse", 1126001831), verse_maps))
               }else {
-                return and__3941__auto____$4
+                return and__2952__auto____$4
               }
             }else {
-              return and__3941__auto____$3
+              return and__2952__auto____$3
             }
           }else {
-            return and__3941__auto____$2
+            return and__2952__auto____$2
           }
         }else {
-          return and__3941__auto____$1
+          return and__2952__auto____$1
         }
       }else {
-        return and__3941__auto__
+        return and__2952__auto__
       }
     }
   }
@@ -34103,46 +35207,46 @@ bible_plan.verse_map.masked__EQ_ = function masked__EQ_(verse_map_1, verse_map_2
 };
 bible_plan.verse_map.masked__GT__EQ_ = function masked__GT__EQ_(verse_map_1, verse_map_2) {
   var verse_maps = cljs.core.PersistentVector.fromArray([verse_map_1, verse_map_2], true);
-  var or__3943__auto__ = cljs.core.apply.call(null, bible_plan.verse_map.masked__EQ_, verse_maps);
-  if(cljs.core.truth_(or__3943__auto__)) {
-    return or__3943__auto__
+  var or__2961__auto__ = cljs.core.apply.call(null, bible_plan.verse_map.masked__EQ_, verse_maps);
+  if(cljs.core.truth_(or__2961__auto__)) {
+    return or__2961__auto__
   }else {
     return cljs.core.apply.call(null, bible_plan.verse_map.masked__GT_, verse_maps)
   }
 };
-bible_plan.verse_map.range = function range(p__6768) {
-  var map__6770 = p__6768;
-  var map__6770__$1 = cljs.core.seq_QMARK_.call(null, map__6770) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6770) : map__6770;
-  var reference = map__6770__$1;
-  var end = cljs.core.get.call(null, map__6770__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-  var start = cljs.core.get.call(null, map__6770__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
-  var verse_map_range = cljs.core.drop_while.call(null, cljs.core.partial.call(null, bible_plan.verse_map.masked__GT_, start), (new cljs.core.Keyword(null, "esv", "esv", 1014004986)).call(null, cljs.core.deref.call(null, bible_plan.verse_map.verse_maps)));
+bible_plan.verse_map.range = function range(p__6853) {
+  var map__6855 = p__6853;
+  var map__6855__$1 = cljs.core.seq_QMARK_.call(null, map__6855) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6855) : map__6855;
+  var reference = map__6855__$1;
+  var end = cljs.core.get.call(null, map__6855__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+  var start = cljs.core.get.call(null, map__6855__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+  var verse_map_range = cljs.core.drop_while.call(null, cljs.core.partial.call(null, bible_plan.verse_map.masked__GT_, start), (new cljs.core.Keyword(null, "esv", "esv", 1014004986)).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null, bible_plan.verse_map.verse_maps)));
   var verse_map_range__$1 = cljs.core.truth_(end) ? cljs.core.take_while.call(null, cljs.core.partial.call(null, bible_plan.verse_map.masked__GT__EQ_, end), verse_map_range) : cljs.core.take_while.call(null, cljs.core.partial.call(null, bible_plan.verse_map.masked__EQ_, start), verse_map_range);
   return verse_map_range__$1
 };
-bible_plan.verse_map.max_verse_map = function max_verse_map(p__6771) {
-  var map__6773 = p__6771;
-  var map__6773__$1 = cljs.core.seq_QMARK_.call(null, map__6773) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6773) : map__6773;
-  var reference = map__6773__$1;
-  var start_verse_map = cljs.core.get.call(null, map__6773__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
-  var end_verse_map = cljs.core.get.call(null, map__6773__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+bible_plan.verse_map.max_verse_map = function max_verse_map(p__6856) {
+  var map__6858 = p__6856;
+  var map__6858__$1 = cljs.core.seq_QMARK_.call(null, map__6858) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6858) : map__6858;
+  var reference = map__6858__$1;
+  var start_verse_map = cljs.core.get.call(null, map__6858__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+  var end_verse_map = cljs.core.get.call(null, map__6858__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
   if(cljs.core.truth_(start_verse_map)) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, new cljs.core.Symbol(null, "start-verse-map", "start-verse-map", 895319762, null)))].join(""));
   }
-  var or__3943__auto__ = end_verse_map;
-  if(cljs.core.truth_(or__3943__auto__)) {
-    return or__3943__auto__
+  var or__2961__auto__ = end_verse_map;
+  if(cljs.core.truth_(or__2961__auto__)) {
+    return or__2961__auto__
   }else {
     return start_verse_map
   }
 };
-bible_plan.verse_map.min_verse_map = function min_verse_map(p__6774) {
-  var map__6776 = p__6774;
-  var map__6776__$1 = cljs.core.seq_QMARK_.call(null, map__6776) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6776) : map__6776;
-  var reference = map__6776__$1;
-  var start_verse_map = cljs.core.get.call(null, map__6776__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
-  var end_verse_map = cljs.core.get.call(null, map__6776__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+bible_plan.verse_map.min_verse_map = function min_verse_map(p__6859) {
+  var map__6861 = p__6859;
+  var map__6861__$1 = cljs.core.seq_QMARK_.call(null, map__6861) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6861) : map__6861;
+  var reference = map__6861__$1;
+  var start_verse_map = cljs.core.get.call(null, map__6861__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+  var end_verse_map = cljs.core.get.call(null, map__6861__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
   if(cljs.core.truth_(start_verse_map)) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, new cljs.core.Symbol(null, "start-verse-map", "start-verse-map", 895319762, null)))].join(""));
@@ -34166,54 +35270,54 @@ bible_plan.verse_map.lowest_unequal_specificity = function lowest_unequal_specif
     }
   }, bible_plan.verse_map.verse_map_specificities)
 };
-bible_plan.verse_map.__GT_book_str = function __GT_book_str(p__6777) {
-  var map__6780 = p__6777;
-  var map__6780__$1 = cljs.core.seq_QMARK_.call(null, map__6780) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6780) : map__6780;
-  var verse_map = map__6780__$1;
-  var chapter = cljs.core.get.call(null, map__6780__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
-  var book = cljs.core.get.call(null, map__6780__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+bible_plan.verse_map.__GT_book_str = function __GT_book_str(p__6862) {
+  var map__6865 = p__6862;
+  var map__6865__$1 = cljs.core.seq_QMARK_.call(null, map__6865) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6865) : map__6865;
+  var verse_map = map__6865__$1;
+  var chapter = cljs.core.get.call(null, map__6865__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
+  var book = cljs.core.get.call(null, map__6865__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
   if(cljs.core.truth_(book)) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, new cljs.core.Symbol(null, "book", "book", -1637501790, null)))].join(""));
   }
-  var book_str = cljs.core.not.call(null, chapter) ? cljs.core.get_in.call(null, (new cljs.core.Keyword(null, "esv", "esv", 1014004986)).call(null, cljs.core.deref.call(null, bible_plan.bible.bibles)), cljs.core.PersistentVector.fromArray([book, new cljs.core.Keyword(null, "name", "name", 1017277949)], true)) : cljs.core.get_in.call(null, (new cljs.core.Keyword(null, "esv", "esv", 1014004986)).call(null, cljs.core.deref.call(null, bible_plan.bible.bibles)), cljs.core.PersistentVector.fromArray([book, 
+  var book_str = cljs.core.not.call(null, chapter) ? cljs.core.get_in.call(null, (new cljs.core.Keyword(null, "esv", "esv", 1014004986)).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null, bible_plan.bible.bibles)), cljs.core.PersistentVector.fromArray([book, new cljs.core.Keyword(null, "name", "name", 1017277949)], true)) : cljs.core.get_in.call(null, (new cljs.core.Keyword(null, "esv", "esv", 1014004986)).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null, bible_plan.bible.bibles)), cljs.core.PersistentVector.fromArray([book, 
   new cljs.core.Keyword(null, "abbreviation", "abbreviation", 3348225728)], true));
   var book_str__$1 = cljs.core.truth_(cljs.core.re_matches.call(null, /^[0-9] .+/, book_str)) ? function() {
-    var vec__6781 = clojure.string.split.call(null, book_str, / /, 2);
-    var number_part = cljs.core.nth.call(null, vec__6781, 0, null);
-    var name_part = cljs.core.nth.call(null, vec__6781, 1, null);
+    var vec__6866 = clojure.string.split.call(null, book_str, / /, 2);
+    var number_part = cljs.core.nth.call(null, vec__6866, 0, null);
+    var name_part = cljs.core.nth.call(null, vec__6866, 1, null);
     return[cljs.core.str(number_part), cljs.core.str(" "), cljs.core.str(clojure.string.capitalize.call(null, name_part))].join("")
   }() : clojure.string.capitalize.call(null, book_str);
   return book_str__$1
 };
-bible_plan.verse_map.__GT_chapter_str = function __GT_chapter_str(p__6782) {
-  var map__6784 = p__6782;
-  var map__6784__$1 = cljs.core.seq_QMARK_.call(null, map__6784) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6784) : map__6784;
-  var verse_map = map__6784__$1;
-  var chapter = cljs.core.get.call(null, map__6784__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
+bible_plan.verse_map.__GT_chapter_str = function __GT_chapter_str(p__6867) {
+  var map__6869 = p__6867;
+  var map__6869__$1 = cljs.core.seq_QMARK_.call(null, map__6869) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6869) : map__6869;
+  var verse_map = map__6869__$1;
+  var chapter = cljs.core.get.call(null, map__6869__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
   if(cljs.core.truth_(chapter)) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, new cljs.core.Symbol(null, "chapter", "chapter", -901515770, null)))].join(""));
   }
   return[cljs.core.str(chapter)].join("")
 };
-bible_plan.verse_map.__GT_verse_str = function __GT_verse_str(p__6785) {
-  var map__6787 = p__6785;
-  var map__6787__$1 = cljs.core.seq_QMARK_.call(null, map__6787) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6787) : map__6787;
-  var verse_map = map__6787__$1;
-  var verse = cljs.core.get.call(null, map__6787__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
+bible_plan.verse_map.__GT_verse_str = function __GT_verse_str(p__6870) {
+  var map__6872 = p__6870;
+  var map__6872__$1 = cljs.core.seq_QMARK_.call(null, map__6872) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6872) : map__6872;
+  var verse_map = map__6872__$1;
+  var verse = cljs.core.get.call(null, map__6872__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
   if(cljs.core.truth_(verse)) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, new cljs.core.Symbol(null, "verse", "verse", -1528433938, null)))].join(""));
   }
   return[cljs.core.str(verse)].join("")
 };
-bible_plan.verse_map.__GT_chapter_verse_QMARK__str = function __GT_chapter_verse_QMARK__str(p__6788) {
-  var map__6790 = p__6788;
-  var map__6790__$1 = cljs.core.seq_QMARK_.call(null, map__6790) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6790) : map__6790;
-  var verse_map = map__6790__$1;
-  var verse = cljs.core.get.call(null, map__6790__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
-  var chapter = cljs.core.get.call(null, map__6790__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
+bible_plan.verse_map.__GT_chapter_verse_QMARK__str = function __GT_chapter_verse_QMARK__str(p__6873) {
+  var map__6875 = p__6873;
+  var map__6875__$1 = cljs.core.seq_QMARK_.call(null, map__6875) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6875) : map__6875;
+  var verse_map = map__6875__$1;
+  var verse = cljs.core.get.call(null, map__6875__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
+  var chapter = cljs.core.get.call(null, map__6875__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
   if(cljs.core.truth_(bible_plan.verse_map.verse_map_QMARK_.call(null, verse_map))) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "verse-map?", "verse-map?", 1808441780, null), new cljs.core.Symbol(null, "verse-map", "verse-map", 1241672317, null))))].join(""));
@@ -34226,43 +35330,43 @@ bible_plan.verse_map.__GT_chapter_verse_QMARK__str = function __GT_chapter_verse
   var verse_str__$1 = cljs.core.truth_(verse) ? [cljs.core.str(verse_str), cljs.core.str("."), cljs.core.str(bible_plan.verse_map.__GT_verse_str.call(null, verse_map))].join("") : verse_str;
   return verse_str__$1
 };
-bible_plan.verse_map.__GT_book_chapter_QMARK__verse_QMARK__str = function __GT_book_chapter_QMARK__verse_QMARK__str(p__6791) {
-  var map__6793 = p__6791;
-  var map__6793__$1 = cljs.core.seq_QMARK_.call(null, map__6793) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6793) : map__6793;
-  var verse_map = map__6793__$1;
-  var verse = cljs.core.get.call(null, map__6793__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
-  var chapter = cljs.core.get.call(null, map__6793__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
-  var book = cljs.core.get.call(null, map__6793__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+bible_plan.verse_map.__GT_book_chapter_QMARK__verse_QMARK__str = function __GT_book_chapter_QMARK__verse_QMARK__str(p__6876) {
+  var map__6878 = p__6876;
+  var map__6878__$1 = cljs.core.seq_QMARK_.call(null, map__6878) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6878) : map__6878;
+  var verse_map = map__6878__$1;
+  var verse = cljs.core.get.call(null, map__6878__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
+  var chapter = cljs.core.get.call(null, map__6878__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
+  var book = cljs.core.get.call(null, map__6878__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
   if(cljs.core.truth_(bible_plan.verse_map.verse_map_QMARK_.call(null, verse_map))) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "verse-map?", "verse-map?", 1808441780, null), new cljs.core.Symbol(null, "verse-map", "verse-map", 1241672317, null))))].join(""));
   }
   if(cljs.core.truth_(function() {
-    var or__3943__auto__ = book;
-    if(cljs.core.truth_(or__3943__auto__)) {
-      return or__3943__auto__
+    var or__2961__auto__ = book;
+    if(cljs.core.truth_(or__2961__auto__)) {
+      return or__2961__auto__
     }else {
-      var or__3943__auto____$1 = function() {
-        var and__3941__auto__ = book;
-        if(cljs.core.truth_(and__3941__auto__)) {
+      var or__2961__auto____$1 = function() {
+        var and__2952__auto__ = book;
+        if(cljs.core.truth_(and__2952__auto__)) {
           return chapter
         }else {
-          return and__3941__auto__
+          return and__2952__auto__
         }
       }();
-      if(cljs.core.truth_(or__3943__auto____$1)) {
-        return or__3943__auto____$1
+      if(cljs.core.truth_(or__2961__auto____$1)) {
+        return or__2961__auto____$1
       }else {
-        var and__3941__auto__ = book;
-        if(cljs.core.truth_(and__3941__auto__)) {
-          var and__3941__auto____$1 = chapter;
-          if(cljs.core.truth_(and__3941__auto____$1)) {
+        var and__2952__auto__ = book;
+        if(cljs.core.truth_(and__2952__auto__)) {
+          var and__2952__auto____$1 = chapter;
+          if(cljs.core.truth_(and__2952__auto____$1)) {
             return verse
           }else {
-            return and__3941__auto____$1
+            return and__2952__auto____$1
           }
         }else {
-          return and__3941__auto__
+          return and__2952__auto__
         }
       }
     }
@@ -34624,10 +35728,10 @@ goog.require("clojure.set");
 goog.require("shodan.console");
 goog.require("shodan.console");
 bible_plan.reference.__GT_verse_maps = function __GT_verse_maps(reference) {
-  var map__6658 = reference;
-  var map__6658__$1 = cljs.core.seq_QMARK_.call(null, map__6658) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6658) : map__6658;
-  var end = cljs.core.get.call(null, map__6658__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-  var start = cljs.core.get.call(null, map__6658__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+  var map__6743 = reference;
+  var map__6743__$1 = cljs.core.seq_QMARK_.call(null, map__6743) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6743) : map__6743;
+  var end = cljs.core.get.call(null, map__6743__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+  var start = cljs.core.get.call(null, map__6743__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
   var verse_maps = cljs.core.PersistentVector.fromArray([start], true);
   var verse_maps__$1 = cljs.core.truth_(end) ? cljs.core.conj.call(null, verse_maps, end) : verse_maps;
   return verse_maps__$1
@@ -34638,12 +35742,12 @@ bible_plan.reference.reference_LT_ = function() {
     }else {
       throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "get-in", "get-in", 1405049013, null), new cljs.core.Symbol(null, "reference", "reference", 1729280260, null), cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], true))))].join(""));
     }
-    if(cljs.core.every_QMARK_.call(null, function(p1__6659_SHARP_) {
-      return cljs.core.get_in.call(null, p1__6659_SHARP_, cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], true))
+    if(cljs.core.every_QMARK_.call(null, function(p1__6744_SHARP_) {
+      return cljs.core.get_in.call(null, p1__6744_SHARP_, cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], true))
     }, references)) {
     }else {
-      throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "every?", "every?", 1363110461, null), cljs.core.list(new cljs.core.Symbol(null, "fn*", "fn*", -1640430053, null), cljs.core.PersistentVector.fromArray([new cljs.core.Symbol(null, "p1__6659#", "p1__6659#", -1528803273, null)], true), cljs.core.list(new cljs.core.Symbol(null, "get-in", "get-in", 1405049013, null), new cljs.core.Symbol(null, "p1__6659#", "p1__6659#", 
-      -1528803273, null), cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], true))), new cljs.core.Symbol(null, "references", "references", -255581119, null))))].join(""));
+      throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "every?", "every?", 1363110461, null), cljs.core.list(new cljs.core.Symbol(null, "fn*", "fn*", -1640430053, null), cljs.core.PersistentVector.fromArray([new cljs.core.Symbol(null, "p1__6744#", "p1__6744#", -1528774598, null)], true), cljs.core.list(new cljs.core.Symbol(null, "get-in", "get-in", 1405049013, null), new cljs.core.Symbol(null, "p1__6744#", "p1__6744#", 
+      -1528774598, null), cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], true))), new cljs.core.Symbol(null, "references", "references", -255581119, null))))].join(""));
     }
     return cljs.core.apply.call(null, bible_plan.verse_map._LT_, cljs.core.reduce.call(null, cljs.core.into, cljs.core.PersistentVector.EMPTY, cljs.core.map.call(null, bible_plan.reference.__GT_verse_maps, cljs.core.into.call(null, cljs.core.PersistentVector.fromArray([reference], true), references))))
   };
@@ -34655,53 +35759,53 @@ bible_plan.reference.reference_LT_ = function() {
     return reference_LT___delegate.call(this, reference, references)
   };
   reference_LT_.cljs$lang$maxFixedArity = 1;
-  reference_LT_.cljs$lang$applyTo = function(arglist__6660) {
-    var reference = cljs.core.first(arglist__6660);
-    var references = cljs.core.rest(arglist__6660);
+  reference_LT_.cljs$lang$applyTo = function(arglist__6745) {
+    var reference = cljs.core.first(arglist__6745);
+    var references = cljs.core.rest(arglist__6745);
     return reference_LT___delegate(reference, references)
   };
   reference_LT_.cljs$core$IFn$_invoke$arity$variadic = reference_LT___delegate;
   return reference_LT_
 }();
-bible_plan.reference.reference_QMARK_ = function reference_QMARK_(p__6661) {
-  var map__6663 = p__6661;
-  var map__6663__$1 = cljs.core.seq_QMARK_.call(null, map__6663) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6663) : map__6663;
-  var reference = map__6663__$1;
-  var end = cljs.core.get.call(null, map__6663__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-  var start = cljs.core.get.call(null, map__6663__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
-  var and__3941__auto__ = bible_plan.verse_map.verse_map_QMARK_.call(null, start);
-  if(cljs.core.truth_(and__3941__auto__)) {
+bible_plan.reference.reference_QMARK_ = function reference_QMARK_(p__6746) {
+  var map__6748 = p__6746;
+  var map__6748__$1 = cljs.core.seq_QMARK_.call(null, map__6748) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6748) : map__6748;
+  var reference = map__6748__$1;
+  var end = cljs.core.get.call(null, map__6748__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+  var start = cljs.core.get.call(null, map__6748__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+  var and__2952__auto__ = bible_plan.verse_map.verse_map_QMARK_.call(null, start);
+  if(cljs.core.truth_(and__2952__auto__)) {
     if(cljs.core.truth_(end)) {
-      var and__3941__auto____$1 = bible_plan.verse_map.verse_map_QMARK_.call(null, end);
-      if(cljs.core.truth_(and__3941__auto____$1)) {
+      var and__2952__auto____$1 = bible_plan.verse_map.verse_map_QMARK_.call(null, end);
+      if(cljs.core.truth_(and__2952__auto____$1)) {
         return bible_plan.verse_map._LT_.call(null, start, end)
       }else {
-        return and__3941__auto____$1
+        return and__2952__auto____$1
       }
     }else {
       return true
     }
   }else {
-    return and__3941__auto__
+    return and__2952__auto__
   }
 };
-bible_plan.reference.single__GT_str = function single__GT_str(p__6664) {
-  var map__6666 = p__6664;
-  var map__6666__$1 = cljs.core.seq_QMARK_.call(null, map__6666) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6666) : map__6666;
-  var reference = map__6666__$1;
-  var start = cljs.core.get.call(null, map__6666__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+bible_plan.reference.single__GT_str = function single__GT_str(p__6749) {
+  var map__6751 = p__6749;
+  var map__6751__$1 = cljs.core.seq_QMARK_.call(null, map__6751) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6751) : map__6751;
+  var reference = map__6751__$1;
+  var start = cljs.core.get.call(null, map__6751__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
   if(cljs.core.truth_(bible_plan.reference.reference_QMARK_.call(null, reference))) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "reference?", "reference?", -255581171, null), new cljs.core.Symbol(null, "reference", "reference", 1729280260, null))))].join(""));
   }
   return bible_plan.verse_map.__GT_book_chapter_QMARK__verse_QMARK__str.call(null, start)
 };
-bible_plan.reference.compound__GT_str = function compound__GT_str(p__6667) {
-  var map__6671 = p__6667;
-  var map__6671__$1 = cljs.core.seq_QMARK_.call(null, map__6671) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6671) : map__6671;
-  var reference = map__6671__$1;
-  var end = cljs.core.get.call(null, map__6671__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-  var start = cljs.core.get.call(null, map__6671__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+bible_plan.reference.compound__GT_str = function compound__GT_str(p__6752) {
+  var map__6756 = p__6752;
+  var map__6756__$1 = cljs.core.seq_QMARK_.call(null, map__6756) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6756) : map__6756;
+  var reference = map__6756__$1;
+  var end = cljs.core.get.call(null, map__6756__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+  var start = cljs.core.get.call(null, map__6756__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
   if(cljs.core.truth_(bible_plan.reference.reference_QMARK_.call(null, reference))) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "reference?", "reference?", -255581171, null), new cljs.core.Symbol(null, "reference", "reference", 1729280260, null))))].join(""));
@@ -34710,18 +35814,18 @@ bible_plan.reference.compound__GT_str = function compound__GT_str(p__6667) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, new cljs.core.Symbol(null, "end", "end", -1640430956, null)))].join(""));
   }
-  var map__6672 = start;
-  var map__6672__$1 = cljs.core.seq_QMARK_.call(null, map__6672) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6672) : map__6672;
-  var start_verse_map = map__6672__$1;
-  var s_book = cljs.core.get.call(null, map__6672__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
-  var s_chapter = cljs.core.get.call(null, map__6672__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
-  var s_verse = cljs.core.get.call(null, map__6672__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
-  var map__6673 = end;
-  var map__6673__$1 = cljs.core.seq_QMARK_.call(null, map__6673) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6673) : map__6673;
-  var end_verse_map = map__6673__$1;
-  var e_book = cljs.core.get.call(null, map__6673__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
-  var e_chapter = cljs.core.get.call(null, map__6673__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
-  var e_verse = cljs.core.get.call(null, map__6673__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
+  var map__6757 = start;
+  var map__6757__$1 = cljs.core.seq_QMARK_.call(null, map__6757) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6757) : map__6757;
+  var start_verse_map = map__6757__$1;
+  var s_book = cljs.core.get.call(null, map__6757__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+  var s_chapter = cljs.core.get.call(null, map__6757__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
+  var s_verse = cljs.core.get.call(null, map__6757__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
+  var map__6758 = end;
+  var map__6758__$1 = cljs.core.seq_QMARK_.call(null, map__6758) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6758) : map__6758;
+  var end_verse_map = map__6758__$1;
+  var e_book = cljs.core.get.call(null, map__6758__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+  var e_chapter = cljs.core.get.call(null, map__6758__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
+  var e_verse = cljs.core.get.call(null, map__6758__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
   var verse_string = [cljs.core.str(bible_plan.verse_map.__GT_book_chapter_QMARK__verse_QMARK__str.call(null, start_verse_map)), cljs.core.str("-")].join("");
   var lowest_unequal_specificity = bible_plan.verse_map.lowest_unequal_specificity.call(null, end_verse_map, start_verse_map);
   var shown_specificities = cljs.core.apply.call(null, cljs.core.vector, cljs.core.drop_while.call(null, function(verse_string, lowest_unequal_specificity) {
@@ -34731,23 +35835,23 @@ bible_plan.reference.compound__GT_str = function compound__GT_str(p__6667) {
   }(verse_string, lowest_unequal_specificity), bible_plan.verse_map.verse_map_specificities));
   return[cljs.core.str(verse_string), cljs.core.str(bible_plan.verse_map.__GT_str_fn.call(null, shown_specificities).call(null, end_verse_map))].join("")
 };
-bible_plan.reference.__GT_str = function __GT_str(p__6674) {
-  var map__6676 = p__6674;
-  var map__6676__$1 = cljs.core.seq_QMARK_.call(null, map__6676) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6676) : map__6676;
-  var reference = map__6676__$1;
-  var start_verse_map = cljs.core.get.call(null, map__6676__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
-  var end_verse_map = cljs.core.get.call(null, map__6676__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+bible_plan.reference.__GT_str = function __GT_str(p__6759) {
+  var map__6761 = p__6759;
+  var map__6761__$1 = cljs.core.seq_QMARK_.call(null, map__6761) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6761) : map__6761;
+  var reference = map__6761__$1;
+  var start_verse_map = cljs.core.get.call(null, map__6761__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+  var end_verse_map = cljs.core.get.call(null, map__6761__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
   if(cljs.core.truth_(bible_plan.reference.reference_QMARK_.call(null, reference))) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "reference?", "reference?", -255581171, null), new cljs.core.Symbol(null, "reference", "reference", 1729280260, null))))].join(""));
   }
   bible_plan.reference._STAR_whee_STAR_ = new cljs.core.Keyword(null, "whee", "whee", 1017552547);
   if(cljs.core.truth_(function() {
-    var and__3941__auto__ = start_verse_map;
-    if(cljs.core.truth_(and__3941__auto__)) {
+    var and__2952__auto__ = start_verse_map;
+    if(cljs.core.truth_(and__2952__auto__)) {
       return end_verse_map
     }else {
-      return and__3941__auto__
+      return and__2952__auto__
     }
   }())) {
     return bible_plan.reference.compound__GT_str.call(null, reference)
@@ -34765,21 +35869,21 @@ bible_plan.reference.contiguous_ascending_ints_QMARK_ = function() {
     }else {
       throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "every?", "every?", 1363110461, null), new cljs.core.Symbol(null, "number?", "number?", 653920207, null), new cljs.core.Symbol(null, "ints", "ints", -1637294051, null))))].join(""));
     }
-    var G__6682 = cljs.core.into.call(null, cljs.core.PersistentVector.fromArray([int_1], true), ints);
-    var vec__6683 = G__6682;
-    var this_int = cljs.core.nth.call(null, vec__6683, 0, null);
-    var next_ints = cljs.core.nthnext.call(null, vec__6683, 1);
-    var G__6682__$1 = G__6682;
+    var G__6767 = cljs.core.into.call(null, cljs.core.PersistentVector.fromArray([int_1], true), ints);
+    var vec__6768 = G__6767;
+    var this_int = cljs.core.nth.call(null, vec__6768, 0, null);
+    var next_ints = cljs.core.nthnext.call(null, vec__6768, 1);
+    var G__6767__$1 = G__6767;
     while(true) {
-      var vec__6684 = G__6682__$1;
-      var this_int__$1 = cljs.core.nth.call(null, vec__6684, 0, null);
-      var next_ints__$1 = cljs.core.nthnext.call(null, vec__6684, 1);
+      var vec__6769 = G__6767__$1;
+      var this_int__$1 = cljs.core.nth.call(null, vec__6769, 0, null);
+      var next_ints__$1 = cljs.core.nthnext.call(null, vec__6769, 1);
       if(cljs.core.not.call(null, cljs.core.first.call(null, next_ints__$1))) {
         return true
       }else {
         if(cljs.core._EQ_.call(null, 1 + this_int__$1, cljs.core.first.call(null, next_ints__$1))) {
-          var G__6685 = next_ints__$1;
-          G__6682__$1 = G__6685;
+          var G__6770 = next_ints__$1;
+          G__6767__$1 = G__6770;
           continue
         }else {
           return false
@@ -34796,9 +35900,9 @@ bible_plan.reference.contiguous_ascending_ints_QMARK_ = function() {
     return contiguous_ascending_ints_QMARK___delegate.call(this, int_1, ints)
   };
   contiguous_ascending_ints_QMARK_.cljs$lang$maxFixedArity = 1;
-  contiguous_ascending_ints_QMARK_.cljs$lang$applyTo = function(arglist__6686) {
-    var int_1 = cljs.core.first(arglist__6686);
-    var ints = cljs.core.rest(arglist__6686);
+  contiguous_ascending_ints_QMARK_.cljs$lang$applyTo = function(arglist__6771) {
+    var int_1 = cljs.core.first(arglist__6771);
+    var ints = cljs.core.rest(arglist__6771);
     return contiguous_ascending_ints_QMARK___delegate(int_1, ints)
   };
   contiguous_ascending_ints_QMARK_.cljs$core$IFn$_invoke$arity$variadic = contiguous_ascending_ints_QMARK___delegate;
@@ -34806,14 +35910,14 @@ bible_plan.reference.contiguous_ascending_ints_QMARK_ = function() {
 }();
 bible_plan.reference.join_points = function join_points(references) {
   return cljs.core.reduce.call(null, function(start_segments, reference_part) {
-    if(cljs.core.truth_((new cljs.core.Keyword(null, "end", "end", 1014004813)).call(null, reference_part))) {
-      return cljs.core.conj.call(null, start_segments, cljs.core.PersistentVector.fromArray([(new cljs.core.Keyword(null, "end", "end", 1014004813)).call(null, reference_part)], true))
+    if(cljs.core.truth_((new cljs.core.Keyword(null, "end", "end", 1014004813)).cljs$core$IFn$_invoke$arity$1(reference_part))) {
+      return cljs.core.conj.call(null, start_segments, cljs.core.PersistentVector.fromArray([(new cljs.core.Keyword(null, "end", "end", 1014004813)).cljs$core$IFn$_invoke$arity$1(reference_part)], true))
     }else {
-      return cljs.core.update_in.call(null, start_segments, cljs.core.PersistentVector.fromArray([cljs.core.count.call(null, start_segments) - 1], true), cljs.core.conj, (new cljs.core.Keyword(null, "start", "start", 1123661780)).call(null, reference_part))
+      return cljs.core.update_in.call(null, start_segments, cljs.core.PersistentVector.fromArray([cljs.core.count.call(null, start_segments) - 1], true), cljs.core.conj, (new cljs.core.Keyword(null, "start", "start", 1123661780)).cljs$core$IFn$_invoke$arity$1(reference_part))
     }
   }, cljs.core.PersistentVector.fromArray([cljs.core.PersistentVector.EMPTY], true), cljs.core.reduce.call(null, function(start_and_ends, reference) {
-    if(cljs.core.truth_((new cljs.core.Keyword(null, "end", "end", 1014004813)).call(null, reference))) {
-      return cljs.core.conj.call(null, cljs.core.conj.call(null, start_and_ends, cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), (new cljs.core.Keyword(null, "start", "start", 1123661780)).call(null, reference)], true)), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "end", "end", 1014004813), (new cljs.core.Keyword(null, "end", "end", 1014004813)).call(null, reference)], true))
+    if(cljs.core.truth_((new cljs.core.Keyword(null, "end", "end", 1014004813)).cljs$core$IFn$_invoke$arity$1(reference))) {
+      return cljs.core.conj.call(null, cljs.core.conj.call(null, start_and_ends, cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), (new cljs.core.Keyword(null, "start", "start", 1123661780)).cljs$core$IFn$_invoke$arity$1(reference)], true)), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "end", "end", 1014004813), (new cljs.core.Keyword(null, "end", "end", 1014004813)).cljs$core$IFn$_invoke$arity$1(reference)], true))
     }else {
       return cljs.core.conj.call(null, start_and_ends, reference)
     }
@@ -34827,18 +35931,13 @@ bible_plan.reference.contiguous_QMARK_ = function() {
     }
     if(cljs.core.truth_(references)) {
       var join_points = bible_plan.reference.join_points.call(null, references);
-      var and__3941__auto__ = cljs.core.every_QMARK_.call(null, function(join_point) {
+      return cljs.core.every_QMARK_.call(null, function(join_point) {
         var specificity = cljs.core.apply.call(null, bible_plan.verse_map.highest_common_verse_map_specificity, join_point);
         return bible_plan.verse_map.lower_specificities_equal_QMARK_.call(null, specificity, join_point)
-      }, join_points);
-      if(and__3941__auto__) {
-        return cljs.core.every_QMARK_.call(null, function(join_point) {
-          var specificity = cljs.core.apply.call(null, bible_plan.verse_map.highest_common_verse_map_specificity, join_point);
-          return cljs.core.apply.call(null, bible_plan.reference.contiguous_ascending_ints_QMARK_, cljs.core.map.call(null, specificity, join_point))
-        }, join_points)
-      }else {
-        return and__3941__auto__
-      }
+      }, join_points) && cljs.core.every_QMARK_.call(null, function(join_point) {
+        var specificity = cljs.core.apply.call(null, bible_plan.verse_map.highest_common_verse_map_specificity, join_point);
+        return cljs.core.apply.call(null, bible_plan.reference.contiguous_ascending_ints_QMARK_, cljs.core.map.call(null, specificity, join_point))
+      }, join_points)
     }else {
       return null
     }
@@ -34851,19 +35950,19 @@ bible_plan.reference.contiguous_QMARK_ = function() {
     return contiguous_QMARK___delegate.call(this, references)
   };
   contiguous_QMARK_.cljs$lang$maxFixedArity = 0;
-  contiguous_QMARK_.cljs$lang$applyTo = function(arglist__6687) {
-    var references = cljs.core.seq(arglist__6687);
+  contiguous_QMARK_.cljs$lang$applyTo = function(arglist__6772) {
+    var references = cljs.core.seq(arglist__6772);
     return contiguous_QMARK___delegate(references)
   };
   contiguous_QMARK_.cljs$core$IFn$_invoke$arity$variadic = contiguous_QMARK___delegate;
   return contiguous_QMARK_
 }();
-bible_plan.reference.reference_verse_map_range = function reference_verse_map_range(p__6688) {
-  var map__6690 = p__6688;
-  var map__6690__$1 = cljs.core.seq_QMARK_.call(null, map__6690) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6690) : map__6690;
-  var reference = map__6690__$1;
-  var end = cljs.core.get.call(null, map__6690__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-  var start = cljs.core.get.call(null, map__6690__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+bible_plan.reference.reference_verse_map_range = function reference_verse_map_range(p__6773) {
+  var map__6775 = p__6773;
+  var map__6775__$1 = cljs.core.seq_QMARK_.call(null, map__6775) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6775) : map__6775;
+  var reference = map__6775__$1;
+  var end = cljs.core.get.call(null, map__6775__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+  var start = cljs.core.get.call(null, map__6775__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
   if(cljs.core.truth_(bible_plan.reference.reference_QMARK_.call(null, reference))) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "reference?", "reference?", -255581171, null), new cljs.core.Symbol(null, "reference", "reference", 1729280260, null))))].join(""));
@@ -34900,8 +35999,8 @@ bible_plan.reference.disjoint_refs_QMARK_ = function() {
     return disjoint_refs_QMARK___delegate.call(this, references)
   };
   disjoint_refs_QMARK_.cljs$lang$maxFixedArity = 0;
-  disjoint_refs_QMARK_.cljs$lang$applyTo = function(arglist__6691) {
-    var references = cljs.core.seq(arglist__6691);
+  disjoint_refs_QMARK_.cljs$lang$applyTo = function(arglist__6776) {
+    var references = cljs.core.seq(arglist__6776);
     return disjoint_refs_QMARK___delegate(references)
   };
   disjoint_refs_QMARK_.cljs$core$IFn$_invoke$arity$variadic = disjoint_refs_QMARK___delegate;
@@ -35406,19 +36505,19 @@ time_ui.now = function now() {
   return new goog.date.DateTime
 };
 time_ui.inc_date_by_day = function inc_date_by_day(date) {
-  var G__6795 = date.clone();
-  G__6795.add(new goog.date.Interval(0, 0, 1));
-  return G__6795
+  var G__6880 = date.clone();
+  G__6880.add(new goog.date.Interval(0, 0, 1));
+  return G__6880
 };
 time_ui.dec_date_by_day = function dec_date_by_day(date) {
-  var G__6797 = date.clone();
-  G__6797.add(new goog.date.Interval(0, 0, -1));
-  return G__6797
+  var G__6882 = date.clone();
+  G__6882.add(new goog.date.Interval(0, 0, -1));
+  return G__6882
 };
 time_ui.inc_date_by_year = function inc_date_by_year(date) {
-  var G__6799 = date.clone();
-  G__6799.add(new goog.date.Interval(1));
-  return G__6799
+  var G__6884 = date.clone();
+  G__6884.add(new goog.date.Interval(1));
+  return G__6884
 };
 time_ui.date_GT__EQ_ = function date_GT__EQ_(date_1, date_2) {
   return 0 <= goog.date.Date.compare(date_1, date_2)
@@ -35445,9 +36544,9 @@ time_ui.__GT_td = function __GT_td(date) {
   var long_date_formatter = new goog.i18n.DateTimeFormat(goog.i18n.DateTimeFormat.Format.LONG_DATE);
   var now = date;
   var formatted_now = long_date_formatter.format(date);
-  var dom6801 = document.createElement("td");
-  dom6801.appendChild(dommy.template.__GT_node_like.call(null, time_ui.date__GT_long_format.call(null, date)));
-  return dom6801
+  var dom6886 = document.createElement("td");
+  dom6886.appendChild(dommy.template.__GT_node_like.call(null, time_ui.date__GT_long_format.call(null, date)));
+  return dom6886
 };
 time_ui.days_of_week = cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "sunday", "sunday", 4417684802), 0, new cljs.core.Keyword(null, "monday", "monday", 4240368770), 1, new cljs.core.Keyword(null, "tuesday", "tuesday", 4331527615), 2, new cljs.core.Keyword(null, "wednesday", "wednesday", 2407434952), 3, new cljs.core.Keyword(null, "thursday", "thursday", 2585959756), 4, new cljs.core.Keyword(null, "friday", "friday", 4042586321), 5, new cljs.core.Keyword(null, "saturday", "saturday", 
 3194669867), 6], true);
@@ -35456,15 +36555,15 @@ time_ui.day_is = function day_is(day_of_week, date) {
 };
 time_ui.day_in = function day_in(days_of_week, date) {
   if(cljs.core.truth_(function() {
-    var and__3941__auto__ = days_of_week;
-    if(cljs.core.truth_(and__3941__auto__)) {
+    var and__2952__auto__ = days_of_week;
+    if(cljs.core.truth_(and__2952__auto__)) {
       return!cljs.core.empty_QMARK_.call(null, days_of_week)
     }else {
-      return and__3941__auto__
+      return and__2952__auto__
     }
   }())) {
-    return cljs.core.some.call(null, cljs.core.identity, cljs.core.apply.call(null, cljs.core.juxt, cljs.core.map.call(null, function(p1__6802_SHARP_) {
-      return cljs.core.partial.call(null, time_ui.day_is, p1__6802_SHARP_)
+    return cljs.core.some.call(null, cljs.core.identity, cljs.core.apply.call(null, cljs.core.juxt, cljs.core.map.call(null, function(p1__6887_SHARP_) {
+      return cljs.core.partial.call(null, time_ui.day_is, p1__6887_SHARP_)
     }, days_of_week)).call(null, date))
   }else {
     return null
@@ -35485,78 +36584,78 @@ bible_plan.plan.assoc_plan = function assoc_plan(name, plan_data) {
   return cljs.core.swap_BANG_.call(null, bible_plan.plan.plans, cljs.core.assoc, name, plan_data)
 };
 bible_plan.plan.load_plans = function load_plans() {
-  return ajax.core.ajax_request.call(null, "/edn/plans/plans.edn", new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function load_available_plans(p__6544) {
-    var vec__6554 = p__6544;
-    var ok = cljs.core.nth.call(null, vec__6554, 0, null);
-    var plan_names = cljs.core.nth.call(null, vec__6554, 1, null);
+  return ajax.core.ajax_request.call(null, "/edn/plans/plans.edn", new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function load_available_plans(p__6629) {
+    var vec__6639 = p__6629;
+    var ok = cljs.core.nth.call(null, vec__6639, 0, null);
+    var plan_names = cljs.core.nth.call(null, vec__6639, 1, null);
     if(cljs.core.truth_(ok)) {
-      var seq__6555 = cljs.core.seq.call(null, plan_names);
-      var chunk__6556 = null;
-      var count__6557 = 0;
-      var i__6558 = 0;
+      var seq__6640 = cljs.core.seq.call(null, plan_names);
+      var chunk__6641 = null;
+      var count__6642 = 0;
+      var i__6643 = 0;
       while(true) {
-        if(i__6558 < count__6557) {
-          var plan_name = cljs.core._nth.call(null, chunk__6556, i__6558);
+        if(i__6643 < count__6642) {
+          var plan_name = cljs.core._nth.call(null, chunk__6641, i__6643);
           shodan.console.log.call(null, [cljs.core.str("Loading plan: "), cljs.core.str(plan_name)].join(""));
-          ajax.core.ajax_request.call(null, [cljs.core.str("/edn/plans/"), cljs.core.str(cljs.core.name.call(null, plan_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__6555, chunk__6556, count__6557, i__6558, plan_name) {
-            return function(p__6559) {
-              var vec__6560 = p__6559;
-              var ok__$1 = cljs.core.nth.call(null, vec__6560, 0, null);
-              var plan_data = cljs.core.nth.call(null, vec__6560, 1, null);
+          ajax.core.ajax_request.call(null, [cljs.core.str("/edn/plans/"), cljs.core.str(cljs.core.name.call(null, plan_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__6640, chunk__6641, count__6642, i__6643, plan_name) {
+            return function(p__6644) {
+              var vec__6645 = p__6644;
+              var ok__$1 = cljs.core.nth.call(null, vec__6645, 0, null);
+              var plan_data = cljs.core.nth.call(null, vec__6645, 1, null);
               if(cljs.core.truth_(ok__$1)) {
                 return bible_plan.plan.assoc_plan.call(null, plan_name, plan_data)
               }else {
                 return null
               }
             }
-          }(seq__6555, chunk__6556, count__6557, i__6558, plan_name), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true));
-          var G__6563 = seq__6555;
-          var G__6564 = chunk__6556;
-          var G__6565 = count__6557;
-          var G__6566 = i__6558 + 1;
-          seq__6555 = G__6563;
-          chunk__6556 = G__6564;
-          count__6557 = G__6565;
-          i__6558 = G__6566;
+          }(seq__6640, chunk__6641, count__6642, i__6643, plan_name), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true));
+          var G__6648 = seq__6640;
+          var G__6649 = chunk__6641;
+          var G__6650 = count__6642;
+          var G__6651 = i__6643 + 1;
+          seq__6640 = G__6648;
+          chunk__6641 = G__6649;
+          count__6642 = G__6650;
+          i__6643 = G__6651;
           continue
         }else {
-          var temp__4092__auto__ = cljs.core.seq.call(null, seq__6555);
+          var temp__4092__auto__ = cljs.core.seq.call(null, seq__6640);
           if(temp__4092__auto__) {
-            var seq__6555__$1 = temp__4092__auto__;
-            if(cljs.core.chunked_seq_QMARK_.call(null, seq__6555__$1)) {
-              var c__3615__auto__ = cljs.core.chunk_first.call(null, seq__6555__$1);
-              var G__6567 = cljs.core.chunk_rest.call(null, seq__6555__$1);
-              var G__6568 = c__3615__auto__;
-              var G__6569 = cljs.core.count.call(null, c__3615__auto__);
-              var G__6570 = 0;
-              seq__6555 = G__6567;
-              chunk__6556 = G__6568;
-              count__6557 = G__6569;
-              i__6558 = G__6570;
+            var seq__6640__$1 = temp__4092__auto__;
+            if(cljs.core.chunked_seq_QMARK_.call(null, seq__6640__$1)) {
+              var c__3670__auto__ = cljs.core.chunk_first.call(null, seq__6640__$1);
+              var G__6652 = cljs.core.chunk_rest.call(null, seq__6640__$1);
+              var G__6653 = c__3670__auto__;
+              var G__6654 = cljs.core.count.call(null, c__3670__auto__);
+              var G__6655 = 0;
+              seq__6640 = G__6652;
+              chunk__6641 = G__6653;
+              count__6642 = G__6654;
+              i__6643 = G__6655;
               continue
             }else {
-              var plan_name = cljs.core.first.call(null, seq__6555__$1);
+              var plan_name = cljs.core.first.call(null, seq__6640__$1);
               shodan.console.log.call(null, [cljs.core.str("Loading plan: "), cljs.core.str(plan_name)].join(""));
-              ajax.core.ajax_request.call(null, [cljs.core.str("/edn/plans/"), cljs.core.str(cljs.core.name.call(null, plan_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__6555, chunk__6556, count__6557, i__6558, plan_name, seq__6555__$1, temp__4092__auto__) {
-                return function(p__6561) {
-                  var vec__6562 = p__6561;
-                  var ok__$1 = cljs.core.nth.call(null, vec__6562, 0, null);
-                  var plan_data = cljs.core.nth.call(null, vec__6562, 1, null);
+              ajax.core.ajax_request.call(null, [cljs.core.str("/edn/plans/"), cljs.core.str(cljs.core.name.call(null, plan_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__6640, chunk__6641, count__6642, i__6643, plan_name, seq__6640__$1, temp__4092__auto__) {
+                return function(p__6646) {
+                  var vec__6647 = p__6646;
+                  var ok__$1 = cljs.core.nth.call(null, vec__6647, 0, null);
+                  var plan_data = cljs.core.nth.call(null, vec__6647, 1, null);
                   if(cljs.core.truth_(ok__$1)) {
                     return bible_plan.plan.assoc_plan.call(null, plan_name, plan_data)
                   }else {
                     return null
                   }
                 }
-              }(seq__6555, chunk__6556, count__6557, i__6558, plan_name, seq__6555__$1, temp__4092__auto__), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true));
-              var G__6571 = cljs.core.next.call(null, seq__6555__$1);
-              var G__6572 = null;
-              var G__6573 = 0;
-              var G__6574 = 0;
-              seq__6555 = G__6571;
-              chunk__6556 = G__6572;
-              count__6557 = G__6573;
-              i__6558 = G__6574;
+              }(seq__6640, chunk__6641, count__6642, i__6643, plan_name, seq__6640__$1, temp__4092__auto__), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], true));
+              var G__6656 = cljs.core.next.call(null, seq__6640__$1);
+              var G__6657 = null;
+              var G__6658 = 0;
+              var G__6659 = 0;
+              seq__6640 = G__6656;
+              chunk__6641 = G__6657;
+              count__6642 = G__6658;
+              i__6643 = G__6659;
               continue
             }
           }else {
@@ -35580,33 +36679,33 @@ bible_plan.plan.annotate_plan_readings_with_days = function annotate_plan_readin
 };
 bible_plan.plan.reading_day__GT_ = function reading_day__GT_(annotated_reading, annotated_reading_day) {
   var reading_day_day_number = cljs.core.comp.call(null, new cljs.core.Keyword(null, "day", "day", 1014003470), cljs.core.first).call(null, annotated_reading_day);
-  var reading_day_number = (new cljs.core.Keyword(null, "day", "day", 1014003470)).call(null, annotated_reading);
+  var reading_day_number = (new cljs.core.Keyword(null, "day", "day", 1014003470)).cljs$core$IFn$_invoke$arity$1(annotated_reading);
   return reading_day_number > reading_day_day_number
 };
 bible_plan.plan.reading_book_QMARK_ = function reading_book_QMARK_(book, reading_day) {
-  return cljs.core.some.call(null, function start_or_end_in_book_QMARK_(p__6582) {
-    var map__6586 = p__6582;
-    var map__6586__$1 = cljs.core.seq_QMARK_.call(null, map__6586) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6586) : map__6586;
-    var map__6587 = cljs.core.get.call(null, map__6586__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
-    var map__6587__$1 = cljs.core.seq_QMARK_.call(null, map__6587) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6587) : map__6587;
-    var s_book = cljs.core.get.call(null, map__6587__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
-    var map__6588 = cljs.core.get.call(null, map__6586__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-    var map__6588__$1 = cljs.core.seq_QMARK_.call(null, map__6588) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6588) : map__6588;
-    var e_book = cljs.core.get.call(null, map__6588__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+  return cljs.core.some.call(null, function start_or_end_in_book_QMARK_(p__6667) {
+    var map__6671 = p__6667;
+    var map__6671__$1 = cljs.core.seq_QMARK_.call(null, map__6671) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6671) : map__6671;
+    var map__6672 = cljs.core.get.call(null, map__6671__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+    var map__6672__$1 = cljs.core.seq_QMARK_.call(null, map__6672) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6672) : map__6672;
+    var s_book = cljs.core.get.call(null, map__6672__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+    var map__6673 = cljs.core.get.call(null, map__6671__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+    var map__6673__$1 = cljs.core.seq_QMARK_.call(null, map__6673) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6673) : map__6673;
+    var e_book = cljs.core.get.call(null, map__6673__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
     return cljs.core.some.call(null, cljs.core.partial.call(null, cljs.core._EQ_, book), cljs.core.PersistentVector.fromArray([s_book, e_book], true))
   }, reading_day)
 };
 bible_plan.plan.readings_for_book_in_reading_day = function readings_for_book_in_reading_day(book, reading_day) {
-  return cljs.core.some.call(null, function start_or_end_in_book_QMARK_(p__6596) {
-    var map__6600 = p__6596;
-    var map__6600__$1 = cljs.core.seq_QMARK_.call(null, map__6600) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6600) : map__6600;
-    var reading = map__6600__$1;
-    var map__6601 = cljs.core.get.call(null, map__6600__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
-    var map__6601__$1 = cljs.core.seq_QMARK_.call(null, map__6601) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6601) : map__6601;
-    var s_book = cljs.core.get.call(null, map__6601__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
-    var map__6602 = cljs.core.get.call(null, map__6600__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-    var map__6602__$1 = cljs.core.seq_QMARK_.call(null, map__6602) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6602) : map__6602;
-    var e_book = cljs.core.get.call(null, map__6602__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+  return cljs.core.some.call(null, function start_or_end_in_book_QMARK_(p__6681) {
+    var map__6685 = p__6681;
+    var map__6685__$1 = cljs.core.seq_QMARK_.call(null, map__6685) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6685) : map__6685;
+    var reading = map__6685__$1;
+    var map__6686 = cljs.core.get.call(null, map__6685__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+    var map__6686__$1 = cljs.core.seq_QMARK_.call(null, map__6686) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6686) : map__6686;
+    var s_book = cljs.core.get.call(null, map__6686__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+    var map__6687 = cljs.core.get.call(null, map__6685__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+    var map__6687__$1 = cljs.core.seq_QMARK_.call(null, map__6687) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6687) : map__6687;
+    var e_book = cljs.core.get.call(null, map__6687__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
     if(cljs.core.truth_(cljs.core.some.call(null, cljs.core.partial.call(null, cljs.core._EQ_, book), cljs.core.PersistentVector.fromArray([s_book, e_book], true)))) {
       return reading
     }else {
@@ -35623,45 +36722,45 @@ bible_plan.plan.contiguous_readings_from = function contiguous_readings_from(ann
 };
 bible_plan.plan.book_order = function book_order(plan) {
   var annotated_plan = cljs.core.map.call(null, function(reading_day) {
-    return cljs.core.map.call(null, function(p1__6603_SHARP_) {
-      return cljs.core.select_keys.call(null, p1__6603_SHARP_, cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "end", "end", 1014004813), new cljs.core.Keyword(null, "day", "day", 1014003470)], true))
+    return cljs.core.map.call(null, function(p1__6688_SHARP_) {
+      return cljs.core.select_keys.call(null, p1__6688_SHARP_, cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "end", "end", 1014004813), new cljs.core.Keyword(null, "day", "day", 1014003470)], true))
     }, reading_day)
   }, bible_plan.plan.annotate_plan_readings_with_days.call(null, plan));
   var annotated_readings = cljs.core.reduce.call(null, cljs.core.into, cljs.core.PersistentVector.EMPTY, annotated_plan);
-  var G__6609 = annotated_readings;
-  var vec__6610 = G__6609;
-  var annotated_reading = cljs.core.nth.call(null, vec__6610, 0, null);
-  var next_annotated_readings = cljs.core.nthnext.call(null, vec__6610, 1);
+  var G__6694 = annotated_readings;
+  var vec__6695 = G__6694;
+  var annotated_reading = cljs.core.nth.call(null, vec__6695, 0, null);
+  var next_annotated_readings = cljs.core.nthnext.call(null, vec__6695, 1);
   var processed_readings = cljs.core.PersistentHashSet.EMPTY;
   var book_order__$1 = cljs.core.PersistentVector.EMPTY;
-  var G__6609__$1 = G__6609;
+  var G__6694__$1 = G__6694;
   var processed_readings__$1 = processed_readings;
   var book_order__$2 = book_order__$1;
   while(true) {
-    var vec__6611 = G__6609__$1;
-    var annotated_reading__$1 = cljs.core.nth.call(null, vec__6611, 0, null);
-    var next_annotated_readings__$1 = cljs.core.nthnext.call(null, vec__6611, 1);
+    var vec__6696 = G__6694__$1;
+    var annotated_reading__$1 = cljs.core.nth.call(null, vec__6696, 0, null);
+    var next_annotated_readings__$1 = cljs.core.nthnext.call(null, vec__6696, 1);
     var processed_readings__$2 = processed_readings__$1;
     var book_order__$3 = book_order__$2;
     if(cljs.core.not.call(null, annotated_reading__$1)) {
       return book_order__$3
     }else {
       if(cljs.core.truth_(processed_readings__$2.call(null, annotated_reading__$1))) {
-        var G__6612 = next_annotated_readings__$1;
-        var G__6613 = processed_readings__$2;
-        var G__6614 = book_order__$3;
-        G__6609__$1 = G__6612;
-        processed_readings__$1 = G__6613;
-        book_order__$2 = G__6614;
+        var G__6697 = next_annotated_readings__$1;
+        var G__6698 = processed_readings__$2;
+        var G__6699 = book_order__$3;
+        G__6694__$1 = G__6697;
+        processed_readings__$1 = G__6698;
+        book_order__$2 = G__6699;
         continue
       }else {
         var contiguous_readings = bible_plan.plan.contiguous_readings_from.call(null, annotated_plan, annotated_reading__$1);
-        var G__6615 = next_annotated_readings__$1;
-        var G__6616 = cljs.core.into.call(null, processed_readings__$2, contiguous_readings);
-        var G__6617 = cljs.core.conj.call(null, book_order__$3, cljs.core.get_in.call(null, annotated_reading__$1, cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], true)));
-        G__6609__$1 = G__6615;
-        processed_readings__$1 = G__6616;
-        book_order__$2 = G__6617;
+        var G__6700 = next_annotated_readings__$1;
+        var G__6701 = cljs.core.into.call(null, processed_readings__$2, contiguous_readings);
+        var G__6702 = cljs.core.conj.call(null, book_order__$3, cljs.core.get_in.call(null, annotated_reading__$1, cljs.core.PersistentVector.fromArray([new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], true)));
+        G__6694__$1 = G__6700;
+        processed_readings__$1 = G__6701;
+        book_order__$2 = G__6702;
         continue
       }
     }
@@ -35670,27 +36769,27 @@ bible_plan.plan.book_order = function book_order(plan) {
 };
 bible_plan.plan.update_vals = function update_vals(the_map, update_fn) {
   return cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, function() {
-    var iter__3584__auto__ = function iter__6626(s__6627) {
+    var iter__3639__auto__ = function iter__6711(s__6712) {
       return new cljs.core.LazySeq(null, function() {
-        var s__6627__$1 = s__6627;
+        var s__6712__$1 = s__6712;
         while(true) {
-          var temp__4092__auto__ = cljs.core.seq.call(null, s__6627__$1);
+          var temp__4092__auto__ = cljs.core.seq.call(null, s__6712__$1);
           if(temp__4092__auto__) {
-            var s__6627__$2 = temp__4092__auto__;
-            if(cljs.core.chunked_seq_QMARK_.call(null, s__6627__$2)) {
-              var c__3582__auto__ = cljs.core.chunk_first.call(null, s__6627__$2);
-              var size__3583__auto__ = cljs.core.count.call(null, c__3582__auto__);
-              var b__6629 = cljs.core.chunk_buffer.call(null, size__3583__auto__);
+            var s__6712__$2 = temp__4092__auto__;
+            if(cljs.core.chunked_seq_QMARK_.call(null, s__6712__$2)) {
+              var c__3637__auto__ = cljs.core.chunk_first.call(null, s__6712__$2);
+              var size__3638__auto__ = cljs.core.count.call(null, c__3637__auto__);
+              var b__6714 = cljs.core.chunk_buffer.call(null, size__3638__auto__);
               if(function() {
-                var i__6628 = 0;
+                var i__6713 = 0;
                 while(true) {
-                  if(i__6628 < size__3583__auto__) {
-                    var vec__6632 = cljs.core._nth.call(null, c__3582__auto__, i__6628);
-                    var k = cljs.core.nth.call(null, vec__6632, 0, null);
-                    var v = cljs.core.nth.call(null, vec__6632, 1, null);
-                    cljs.core.chunk_append.call(null, b__6629, cljs.core.PersistentVector.fromArray([k, update_fn.call(null, v)], true));
-                    var G__6634 = i__6628 + 1;
-                    i__6628 = G__6634;
+                  if(i__6713 < size__3638__auto__) {
+                    var vec__6717 = cljs.core._nth.call(null, c__3637__auto__, i__6713);
+                    var k = cljs.core.nth.call(null, vec__6717, 0, null);
+                    var v = cljs.core.nth.call(null, vec__6717, 1, null);
+                    cljs.core.chunk_append.call(null, b__6714, cljs.core.PersistentVector.fromArray([k, update_fn.call(null, v)], true));
+                    var G__6719 = i__6713 + 1;
+                    i__6713 = G__6719;
                     continue
                   }else {
                     return true
@@ -35698,15 +36797,15 @@ bible_plan.plan.update_vals = function update_vals(the_map, update_fn) {
                   break
                 }
               }()) {
-                return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__6629), iter__6626.call(null, cljs.core.chunk_rest.call(null, s__6627__$2)))
+                return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__6714), iter__6711.call(null, cljs.core.chunk_rest.call(null, s__6712__$2)))
               }else {
-                return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__6629), null)
+                return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__6714), null)
               }
             }else {
-              var vec__6633 = cljs.core.first.call(null, s__6627__$2);
-              var k = cljs.core.nth.call(null, vec__6633, 0, null);
-              var v = cljs.core.nth.call(null, vec__6633, 1, null);
-              return cljs.core.cons.call(null, cljs.core.PersistentVector.fromArray([k, update_fn.call(null, v)], true), iter__6626.call(null, cljs.core.rest.call(null, s__6627__$2)))
+              var vec__6718 = cljs.core.first.call(null, s__6712__$2);
+              var k = cljs.core.nth.call(null, vec__6718, 0, null);
+              var v = cljs.core.nth.call(null, vec__6718, 1, null);
+              return cljs.core.cons.call(null, cljs.core.PersistentVector.fromArray([k, update_fn.call(null, v)], true), iter__6711.call(null, cljs.core.rest.call(null, s__6712__$2)))
             }
           }else {
             return null
@@ -35715,7 +36814,7 @@ bible_plan.plan.update_vals = function update_vals(the_map, update_fn) {
         }
       }, null, null)
     };
-    return iter__3584__auto__.call(null, the_map)
+    return iter__3639__auto__.call(null, the_map)
   }())
 };
 bible_plan.plan.group_into_ascending_readings = function group_into_ascending_readings(readings) {
@@ -35744,12 +36843,12 @@ bible_plan.plan.group_reading_day = function group_reading_day(raw_reading_day) 
   var grouped_readings = cljs.core.group_by.call(null, cljs.core.comp.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), new cljs.core.Keyword(null, "start", "start", 1123661780)), raw_reading_day);
   return cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "book-order", "book-order", 2217817820), original_order, new cljs.core.Keyword(null, "book-readings", "book-readings", 1725265213), grouped_readings], true)
 };
-bible_plan.plan.coalesce_reading_day = function coalesce_reading_day(p__6635) {
-  var map__6637 = p__6635;
-  var map__6637__$1 = cljs.core.seq_QMARK_.call(null, map__6637) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6637) : map__6637;
-  var grouped_reading_day = map__6637__$1;
-  var book_readings = cljs.core.get.call(null, map__6637__$1, new cljs.core.Keyword(null, "book-readings", "book-readings", 1725265213));
-  var book_order = cljs.core.get.call(null, map__6637__$1, new cljs.core.Keyword(null, "book-order", "book-order", 2217817820));
+bible_plan.plan.coalesce_reading_day = function coalesce_reading_day(p__6720) {
+  var map__6722 = p__6720;
+  var map__6722__$1 = cljs.core.seq_QMARK_.call(null, map__6722) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6722) : map__6722;
+  var grouped_reading_day = map__6722__$1;
+  var book_readings = cljs.core.get.call(null, map__6722__$1, new cljs.core.Keyword(null, "book-readings", "book-readings", 1725265213));
+  var book_order = cljs.core.get.call(null, map__6722__$1, new cljs.core.Keyword(null, "book-order", "book-order", 2217817820));
   return cljs.core.map.call(null, function merge_reading_book_group(reading_book_group) {
     return cljs.core.reduce.call(null, bible_plan.reference.merge_refs, cljs.core.get.call(null, book_readings, reading_book_group))
   }, book_order)
@@ -35757,28 +36856,28 @@ bible_plan.plan.coalesce_reading_day = function coalesce_reading_day(p__6635) {
 bible_plan.plan.raw_plan_by_book = function raw_plan_by_book(book_readings, book_order) {
   var raw_plan = cljs.core.PersistentVector.EMPTY;
   var book_readings__$1 = book_readings;
-  var G__6643 = book_order;
-  var vec__6644 = G__6643;
-  var book = cljs.core.nth.call(null, vec__6644, 0, null);
-  var next_books = cljs.core.nthnext.call(null, vec__6644, 1);
+  var G__6728 = book_order;
+  var vec__6729 = G__6728;
+  var book = cljs.core.nth.call(null, vec__6729, 0, null);
+  var next_books = cljs.core.nthnext.call(null, vec__6729, 1);
   var raw_plan__$1 = raw_plan;
   var book_readings__$2 = book_readings__$1;
-  var G__6643__$1 = G__6643;
+  var G__6728__$1 = G__6728;
   while(true) {
     var raw_plan__$2 = raw_plan__$1;
     var book_readings__$3 = book_readings__$2;
-    var vec__6645 = G__6643__$1;
-    var book__$1 = cljs.core.nth.call(null, vec__6645, 0, null);
-    var next_books__$1 = cljs.core.nthnext.call(null, vec__6645, 1);
+    var vec__6730 = G__6728__$1;
+    var book__$1 = cljs.core.nth.call(null, vec__6730, 0, null);
+    var next_books__$1 = cljs.core.nthnext.call(null, vec__6730, 1);
     if(cljs.core.truth_(book__$1)) {
       var current_book_readings = cljs.core.first.call(null, cljs.core.get.call(null, book_readings__$3, book__$1));
       var next_book_readings = cljs.core.update_in.call(null, book_readings__$3, cljs.core.PersistentVector.fromArray([book__$1], true), cljs.core.rest);
-      var G__6646 = cljs.core.into.call(null, raw_plan__$2, current_book_readings);
-      var G__6647 = next_book_readings;
-      var G__6648 = next_books__$1;
-      raw_plan__$1 = G__6646;
-      book_readings__$2 = G__6647;
-      G__6643__$1 = G__6648;
+      var G__6731 = cljs.core.into.call(null, raw_plan__$2, current_book_readings);
+      var G__6732 = next_book_readings;
+      var G__6733 = next_books__$1;
+      raw_plan__$1 = G__6731;
+      book_readings__$2 = G__6732;
+      G__6728__$1 = G__6733;
       continue
     }else {
       return raw_plan__$2
@@ -35797,16 +36896,16 @@ bible_plan.plan.partition_all_balanced = function partition_all_balanced(n, coll
     var make_up = sub_1_part;
     while(true) {
       if(cljs.core.seq.call(null, rest_coll_items)) {
-        var G__6649 = cljs.core.drop.call(null, step_size + Math.floor(make_up), rest_coll_items);
-        var G__6650 = cljs.core.conj.call(null, partitioned_coll, cljs.core.take.call(null, step_size + Math.floor(make_up), rest_coll_items));
-        var G__6651 = step_size;
-        var G__6652 = sub_1_part;
-        var G__6653 = sub_1_part + cljs.core.rem.call(null, make_up, 1);
-        rest_coll_items = G__6649;
-        partitioned_coll = G__6650;
-        step_size = G__6651;
-        sub_1_part = G__6652;
-        make_up = G__6653;
+        var G__6734 = cljs.core.drop.call(null, step_size + Math.floor(make_up), rest_coll_items);
+        var G__6735 = cljs.core.conj.call(null, partitioned_coll, cljs.core.take.call(null, step_size + Math.floor(make_up), rest_coll_items));
+        var G__6736 = step_size;
+        var G__6737 = sub_1_part;
+        var G__6738 = sub_1_part + cljs.core.rem.call(null, make_up, 1);
+        rest_coll_items = G__6734;
+        partitioned_coll = G__6735;
+        step_size = G__6736;
+        sub_1_part = G__6737;
+        make_up = G__6738;
         continue
       }else {
         return partitioned_coll
@@ -35838,15 +36937,15 @@ bible_plan.plan.order_by_plan = function order_by_plan(number_of_reading_days, p
   var coalesced_reading_days = cljs.core.map.call(null, bible_plan.plan.coalesce_reading_day, grouped_reading_days);
   return coalesced_reading_days
 };
-bible_plan.plan.calculate_plan = function calculate_plan(p__6654) {
-  var map__6656 = p__6654;
-  var map__6656__$1 = cljs.core.seq_QMARK_.call(null, map__6656) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6656) : map__6656;
-  var plan_options = map__6656__$1;
-  var books_at_a_time_QMARK_ = cljs.core.get.call(null, map__6656__$1, new cljs.core.Keyword(null, "books-at-a-time?", "books-at-a-time?", 761096577));
-  var skip_days = cljs.core.get.call(null, map__6656__$1, new cljs.core.Keyword(null, "skip-days", "skip-days", 3061888855));
-  var end_date = cljs.core.get.call(null, map__6656__$1, new cljs.core.Keyword(null, "end-date", "end-date", 2692795602));
-  var start_date = cljs.core.get.call(null, map__6656__$1, new cljs.core.Keyword(null, "start-date", "start-date", 3689065899));
-  var base_plan = cljs.core.get.call(null, map__6656__$1, new cljs.core.Keyword(null, "base-plan", "base-plan", 3446158359));
+bible_plan.plan.calculate_plan = function calculate_plan(p__6739) {
+  var map__6741 = p__6739;
+  var map__6741__$1 = cljs.core.seq_QMARK_.call(null, map__6741) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6741) : map__6741;
+  var plan_options = map__6741__$1;
+  var books_at_a_time_QMARK_ = cljs.core.get.call(null, map__6741__$1, new cljs.core.Keyword(null, "books-at-a-time?", "books-at-a-time?", 761096577));
+  var skip_days = cljs.core.get.call(null, map__6741__$1, new cljs.core.Keyword(null, "skip-days", "skip-days", 3061888855));
+  var end_date = cljs.core.get.call(null, map__6741__$1, new cljs.core.Keyword(null, "end-date", "end-date", 2692795602));
+  var start_date = cljs.core.get.call(null, map__6741__$1, new cljs.core.Keyword(null, "start-date", "start-date", 3689065899));
+  var base_plan = cljs.core.get.call(null, map__6741__$1, new cljs.core.Keyword(null, "base-plan", "base-plan", 3446158359));
   if(cljs.core.truth_(base_plan)) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, new cljs.core.Symbol(null, "base-plan", "base-plan", 791722590, null)))].join(""));
@@ -35859,9 +36958,9 @@ bible_plan.plan.calculate_plan = function calculate_plan(p__6654) {
   var start_date__$1 = cljs.core.truth_(start_date) ? start_date : time_ui.now.call(null);
   var end_date__$1 = cljs.core.truth_(end_date) ? end_date : time_ui.inc_date_by_year.call(null, start_date__$1);
   var dates = cljs.core.filter.call(null, cljs.core.comp.call(null, cljs.core.complement.call(null, function() {
-    var or__3943__auto__ = skip_days;
-    if(cljs.core.truth_(or__3943__auto__)) {
-      return or__3943__auto__
+    var or__2961__auto__ = skip_days;
+    if(cljs.core.truth_(or__2961__auto__)) {
+      return or__2961__auto__
     }else {
       return cljs.core.PersistentHashSet.EMPTY
     }
@@ -37524,14 +38623,14 @@ goog.require("bible_plan.reference");
 goog.require("dommy.core");
 goog.require("dommy.core");
 bible_plan.ui.reference.__GT_li = function __GT_li(day) {
-  var dom6698 = document.createElement("li");
-  dom6698.appendChild(dommy.template.__GT_node_like.call(null, clojure.string.join.call(null, ", ", cljs.core.map.call(null, cljs.core.comp.call(null, titlecase.__GT_titlecase, bible_plan.reference.__GT_str), day))));
-  return dom6698
+  var dom6783 = document.createElement("li");
+  dom6783.appendChild(dommy.template.__GT_node_like.call(null, clojure.string.join.call(null, ", ", cljs.core.map.call(null, cljs.core.comp.call(null, titlecase.__GT_titlecase, bible_plan.reference.__GT_str), day))));
+  return dom6783
 };
 bible_plan.ui.reference.__GT_td = function __GT_td(reference) {
-  var dom6700 = document.createElement("td");
-  dom6700.appendChild(dommy.template.__GT_node_like.call(null, bible_plan.reference.__GT_str.call(null, reference)));
-  return dom6700
+  var dom6785 = document.createElement("td");
+  dom6785.appendChild(dommy.template.__GT_node_like.call(null, bible_plan.reference.__GT_str.call(null, reference)));
+  return dom6785
 };
 goog.provide("bible_plan.ui.plan");
 goog.require("cljs.core");
@@ -37567,16 +38666,16 @@ bible_plan.ui.plan.plan_state__GT_plan_options = function plan_state__GT_plan_op
   var books_at_a_time_QMARK_ = cljs.core._EQ_.call(null, "yes", books_at_a_time_QMARK__raw);
   return cljs.core.PersistentArrayMap.fromArray([new cljs.core.Keyword(null, "base-plan", "base-plan", 3446158359), base_plan, new cljs.core.Keyword(null, "skip-days", "skip-days", 3061888855), skip_days, new cljs.core.Keyword(null, "books-at-a-time?", "books-at-a-time?", 761096577), books_at_a_time_QMARK_], true)
 };
-bible_plan.ui.plan.plan_day__GT_tr = function plan_day__GT_tr(p__6692) {
-  var map__6695 = p__6692;
-  var map__6695__$1 = cljs.core.seq_QMARK_.call(null, map__6695) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6695) : map__6695;
-  var plan_day = map__6695__$1;
-  var date = cljs.core.get.call(null, map__6695__$1, new cljs.core.Keyword(null, "date", "date", 1016980256));
-  var readings = cljs.core.get.call(null, map__6695__$1, new cljs.core.Keyword(null, "readings", "readings", 4441962201));
-  var dom6696 = document.createElement("tr");
-  dom6696.appendChild(dommy.template.__GT_node_like.call(null, time_ui.__GT_td.call(null, date)));
-  dom6696.appendChild(dommy.template.__GT_node_like.call(null, cljs.core.map.call(null, bible_plan.ui.reference.__GT_td, readings)));
-  return dom6696
+bible_plan.ui.plan.plan_day__GT_tr = function plan_day__GT_tr(p__6777) {
+  var map__6780 = p__6777;
+  var map__6780__$1 = cljs.core.seq_QMARK_.call(null, map__6780) ? cljs.core.apply.call(null, cljs.core.hash_map, map__6780) : map__6780;
+  var plan_day = map__6780__$1;
+  var date = cljs.core.get.call(null, map__6780__$1, new cljs.core.Keyword(null, "date", "date", 1016980256));
+  var readings = cljs.core.get.call(null, map__6780__$1, new cljs.core.Keyword(null, "readings", "readings", 4441962201));
+  var dom6781 = document.createElement("tr");
+  dom6781.appendChild(dommy.template.__GT_node_like.call(null, time_ui.__GT_td.call(null, date)));
+  dom6781.appendChild(dommy.template.__GT_node_like.call(null, cljs.core.map.call(null, bible_plan.ui.reference.__GT_td, readings)));
+  return dom6781
 };
 bible_plan.ui.plan.plan__GT_dom_content = function plan__GT_dom_content(the_plan) {
   return cljs.core.map.call(null, bible_plan.ui.plan.plan_day__GT_tr, the_plan)
@@ -39541,49 +40640,49 @@ goog.require("bible_plan.ui.reference");
 goog.require("dommy.core");
 goog.require("dommy.core");
 dommy.core.listen_BANG_.call(null, document.querySelector(dommy.core.selector.call(null, cljs.core.keyword.call(null, "input[name\x3dplan]"))), new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
-var seq__6450_6454 = cljs.core.seq.call(null, dommy.utils.__GT_Array.call(null, document.querySelectorAll(dommy.core.selector.call(null, cljs.core.keyword.call(null, "input[name\x3dskip-day]")))));
-var chunk__6451_6455 = null;
-var count__6452_6456 = 0;
-var i__6453_6457 = 0;
+var seq__6535_6539 = cljs.core.seq.call(null, dommy.utils.__GT_Array.call(null, document.querySelectorAll(dommy.core.selector.call(null, cljs.core.keyword.call(null, "input[name\x3dskip-day]")))));
+var chunk__6536_6540 = null;
+var count__6537_6541 = 0;
+var i__6538_6542 = 0;
 while(true) {
-  if(i__6453_6457 < count__6452_6456) {
-    var skip_day_node_6458 = cljs.core._nth.call(null, chunk__6451_6455, i__6453_6457);
-    dommy.core.listen_BANG_.call(null, skip_day_node_6458, new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
-    var G__6459 = seq__6450_6454;
-    var G__6460 = chunk__6451_6455;
-    var G__6461 = count__6452_6456;
-    var G__6462 = i__6453_6457 + 1;
-    seq__6450_6454 = G__6459;
-    chunk__6451_6455 = G__6460;
-    count__6452_6456 = G__6461;
-    i__6453_6457 = G__6462;
+  if(i__6538_6542 < count__6537_6541) {
+    var skip_day_node_6543 = cljs.core._nth.call(null, chunk__6536_6540, i__6538_6542);
+    dommy.core.listen_BANG_.call(null, skip_day_node_6543, new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
+    var G__6544 = seq__6535_6539;
+    var G__6545 = chunk__6536_6540;
+    var G__6546 = count__6537_6541;
+    var G__6547 = i__6538_6542 + 1;
+    seq__6535_6539 = G__6544;
+    chunk__6536_6540 = G__6545;
+    count__6537_6541 = G__6546;
+    i__6538_6542 = G__6547;
     continue
   }else {
-    var temp__4092__auto___6463 = cljs.core.seq.call(null, seq__6450_6454);
-    if(temp__4092__auto___6463) {
-      var seq__6450_6464__$1 = temp__4092__auto___6463;
-      if(cljs.core.chunked_seq_QMARK_.call(null, seq__6450_6464__$1)) {
-        var c__3615__auto___6465 = cljs.core.chunk_first.call(null, seq__6450_6464__$1);
-        var G__6466 = cljs.core.chunk_rest.call(null, seq__6450_6464__$1);
-        var G__6467 = c__3615__auto___6465;
-        var G__6468 = cljs.core.count.call(null, c__3615__auto___6465);
-        var G__6469 = 0;
-        seq__6450_6454 = G__6466;
-        chunk__6451_6455 = G__6467;
-        count__6452_6456 = G__6468;
-        i__6453_6457 = G__6469;
+    var temp__4092__auto___6548 = cljs.core.seq.call(null, seq__6535_6539);
+    if(temp__4092__auto___6548) {
+      var seq__6535_6549__$1 = temp__4092__auto___6548;
+      if(cljs.core.chunked_seq_QMARK_.call(null, seq__6535_6549__$1)) {
+        var c__3670__auto___6550 = cljs.core.chunk_first.call(null, seq__6535_6549__$1);
+        var G__6551 = cljs.core.chunk_rest.call(null, seq__6535_6549__$1);
+        var G__6552 = c__3670__auto___6550;
+        var G__6553 = cljs.core.count.call(null, c__3670__auto___6550);
+        var G__6554 = 0;
+        seq__6535_6539 = G__6551;
+        chunk__6536_6540 = G__6552;
+        count__6537_6541 = G__6553;
+        i__6538_6542 = G__6554;
         continue
       }else {
-        var skip_day_node_6470 = cljs.core.first.call(null, seq__6450_6464__$1);
-        dommy.core.listen_BANG_.call(null, skip_day_node_6470, new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
-        var G__6471 = cljs.core.next.call(null, seq__6450_6464__$1);
-        var G__6472 = null;
-        var G__6473 = 0;
-        var G__6474 = 0;
-        seq__6450_6454 = G__6471;
-        chunk__6451_6455 = G__6472;
-        count__6452_6456 = G__6473;
-        i__6453_6457 = G__6474;
+        var skip_day_node_6555 = cljs.core.first.call(null, seq__6535_6549__$1);
+        dommy.core.listen_BANG_.call(null, skip_day_node_6555, new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
+        var G__6556 = cljs.core.next.call(null, seq__6535_6549__$1);
+        var G__6557 = null;
+        var G__6558 = 0;
+        var G__6559 = 0;
+        seq__6535_6539 = G__6556;
+        chunk__6536_6540 = G__6557;
+        count__6537_6541 = G__6558;
+        i__6538_6542 = G__6559;
         continue
       }
     }else {
@@ -39591,49 +40690,49 @@ while(true) {
   }
   break
 }
-var seq__6475_6479 = cljs.core.seq.call(null, dommy.utils.__GT_Array.call(null, document.querySelectorAll(dommy.core.selector.call(null, cljs.core.keyword.call(null, "input[name\x3dbooks-at-a-time]")))));
-var chunk__6476_6480 = null;
-var count__6477_6481 = 0;
-var i__6478_6482 = 0;
+var seq__6560_6564 = cljs.core.seq.call(null, dommy.utils.__GT_Array.call(null, document.querySelectorAll(dommy.core.selector.call(null, cljs.core.keyword.call(null, "input[name\x3dbooks-at-a-time]")))));
+var chunk__6561_6565 = null;
+var count__6562_6566 = 0;
+var i__6563_6567 = 0;
 while(true) {
-  if(i__6478_6482 < count__6477_6481) {
-    var books_at_a_time_node_6483 = cljs.core._nth.call(null, chunk__6476_6480, i__6478_6482);
-    dommy.core.listen_BANG_.call(null, books_at_a_time_node_6483, new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
-    var G__6484 = seq__6475_6479;
-    var G__6485 = chunk__6476_6480;
-    var G__6486 = count__6477_6481;
-    var G__6487 = i__6478_6482 + 1;
-    seq__6475_6479 = G__6484;
-    chunk__6476_6480 = G__6485;
-    count__6477_6481 = G__6486;
-    i__6478_6482 = G__6487;
+  if(i__6563_6567 < count__6562_6566) {
+    var books_at_a_time_node_6568 = cljs.core._nth.call(null, chunk__6561_6565, i__6563_6567);
+    dommy.core.listen_BANG_.call(null, books_at_a_time_node_6568, new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
+    var G__6569 = seq__6560_6564;
+    var G__6570 = chunk__6561_6565;
+    var G__6571 = count__6562_6566;
+    var G__6572 = i__6563_6567 + 1;
+    seq__6560_6564 = G__6569;
+    chunk__6561_6565 = G__6570;
+    count__6562_6566 = G__6571;
+    i__6563_6567 = G__6572;
     continue
   }else {
-    var temp__4092__auto___6488 = cljs.core.seq.call(null, seq__6475_6479);
-    if(temp__4092__auto___6488) {
-      var seq__6475_6489__$1 = temp__4092__auto___6488;
-      if(cljs.core.chunked_seq_QMARK_.call(null, seq__6475_6489__$1)) {
-        var c__3615__auto___6490 = cljs.core.chunk_first.call(null, seq__6475_6489__$1);
-        var G__6491 = cljs.core.chunk_rest.call(null, seq__6475_6489__$1);
-        var G__6492 = c__3615__auto___6490;
-        var G__6493 = cljs.core.count.call(null, c__3615__auto___6490);
-        var G__6494 = 0;
-        seq__6475_6479 = G__6491;
-        chunk__6476_6480 = G__6492;
-        count__6477_6481 = G__6493;
-        i__6478_6482 = G__6494;
+    var temp__4092__auto___6573 = cljs.core.seq.call(null, seq__6560_6564);
+    if(temp__4092__auto___6573) {
+      var seq__6560_6574__$1 = temp__4092__auto___6573;
+      if(cljs.core.chunked_seq_QMARK_.call(null, seq__6560_6574__$1)) {
+        var c__3670__auto___6575 = cljs.core.chunk_first.call(null, seq__6560_6574__$1);
+        var G__6576 = cljs.core.chunk_rest.call(null, seq__6560_6574__$1);
+        var G__6577 = c__3670__auto___6575;
+        var G__6578 = cljs.core.count.call(null, c__3670__auto___6575);
+        var G__6579 = 0;
+        seq__6560_6564 = G__6576;
+        chunk__6561_6565 = G__6577;
+        count__6562_6566 = G__6578;
+        i__6563_6567 = G__6579;
         continue
       }else {
-        var books_at_a_time_node_6495 = cljs.core.first.call(null, seq__6475_6489__$1);
-        dommy.core.listen_BANG_.call(null, books_at_a_time_node_6495, new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
-        var G__6496 = cljs.core.next.call(null, seq__6475_6489__$1);
-        var G__6497 = null;
-        var G__6498 = 0;
-        var G__6499 = 0;
-        seq__6475_6479 = G__6496;
-        chunk__6476_6480 = G__6497;
-        count__6477_6481 = G__6498;
-        i__6478_6482 = G__6499;
+        var books_at_a_time_node_6580 = cljs.core.first.call(null, seq__6560_6574__$1);
+        dommy.core.listen_BANG_.call(null, books_at_a_time_node_6580, new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
+        var G__6581 = cljs.core.next.call(null, seq__6560_6574__$1);
+        var G__6582 = null;
+        var G__6583 = 0;
+        var G__6584 = 0;
+        seq__6560_6564 = G__6581;
+        chunk__6561_6565 = G__6582;
+        count__6562_6566 = G__6583;
+        i__6563_6567 = G__6584;
         continue
       }
     }else {
@@ -39641,49 +40740,49 @@ while(true) {
   }
   break
 }
-var seq__6500_6504 = cljs.core.seq.call(null, dommy.utils.__GT_Array.call(null, document.querySelectorAll(dommy.core.selector.call(null, cljs.core.keyword.call(null, "input[name\x3dbooks-at-a-time]")))));
-var chunk__6501_6505 = null;
-var count__6502_6506 = 0;
-var i__6503_6507 = 0;
+var seq__6585_6589 = cljs.core.seq.call(null, dommy.utils.__GT_Array.call(null, document.querySelectorAll(dommy.core.selector.call(null, cljs.core.keyword.call(null, "input[name\x3dbooks-at-a-time]")))));
+var chunk__6586_6590 = null;
+var count__6587_6591 = 0;
+var i__6588_6592 = 0;
 while(true) {
-  if(i__6503_6507 < count__6502_6506) {
-    var books_at_a_time_node_6508 = cljs.core._nth.call(null, chunk__6501_6505, i__6503_6507);
-    dommy.core.listen_BANG_.call(null, books_at_a_time_node_6508, new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
-    var G__6509 = seq__6500_6504;
-    var G__6510 = chunk__6501_6505;
-    var G__6511 = count__6502_6506;
-    var G__6512 = i__6503_6507 + 1;
-    seq__6500_6504 = G__6509;
-    chunk__6501_6505 = G__6510;
-    count__6502_6506 = G__6511;
-    i__6503_6507 = G__6512;
+  if(i__6588_6592 < count__6587_6591) {
+    var books_at_a_time_node_6593 = cljs.core._nth.call(null, chunk__6586_6590, i__6588_6592);
+    dommy.core.listen_BANG_.call(null, books_at_a_time_node_6593, new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
+    var G__6594 = seq__6585_6589;
+    var G__6595 = chunk__6586_6590;
+    var G__6596 = count__6587_6591;
+    var G__6597 = i__6588_6592 + 1;
+    seq__6585_6589 = G__6594;
+    chunk__6586_6590 = G__6595;
+    count__6587_6591 = G__6596;
+    i__6588_6592 = G__6597;
     continue
   }else {
-    var temp__4092__auto___6513 = cljs.core.seq.call(null, seq__6500_6504);
-    if(temp__4092__auto___6513) {
-      var seq__6500_6514__$1 = temp__4092__auto___6513;
-      if(cljs.core.chunked_seq_QMARK_.call(null, seq__6500_6514__$1)) {
-        var c__3615__auto___6515 = cljs.core.chunk_first.call(null, seq__6500_6514__$1);
-        var G__6516 = cljs.core.chunk_rest.call(null, seq__6500_6514__$1);
-        var G__6517 = c__3615__auto___6515;
-        var G__6518 = cljs.core.count.call(null, c__3615__auto___6515);
-        var G__6519 = 0;
-        seq__6500_6504 = G__6516;
-        chunk__6501_6505 = G__6517;
-        count__6502_6506 = G__6518;
-        i__6503_6507 = G__6519;
+    var temp__4092__auto___6598 = cljs.core.seq.call(null, seq__6585_6589);
+    if(temp__4092__auto___6598) {
+      var seq__6585_6599__$1 = temp__4092__auto___6598;
+      if(cljs.core.chunked_seq_QMARK_.call(null, seq__6585_6599__$1)) {
+        var c__3670__auto___6600 = cljs.core.chunk_first.call(null, seq__6585_6599__$1);
+        var G__6601 = cljs.core.chunk_rest.call(null, seq__6585_6599__$1);
+        var G__6602 = c__3670__auto___6600;
+        var G__6603 = cljs.core.count.call(null, c__3670__auto___6600);
+        var G__6604 = 0;
+        seq__6585_6589 = G__6601;
+        chunk__6586_6590 = G__6602;
+        count__6587_6591 = G__6603;
+        i__6588_6592 = G__6604;
         continue
       }else {
-        var books_at_a_time_node_6520 = cljs.core.first.call(null, seq__6500_6514__$1);
-        dommy.core.listen_BANG_.call(null, books_at_a_time_node_6520, new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
-        var G__6521 = cljs.core.next.call(null, seq__6500_6514__$1);
-        var G__6522 = null;
-        var G__6523 = 0;
-        var G__6524 = 0;
-        seq__6500_6504 = G__6521;
-        chunk__6501_6505 = G__6522;
-        count__6502_6506 = G__6523;
-        i__6503_6507 = G__6524;
+        var books_at_a_time_node_6605 = cljs.core.first.call(null, seq__6585_6599__$1);
+        dommy.core.listen_BANG_.call(null, books_at_a_time_node_6605, new cljs.core.Keyword(null, "change", "change", 3947235106), bible_plan.ui.plan.re_show_plan);
+        var G__6606 = cljs.core.next.call(null, seq__6585_6599__$1);
+        var G__6607 = null;
+        var G__6608 = 0;
+        var G__6609 = 0;
+        seq__6585_6589 = G__6606;
+        chunk__6586_6590 = G__6607;
+        count__6587_6591 = G__6608;
+        i__6588_6592 = G__6609;
         continue
       }
     }else {
@@ -39692,4 +40791,4 @@ while(true) {
   break
 }
 ;
-//@ sourceMappingURL=resources/public/whitespace/js/bible-plan.js.map
+//# sourceMappingURL=bible-plan.js.map

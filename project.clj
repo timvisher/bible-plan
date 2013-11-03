@@ -5,7 +5,7 @@
                  :url "http://www.eclipse.org/legal/epl-v10.html"}
   :source-paths ["src/clj" "src/cljs"]
   :dependencies [[org.clojure/clojure             "1.5.1"]
-                 [org.clojure/clojurescript       "0.0-1934"]
+                 [org.clojure/clojurescript       "0.0-1978"]
                  [prismatic/dommy                 "0.1.2"]
                  [ring                            "1.2.0"]
                  [compojure                       "1.1.5"]
@@ -46,7 +46,6 @@
                                                                  "-message"]
                                                 :compiler       {:pretty-print  false
                                                                  :output-to     "resources/public/js/bible-plan.js"
-                                                                 :source-map    "resources/public/js/bible-plan.js.map"
                                                                  :output-dir    "target/advanced"
                                                                  :externs       ["externs/bible-plan-bibles-externs.js"]
                                                                  :optimizations :advanced}}]}}})
