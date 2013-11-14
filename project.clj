@@ -5,7 +5,7 @@
                  :url "http://www.eclipse.org/legal/epl-v10.html"}
   :source-paths ["src/clj" "src/cljs"]
   :dependencies [[org.clojure/clojure             "1.5.1"]
-                 [org.clojure/clojurescript       "0.0-1978"]
+                 [org.clojure/clojurescript       "0.0-2030"]
                  [prismatic/dommy                 "0.1.2"]
                  [ring                            "1.2.0"]
                  [compojure                       "1.1.5"]
@@ -33,7 +33,8 @@
                                                                  :output-dir    "target/whitespace"
                                                                  :externs       ["externs/bible-plan-bibles-externs.js"]
                                                                  :optimizations :whitespace}}
-                                               {:source-paths   ["src/cljs"]
+                                               {:id             "advanced"
+                                                :source-paths   ["src/cljs"]
                                                 :notify-command ["terminal-notifier"
                                                                  "-title"
                                                                  "bible-plan"
@@ -46,6 +47,7 @@
                                                                  "-message"]
                                                 :compiler       {:pretty-print  false
                                                                  :output-to     "resources/public/js/bible-plan.js"
-                                                                 :output-dir    "target/advanced"
+                                                                 :output-dir    "resources/public/js"
+                                                                 :source-map    "resources/public/js/bible-plan.js.map"
                                                                  :externs       ["externs/bible-plan-bibles-externs.js"]
                                                                  :optimizations :advanced}}]}}})
