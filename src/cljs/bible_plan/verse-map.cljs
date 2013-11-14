@@ -116,7 +116,7 @@
         (apply masked-> verse-maps))))
 
 (defn range [{:keys [start end] :as reference}]
-  (let [verse-map-range (drop-while (partial masked-> start) (:esv @verse-maps))
+  (let [verse-map-range (drop-while (partial masked-> start) (get @verse-maps :esv))
         verse-map-range (if end
                       (take-while (partial masked->= end) verse-map-range)
                       (take-while (partial masked-= start) verse-map-range))]
@@ -141,8 +141,8 @@
 (defn ->book-str [{:keys [book chapter] :as verse-map}]
   {:pre [book]}
   (let [book-str (if (not chapter)
-                   (get-in (:esv @bible/bibles) [book :name])
-                   (get-in (:esv @bible/bibles) [book :abbreviation]))
+                   (get-in (get @bible/bibles :esv) [book :name])
+                   (get-in (get @bible/bibles :esv) [book :abbreviation]))
         book-str (if (re-matches #"^[0-9] .+" book-str)
                    (let [[number-part name-part] (string/split book-str #" " 2)]
                      (str number-part " " (string/capitalize name-part)))

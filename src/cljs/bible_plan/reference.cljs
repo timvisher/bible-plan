@@ -62,13 +62,13 @@
 
 (defn join-points [references]
   (reduce (fn [start-segments reference-part]
-            (if (:end reference-part)
-              (conj start-segments [(:end reference-part)])
-              (update-in start-segments [(- (count start-segments) 1)] conj (:start reference-part))))
+            (if (get reference-part :end)
+              (conj start-segments [(get reference-part :end)])
+              (update-in start-segments [(- (count start-segments) 1)] conj (get reference-part :start))))
           [[]]
           (reduce (fn [start-and-ends reference]
-                    (if (:end reference)
-                      (conj (conj start-and-ends {:start (:start reference)}) {:end (:end reference)})
+                    (if (get reference :end)
+                      (conj (conj start-and-ends {:start (get reference :start)}) {:end (get reference :end)})
                       (conj start-and-ends reference)))
                   []
                   references)))

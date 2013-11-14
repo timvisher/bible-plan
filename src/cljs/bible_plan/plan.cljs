@@ -36,7 +36,7 @@
 
 (defn reading-day-> [annotated-reading annotated-reading-day]
                    (let [reading-day-day-number ((comp :day first) annotated-reading-day)
-                         reading-day-number     (:day annotated-reading)]
+                         reading-day-number     (get annotated-reading :day)]
                      (> reading-day-number reading-day-day-number)))
 
 (defn reading-book? [book reading-day]
