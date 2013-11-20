@@ -2,6 +2,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Generate Your Bible Plans!</title>
+    <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
   </head>
   <body>
     <form>
@@ -22,6 +23,10 @@
       <h2>Books at a time?</h2>
       <input type="radio" name="books-at-a-time" id="books-at-a-time-yes" value="yes" /><label for="books-at-a-time-yes">Yes</label>
       <input type="radio" name="books-at-a-time" id="books-at-a-time-no" value="no" /><label for="books-at-a-time-no">No</label>
+
+      <h2><label for="start-date">Start Date:</label></h2>
+      <input type="date" id="start-date" name="start-date" />
+      <div class="date-input"></div>
     </form>
 
     <h2>The Plan</h2>

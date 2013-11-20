@@ -234,7 +234,7 @@
   {:kind "family" :start {:book 42 :chapter 14}}
   {:kind "secret" :start {:book 18 :chapter 29}}
   {:kind "secret" :start {:book 46 :chapter 15}}]
- [{:kind "family" :start {:verse 22 :book 2 :chapter 12}}
+ [{:kind "family" :start {:verse 22 :book 2 :chapter 12} :end {:book 2 :chapter 12 :verse 51}}
   {:kind "family" :start {:book 42 :chapter 15}}
   {:kind "secret" :start {:book 18 :chapter 30}}
   {:kind "secret" :start {:book 46 :chapter 16}}]
