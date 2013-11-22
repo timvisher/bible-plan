@@ -5,7 +5,7 @@
                  :url "http://www.eclipse.org/legal/epl-v10.html"}
   :source-paths ["src/clj" "src/cljs"]
   :dependencies [[org.clojure/clojure             "1.5.1"]
-                 [org.clojure/clojurescript       "0.0-2034"]
+                 [org.clojure/clojurescript       "0.0-2069"]
                  [prismatic/dommy                 "0.1.2"]
                  [ring                            "1.2.0"]
                  [compojure                       "1.1.5"]
@@ -13,6 +13,7 @@
                  [com.cemerick/clojurescript.test "0.0.4"]
                  [shodan                          "0.1.0"]
                  [cljs-ajax                       "0.2.1"]]
+  :repositories {"sonatype-staging" "https://oss.sonatype.org/content/groups/staging/"}
   :profiles     {:dev {;; :repl-options {:init-ns dev-server}
                        :plugins      [[com.cemerick/austin "0.1.1"]
                                       [lein-cljsbuild      "0.3.4"]]
