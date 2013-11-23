@@ -5,7 +5,7 @@
                  :url "http://www.eclipse.org/legal/epl-v10.html"}
   :source-paths ["src/clj" "src/cljs"]
   :dependencies [[org.clojure/clojure             "1.5.1"]
-                 [org.clojure/clojurescript       "0.0-1978"]
+                 [org.clojure/clojurescript       "0.0-2034"]
                  [prismatic/dommy                 "0.1.2"]
                  [ring                            "1.2.0"]
                  [compojure                       "1.1.5"]
@@ -16,7 +16,8 @@
   :profiles     {:dev {;; :repl-options {:init-ns dev-server}
                        :plugins      [[com.cemerick/austin "0.1.1"]
                                       [lein-cljsbuild      "0.3.4"]]
-                       :cljsbuild    {:builds [{:source-paths   ["src/cljs"]
+                       :cljsbuild    {:builds [{:id             "whitespace"
+                                                :source-paths   ["src/cljs"]
                                                 :notify-command ["terminal-notifier"
                                                                  "-title"
                                                                  "bible-plan"
@@ -27,13 +28,14 @@
                                                                  "-activate"
                                                                  "com.googlecode.iTerm2"
                                                                  "-message"]
-                                                :compiler       {:pretty-print  true
-                                                                 :output-to     "resources/public/whitespace/js/bible-plan.js"
-                                                                 :source-map    "resources/public/whitespace/js/bible-plan.js.map"
-                                                                 :output-dir    "target/whitespace"
-                                                                 :externs       ["externs/bible-plan-bibles-externs.js"]
-                                                                 :optimizations :whitespace}}
-                                               {:source-paths   ["src/cljs"]
+                                                :compiler       {:pretty-print    true
+                                                                 :output-to       "resources/public/whitespace/js/bible-plan.js"
+                                                                 :source-map      "resources/public/whitespace/js/bible-plan.js.map"
+                                                                 :output-dir      "resources/public/whitespace/js/out"
+                                                                 :externs         ["externs/bible-plan-bibles-externs.js"]
+                                                                 :optimizations   :whitespace}}
+                                               {:id             "advanced"
+                                                :source-paths   ["src/cljs"]
                                                 :notify-command ["terminal-notifier"
                                                                  "-title"
                                                                  "bible-plan"
@@ -44,8 +46,26 @@
                                                                  "-activate"
                                                                  "com.googlecode.iTerm2"
                                                                  "-message"]
+                                                :compiler       {:pretty-print    false
+                                                                 :output-to       "resources/public/js/bible-plan.js"
+                                                                 :output-dir      "resources/public/js/out"
+                                                                 :source-map      "resources/public/js/bible-plan.js.map"
+                                                                 :externs         ["externs/bible-plan-bibles-externs.js"]
+                                                                 :optimizations   :advanced}}
+                                               {:id             "prod"
+                                                :source-paths   ["src/cljs"]
+                                                :notify-command ["terminal-notifier"
+                                                                 "-title"
+                                                                 "bible-plan"
+                                                                 "-subtitle"
+                                                                 "prod"
+                                                                 "-group"
+                                                                 "bible-plan-build"
+                                                                 "-activate"
+                                                                 "com.googlecode.iTerm2"
+                                                                 "-message"]
                                                 :compiler       {:pretty-print  false
-                                                                 :output-to     "resources/public/js/bible-plan.js"
-                                                                 :output-dir    "target/advanced"
+                                                                 :output-to     "sync/prod/js/bible-plan.js"
+                                                                 :output-dir    "target/prod"
                                                                  :externs       ["externs/bible-plan-bibles-externs.js"]
                                                                  :optimizations :advanced}}]}}})

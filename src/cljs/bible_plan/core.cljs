@@ -2,6 +2,7 @@
   (:require    [dommy.core              :as dom]
                [bible-plan.ui.reference :as ref-ui]
                [bible-plan.ui.plan      :as plan-ui]
+               [goog.ui.DatePicker]
                clojure.browser.repl)
 
   (:use-macros [dommy.macros :only [sel sel1]]))
@@ -10,16 +11,12 @@
   (in-ns 'bible-plan.core)
   )
 
-(dom/listen! (sel1 (keyword "input[name=plan]")) :change plan-ui/re-show-plan)
+(dom/listen! (sel1 :form) :change plan-ui/re-show-plan)
 
-(doseq [skip-day-node (sel (keyword "input[name=skip-day]"))]
-  (dom/listen! skip-day-node :change plan-ui/re-show-plan))
-
-(doseq [books-at-a-time-node (sel (keyword "input[name=books-at-a-time]"))]
-  (dom/listen! books-at-a-time-node :change plan-ui/re-show-plan))
-
-(doseq [books-at-a-time-node (sel (keyword "input[name=books-at-a-time]"))]
-  (dom/listen! books-at-a-time-node :change plan-ui/re-show-plan))
+(when-not (.-date (.-inputtypes js/Modernizr))
+  (doseq [date-input (sel (keyword ".date-input"))]
+    (let [g-dp (goog.ui.DatePicker.)]
+      (.render g-dp date-input))))
 
 (comment
   (dom/event-listeners (sel1 (keyword "input[name=plan]")))
