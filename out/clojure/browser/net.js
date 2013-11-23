@@ -1,39 +1,38 @@
+// Compiled by ClojureScript 0.0-2075
 goog.provide('clojure.browser.net');
 goog.require('cljs.core');
-goog.require('goog.json');
-goog.require('goog.net.xpc.CrossPageChannel');
-goog.require('goog.net.xpc.CfgFields');
-goog.require('goog.net.EventType');
 goog.require('goog.net.XhrIo');
+goog.require('goog.net.xpc.CrossPageChannel');
 goog.require('clojure.browser.event');
+goog.require('goog.json');
+goog.require('goog.net.xpc.CfgFields');
+goog.require('clojure.browser.event');
+goog.require('goog.net.EventType');
+goog.require('goog.net.EventType');
+goog.require('goog.net.xpc.CrossPageChannel');
+goog.require('goog.json');
+goog.require('goog.net.XhrIo');
+goog.require('goog.net.xpc.CfgFields');
 clojure.browser.net._STAR_timeout_STAR_ = 10000;
-clojure.browser.net.event_types = cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,(function (p__5768){
-var vec__5769 = p__5768;
-var k = cljs.core.nth.call(null,vec__5769,0,null);
-var v = cljs.core.nth.call(null,vec__5769,1,null);
-return cljs.core.PersistentVector.fromArray([cljs.core.keyword.call(null,k.toLowerCase()),v], true);
+clojure.browser.net.event_types = cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,(function (p__22129){var vec__22130 = p__22129;var k = cljs.core.nth.call(null,vec__22130,0,null);var v = cljs.core.nth.call(null,vec__22130,1,null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.call(null,k.toLowerCase()),v], null);
 }),cljs.core.merge.call(null,cljs.core.js__GT_clj.call(null,goog.net.EventType))));
-clojure.browser.net.IConnection = {};
+clojure.browser.net.IConnection = (function (){var obj22132 = {};return obj22132;
+})();
 clojure.browser.net.connect = (function() {
 var connect = null;
-var connect__1 = (function (this$){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+var connect__1 = (function (this$){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$net$IConnection$connect$arity$1;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$net$IConnection$connect$arity$1(this$);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.net.connect[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.net.connect[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.net.connect["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.net.connect["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"IConnection.connect",this$);
 }
@@ -41,24 +40,19 @@ if(or__3943__auto____$1)
 })().call(null,this$);
 }
 });
-var connect__2 = (function (this$,opt1){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+var connect__2 = (function (this$,opt1){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$net$IConnection$connect$arity$2;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$net$IConnection$connect$arity$2(this$,opt1);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.net.connect[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.net.connect[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.net.connect["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.net.connect["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"IConnection.connect",this$);
 }
@@ -66,24 +60,19 @@ if(or__3943__auto____$1)
 })().call(null,this$,opt1);
 }
 });
-var connect__3 = (function (this$,opt1,opt2){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+var connect__3 = (function (this$,opt1,opt2){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$net$IConnection$connect$arity$3;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$net$IConnection$connect$arity$3(this$,opt1,opt2);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.net.connect[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.net.connect[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.net.connect["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.net.connect["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"IConnection.connect",this$);
 }
@@ -91,24 +80,19 @@ if(or__3943__auto____$1)
 })().call(null,this$,opt1,opt2);
 }
 });
-var connect__4 = (function (this$,opt1,opt2,opt3){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+var connect__4 = (function (this$,opt1,opt2,opt3){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$net$IConnection$connect$arity$4;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$net$IConnection$connect$arity$4(this$,opt1,opt2,opt3);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.net.connect[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.net.connect[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.net.connect["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.net.connect["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"IConnection.connect",this$);
 }
@@ -138,24 +122,19 @@ return connect;
 ;
 clojure.browser.net.transmit = (function() {
 var transmit = null;
-var transmit__2 = (function (this$,opt){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+var transmit__2 = (function (this$,opt){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$net$IConnection$transmit$arity$2;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$net$IConnection$transmit$arity$2(this$,opt);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.net.transmit[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.net.transmit[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.net.transmit["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.net.transmit["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"IConnection.transmit",this$);
 }
@@ -163,24 +142,19 @@ if(or__3943__auto____$1)
 })().call(null,this$,opt);
 }
 });
-var transmit__3 = (function (this$,opt,opt2){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+var transmit__3 = (function (this$,opt,opt2){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$net$IConnection$transmit$arity$3;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$net$IConnection$transmit$arity$3(this$,opt,opt2);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.net.transmit[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.net.transmit[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.net.transmit["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.net.transmit["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"IConnection.transmit",this$);
 }
@@ -188,24 +162,19 @@ if(or__3943__auto____$1)
 })().call(null,this$,opt,opt2);
 }
 });
-var transmit__4 = (function (this$,opt,opt2,opt3){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+var transmit__4 = (function (this$,opt,opt2,opt3){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$net$IConnection$transmit$arity$4;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$net$IConnection$transmit$arity$4(this$,opt,opt2,opt3);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.net.transmit[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.net.transmit[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.net.transmit["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.net.transmit["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"IConnection.transmit",this$);
 }
@@ -213,24 +182,19 @@ if(or__3943__auto____$1)
 })().call(null,this$,opt,opt2,opt3);
 }
 });
-var transmit__5 = (function (this$,opt,opt2,opt3,opt4){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+var transmit__5 = (function (this$,opt,opt2,opt3,opt4){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$net$IConnection$transmit$arity$5;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$net$IConnection$transmit$arity$5(this$,opt,opt2,opt3,opt4);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.net.transmit[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.net.transmit[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.net.transmit["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.net.transmit["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"IConnection.transmit",this$);
 }
@@ -238,24 +202,19 @@ if(or__3943__auto____$1)
 })().call(null,this$,opt,opt2,opt3,opt4);
 }
 });
-var transmit__6 = (function (this$,opt,opt2,opt3,opt4,opt5){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+var transmit__6 = (function (this$,opt,opt2,opt3,opt4,opt5){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$net$IConnection$transmit$arity$6;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$net$IConnection$transmit$arity$6(this$,opt,opt2,opt3,opt4,opt5);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.net.transmit[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.net.transmit[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.net.transmit["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.net.transmit["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"IConnection.transmit",this$);
 }
@@ -286,24 +245,19 @@ transmit.cljs$core$IFn$_invoke$arity$6 = transmit__6;
 return transmit;
 })()
 ;
-clojure.browser.net.close = (function close(this$){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+clojure.browser.net.close = (function close(this$){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$net$IConnection$close$arity$1;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$net$IConnection$close$arity$1(this$);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.net.close[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.net.close[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.net.close["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.net.close["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"IConnection.close",this$);
 }
@@ -312,64 +266,45 @@ if(or__3943__auto____$1)
 }
 });
 goog.net.XhrIo.prototype.clojure$browser$event$EventType$ = true;
-goog.net.XhrIo.prototype.clojure$browser$event$EventType$event_types$arity$1 = (function (this$){
-return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,(function (p__5770){
-var vec__5771 = p__5770;
-var k = cljs.core.nth.call(null,vec__5771,0,null);
-var v = cljs.core.nth.call(null,vec__5771,1,null);
-return cljs.core.PersistentVector.fromArray([cljs.core.keyword.call(null,k.toLowerCase()),v], true);
+goog.net.XhrIo.prototype.clojure$browser$event$EventType$event_types$arity$1 = (function (this$){var this$__$1 = this;return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,(function (p__22133){var vec__22134 = p__22133;var k = cljs.core.nth.call(null,vec__22134,0,null);var v = cljs.core.nth.call(null,vec__22134,1,null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.call(null,k.toLowerCase()),v], null);
 }),cljs.core.merge.call(null,cljs.core.js__GT_clj.call(null,goog.net.EventType))));
 });
 goog.net.XhrIo.prototype.clojure$browser$net$IConnection$ = true;
-goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$2 = (function (this$,uri){
-return clojure.browser.net.transmit.call(null,this$,uri,"GET",null,null,clojure.browser.net._STAR_timeout_STAR_);
+goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$2 = (function (this$,uri){var this$__$1 = this;return clojure.browser.net.transmit.call(null,this$__$1,uri,"GET",null,null,clojure.browser.net._STAR_timeout_STAR_);
 });
-goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$3 = (function (this$,uri,method){
-return clojure.browser.net.transmit.call(null,this$,uri,method,null,null,clojure.browser.net._STAR_timeout_STAR_);
+goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$3 = (function (this$,uri,method){var this$__$1 = this;return clojure.browser.net.transmit.call(null,this$__$1,uri,method,null,null,clojure.browser.net._STAR_timeout_STAR_);
 });
-goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$4 = (function (this$,uri,method,content){
-return clojure.browser.net.transmit.call(null,this$,uri,method,content,null,clojure.browser.net._STAR_timeout_STAR_);
+goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$4 = (function (this$,uri,method,content){var this$__$1 = this;return clojure.browser.net.transmit.call(null,this$__$1,uri,method,content,null,clojure.browser.net._STAR_timeout_STAR_);
 });
-goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$5 = (function (this$,uri,method,content,headers){
-return clojure.browser.net.transmit.call(null,this$,uri,method,content,headers,clojure.browser.net._STAR_timeout_STAR_);
+goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$5 = (function (this$,uri,method,content,headers){var this$__$1 = this;return clojure.browser.net.transmit.call(null,this$__$1,uri,method,content,headers,clojure.browser.net._STAR_timeout_STAR_);
 });
-goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$6 = (function (this$,uri,method,content,headers,timeout){
-this$.setTimeoutInterval(timeout);
-return this$.send(uri,method,content,headers);
+goog.net.XhrIo.prototype.clojure$browser$net$IConnection$transmit$arity$6 = (function (this$,uri,method,content,headers,timeout){var this$__$1 = this;this$__$1.setTimeoutInterval(timeout);
+return this$__$1.send(uri,method,content,headers);
 });
-clojure.browser.net.xpc_config_fields = cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,(function (p__5772){
-var vec__5773 = p__5772;
-var k = cljs.core.nth.call(null,vec__5773,0,null);
-var v = cljs.core.nth.call(null,vec__5773,1,null);
-return cljs.core.PersistentVector.fromArray([cljs.core.keyword.call(null,k.toLowerCase()),v], true);
+clojure.browser.net.xpc_config_fields = cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,(function (p__22135){var vec__22136 = p__22135;var k = cljs.core.nth.call(null,vec__22136,0,null);var v = cljs.core.nth.call(null,vec__22136,1,null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.call(null,k.toLowerCase()),v], null);
 }),cljs.core.js__GT_clj.call(null,goog.net.xpc.CfgFields)));
 /**
 * Returns an XhrIo connection
 */
-clojure.browser.net.xhr_connection = (function xhr_connection(){
-return (new goog.net.XhrIo());
+clojure.browser.net.xhr_connection = (function xhr_connection(){return (new goog.net.XhrIo());
 });
-clojure.browser.net.ICrossPageChannel = {};
+clojure.browser.net.ICrossPageChannel = (function (){var obj22138 = {};return obj22138;
+})();
 clojure.browser.net.register_service = (function() {
 var register_service = null;
-var register_service__3 = (function (this$,service_name,fn){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+var register_service__3 = (function (this$,service_name,fn){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$net$ICrossPageChannel$register_service$arity$3;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$net$ICrossPageChannel$register_service$arity$3(this$,service_name,fn);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.net.register_service[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.net.register_service[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.net.register_service["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.net.register_service["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"ICrossPageChannel.register-service",this$);
 }
@@ -377,24 +312,19 @@ if(or__3943__auto____$1)
 })().call(null,this$,service_name,fn);
 }
 });
-var register_service__4 = (function (this$,service_name,fn,encode_json_QMARK_){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+var register_service__4 = (function (this$,service_name,fn,encode_json_QMARK_){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$net$ICrossPageChannel$register_service$arity$4;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$net$ICrossPageChannel$register_service$arity$4(this$,service_name,fn,encode_json_QMARK_);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.net.register_service[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.net.register_service[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.net.register_service["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.net.register_service["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"ICrossPageChannel.register-service",this$);
 }
@@ -417,31 +347,23 @@ return register_service;
 })()
 ;
 goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$ = true;
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect$arity$1 = (function (this$){
-return clojure.browser.net.connect.call(null,this$,null);
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect$arity$1 = (function (this$){var this$__$1 = this;return clojure.browser.net.connect.call(null,this$__$1,null);
 });
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect$arity$2 = (function (this$,on_connect_fn){
-return this$.connect(on_connect_fn);
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect$arity$2 = (function (this$,on_connect_fn){var this$__$1 = this;return this$__$1.connect(on_connect_fn);
 });
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect$arity$3 = (function (this$,on_connect_fn,config_iframe_fn){
-return clojure.browser.net.connect.call(null,this$,on_connect_fn,config_iframe_fn,document.body);
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect$arity$3 = (function (this$,on_connect_fn,config_iframe_fn){var this$__$1 = this;return clojure.browser.net.connect.call(null,this$__$1,on_connect_fn,config_iframe_fn,document.body);
 });
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect$arity$4 = (function (this$,on_connect_fn,config_iframe_fn,iframe_parent){
-this$.createPeerIframe(iframe_parent,config_iframe_fn);
-return this$.connect(on_connect_fn);
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$connect$arity$4 = (function (this$,on_connect_fn,config_iframe_fn,iframe_parent){var this$__$1 = this;this$__$1.createPeerIframe(iframe_parent,config_iframe_fn);
+return this$__$1.connect(on_connect_fn);
 });
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$transmit$arity$3 = (function (this$,service_name,payload){
-return this$.send(cljs.core.name.call(null,service_name),payload);
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$transmit$arity$3 = (function (this$,service_name,payload){var this$__$1 = this;return this$__$1.send(cljs.core.name.call(null,service_name),payload);
 });
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$close$arity$1 = (function (this$){
-return this$.close(cljs.core.List.EMPTY);
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$IConnection$close$arity$1 = (function (this$){var this$__$1 = this;return this$__$1.close(cljs.core.List.EMPTY);
 });
 goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$ICrossPageChannel$ = true;
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$ICrossPageChannel$register_service$arity$3 = (function (this$,service_name,fn){
-return clojure.browser.net.register_service.call(null,this$,service_name,fn,false);
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$ICrossPageChannel$register_service$arity$3 = (function (this$,service_name,fn){var this$__$1 = this;return clojure.browser.net.register_service.call(null,this$__$1,service_name,fn,false);
 });
-goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$ICrossPageChannel$register_service$arity$4 = (function (this$,service_name,fn,encode_json_QMARK_){
-return this$.registerService(cljs.core.name.call(null,service_name),fn,encode_json_QMARK_);
+goog.net.xpc.CrossPageChannel.prototype.clojure$browser$net$ICrossPageChannel$register_service$arity$4 = (function (this$,service_name,fn,encode_json_QMARK_){var this$__$1 = this;return this$__$1.registerService(cljs.core.name.call(null,service_name),fn,encode_json_QMARK_);
 });
 /**
 * When passed with a config hash-map, returns a parent
@@ -456,30 +378,20 @@ return this$.registerService(cljs.core.name.call(null,service_name),fn,encode_js
 */
 clojure.browser.net.xpc_connection = (function() {
 var xpc_connection = null;
-var xpc_connection__0 = (function (){
-var temp__4092__auto__ = (new goog.Uri(window.location.href)).getParameterValue("xpc");
-if(cljs.core.truth_(temp__4092__auto__))
-{var config = temp__4092__auto__;
-return (new goog.net.xpc.CrossPageChannel(goog.json.parse(config)));
+var xpc_connection__0 = (function (){var temp__4092__auto__ = (new goog.Uri(window.location.href)).getParameterValue("xpc");if(cljs.core.truth_(temp__4092__auto__))
+{var config = temp__4092__auto__;return (new goog.net.xpc.CrossPageChannel(goog.json.parse(config)));
 } else
 {return null;
 }
 });
-var xpc_connection__1 = (function (config){
-return (new goog.net.xpc.CrossPageChannel(cljs.core.reduce.call(null,(function (sum,p__5777){
-var vec__5778 = p__5777;
-var k = cljs.core.nth.call(null,vec__5778,0,null);
-var v = cljs.core.nth.call(null,vec__5778,1,null);
-var temp__4090__auto__ = cljs.core.get.call(null,clojure.browser.net.xpc_config_fields,k);
-if(cljs.core.truth_(temp__4090__auto__))
-{var field = temp__4090__auto__;
-var G__5779 = sum;
-(G__5779[field] = v);
-return G__5779;
+var xpc_connection__1 = (function (config){return (new goog.net.xpc.CrossPageChannel(cljs.core.reduce.call(null,(function (sum,p__22144){var vec__22145 = p__22144;var k = cljs.core.nth.call(null,vec__22145,0,null);var v = cljs.core.nth.call(null,vec__22145,1,null);var temp__4090__auto__ = cljs.core.get.call(null,clojure.browser.net.xpc_config_fields,k);if(cljs.core.truth_(temp__4090__auto__))
+{var field = temp__4090__auto__;var G__22146 = sum;(G__22146[field] = v);
+return G__22146;
 } else
 {return sum;
 }
-}),{},config)));
+}),(function (){var obj22148 = {};return obj22148;
+})(),config)));
 });
 xpc_connection = function(config){
 switch(arguments.length){

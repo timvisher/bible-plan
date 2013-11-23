@@ -1,27 +1,27 @@
+// Compiled by ClojureScript 0.0-2075
 goog.provide('clojure.browser.event');
 goog.require('cljs.core');
 goog.require('goog.events.EventType');
+goog.require('goog.events.EventType');
+goog.require('goog.events.EventTarget');
 goog.require('goog.events.EventTarget');
 goog.require('goog.events');
-clojure.browser.event.EventType = {};
-clojure.browser.event.event_types = (function event_types(this$){
-if((function (){var and__3941__auto__ = this$;
-if(and__3941__auto__)
+goog.require('goog.events');
+clojure.browser.event.EventType = (function (){var obj22150 = {};return obj22150;
+})();
+clojure.browser.event.event_types = (function event_types(this$){if((function (){var and__6323__auto__ = this$;if(and__6323__auto__)
 {return this$.clojure$browser$event$EventType$event_types$arity$1;
 } else
-{return and__3941__auto__;
+{return and__6323__auto__;
 }
 })())
 {return this$.clojure$browser$event$EventType$event_types$arity$1(this$);
 } else
-{var x__4374__auto__ = (((this$ == null))?null:this$);
-return (function (){var or__3943__auto__ = (clojure.browser.event.event_types[goog.typeOf(x__4374__auto__)]);
-if(or__3943__auto__)
-{return or__3943__auto__;
+{var x__6933__auto__ = (((this$ == null))?null:this$);return (function (){var or__6335__auto__ = (clojure.browser.event.event_types[goog.typeOf(x__6933__auto__)]);if(or__6335__auto__)
+{return or__6335__auto__;
 } else
-{var or__3943__auto____$1 = (clojure.browser.event.event_types["_"]);
-if(or__3943__auto____$1)
-{return or__3943__auto____$1;
+{var or__6335__auto____$1 = (clojure.browser.event.event_types["_"]);if(or__6335__auto____$1)
+{return or__6335__auto____$1;
 } else
 {throw cljs.core.missing_protocol.call(null,"EventType.event-types",this$);
 }
@@ -30,30 +30,18 @@ if(or__3943__auto____$1)
 }
 });
 Element.prototype.clojure$browser$event$EventType$ = true;
-Element.prototype.clojure$browser$event$EventType$event_types$arity$1 = (function (this$){
-return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,(function (p__5780){
-var vec__5781 = p__5780;
-var k = cljs.core.nth.call(null,vec__5781,0,null);
-var v = cljs.core.nth.call(null,vec__5781,1,null);
-return cljs.core.PersistentVector.fromArray([cljs.core.keyword.call(null,k.toLowerCase()),v], true);
+Element.prototype.clojure$browser$event$EventType$event_types$arity$1 = (function (this$){var this$__$1 = this;return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,(function (p__22151){var vec__22152 = p__22151;var k = cljs.core.nth.call(null,vec__22152,0,null);var v = cljs.core.nth.call(null,vec__22152,1,null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.call(null,k.toLowerCase()),v], null);
 }),cljs.core.merge.call(null,cljs.core.js__GT_clj.call(null,goog.events.EventType))));
 });
 goog.events.EventTarget.prototype.clojure$browser$event$EventType$ = true;
-goog.events.EventTarget.prototype.clojure$browser$event$EventType$event_types$arity$1 = (function (this$){
-return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,(function (p__5782){
-var vec__5783 = p__5782;
-var k = cljs.core.nth.call(null,vec__5783,0,null);
-var v = cljs.core.nth.call(null,vec__5783,1,null);
-return cljs.core.PersistentVector.fromArray([cljs.core.keyword.call(null,k.toLowerCase()),v], true);
+goog.events.EventTarget.prototype.clojure$browser$event$EventType$event_types$arity$1 = (function (this$){var this$__$1 = this;return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,(function (p__22153){var vec__22154 = p__22153;var k = cljs.core.nth.call(null,vec__22154,0,null);var v = cljs.core.nth.call(null,vec__22154,1,null);return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.keyword.call(null,k.toLowerCase()),v], null);
 }),cljs.core.merge.call(null,cljs.core.js__GT_clj.call(null,goog.events.EventType))));
 });
 clojure.browser.event.listen = (function() {
 var listen = null;
-var listen__3 = (function (src,type,fn){
-return listen.call(null,src,type,fn,false);
+var listen__3 = (function (src,type,fn){return listen.call(null,src,type,fn,false);
 });
-var listen__4 = (function (src,type,fn,capture_QMARK_){
-return goog.events.listen(src,cljs.core.get.call(null,clojure.browser.event.event_types.call(null,src),type,type),fn,capture_QMARK_);
+var listen__4 = (function (src,type,fn,capture_QMARK_){return goog.events.listen(src,cljs.core.get.call(null,clojure.browser.event.event_types.call(null,src),type,type),fn,capture_QMARK_);
 });
 listen = function(src,type,fn,capture_QMARK_){
 switch(arguments.length){
@@ -71,11 +59,9 @@ return listen;
 ;
 clojure.browser.event.listen_once = (function() {
 var listen_once = null;
-var listen_once__3 = (function (src,type,fn){
-return listen_once.call(null,src,type,fn,false);
+var listen_once__3 = (function (src,type,fn){return listen_once.call(null,src,type,fn,false);
 });
-var listen_once__4 = (function (src,type,fn,capture_QMARK_){
-return goog.events.listenOnce(src,cljs.core.get.call(null,clojure.browser.event.event_types.call(null,src),type,type),fn,capture_QMARK_);
+var listen_once__4 = (function (src,type,fn,capture_QMARK_){return goog.events.listenOnce(src,cljs.core.get.call(null,clojure.browser.event.event_types.call(null,src),type,type),fn,capture_QMARK_);
 });
 listen_once = function(src,type,fn,capture_QMARK_){
 switch(arguments.length){
@@ -93,11 +79,9 @@ return listen_once;
 ;
 clojure.browser.event.unlisten = (function() {
 var unlisten = null;
-var unlisten__3 = (function (src,type,fn){
-return unlisten.call(null,src,type,fn,false);
+var unlisten__3 = (function (src,type,fn){return unlisten.call(null,src,type,fn,false);
 });
-var unlisten__4 = (function (src,type,fn,capture_QMARK_){
-return goog.events.unlisten(src,cljs.core.get.call(null,clojure.browser.event.event_types.call(null,src),type,type),fn,capture_QMARK_);
+var unlisten__4 = (function (src,type,fn,capture_QMARK_){return goog.events.unlisten(src,cljs.core.get.call(null,clojure.browser.event.event_types.call(null,src),type,type),fn,capture_QMARK_);
 });
 unlisten = function(src,type,fn,capture_QMARK_){
 switch(arguments.length){
@@ -113,33 +97,23 @@ unlisten.cljs$core$IFn$_invoke$arity$4 = unlisten__4;
 return unlisten;
 })()
 ;
-clojure.browser.event.unlisten_by_key = (function unlisten_by_key(key){
-return goog.events.unlistenByKey(key);
+clojure.browser.event.unlisten_by_key = (function unlisten_by_key(key){return goog.events.unlistenByKey(key);
 });
-clojure.browser.event.dispatch_event = (function dispatch_event(src,event){
-return goog.events.dispatchEvent(src,event);
+clojure.browser.event.dispatch_event = (function dispatch_event(src,event){return goog.events.dispatchEvent(src,event);
 });
-clojure.browser.event.expose = (function expose(e){
-return goog.events.expose(e);
+clojure.browser.event.expose = (function expose(e){return goog.events.expose(e);
 });
-clojure.browser.event.fire_listeners = (function fire_listeners(obj,type,capture,event){
-return null;
+clojure.browser.event.fire_listeners = (function fire_listeners(obj,type,capture,event){return null;
 });
-clojure.browser.event.total_listener_count = (function total_listener_count(){
-return goog.events.getTotalListenerCount();
+clojure.browser.event.total_listener_count = (function total_listener_count(){return goog.events.getTotalListenerCount();
 });
-clojure.browser.event.get_listener = (function get_listener(src,type,listener,opt_capt,opt_handler){
-return null;
+clojure.browser.event.get_listener = (function get_listener(src,type,listener,opt_capt,opt_handler){return null;
 });
-clojure.browser.event.all_listeners = (function all_listeners(obj,type,capture){
-return null;
+clojure.browser.event.all_listeners = (function all_listeners(obj,type,capture){return null;
 });
-clojure.browser.event.unique_event_id = (function unique_event_id(event_type){
-return null;
+clojure.browser.event.unique_event_id = (function unique_event_id(event_type){return null;
 });
-clojure.browser.event.has_listener = (function has_listener(obj,opt_type,opt_capture){
-return null;
+clojure.browser.event.has_listener = (function has_listener(obj,opt_type,opt_capture){return null;
 });
-clojure.browser.event.remove_all = (function remove_all(opt_obj,opt_type,opt_capt){
-return null;
+clojure.browser.event.remove_all = (function remove_all(opt_obj,opt_type,opt_capt){return null;
 });

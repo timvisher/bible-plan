@@ -14,9 +14,20 @@
 (dom/listen! (sel1 :form) :change plan-ui/re-show-plan)
 
 (when-not (.-date (.-inputtypes js/Modernizr))
-  (doseq [date-input (sel (keyword ".date-input"))]
-    (let [g-dp (goog.ui.DatePicker.)]
-      (.render g-dp date-input))))
+  (def start-date-picker (goog.ui.DatePicker.))
+
+  (.render start-date-picker (sel1 :#start-date-picker))
+
+  (goog.events/listen start-date-picker
+                      goog.ui.DatePicker.Events.CHANGE
+                      (fn start-date-picker-changed! [e]
+                        (dom/set-value! (sel1 :#start-date)
+                                        (if (.-date e)
+                                          (.toIsoString (.-date e) true)
+                                          ""))
+                        (plan-ui/re-show-plan))))
+
+
 
 (comment
   (dom/event-listeners (sel1 (keyword "input[name=plan]")))
