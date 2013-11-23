@@ -16,8 +16,9 @@
            (enlive/html [:script (browser-connected-repl-js)])))
 
 (defroutes whitespace-site
-  (resources "/" {:root "public/whitespace"})
+  (resources "/js" {:root "public/whitespace/js"})
   (resources "/edn" {:root "edn"})
+  (resources "/styles" {:root "styles"})
   (GET "/" req (page)))
 
 (defroutes advanced-site
