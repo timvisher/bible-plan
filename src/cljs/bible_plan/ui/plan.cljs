@@ -20,14 +20,19 @@
   (dom/replace-contents! (sel1 :#plan) plan-dom-content)
   (dom/remove-class! (sel1 :#plan) :hidden))
 
+(defn start-date []
+  (let [start-date-value (.-value (sel1 :#start-date))]
+    (if-not (empty? start-date-value)
+      (goog.date/fromIsoString start-date-value)
+      (time-ui/inc-date-by-day (time-ui/now)))))
+
 (defn plan-state->plan-options []
   (let [base-plan             (keyword (.-value (sel1 (keyword "input[name=plan]:checked"))))
-        ;; TODO: this should truncate out to the number of days between now and the end date goal
-        available-dates       (time-ui/days-from-now)
         skip-days             (into #{}
                                     (map (fn day-input->keyword [day-input]
                                            (keyword (.-value day-input)))
                                          (sel (keyword "input[name=skip-day]:checked"))))
+        start-date            (start-date)
         books-at-a-time?-node (sel1 (keyword "input[name=books-at-a-time]:checked"))
         books-at-a-time?-raw  (if books-at-a-time?-node
                                 (.-value books-at-a-time?-node)
@@ -35,6 +40,7 @@
         books-at-a-time?      (= "yes" books-at-a-time?-raw)]
     {:base-plan        base-plan
      :skip-days        skip-days
+     :start-date       start-date
      :books-at-a-time? books-at-a-time?}))
 
 (deftemplate plan-day->tr [{:keys [readings date] :as plan-day}]
