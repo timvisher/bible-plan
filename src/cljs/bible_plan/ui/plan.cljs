@@ -26,6 +26,12 @@
       (goog.date/fromIsoString start-date-value)
       (time-ui/inc-date-by-day (time-ui/now)))))
 
+(defn end-date []
+  (let [end-date-value (.-value (sel1 :#end-date))]
+    (if-not (empty? end-date-value)
+      (goog.date/fromIsoString end-date-value)
+      (time-ui/inc-date-by-year (start-date)))))
+
 (defn plan-state->plan-options []
   (let [base-plan             (keyword (.-value (sel1 (keyword "input[name=plan]:checked"))))
         skip-days             (into #{}
@@ -33,6 +39,7 @@
                                            (keyword (.-value day-input)))
                                          (sel (keyword "input[name=skip-day]:checked"))))
         start-date            (start-date)
+        end-date              (end-date)
         books-at-a-time?-node (sel1 (keyword "input[name=books-at-a-time]:checked"))
         books-at-a-time?-raw  (if books-at-a-time?-node
                                 (.-value books-at-a-time?-node)
@@ -41,6 +48,7 @@
     {:base-plan        base-plan
      :skip-days        skip-days
      :start-date       start-date
+     :end-date         end-date
      :books-at-a-time? books-at-a-time?}))
 
 (deftemplate plan-day->tr [{:keys [readings date] :as plan-day}]
