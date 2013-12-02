@@ -2,6 +2,9 @@
   <head>
     <meta charset="UTF-8">
     <title>Generate Your Bible Plans!</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/datepicker.css" />
+    <script src="http://modernizr.com/downloads/modernizr-latest.js"></script>
   </head>
   <body>
     <form>
@@ -22,11 +25,16 @@
       <h2>Books at a time?</h2>
       <input type="radio" name="books-at-a-time" id="books-at-a-time-yes" value="yes" /><label for="books-at-a-time-yes">Yes</label>
       <input type="radio" name="books-at-a-time" id="books-at-a-time-no" value="no" /><label for="books-at-a-time-no">No</label>
+
+      <h2><label for="start-date">Start Date:</label></h2>
+      <input type="date" id="start-date" name="start-date" />
+      <div id="start-date-picker"></div>
     </form>
 
     <h2>The Plan</h2>
     <table id="plan"></table>
 </form>
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
 <script type="text/javascript" src="js/bible-plan.js"></script>
 </body>
 </html>
