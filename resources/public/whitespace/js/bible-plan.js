@@ -38352,51 +38352,51 @@ goog.require("clojure.set");
 goog.require("shodan.console");
 goog.require("shodan.console");
 bible_plan.reference.__GT_verse_maps = function __GT_verse_maps(reference) {
-  var map__7486 = reference;
-  var map__7486__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__7486)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__7486) : map__7486;
-  var end = cljs.core.get.call(null, map__7486__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-  var start = cljs.core.get.call(null, map__7486__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+  var map__22883 = reference;
+  var map__22883__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22883)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22883) : map__22883;
+  var end = cljs.core.get.call(null, map__22883__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+  var start = cljs.core.get.call(null, map__22883__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
   var verse_maps = new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [start], null);
   var verse_maps__$1 = cljs.core.truth_(end) ? cljs.core.conj.call(null, verse_maps, end) : verse_maps;
   return verse_maps__$1
 };
-bible_plan.reference.reference_LT_ = function() {
-  var reference_LT___delegate = function(reference, references) {
+bible_plan.reference._LT_ = function() {
+  var _LT___delegate = function(reference, references) {
     if(cljs.core.truth_(cljs.core.get_in.call(null, reference, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], null)))) {
     }else {
       throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "get-in", "get-in", 1405049013, null), new cljs.core.Symbol(null, "reference", "reference", 1729280260, null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], null))))].join(""));
     }
-    if(cljs.core.truth_(cljs.core.every_QMARK_.call(null, function(p1__7487_SHARP_) {
-      return cljs.core.get_in.call(null, p1__7487_SHARP_, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], null))
+    if(cljs.core.truth_(cljs.core.every_QMARK_.call(null, function(p1__22884_SHARP_) {
+      return cljs.core.get_in.call(null, p1__22884_SHARP_, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], null))
     }, references))) {
     }else {
-      throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "every?", "every?", 1363110461, null), cljs.core.list(new cljs.core.Symbol(null, "fn*", "fn*", -1640430053, null), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null, "p1__7487#", "p1__7487#", -1527936513, null)], null), cljs.core.list(new cljs.core.Symbol(null, "get-in", "get-in", 1405049013, null), 
-      new cljs.core.Symbol(null, "p1__7487#", "p1__7487#", -1527936513, null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], null))), new cljs.core.Symbol(null, "references", "references", -255581119, null))))].join(""));
+      throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "every?", "every?", 1363110461, null), cljs.core.list(new cljs.core.Symbol(null, "fn*", "fn*", -1640430053, null), new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null, "p1__22884#", "p1__22884#", 1704922633, null)], null), cljs.core.list(new cljs.core.Symbol(null, "get-in", "get-in", 1405049013, null), 
+      new cljs.core.Symbol(null, "p1__22884#", "p1__22884#", 1704922633, null), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], null))), new cljs.core.Symbol(null, "references", "references", -255581119, null))))].join(""));
     }
     return cljs.core.apply.call(null, bible_plan.verse_map._LT_, cljs.core.reduce.call(null, cljs.core.into, cljs.core.PersistentVector.EMPTY, cljs.core.map.call(null, bible_plan.reference.__GT_verse_maps, cljs.core.into.call(null, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [reference], null), references))))
   };
-  var reference_LT_ = function(reference, var_args) {
+  var _LT_ = function(reference, var_args) {
     var references = null;
     if(arguments.length > 1) {
       references = cljs.core.array_seq(Array.prototype.slice.call(arguments, 1), 0)
     }
-    return reference_LT___delegate.call(this, reference, references)
+    return _LT___delegate.call(this, reference, references)
   };
-  reference_LT_.cljs$lang$maxFixedArity = 1;
-  reference_LT_.cljs$lang$applyTo = function(arglist__7488) {
-    var reference = cljs.core.first(arglist__7488);
-    var references = cljs.core.rest(arglist__7488);
-    return reference_LT___delegate(reference, references)
+  _LT_.cljs$lang$maxFixedArity = 1;
+  _LT_.cljs$lang$applyTo = function(arglist__22885) {
+    var reference = cljs.core.first(arglist__22885);
+    var references = cljs.core.rest(arglist__22885);
+    return _LT___delegate(reference, references)
   };
-  reference_LT_.cljs$core$IFn$_invoke$arity$variadic = reference_LT___delegate;
-  return reference_LT_
+  _LT_.cljs$core$IFn$_invoke$arity$variadic = _LT___delegate;
+  return _LT_
 }();
-bible_plan.reference.reference_QMARK_ = function reference_QMARK_(p__7489) {
-  var map__7491 = p__7489;
-  var map__7491__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__7491)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__7491) : map__7491;
-  var reference = map__7491__$1;
-  var end = cljs.core.get.call(null, map__7491__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-  var start = cljs.core.get.call(null, map__7491__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+bible_plan.reference.reference_QMARK_ = function reference_QMARK_(p__22886) {
+  var map__22888 = p__22886;
+  var map__22888__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22888)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22888) : map__22888;
+  var reference = map__22888__$1;
+  var end = cljs.core.get.call(null, map__22888__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+  var start = cljs.core.get.call(null, map__22888__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
   var and__3279__auto__ = bible_plan.verse_map.verse_map_QMARK_.call(null, start);
   if(cljs.core.truth_(and__3279__auto__)) {
     if(cljs.core.truth_(end)) {
@@ -38413,23 +38413,23 @@ bible_plan.reference.reference_QMARK_ = function reference_QMARK_(p__7489) {
     return and__3279__auto__
   }
 };
-bible_plan.reference.single__GT_str = function single__GT_str(p__7492) {
-  var map__7494 = p__7492;
-  var map__7494__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__7494)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__7494) : map__7494;
-  var reference = map__7494__$1;
-  var start = cljs.core.get.call(null, map__7494__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+bible_plan.reference.single__GT_str = function single__GT_str(p__22889) {
+  var map__22891 = p__22889;
+  var map__22891__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22891)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22891) : map__22891;
+  var reference = map__22891__$1;
+  var start = cljs.core.get.call(null, map__22891__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
   if(cljs.core.truth_(bible_plan.reference.reference_QMARK_.call(null, reference))) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "reference?", "reference?", -255581171, null), new cljs.core.Symbol(null, "reference", "reference", 1729280260, null))))].join(""));
   }
   return bible_plan.verse_map.__GT_book_chapter_QMARK__verse_QMARK__str.call(null, start)
 };
-bible_plan.reference.compound__GT_str = function compound__GT_str(p__7495) {
-  var map__7499 = p__7495;
-  var map__7499__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__7499)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__7499) : map__7499;
-  var reference = map__7499__$1;
-  var end = cljs.core.get.call(null, map__7499__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-  var start = cljs.core.get.call(null, map__7499__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+bible_plan.reference.compound__GT_str = function compound__GT_str(p__22892) {
+  var map__22896 = p__22892;
+  var map__22896__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22896)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22896) : map__22896;
+  var reference = map__22896__$1;
+  var end = cljs.core.get.call(null, map__22896__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+  var start = cljs.core.get.call(null, map__22896__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
   if(cljs.core.truth_(bible_plan.reference.reference_QMARK_.call(null, reference))) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "reference?", "reference?", -255581171, null), new cljs.core.Symbol(null, "reference", "reference", 1729280260, null))))].join(""));
@@ -38438,18 +38438,18 @@ bible_plan.reference.compound__GT_str = function compound__GT_str(p__7495) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, new cljs.core.Symbol(null, "end", "end", -1640430956, null)))].join(""));
   }
-  var map__7500 = start;
-  var map__7500__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__7500)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__7500) : map__7500;
-  var start_verse_map = map__7500__$1;
-  var s_book = cljs.core.get.call(null, map__7500__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
-  var s_chapter = cljs.core.get.call(null, map__7500__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
-  var s_verse = cljs.core.get.call(null, map__7500__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
-  var map__7501 = end;
-  var map__7501__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__7501)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__7501) : map__7501;
-  var end_verse_map = map__7501__$1;
-  var e_book = cljs.core.get.call(null, map__7501__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
-  var e_chapter = cljs.core.get.call(null, map__7501__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
-  var e_verse = cljs.core.get.call(null, map__7501__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
+  var map__22897 = start;
+  var map__22897__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22897)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22897) : map__22897;
+  var start_verse_map = map__22897__$1;
+  var s_book = cljs.core.get.call(null, map__22897__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+  var s_chapter = cljs.core.get.call(null, map__22897__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
+  var s_verse = cljs.core.get.call(null, map__22897__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
+  var map__22898 = end;
+  var map__22898__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22898)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22898) : map__22898;
+  var end_verse_map = map__22898__$1;
+  var e_book = cljs.core.get.call(null, map__22898__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+  var e_chapter = cljs.core.get.call(null, map__22898__$1, new cljs.core.Keyword(null, "chapter", "chapter", 1752919999));
+  var e_verse = cljs.core.get.call(null, map__22898__$1, new cljs.core.Keyword(null, "verse", "verse", 1126001831));
   var verse_string = [cljs.core.str(bible_plan.verse_map.__GT_book_chapter_QMARK__verse_QMARK__str.call(null, start_verse_map)), cljs.core.str("-")].join("");
   var lowest_unequal_specificity = bible_plan.verse_map.lowest_unequal_specificity.call(null, end_verse_map, start_verse_map);
   var shown_specificities = cljs.core.apply.call(null, cljs.core.vector, cljs.core.drop_while.call(null, function(verse_string, lowest_unequal_specificity) {
@@ -38459,12 +38459,12 @@ bible_plan.reference.compound__GT_str = function compound__GT_str(p__7495) {
   }(verse_string, lowest_unequal_specificity), bible_plan.verse_map.verse_map_specificities));
   return[cljs.core.str(verse_string), cljs.core.str(bible_plan.verse_map.__GT_str_fn.call(null, shown_specificities).call(null, end_verse_map))].join("")
 };
-bible_plan.reference.__GT_str = function __GT_str(p__7502) {
-  var map__7504 = p__7502;
-  var map__7504__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__7504)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__7504) : map__7504;
-  var reference = map__7504__$1;
-  var start_verse_map = cljs.core.get.call(null, map__7504__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
-  var end_verse_map = cljs.core.get.call(null, map__7504__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+bible_plan.reference.__GT_str = function __GT_str(p__22899) {
+  var map__22901 = p__22899;
+  var map__22901__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22901)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22901) : map__22901;
+  var reference = map__22901__$1;
+  var start_verse_map = cljs.core.get.call(null, map__22901__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+  var end_verse_map = cljs.core.get.call(null, map__22901__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
   if(cljs.core.truth_(bible_plan.reference.reference_QMARK_.call(null, reference))) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "reference?", "reference?", -255581171, null), new cljs.core.Symbol(null, "reference", "reference", 1729280260, null))))].join(""));
@@ -38493,21 +38493,21 @@ bible_plan.reference.contiguous_ascending_ints_QMARK_ = function() {
     }else {
       throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "every?", "every?", 1363110461, null), new cljs.core.Symbol(null, "number?", "number?", 653920207, null), new cljs.core.Symbol(null, "ints", "ints", -1637294051, null))))].join(""));
     }
-    var G__7510 = cljs.core.into.call(null, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [int_1], null), ints);
-    var vec__7511 = G__7510;
-    var this_int = cljs.core.nth.call(null, vec__7511, 0, null);
-    var next_ints = cljs.core.nthnext.call(null, vec__7511, 1);
-    var G__7510__$1 = G__7510;
+    var G__22907 = cljs.core.into.call(null, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [int_1], null), ints);
+    var vec__22908 = G__22907;
+    var this_int = cljs.core.nth.call(null, vec__22908, 0, null);
+    var next_ints = cljs.core.nthnext.call(null, vec__22908, 1);
+    var G__22907__$1 = G__22907;
     while(true) {
-      var vec__7512 = G__7510__$1;
-      var this_int__$1 = cljs.core.nth.call(null, vec__7512, 0, null);
-      var next_ints__$1 = cljs.core.nthnext.call(null, vec__7512, 1);
+      var vec__22909 = G__22907__$1;
+      var this_int__$1 = cljs.core.nth.call(null, vec__22909, 0, null);
+      var next_ints__$1 = cljs.core.nthnext.call(null, vec__22909, 1);
       if(cljs.core.not.call(null, cljs.core.first.call(null, next_ints__$1))) {
         return true
       }else {
         if(cljs.core._EQ_.call(null, 1 + this_int__$1, cljs.core.first.call(null, next_ints__$1))) {
-          var G__7513 = next_ints__$1;
-          G__7510__$1 = G__7513;
+          var G__22910 = next_ints__$1;
+          G__22907__$1 = G__22910;
           continue
         }else {
           return false
@@ -38524,9 +38524,9 @@ bible_plan.reference.contiguous_ascending_ints_QMARK_ = function() {
     return contiguous_ascending_ints_QMARK___delegate.call(this, int_1, ints)
   };
   contiguous_ascending_ints_QMARK_.cljs$lang$maxFixedArity = 1;
-  contiguous_ascending_ints_QMARK_.cljs$lang$applyTo = function(arglist__7514) {
-    var int_1 = cljs.core.first(arglist__7514);
-    var ints = cljs.core.rest(arglist__7514);
+  contiguous_ascending_ints_QMARK_.cljs$lang$applyTo = function(arglist__22911) {
+    var int_1 = cljs.core.first(arglist__22911);
+    var ints = cljs.core.rest(arglist__22911);
     return contiguous_ascending_ints_QMARK___delegate(int_1, ints)
   };
   contiguous_ascending_ints_QMARK_.cljs$core$IFn$_invoke$arity$variadic = contiguous_ascending_ints_QMARK___delegate;
@@ -38549,9 +38549,9 @@ bible_plan.reference.join_points = function join_points(references) {
 };
 bible_plan.reference.contiguous_QMARK_ = function() {
   var contiguous_QMARK___delegate = function(references) {
-    if(cljs.core.truth_(cljs.core.apply.call(null, bible_plan.reference.reference_LT_, references))) {
+    if(cljs.core.truth_(cljs.core.apply.call(null, bible_plan.reference._LT_, references))) {
     }else {
-      throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "apply", "apply", -1547502297, null), new cljs.core.Symbol(null, "reference\x3c", "reference\x3c", -255581174, null), new cljs.core.Symbol(null, "references", "references", -255581119, null))))].join(""));
+      throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "apply", "apply", -1547502297, null), new cljs.core.Symbol(null, "\x3c", "\x3c", -1640531467, null), new cljs.core.Symbol(null, "references", "references", -255581119, null))))].join(""));
     }
     if(cljs.core.truth_(references)) {
       var join_points = bible_plan.reference.join_points.call(null, references);
@@ -38579,19 +38579,19 @@ bible_plan.reference.contiguous_QMARK_ = function() {
     return contiguous_QMARK___delegate.call(this, references)
   };
   contiguous_QMARK_.cljs$lang$maxFixedArity = 0;
-  contiguous_QMARK_.cljs$lang$applyTo = function(arglist__7515) {
-    var references = cljs.core.seq(arglist__7515);
+  contiguous_QMARK_.cljs$lang$applyTo = function(arglist__22912) {
+    var references = cljs.core.seq(arglist__22912);
     return contiguous_QMARK___delegate(references)
   };
   contiguous_QMARK_.cljs$core$IFn$_invoke$arity$variadic = contiguous_QMARK___delegate;
   return contiguous_QMARK_
 }();
-bible_plan.reference.reference_verse_map_range = function reference_verse_map_range(p__7516) {
-  var map__7518 = p__7516;
-  var map__7518__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__7518)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__7518) : map__7518;
-  var reference = map__7518__$1;
-  var end = cljs.core.get.call(null, map__7518__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-  var start = cljs.core.get.call(null, map__7518__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+bible_plan.reference.reference_verse_map_range = function reference_verse_map_range(p__22913) {
+  var map__22915 = p__22913;
+  var map__22915__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22915)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22915) : map__22915;
+  var reference = map__22915__$1;
+  var end = cljs.core.get.call(null, map__22915__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+  var start = cljs.core.get.call(null, map__22915__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
   if(cljs.core.truth_(bible_plan.reference.reference_QMARK_.call(null, reference))) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "reference?", "reference?", -255581171, null), new cljs.core.Symbol(null, "reference", "reference", 1729280260, null))))].join(""));
@@ -38628,17 +38628,17 @@ bible_plan.reference.disjoint_refs_QMARK_ = function() {
     return disjoint_refs_QMARK___delegate.call(this, references)
   };
   disjoint_refs_QMARK_.cljs$lang$maxFixedArity = 0;
-  disjoint_refs_QMARK_.cljs$lang$applyTo = function(arglist__7519) {
-    var references = cljs.core.seq(arglist__7519);
+  disjoint_refs_QMARK_.cljs$lang$applyTo = function(arglist__22916) {
+    var references = cljs.core.seq(arglist__22916);
     return disjoint_refs_QMARK___delegate(references)
   };
   disjoint_refs_QMARK_.cljs$core$IFn$_invoke$arity$variadic = disjoint_refs_QMARK___delegate;
   return disjoint_refs_QMARK_
 }();
 bible_plan.reference.merge_refs = function merge_refs(start_ref, end_ref) {
-  if(cljs.core.truth_(bible_plan.reference.reference_LT_.call(null, start_ref, end_ref))) {
+  if(cljs.core.truth_(bible_plan.reference._LT_.call(null, start_ref, end_ref))) {
   }else {
-    throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "reference\x3c", "reference\x3c", -255581174, null), new cljs.core.Symbol(null, "start-ref", "start-ref", 523987553, null), new cljs.core.Symbol(null, "end-ref", "end-ref", 1046039130, null))))].join(""));
+    throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, cljs.core.list(new cljs.core.Symbol(null, "\x3c", "\x3c", -1640531467, null), new cljs.core.Symbol(null, "start-ref", "start-ref", 523987553, null), new cljs.core.Symbol(null, "end-ref", "end-ref", 1046039130, null))))].join(""));
   }
   if(cljs.core.truth_(bible_plan.reference.contiguous_QMARK_.call(null, start_ref, end_ref))) {
     var sorted_verse_maps = cljs.core.sort.call(null, bible_plan.verse_map._LT_, cljs.core.reduce.call(null, cljs.core.into, cljs.core.PersistentVector.EMPTY, cljs.core.map.call(null, bible_plan.reference.__GT_verse_maps, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [start_ref, end_ref], null))));
@@ -38665,78 +38665,78 @@ bible_plan.plan.assoc_plan = function assoc_plan(name, plan_data) {
   return cljs.core.swap_BANG_.call(null, bible_plan.plan.plans, cljs.core.assoc, name, plan_data)
 };
 bible_plan.plan.load_plans = function load_plans() {
-  return ajax.core.ajax_request.call(null, "/edn/plans/plans.edn", new cljs.core.Keyword(null, "get", "get", 1014006472), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "handler", "handler", 1706707644), function load_available_plans(p__21794) {
-    var vec__21804 = p__21794;
-    var ok = cljs.core.nth.call(null, vec__21804, 0, null);
-    var plan_names = cljs.core.nth.call(null, vec__21804, 1, null);
+  return ajax.core.ajax_request.call(null, "/edn/plans/plans.edn", new cljs.core.Keyword(null, "get", "get", 1014006472), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "handler", "handler", 1706707644), function load_available_plans(p__22365) {
+    var vec__22375 = p__22365;
+    var ok = cljs.core.nth.call(null, vec__22375, 0, null);
+    var plan_names = cljs.core.nth.call(null, vec__22375, 1, null);
     if(cljs.core.truth_(ok)) {
-      var seq__21805 = cljs.core.seq.call(null, plan_names);
-      var chunk__21806 = null;
-      var count__21807 = 0;
-      var i__21808 = 0;
+      var seq__22376 = cljs.core.seq.call(null, plan_names);
+      var chunk__22377 = null;
+      var count__22378 = 0;
+      var i__22379 = 0;
       while(true) {
-        if(i__21808 < count__21807) {
-          var plan_name = cljs.core._nth.call(null, chunk__21806, i__21808);
+        if(i__22379 < count__22378) {
+          var plan_name = cljs.core._nth.call(null, chunk__22377, i__22379);
           shodan.console.log.call(null, [cljs.core.str("Loading plan: "), cljs.core.str(plan_name)].join(""));
-          ajax.core.ajax_request.call(null, [cljs.core.str("/edn/plans/"), cljs.core.str(cljs.core.name.call(null, plan_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__21805, chunk__21806, count__21807, i__21808, plan_name) {
-            return function(p__21809) {
-              var vec__21810 = p__21809;
-              var ok__$1 = cljs.core.nth.call(null, vec__21810, 0, null);
-              var plan_data = cljs.core.nth.call(null, vec__21810, 1, null);
+          ajax.core.ajax_request.call(null, [cljs.core.str("/edn/plans/"), cljs.core.str(cljs.core.name.call(null, plan_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__22376, chunk__22377, count__22378, i__22379, plan_name) {
+            return function(p__22380) {
+              var vec__22381 = p__22380;
+              var ok__$1 = cljs.core.nth.call(null, vec__22381, 0, null);
+              var plan_data = cljs.core.nth.call(null, vec__22381, 1, null);
               if(cljs.core.truth_(ok__$1)) {
                 return bible_plan.plan.assoc_plan.call(null, plan_name, plan_data)
               }else {
                 return null
               }
             }
-          }(seq__21805, chunk__21806, count__21807, i__21808, plan_name), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], null));
-          var G__21813 = seq__21805;
-          var G__21814 = chunk__21806;
-          var G__21815 = count__21807;
-          var G__21816 = i__21808 + 1;
-          seq__21805 = G__21813;
-          chunk__21806 = G__21814;
-          count__21807 = G__21815;
-          i__21808 = G__21816;
+          }(seq__22376, chunk__22377, count__22378, i__22379, plan_name), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], null));
+          var G__22384 = seq__22376;
+          var G__22385 = chunk__22377;
+          var G__22386 = count__22378;
+          var G__22387 = i__22379 + 1;
+          seq__22376 = G__22384;
+          chunk__22377 = G__22385;
+          count__22378 = G__22386;
+          i__22379 = G__22387;
           continue
         }else {
-          var temp__4092__auto__ = cljs.core.seq.call(null, seq__21805);
+          var temp__4092__auto__ = cljs.core.seq.call(null, seq__22376);
           if(cljs.core.truth_(temp__4092__auto__)) {
-            var seq__21805__$1 = temp__4092__auto__;
-            if(cljs.core.chunked_seq_QMARK_.call(null, seq__21805__$1)) {
-              var c__4010__auto__ = cljs.core.chunk_first.call(null, seq__21805__$1);
-              var G__21817 = cljs.core.chunk_rest.call(null, seq__21805__$1);
-              var G__21818 = c__4010__auto__;
-              var G__21819 = cljs.core.count.call(null, c__4010__auto__);
-              var G__21820 = 0;
-              seq__21805 = G__21817;
-              chunk__21806 = G__21818;
-              count__21807 = G__21819;
-              i__21808 = G__21820;
+            var seq__22376__$1 = temp__4092__auto__;
+            if(cljs.core.chunked_seq_QMARK_.call(null, seq__22376__$1)) {
+              var c__4010__auto__ = cljs.core.chunk_first.call(null, seq__22376__$1);
+              var G__22388 = cljs.core.chunk_rest.call(null, seq__22376__$1);
+              var G__22389 = c__4010__auto__;
+              var G__22390 = cljs.core.count.call(null, c__4010__auto__);
+              var G__22391 = 0;
+              seq__22376 = G__22388;
+              chunk__22377 = G__22389;
+              count__22378 = G__22390;
+              i__22379 = G__22391;
               continue
             }else {
-              var plan_name = cljs.core.first.call(null, seq__21805__$1);
+              var plan_name = cljs.core.first.call(null, seq__22376__$1);
               shodan.console.log.call(null, [cljs.core.str("Loading plan: "), cljs.core.str(plan_name)].join(""));
-              ajax.core.ajax_request.call(null, [cljs.core.str("/edn/plans/"), cljs.core.str(cljs.core.name.call(null, plan_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__21805, chunk__21806, count__21807, i__21808, plan_name, seq__21805__$1, temp__4092__auto__) {
-                return function(p__21811) {
-                  var vec__21812 = p__21811;
-                  var ok__$1 = cljs.core.nth.call(null, vec__21812, 0, null);
-                  var plan_data = cljs.core.nth.call(null, vec__21812, 1, null);
+              ajax.core.ajax_request.call(null, [cljs.core.str("/edn/plans/"), cljs.core.str(cljs.core.name.call(null, plan_name)), cljs.core.str(".edn")].join(""), new cljs.core.Keyword(null, "get", "get", 1014006472), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "handler", "handler", 1706707644), function(seq__22376, chunk__22377, count__22378, i__22379, plan_name, seq__22376__$1, temp__4092__auto__) {
+                return function(p__22382) {
+                  var vec__22383 = p__22382;
+                  var ok__$1 = cljs.core.nth.call(null, vec__22383, 0, null);
+                  var plan_data = cljs.core.nth.call(null, vec__22383, 1, null);
                   if(cljs.core.truth_(ok__$1)) {
                     return bible_plan.plan.assoc_plan.call(null, plan_name, plan_data)
                   }else {
                     return null
                   }
                 }
-              }(seq__21805, chunk__21806, count__21807, i__21808, plan_name, seq__21805__$1, temp__4092__auto__), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], null));
-              var G__21821 = cljs.core.next.call(null, seq__21805__$1);
-              var G__21822 = null;
-              var G__21823 = 0;
-              var G__21824 = 0;
-              seq__21805 = G__21821;
-              chunk__21806 = G__21822;
-              count__21807 = G__21823;
-              i__21808 = G__21824;
+              }(seq__22376, chunk__22377, count__22378, i__22379, plan_name, seq__22376__$1, temp__4092__auto__), new cljs.core.Keyword(null, "format", "format", 4040092521), ajax.core.edn_format.call(null)], null));
+              var G__22392 = cljs.core.next.call(null, seq__22376__$1);
+              var G__22393 = null;
+              var G__22394 = 0;
+              var G__22395 = 0;
+              seq__22376 = G__22392;
+              chunk__22377 = G__22393;
+              count__22378 = G__22394;
+              i__22379 = G__22395;
               continue
             }
           }else {
@@ -38764,29 +38764,29 @@ bible_plan.plan.reading_day__GT_ = function reading_day__GT_(annotated_reading, 
   return reading_day_number > reading_day_day_number
 };
 bible_plan.plan.reading_book_QMARK_ = function reading_book_QMARK_(book, reading_day) {
-  return cljs.core.some.call(null, function start_or_end_in_book_QMARK_(p__21832) {
-    var map__21836 = p__21832;
-    var map__21836__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__21836)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__21836) : map__21836;
-    var map__21837 = cljs.core.get.call(null, map__21836__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
-    var map__21837__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__21837)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__21837) : map__21837;
-    var s_book = cljs.core.get.call(null, map__21837__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
-    var map__21838 = cljs.core.get.call(null, map__21836__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-    var map__21838__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__21838)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__21838) : map__21838;
-    var e_book = cljs.core.get.call(null, map__21838__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+  return cljs.core.some.call(null, function start_or_end_in_book_QMARK_(p__22403) {
+    var map__22407 = p__22403;
+    var map__22407__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22407)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22407) : map__22407;
+    var map__22408 = cljs.core.get.call(null, map__22407__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+    var map__22408__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22408)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22408) : map__22408;
+    var s_book = cljs.core.get.call(null, map__22408__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+    var map__22409 = cljs.core.get.call(null, map__22407__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+    var map__22409__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22409)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22409) : map__22409;
+    var e_book = cljs.core.get.call(null, map__22409__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
     return cljs.core.some.call(null, cljs.core.partial.call(null, cljs.core._EQ_, book), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [s_book, e_book], null))
   }, reading_day)
 };
 bible_plan.plan.readings_for_book_in_reading_day = function readings_for_book_in_reading_day(book, reading_day) {
-  return cljs.core.some.call(null, function start_or_end_in_book_QMARK_(p__21846) {
-    var map__21850 = p__21846;
-    var map__21850__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__21850)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__21850) : map__21850;
-    var reading = map__21850__$1;
-    var map__21851 = cljs.core.get.call(null, map__21850__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
-    var map__21851__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__21851)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__21851) : map__21851;
-    var s_book = cljs.core.get.call(null, map__21851__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
-    var map__21852 = cljs.core.get.call(null, map__21850__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
-    var map__21852__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__21852)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__21852) : map__21852;
-    var e_book = cljs.core.get.call(null, map__21852__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+  return cljs.core.some.call(null, function start_or_end_in_book_QMARK_(p__22417) {
+    var map__22421 = p__22417;
+    var map__22421__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22421)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22421) : map__22421;
+    var reading = map__22421__$1;
+    var map__22422 = cljs.core.get.call(null, map__22421__$1, new cljs.core.Keyword(null, "start", "start", 1123661780));
+    var map__22422__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22422)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22422) : map__22422;
+    var s_book = cljs.core.get.call(null, map__22422__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
+    var map__22423 = cljs.core.get.call(null, map__22421__$1, new cljs.core.Keyword(null, "end", "end", 1014004813));
+    var map__22423__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22423)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22423) : map__22423;
+    var e_book = cljs.core.get.call(null, map__22423__$1, new cljs.core.Keyword(null, "book", "book", 1016933979));
     if(cljs.core.truth_(cljs.core.some.call(null, cljs.core.partial.call(null, cljs.core._EQ_, book), new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [s_book, e_book], null)))) {
       return reading
     }else {
@@ -38803,45 +38803,45 @@ bible_plan.plan.contiguous_readings_from = function contiguous_readings_from(ann
 };
 bible_plan.plan.book_order = function book_order(plan) {
   var annotated_plan = cljs.core.map.call(null, function(reading_day) {
-    return cljs.core.map.call(null, function(p1__21853_SHARP_) {
-      return cljs.core.select_keys.call(null, p1__21853_SHARP_, new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "end", "end", 1014004813), new cljs.core.Keyword(null, "day", "day", 1014003470)], null))
+    return cljs.core.map.call(null, function(p1__22424_SHARP_) {
+      return cljs.core.select_keys.call(null, p1__22424_SHARP_, new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "end", "end", 1014004813), new cljs.core.Keyword(null, "day", "day", 1014003470)], null))
     }, reading_day)
   }, bible_plan.plan.annotate_plan_readings_with_days.call(null, plan));
   var annotated_readings = cljs.core.reduce.call(null, cljs.core.into, cljs.core.PersistentVector.EMPTY, annotated_plan);
-  var G__21859 = annotated_readings;
-  var vec__21860 = G__21859;
-  var annotated_reading = cljs.core.nth.call(null, vec__21860, 0, null);
-  var next_annotated_readings = cljs.core.nthnext.call(null, vec__21860, 1);
+  var G__22430 = annotated_readings;
+  var vec__22431 = G__22430;
+  var annotated_reading = cljs.core.nth.call(null, vec__22431, 0, null);
+  var next_annotated_readings = cljs.core.nthnext.call(null, vec__22431, 1);
   var processed_readings = cljs.core.PersistentHashSet.EMPTY;
   var book_order__$1 = cljs.core.PersistentVector.EMPTY;
-  var G__21859__$1 = G__21859;
+  var G__22430__$1 = G__22430;
   var processed_readings__$1 = processed_readings;
   var book_order__$2 = book_order__$1;
   while(true) {
-    var vec__21861 = G__21859__$1;
-    var annotated_reading__$1 = cljs.core.nth.call(null, vec__21861, 0, null);
-    var next_annotated_readings__$1 = cljs.core.nthnext.call(null, vec__21861, 1);
+    var vec__22432 = G__22430__$1;
+    var annotated_reading__$1 = cljs.core.nth.call(null, vec__22432, 0, null);
+    var next_annotated_readings__$1 = cljs.core.nthnext.call(null, vec__22432, 1);
     var processed_readings__$2 = processed_readings__$1;
     var book_order__$3 = book_order__$2;
     if(cljs.core.not.call(null, annotated_reading__$1)) {
       return book_order__$3
     }else {
       if(cljs.core.truth_(processed_readings__$2.call(null, annotated_reading__$1))) {
-        var G__21862 = next_annotated_readings__$1;
-        var G__21863 = processed_readings__$2;
-        var G__21864 = book_order__$3;
-        G__21859__$1 = G__21862;
-        processed_readings__$1 = G__21863;
-        book_order__$2 = G__21864;
+        var G__22433 = next_annotated_readings__$1;
+        var G__22434 = processed_readings__$2;
+        var G__22435 = book_order__$3;
+        G__22430__$1 = G__22433;
+        processed_readings__$1 = G__22434;
+        book_order__$2 = G__22435;
         continue
       }else {
         var contiguous_readings = bible_plan.plan.contiguous_readings_from.call(null, annotated_plan, annotated_reading__$1);
-        var G__21865 = next_annotated_readings__$1;
-        var G__21866 = cljs.core.into.call(null, processed_readings__$2, contiguous_readings);
-        var G__21867 = cljs.core.conj.call(null, book_order__$3, cljs.core.get_in.call(null, annotated_reading__$1, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], null)));
-        G__21859__$1 = G__21865;
-        processed_readings__$1 = G__21866;
-        book_order__$2 = G__21867;
+        var G__22436 = next_annotated_readings__$1;
+        var G__22437 = cljs.core.into.call(null, processed_readings__$2, contiguous_readings);
+        var G__22438 = cljs.core.conj.call(null, book_order__$3, cljs.core.get_in.call(null, annotated_reading__$1, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "start", "start", 1123661780), new cljs.core.Keyword(null, "book", "book", 1016933979)], null)));
+        G__22430__$1 = G__22436;
+        processed_readings__$1 = G__22437;
+        book_order__$2 = G__22438;
         continue
       }
     }
@@ -38850,27 +38850,27 @@ bible_plan.plan.book_order = function book_order(plan) {
 };
 bible_plan.plan.update_vals = function update_vals(the_map, update_fn) {
   return cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, function() {
-    var iter__3979__auto__ = function iter__21876(s__21877) {
+    var iter__3979__auto__ = function iter__22447(s__22448) {
       return new cljs.core.LazySeq(null, function() {
-        var s__21877__$1 = s__21877;
+        var s__22448__$1 = s__22448;
         while(true) {
-          var temp__4092__auto__ = cljs.core.seq.call(null, s__21877__$1);
+          var temp__4092__auto__ = cljs.core.seq.call(null, s__22448__$1);
           if(cljs.core.truth_(temp__4092__auto__)) {
-            var s__21877__$2 = temp__4092__auto__;
-            if(cljs.core.chunked_seq_QMARK_.call(null, s__21877__$2)) {
-              var c__3977__auto__ = cljs.core.chunk_first.call(null, s__21877__$2);
+            var s__22448__$2 = temp__4092__auto__;
+            if(cljs.core.chunked_seq_QMARK_.call(null, s__22448__$2)) {
+              var c__3977__auto__ = cljs.core.chunk_first.call(null, s__22448__$2);
               var size__3978__auto__ = cljs.core.count.call(null, c__3977__auto__);
-              var b__21879 = cljs.core.chunk_buffer.call(null, size__3978__auto__);
+              var b__22450 = cljs.core.chunk_buffer.call(null, size__3978__auto__);
               if(function() {
-                var i__21878 = 0;
+                var i__22449 = 0;
                 while(true) {
-                  if(i__21878 < size__3978__auto__) {
-                    var vec__21882 = cljs.core._nth.call(null, c__3977__auto__, i__21878);
-                    var k = cljs.core.nth.call(null, vec__21882, 0, null);
-                    var v = cljs.core.nth.call(null, vec__21882, 1, null);
-                    cljs.core.chunk_append.call(null, b__21879, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k, update_fn.call(null, v)], null));
-                    var G__21884 = i__21878 + 1;
-                    i__21878 = G__21884;
+                  if(i__22449 < size__3978__auto__) {
+                    var vec__22453 = cljs.core._nth.call(null, c__3977__auto__, i__22449);
+                    var k = cljs.core.nth.call(null, vec__22453, 0, null);
+                    var v = cljs.core.nth.call(null, vec__22453, 1, null);
+                    cljs.core.chunk_append.call(null, b__22450, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k, update_fn.call(null, v)], null));
+                    var G__22455 = i__22449 + 1;
+                    i__22449 = G__22455;
                     continue
                   }else {
                     return true
@@ -38878,15 +38878,15 @@ bible_plan.plan.update_vals = function update_vals(the_map, update_fn) {
                   break
                 }
               }()) {
-                return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__21879), iter__21876.call(null, cljs.core.chunk_rest.call(null, s__21877__$2)))
+                return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__22450), iter__22447.call(null, cljs.core.chunk_rest.call(null, s__22448__$2)))
               }else {
-                return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__21879), null)
+                return cljs.core.chunk_cons.call(null, cljs.core.chunk.call(null, b__22450), null)
               }
             }else {
-              var vec__21883 = cljs.core.first.call(null, s__21877__$2);
-              var k = cljs.core.nth.call(null, vec__21883, 0, null);
-              var v = cljs.core.nth.call(null, vec__21883, 1, null);
-              return cljs.core.cons.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k, update_fn.call(null, v)], null), iter__21876.call(null, cljs.core.rest.call(null, s__21877__$2)))
+              var vec__22454 = cljs.core.first.call(null, s__22448__$2);
+              var k = cljs.core.nth.call(null, vec__22454, 0, null);
+              var v = cljs.core.nth.call(null, vec__22454, 1, null);
+              return cljs.core.cons.call(null, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k, update_fn.call(null, v)], null), iter__22447.call(null, cljs.core.rest.call(null, s__22448__$2)))
             }
           }else {
             return null
@@ -38900,7 +38900,7 @@ bible_plan.plan.update_vals = function update_vals(the_map, update_fn) {
 };
 bible_plan.plan.group_into_ascending_readings = function group_into_ascending_readings(readings) {
   return cljs.core.reduce.call(null, function(ascending_readings, reference) {
-    if(cljs.core.truth_(bible_plan.reference.reference_LT_.call(null, cljs.core.last.call(null, cljs.core.nth.call(null, ascending_readings, cljs.core.count.call(null, ascending_readings) - 1)), reference))) {
+    if(cljs.core.truth_(bible_plan.reference._LT_.call(null, cljs.core.last.call(null, cljs.core.nth.call(null, ascending_readings, cljs.core.count.call(null, ascending_readings) - 1)), reference))) {
       return cljs.core.update_in.call(null, ascending_readings, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.count.call(null, ascending_readings) - 1], null), cljs.core.conj, reference)
     }else {
       return cljs.core.conj.call(null, ascending_readings, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [reference], null))
@@ -38924,12 +38924,12 @@ bible_plan.plan.group_reading_day = function group_reading_day(raw_reading_day) 
   var grouped_readings = cljs.core.group_by.call(null, cljs.core.comp.call(null, new cljs.core.Keyword(null, "book", "book", 1016933979), new cljs.core.Keyword(null, "start", "start", 1123661780)), raw_reading_day);
   return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "book-order", "book-order", 2217817820), original_order, new cljs.core.Keyword(null, "book-readings", "book-readings", 1725265213), grouped_readings], null)
 };
-bible_plan.plan.coalesce_reading_day = function coalesce_reading_day(p__21885) {
-  var map__21887 = p__21885;
-  var map__21887__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__21887)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__21887) : map__21887;
-  var grouped_reading_day = map__21887__$1;
-  var book_readings = cljs.core.get.call(null, map__21887__$1, new cljs.core.Keyword(null, "book-readings", "book-readings", 1725265213));
-  var book_order = cljs.core.get.call(null, map__21887__$1, new cljs.core.Keyword(null, "book-order", "book-order", 2217817820));
+bible_plan.plan.coalesce_reading_day = function coalesce_reading_day(p__22456) {
+  var map__22458 = p__22456;
+  var map__22458__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22458)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22458) : map__22458;
+  var grouped_reading_day = map__22458__$1;
+  var book_readings = cljs.core.get.call(null, map__22458__$1, new cljs.core.Keyword(null, "book-readings", "book-readings", 1725265213));
+  var book_order = cljs.core.get.call(null, map__22458__$1, new cljs.core.Keyword(null, "book-order", "book-order", 2217817820));
   return cljs.core.map.call(null, function merge_reading_book_group(reading_book_group) {
     return cljs.core.reduce.call(null, bible_plan.reference.merge_refs, cljs.core.get.call(null, book_readings, reading_book_group))
   }, book_order)
@@ -38937,28 +38937,28 @@ bible_plan.plan.coalesce_reading_day = function coalesce_reading_day(p__21885) {
 bible_plan.plan.raw_plan_by_book = function raw_plan_by_book(book_readings, book_order) {
   var raw_plan = cljs.core.PersistentVector.EMPTY;
   var book_readings__$1 = book_readings;
-  var G__21893 = book_order;
-  var vec__21894 = G__21893;
-  var book = cljs.core.nth.call(null, vec__21894, 0, null);
-  var next_books = cljs.core.nthnext.call(null, vec__21894, 1);
+  var G__22464 = book_order;
+  var vec__22465 = G__22464;
+  var book = cljs.core.nth.call(null, vec__22465, 0, null);
+  var next_books = cljs.core.nthnext.call(null, vec__22465, 1);
   var raw_plan__$1 = raw_plan;
   var book_readings__$2 = book_readings__$1;
-  var G__21893__$1 = G__21893;
+  var G__22464__$1 = G__22464;
   while(true) {
     var raw_plan__$2 = raw_plan__$1;
     var book_readings__$3 = book_readings__$2;
-    var vec__21895 = G__21893__$1;
-    var book__$1 = cljs.core.nth.call(null, vec__21895, 0, null);
-    var next_books__$1 = cljs.core.nthnext.call(null, vec__21895, 1);
+    var vec__22466 = G__22464__$1;
+    var book__$1 = cljs.core.nth.call(null, vec__22466, 0, null);
+    var next_books__$1 = cljs.core.nthnext.call(null, vec__22466, 1);
     if(cljs.core.truth_(book__$1)) {
       var current_book_readings = cljs.core.first.call(null, cljs.core.get.call(null, book_readings__$3, book__$1));
       var next_book_readings = cljs.core.update_in.call(null, book_readings__$3, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [book__$1], null), cljs.core.rest);
-      var G__21896 = cljs.core.into.call(null, raw_plan__$2, current_book_readings);
-      var G__21897 = next_book_readings;
-      var G__21898 = next_books__$1;
-      raw_plan__$1 = G__21896;
-      book_readings__$2 = G__21897;
-      G__21893__$1 = G__21898;
+      var G__22467 = cljs.core.into.call(null, raw_plan__$2, current_book_readings);
+      var G__22468 = next_book_readings;
+      var G__22469 = next_books__$1;
+      raw_plan__$1 = G__22467;
+      book_readings__$2 = G__22468;
+      G__22464__$1 = G__22469;
       continue
     }else {
       return raw_plan__$2
@@ -38977,16 +38977,16 @@ bible_plan.plan.partition_all_balanced = function partition_all_balanced(n, coll
     var make_up = sub_1_part;
     while(true) {
       if(cljs.core.truth_(cljs.core.seq.call(null, rest_coll_items))) {
-        var G__21899 = cljs.core.drop.call(null, step_size + Math.floor(make_up), rest_coll_items);
-        var G__21900 = cljs.core.conj.call(null, partitioned_coll, cljs.core.take.call(null, step_size + Math.floor(make_up), rest_coll_items));
-        var G__21901 = step_size;
-        var G__21902 = sub_1_part;
-        var G__21903 = sub_1_part + cljs.core.rem.call(null, make_up, 1);
-        rest_coll_items = G__21899;
-        partitioned_coll = G__21900;
-        step_size = G__21901;
-        sub_1_part = G__21902;
-        make_up = G__21903;
+        var G__22470 = cljs.core.drop.call(null, step_size + Math.floor(make_up), rest_coll_items);
+        var G__22471 = cljs.core.conj.call(null, partitioned_coll, cljs.core.take.call(null, step_size + Math.floor(make_up), rest_coll_items));
+        var G__22472 = step_size;
+        var G__22473 = sub_1_part;
+        var G__22474 = sub_1_part + cljs.core.rem.call(null, make_up, 1);
+        rest_coll_items = G__22470;
+        partitioned_coll = G__22471;
+        step_size = G__22472;
+        sub_1_part = G__22473;
+        make_up = G__22474;
         continue
       }else {
         return partitioned_coll
@@ -39027,15 +39027,15 @@ bible_plan.plan.order_by_plan = function order_by_plan(number_of_reading_days, p
     return coalesced_reading_days
   }
 };
-bible_plan.plan.calculate_plan = function calculate_plan(p__21904) {
-  var map__21906 = p__21904;
-  var map__21906__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__21906)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__21906) : map__21906;
-  var plan_options = map__21906__$1;
-  var books_at_a_time_QMARK_ = cljs.core.get.call(null, map__21906__$1, new cljs.core.Keyword(null, "books-at-a-time?", "books-at-a-time?", 761096577));
-  var skip_days = cljs.core.get.call(null, map__21906__$1, new cljs.core.Keyword(null, "skip-days", "skip-days", 3061888855));
-  var end_date = cljs.core.get.call(null, map__21906__$1, new cljs.core.Keyword(null, "end-date", "end-date", 2692795602));
-  var start_date = cljs.core.get.call(null, map__21906__$1, new cljs.core.Keyword(null, "start-date", "start-date", 3689065899));
-  var base_plan = cljs.core.get.call(null, map__21906__$1, new cljs.core.Keyword(null, "base-plan", "base-plan", 3446158359));
+bible_plan.plan.calculate_plan = function calculate_plan(p__22475) {
+  var map__22477 = p__22475;
+  var map__22477__$1 = cljs.core.truth_(cljs.core.seq_QMARK_.call(null, map__22477)) ? cljs.core.apply.call(null, cljs.core.hash_map, map__22477) : map__22477;
+  var plan_options = map__22477__$1;
+  var books_at_a_time_QMARK_ = cljs.core.get.call(null, map__22477__$1, new cljs.core.Keyword(null, "books-at-a-time?", "books-at-a-time?", 761096577));
+  var skip_days = cljs.core.get.call(null, map__22477__$1, new cljs.core.Keyword(null, "skip-days", "skip-days", 3061888855));
+  var end_date = cljs.core.get.call(null, map__22477__$1, new cljs.core.Keyword(null, "end-date", "end-date", 2692795602));
+  var start_date = cljs.core.get.call(null, map__22477__$1, new cljs.core.Keyword(null, "start-date", "start-date", 3689065899));
+  var base_plan = cljs.core.get.call(null, map__22477__$1, new cljs.core.Keyword(null, "base-plan", "base-plan", 3446158359));
   if(cljs.core.truth_(base_plan)) {
   }else {
     throw new Error([cljs.core.str("Assert failed: "), cljs.core.str(cljs.core.pr_str.call(null, new cljs.core.Symbol(null, "base-plan", "base-plan", 791722590, null)))].join(""));

@@ -78,7 +78,7 @@
 
 (defn group-into-ascending-readings [readings]
   (reduce (fn [ascending-readings reference]
-            (if (ref/reference< (last (nth ascending-readings (- (count ascending-readings) 1))) reference)
+            (if (ref/< (last (nth ascending-readings (- (count ascending-readings) 1))) reference)
               (update-in ascending-readings [(- (count ascending-readings) 1)] conj reference)
               (conj ascending-readings [reference])))
           [[(first readings)]]

@@ -4,7 +4,8 @@
             [clojure.set          :as set]
             [shodan.console       :as console]
             [bible-plan.verse-map :as verse-map]
-            [ajax.core            :as ajax :refer [ajax-request]]))
+            [ajax.core            :as ajax :refer [ajax-request]])
+  (:refer-clojure :exclude [<]))
 
 (defn ->verse-maps [reference]
   (let [{:keys [start end]} reference
@@ -14,7 +15,7 @@
                  verse-maps)]
     verse-maps))
 
-(defn reference< [reference & references]
+(defn < [reference & references]
   {:pre [(get-in reference [:start :book])
          (every? #(get-in % [:start :book]) references)]}
   (apply verse-map/< (reduce into [] (map ->verse-maps (into [reference] references)))))
@@ -74,7 +75,7 @@
                   references)))
 
 (defn contiguous? [& references]
-  {:pre [(apply reference< references)]}
+  {:pre [(apply < references)]}
   (if references
     (let [join-points (join-points references)]
       (and (every? (fn [join-point]
@@ -106,7 +107,7 @@
     (every? (partial none-overlap? references) references)))
 
 (defn merge-refs [start-ref end-ref]
-  {:pre [(reference< start-ref end-ref)]}
+  {:pre [(< start-ref end-ref)]}
   (if (contiguous? start-ref end-ref)
     (let [sorted-verse-maps (sort verse-map/< (reduce into [] (map ->verse-maps [start-ref end-ref])))]
       {:start (first sorted-verse-maps) :end (last sorted-verse-maps)})
