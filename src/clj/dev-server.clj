@@ -24,6 +24,7 @@
 (defroutes advanced-site
   (resources "/")
   (resources "/edn" {:root "edn"})
+  (resources "/styles" {:root "styles"})
   (GET "/" req (index-page)))
 
 (defn run
