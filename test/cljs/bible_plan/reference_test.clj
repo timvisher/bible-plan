@@ -20,7 +20,7 @@
   (is (= "Am. 1.16-2.32" (ref/->str {:start {:book 30 :chapter 1 :verse 16} :end {:book 30 :chapter 2 :verse 32}}))))
 
 (deftest ->str-start-and-end-when-books-not-ascending
-  (is (thrown-with-msg? js/Error #"reference<" (ref/->str {:start {:book 30 :chapter 1} :end {:book 29 :chapter 1}}))))
+  (is (thrown-with-msg? js/Error #"<" (ref/->str {:start {:book 30 :chapter 1} :end {:book 29 :chapter 1}}))))
 
 (deftest ->str-start-and-end-when-ascending
   (is (= "Am. 1-Jon. 3" (ref/->str {:start {:book 30 :chapter 1} :end {:book 32 :chapter 3}}))))
@@ -29,16 +29,16 @@
   (is (= "Gn. 35-36" (ref/->str {:start {:book 1 :chapter 35} :end {:book 1 :chapter 36} :kind "family"}))))
 
 (deftest ->str-start-and-end-when-verses-not-ascending
-  (is (thrown-with-msg? js/Error #"reference<" (ref/->str {:start {:book 30 :chapter 1 :verse 15} :end {:book 30 :chapter 1 :verse 1}}))))
+  (is (thrown-with-msg? js/Error #"<" (ref/->str {:start {:book 30 :chapter 1 :verse 15} :end {:book 30 :chapter 1 :verse 1}}))))
 
-(deftest reference<-ascending-start-and-end-full-reference
-  (is (ref/reference< {:book 30 :chapter 1 :verse 16} {:book 30 :chapter 1 :verse 32})))
+(deftest <-ascending-start-and-end-full-reference
+  (is (ref/< {:book 30 :chapter 1 :verse 16} {:book 30 :chapter 1 :verse 32})))
 
-(deftest reference<-differing-specificity-chapters-is-false
-  (is (not (ref/reference< {:book 30} {:book 30 :chapter 2}))))
+(deftest <-differing-specificity-chapters-is-false
+  (is (not (ref/< {:book 30} {:book 30 :chapter 2}))))
 
-(deftest reference<-differing-specificity-verses-is-false
-  (is (not (ref/reference< {:book 30 :chapter 1}  {:book 30 :chapter 1 :verse 15}))))
+(deftest <-differing-specificity-verses-is-false
+  (is (not (ref/< {:book 30 :chapter 1}  {:book 30 :chapter 1 :verse 15}))))
 
 (comment
   (in-ns 'bible-plan.reference-test)

@@ -33,7 +33,7 @@
                                                                  :output-to       "resources/public/whitespace/js/bible-plan.js"
                                                                  :source-map      "resources/public/whitespace/js/bible-plan.js.map"
                                                                  :output-dir      "resources/public/whitespace/js/out"
-                                                                 :externs         ["externs/bible-plan-bibles-externs.js"]
+                                                                 :externs         ["externs/modernizr-externs.js"]
                                                                  :optimizations   :whitespace}}
                                                {:id             "advanced"
                                                 :source-paths   ["src/cljs"]
@@ -51,7 +51,7 @@
                                                                  :output-to       "resources/public/js/bible-plan.js"
                                                                  :output-dir      "resources/public/js/out"
                                                                  :source-map      "resources/public/js/bible-plan.js.map"
-                                                                 :externs         ["externs/bible-plan-bibles-externs.js"]
+                                                                 :externs         ["externs/modernizr-externs.js"]
                                                                  :optimizations   :advanced}}
                                                {:id             "prod"
                                                 :source-paths   ["src/cljs"]
@@ -68,5 +68,5 @@
                                                 :compiler       {:pretty-print  false
                                                                  :output-to     "sync/prod/js/bible-plan.js"
                                                                  :output-dir    "target/prod"
-                                                                 :externs       ["externs/bible-plan-bibles-externs.js"]
+                                                                 :externs       ["externs/modernizr-externs.js"]
                                                                  :optimizations :advanced}}]}}})
