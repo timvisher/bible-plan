@@ -89,8 +89,8 @@ clojure.string.capitalize = (function capitalize(s){if((cljs.core.count(s) < 2))
 clojure.string.pop_last_while_empty = (function pop_last_while_empty(v){var v__$1 = v;while(true){
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2("",cljs.core.peek(v__$1)))
 {{
-var G__15614 = cljs.core.pop(v__$1);
-v__$1 = G__15614;
+var G__15666 = cljs.core.pop(v__$1);
+v__$1 = G__15666;
 continue;
 }
 } else
@@ -108,10 +108,10 @@ clojure.string.discard_trailing_if_needed = (function discard_trailing_if_needed
 clojure.string.split_with_empty_regex = (function split_with_empty_regex(s,limit){if(((limit <= 0)) || ((limit >= (2 + cljs.core.count(s)))))
 {return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(cljs.core.vec(cljs.core.cons("",cljs.core.map.cljs$core$IFn$_invoke$arity$2(cljs.core.str,cljs.core.seq(s)))),"");
 } else
-{var pred__15618 = cljs.core._EQ_;var expr__15619 = limit;if(cljs.core.truth_((pred__15618.cljs$core$IFn$_invoke$arity$2 ? pred__15618.cljs$core$IFn$_invoke$arity$2(1,expr__15619) : pred__15618.call(null,1,expr__15619))))
+{var pred__15670 = cljs.core._EQ_;var expr__15671 = limit;if(cljs.core.truth_((pred__15670.cljs$core$IFn$_invoke$arity$2 ? pred__15670.cljs$core$IFn$_invoke$arity$2(1,expr__15671) : pred__15670.call(null,1,expr__15671))))
 {return (new cljs.core.PersistentVector(null,1,5,cljs.core.PersistentVector.EMPTY_NODE,[s],null));
 } else
-{if(cljs.core.truth_((pred__15618.cljs$core$IFn$_invoke$arity$2 ? pred__15618.cljs$core$IFn$_invoke$arity$2(2,expr__15619) : pred__15618.call(null,2,expr__15619))))
+{if(cljs.core.truth_((pred__15670.cljs$core$IFn$_invoke$arity$2 ? pred__15670.cljs$core$IFn$_invoke$arity$2(2,expr__15671) : pred__15670.call(null,2,expr__15671))))
 {return (new cljs.core.PersistentVector(null,2,5,cljs.core.PersistentVector.EMPTY_NODE,["",s],null));
 } else
 {var c = (limit - 2);return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(cljs.core.vec(cljs.core.cons("",cljs.core.subvec.cljs$core$IFn$_invoke$arity$3(cljs.core.vec(cljs.core.map.cljs$core$IFn$_invoke$arity$2(cljs.core.str,cljs.core.seq(s))),0,c))),cljs.core.subs.cljs$core$IFn$_invoke$arity$2(s,c));
@@ -133,12 +133,12 @@ if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(limit__$1,1))
 } else
 {var temp__4090__auto__ = cljs.core.re_find(re,s__$1);if(cljs.core.truth_(temp__4090__auto__))
 {var m = temp__4090__auto__;var index = s__$1.indexOf(m);{
-var G__15621 = s__$1.substring((index + cljs.core.count(m)));
-var G__15622 = (limit__$1 - 1);
-var G__15623 = cljs.core.conj.cljs$core$IFn$_invoke$arity$2(parts,s__$1.substring(0,index));
-s__$1 = G__15621;
-limit__$1 = G__15622;
-parts = G__15623;
+var G__15673 = s__$1.substring((index + cljs.core.count(m)));
+var G__15674 = (limit__$1 - 1);
+var G__15675 = cljs.core.conj.cljs$core$IFn$_invoke$arity$2(parts,s__$1.substring(0,index));
+s__$1 = G__15673;
+limit__$1 = G__15674;
+parts = G__15675;
 continue;
 }
 } else
@@ -195,8 +195,8 @@ if((index === 0))
 } else
 {var ch = cljs.core.get.cljs$core$IFn$_invoke$arity$2(s,(index - 1));if((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(ch,"\n")) || (cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(ch,"\r")))
 {{
-var G__15624 = (index - 1);
-index = G__15624;
+var G__15676 = (index - 1);
+index = G__15676;
 continue;
 }
 } else
@@ -222,14 +222,14 @@ clojure.string.escape = (function escape__$1(s,cmap){var buffer = (new goog.stri
 if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(length,index))
 {return buffer.toString();
 } else
-{var ch = s.charAt(index);var temp__4090__auto___15625 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(cmap,ch);if(cljs.core.truth_(temp__4090__auto___15625))
-{var replacement_15626 = temp__4090__auto___15625;buffer.append([cljs.core.str(replacement_15626)].join(''));
+{var ch = s.charAt(index);var temp__4090__auto___15677 = cljs.core.get.cljs$core$IFn$_invoke$arity$2(cmap,ch);if(cljs.core.truth_(temp__4090__auto___15677))
+{var replacement_15678 = temp__4090__auto___15677;buffer.append([cljs.core.str(replacement_15678)].join(''));
 } else
 {buffer.append(ch);
 }
 {
-var G__15627 = (index + 1);
-index = G__15627;
+var G__15679 = (index + 1);
+index = G__15679;
 continue;
 }
 }

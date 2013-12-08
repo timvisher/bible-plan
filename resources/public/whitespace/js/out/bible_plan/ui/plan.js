@@ -31,15 +31,16 @@ bible_plan.ui.plan.end_date = (function end_date(){var end_date_value = document
 {return clj_time.core.plus.call(null,bible_plan.ui.plan.start_date.call(null),clj_time.core.years.call(null,1));
 }
 });
+bible_plan.ui.plan.days_of_week = new cljs.core.PersistentArrayMap(null, 7, ["monday",1,"tuesday",2,"wednesday",3,"thursday",4,"friday",5,"saturday",6,"sunday",7], null);
 bible_plan.ui.plan.plan_state__GT_plan_options = (function plan_state__GT_plan_options(){var base_plan = cljs.core.keyword.call(null,document.querySelector(dommy.core.selector.call(null,cljs.core.keyword.call(null,"input[name=plan]:checked"))).value);var skip_days = cljs.core.into.call(null,cljs.core.PersistentHashSet.EMPTY,cljs.core.map.call(null,((function (base_plan){
-return (function day_input__GT_keyword(day_input){return cljs.core.keyword.call(null,day_input.value);
+return (function day_input__GT_day_number(day_input){return cljs.core.get.call(null,bible_plan.ui.plan.days_of_week,day_input.value);
 });})(base_plan))
 ,dommy.utils.__GT_Array.call(null,document.querySelectorAll(dommy.core.selector.call(null,cljs.core.keyword.call(null,"input[name=skip-day]:checked"))))));var start_date = bible_plan.ui.plan.start_date.call(null);var end_date = bible_plan.ui.plan.end_date.call(null);var books_at_a_time_QMARK__node = document.querySelector(dommy.core.selector.call(null,cljs.core.keyword.call(null,"input[name=books-at-a-time]:checked")));var books_at_a_time_QMARK__raw = (cljs.core.truth_(books_at_a_time_QMARK__node)?books_at_a_time_QMARK__node.value:null);var books_at_a_time_QMARK_ = cljs.core._EQ_.call(null,"yes",books_at_a_time_QMARK__raw);var plan_options = new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"base-plan","base-plan",3446158359),base_plan,new cljs.core.Keyword(null,"skip-days","skip-days",3061888855),skip_days,new cljs.core.Keyword(null,"start-date","start-date",3689065899),start_date,new cljs.core.Keyword(null,"end-date","end-date",2692795602),end_date,new cljs.core.Keyword(null,"books-at-a-time?","books-at-a-time?",761096577),books_at_a_time_QMARK_], null);shodan.console.log.call(null,cljs.core.pr_str.call(null,plan_options));
 return plan_options;
 });
-bible_plan.ui.plan.plan_day__GT_tr = (function plan_day__GT_tr(p__18936){var map__18939 = p__18936;var map__18939__$1 = (cljs.core.truth_(cljs.core.seq_QMARK_.call(null,map__18939))?cljs.core.apply.call(null,cljs.core.hash_map,map__18939):map__18939);var plan_day = map__18939__$1;var date = cljs.core.get.call(null,map__18939__$1,new cljs.core.Keyword(null,"date","date",1016980256));var readings = cljs.core.get.call(null,map__18939__$1,new cljs.core.Keyword(null,"readings","readings",4441962201));var dom18940 = document.createElement("tr");dom18940.appendChild(dommy.template.__GT_node_like.call(null,time_ui.__GT_td.call(null,date)));
-dom18940.appendChild(dommy.template.__GT_node_like.call(null,cljs.core.map.call(null,bible_plan.ui.reference.__GT_td,readings)));
-return dom18940;
+bible_plan.ui.plan.plan_day__GT_tr = (function plan_day__GT_tr(p__7520){var map__7523 = p__7520;var map__7523__$1 = (cljs.core.truth_(cljs.core.seq_QMARK_.call(null,map__7523))?cljs.core.apply.call(null,cljs.core.hash_map,map__7523):map__7523);var plan_day = map__7523__$1;var date = cljs.core.get.call(null,map__7523__$1,new cljs.core.Keyword(null,"date","date",1016980256));var readings = cljs.core.get.call(null,map__7523__$1,new cljs.core.Keyword(null,"readings","readings",4441962201));var dom7524 = document.createElement("tr");dom7524.appendChild(dommy.template.__GT_node_like.call(null,time_ui.__GT_td.call(null,date)));
+dom7524.appendChild(dommy.template.__GT_node_like.call(null,cljs.core.map.call(null,bible_plan.ui.reference.__GT_td,readings)));
+return dom7524;
 });
 bible_plan.ui.plan.plan__GT_dom_content = (function plan__GT_dom_content(the_plan){return cljs.core.map.call(null,bible_plan.ui.plan.plan_day__GT_tr,the_plan);
 });

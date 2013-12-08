@@ -14,14 +14,14 @@ time_ui.day = (function day(date){return cljs.core.get.call(null,time_ui.weekday
 });
 time_ui.now = (function now(){return (new goog.date.DateTime());
 });
-time_ui.inc_date_by_day = (function inc_date_by_day(date){var G__7610 = date.clone();G__7610.add((new goog.date.Interval(0,0,1)));
-return G__7610;
+time_ui.inc_date_by_day = (function inc_date_by_day(date){var G__18851 = date.clone();G__18851.add((new goog.date.Interval(0,0,1)));
+return G__18851;
 });
-time_ui.dec_date_by_day = (function dec_date_by_day(date){var G__7612 = date.clone();G__7612.add((new goog.date.Interval(0,0,-1)));
-return G__7612;
+time_ui.dec_date_by_day = (function dec_date_by_day(date){var G__18853 = date.clone();G__18853.add((new goog.date.Interval(0,0,-1)));
+return G__18853;
 });
-time_ui.inc_date_by_year = (function inc_date_by_year(date){var G__7614 = date.clone();G__7614.add((new goog.date.Interval(1)));
-return G__7614;
+time_ui.inc_date_by_year = (function inc_date_by_year(date){var G__18855 = date.clone();G__18855.add((new goog.date.Interval(1)));
+return G__18855;
 });
 time_ui.date_GT__EQ_ = (function date_GT__EQ_(date_1,date_2){return (0 <= goog.date.Date.compare(date_1,date_2));
 });
@@ -35,8 +35,8 @@ time_ui.days_from_now = (function days_from_now(){return time_ui.days_from.call(
 });
 time_ui.date__GT_long_format = (function date__GT_long_format(date){var long_date_formatter = (new goog.i18n.DateTimeFormat(goog.i18n.DateTimeFormat.Format.LONG_DATE));var formatted_date = long_date_formatter.format(date);return formatted_date;
 });
-time_ui.__GT_td = (function __GT_td(date){var long_date_formatter = (new goog.i18n.DateTimeFormat(goog.i18n.DateTimeFormat.Format.LONG_DATE));var now = date;var formatted_now = long_date_formatter.format(date);var dom7616 = document.createElement("td");dom7616.appendChild(dommy.template.__GT_node_like.call(null,time_ui.date__GT_long_format.call(null,date)));
-return dom7616;
+time_ui.__GT_td = (function __GT_td(date){var long_date_formatter = (new goog.i18n.DateTimeFormat(goog.i18n.DateTimeFormat.Format.LONG_DATE));var now = date;var formatted_now = long_date_formatter.format(date);var dom18857 = document.createElement("td");dom18857.appendChild(dommy.template.__GT_node_like.call(null,time_ui.date__GT_long_format.call(null,date)));
+return dom18857;
 });
 time_ui.days_of_week = new cljs.core.PersistentArrayMap(null, 7, [new cljs.core.Keyword(null,"sunday","sunday",4417684802),0,new cljs.core.Keyword(null,"monday","monday",4240368770),1,new cljs.core.Keyword(null,"tuesday","tuesday",4331527615),2,new cljs.core.Keyword(null,"wednesday","wednesday",2407434952),3,new cljs.core.Keyword(null,"thursday","thursday",2585959756),4,new cljs.core.Keyword(null,"friday","friday",4042586321),5,new cljs.core.Keyword(null,"saturday","saturday",3194669867),6], null);
 time_ui.day_is = (function day_is(day_of_week,date){return cljs.core._EQ_.call(null,day_of_week.call(null,time_ui.days_of_week),date.getDay());
@@ -47,7 +47,7 @@ time_ui.day_in = (function day_in(days_of_week,date){if(cljs.core.truth_((functi
 {return and__3279__auto__;
 }
 })()))
-{return cljs.core.some.call(null,cljs.core.identity,cljs.core.apply.call(null,cljs.core.juxt,cljs.core.map.call(null,(function (p1__7617_SHARP_){return cljs.core.partial.call(null,time_ui.day_is,p1__7617_SHARP_);
+{return cljs.core.some.call(null,cljs.core.identity,cljs.core.apply.call(null,cljs.core.juxt,cljs.core.map.call(null,(function (p1__18858_SHARP_){return cljs.core.partial.call(null,time_ui.day_is,p1__18858_SHARP_);
 }),days_of_week)).call(null,date));
 } else
 {return null;
