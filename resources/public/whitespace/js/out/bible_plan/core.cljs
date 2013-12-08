@@ -1,5 +1,6 @@
 (ns bible-plan.core
   (:require    [dommy.core              :as dom]
+               [dommy.attrs             :as dom-attrs]
                [bible-plan.ui.reference :as ref-ui]
                [bible-plan.ui.plan      :as plan-ui]
                [goog.ui.DatePicker]
@@ -12,6 +13,9 @@
   )
 
 (dom/listen! (sel1 :form) :change plan-ui/re-show-plan)
+
+(when-not (.-date (.-inputtypes js/Modernizr))
+  (dom-attrs/add-class! (.-documentElement js/document) "no-date-input"))
 
 ;; (when-not (.-date (.-inputtypes js/Modernizr))
 ;;   (def start-date-picker (goog.ui.DatePicker.))

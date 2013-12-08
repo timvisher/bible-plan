@@ -1,0 +1,9 @@
+.date-hint {
+   display:    none !important;
+   visibility: hidden;
+}
+
+.no-date-input .date-hint {
+   display:    inline !important;
+   visibility: visible;
+}

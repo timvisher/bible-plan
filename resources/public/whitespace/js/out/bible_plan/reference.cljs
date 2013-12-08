@@ -18,7 +18,6 @@
 (defn < [reference & references]
   {:pre [(get-in reference [:start :book])
          (every? #(get-in % [:start :book]) references)]}
-
   (apply verse-map/< (reduce into [] (map ->verse-maps (into [reference] references)))))
 
 (defn reference? [{:keys [start end] :as reference}]
