@@ -62,7 +62,7 @@
   (minus- [this #^goog.date.Interval interval] (doto (.clone this) (.add (.getInverse interval)))))
 
 (defn now []
-  (goog.date.UtcDateTime.))
+  (goog.date.DateTime.))
 
 (defn plus
   "Returns a new date/time corresponding to the given date/time moved forwards by
