@@ -33,13 +33,13 @@
       (goog.date/fromIsoString end-date-value)
       (ct/plus (start-date) (ct/years 1)))))
 
-(def days-of-week {"monday"    1
+(def days-of-week {"sunday"    0
+                   "monday"    1
                    "tuesday"   2
                    "wednesday" 3
                    "thursday"  4
                    "friday"    5
-                   "saturday"  6
-                   "sunday"    7})
+                   "saturday"  6})
 
 (defn plan-state->plan-options []
   (let [base-plan             (keyword (.-value (sel1 (keyword "input[name=plan]:checked"))))

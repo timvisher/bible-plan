@@ -15,8 +15,8 @@ var args = null;if (arguments.length > 0) {
   args = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
 return log__delegate.call(this,args);};
 log.cljs$lang$maxFixedArity = 0;
-log.cljs$lang$applyTo = (function (arglist__14796){
-var args = cljs.core.seq(arglist__14796);
+log.cljs$lang$applyTo = (function (arglist__15252){
+var args = cljs.core.seq(arglist__15252);
 return log__delegate(args);
 });
 log.cljs$core$IFn$_invoke$arity$variadic = log__delegate;
@@ -37,8 +37,8 @@ var args = null;if (arguments.length > 0) {
   args = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
 return debug__delegate.call(this,args);};
 debug.cljs$lang$maxFixedArity = 0;
-debug.cljs$lang$applyTo = (function (arglist__14797){
-var args = cljs.core.seq(arglist__14797);
+debug.cljs$lang$applyTo = (function (arglist__15253){
+var args = cljs.core.seq(arglist__15253);
 return debug__delegate(args);
 });
 debug.cljs$core$IFn$_invoke$arity$variadic = debug__delegate;
@@ -58,8 +58,8 @@ var args = null;if (arguments.length > 0) {
   args = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
 return info__delegate.call(this,args);};
 info.cljs$lang$maxFixedArity = 0;
-info.cljs$lang$applyTo = (function (arglist__14798){
-var args = cljs.core.seq(arglist__14798);
+info.cljs$lang$applyTo = (function (arglist__15254){
+var args = cljs.core.seq(arglist__15254);
 return info__delegate(args);
 });
 info.cljs$core$IFn$_invoke$arity$variadic = info__delegate;
@@ -78,8 +78,8 @@ var args = null;if (arguments.length > 0) {
   args = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
 return warn__delegate.call(this,args);};
 warn.cljs$lang$maxFixedArity = 0;
-warn.cljs$lang$applyTo = (function (arglist__14799){
-var args = cljs.core.seq(arglist__14799);
+warn.cljs$lang$applyTo = (function (arglist__15255){
+var args = cljs.core.seq(arglist__15255);
 return warn__delegate(args);
 });
 warn.cljs$core$IFn$_invoke$arity$variadic = warn__delegate;
@@ -98,8 +98,8 @@ var args = null;if (arguments.length > 0) {
   args = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
 return error__delegate.call(this,args);};
 error.cljs$lang$maxFixedArity = 0;
-error.cljs$lang$applyTo = (function (arglist__14800){
-var args = cljs.core.seq(arglist__14800);
+error.cljs$lang$applyTo = (function (arglist__15256){
+var args = cljs.core.seq(arglist__15256);
 return error__delegate(args);
 });
 error.cljs$core$IFn$_invoke$arity$variadic = error__delegate;
@@ -119,8 +119,8 @@ var args = null;if (arguments.length > 0) {
   args = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
 return group__delegate.call(this,args);};
 group.cljs$lang$maxFixedArity = 0;
-group.cljs$lang$applyTo = (function (arglist__14801){
-var args = cljs.core.seq(arglist__14801);
+group.cljs$lang$applyTo = (function (arglist__15257){
+var args = cljs.core.seq(arglist__15257);
 return group__delegate(args);
 });
 group.cljs$core$IFn$_invoke$arity$variadic = group__delegate;
@@ -138,8 +138,8 @@ var args = null;if (arguments.length > 0) {
   args = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
 return group_collapsed__delegate.call(this,args);};
 group_collapsed.cljs$lang$maxFixedArity = 0;
-group_collapsed.cljs$lang$applyTo = (function (arglist__14802){
-var args = cljs.core.seq(arglist__14802);
+group_collapsed.cljs$lang$applyTo = (function (arglist__15258){
+var args = cljs.core.seq(arglist__15258);
 return group_collapsed__delegate(args);
 });
 group_collapsed.cljs$core$IFn$_invoke$arity$variadic = group_collapsed__delegate;
@@ -160,8 +160,8 @@ var args = null;if (arguments.length > 0) {
   args = cljs.core.array_seq(Array.prototype.slice.call(arguments, 0),0);} 
 return assert__delegate.call(this,args);};
 assert.cljs$lang$maxFixedArity = 0;
-assert.cljs$lang$applyTo = (function (arglist__14803){
-var args = cljs.core.seq(arglist__14803);
+assert.cljs$lang$applyTo = (function (arglist__15259){
+var args = cljs.core.seq(arglist__15259);
 return assert__delegate(args);
 });
 assert.cljs$core$IFn$_invoke$arity$variadic = assert__delegate;

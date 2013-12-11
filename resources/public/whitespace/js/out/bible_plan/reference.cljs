@@ -38,9 +38,9 @@
         {e-book :book e-chapter :chapter e-verse :verse :as end-verse-map}   end]
     (let [verse-string               (str (verse-map/->book-chapter?-verse?-str start-verse-map) "-")
           lowest-unequal-specificity (verse-map/lowest-unequal-specificity end-verse-map start-verse-map)
-          shown-specificities        (apply vector (drop-while (fn [specificity]
-                                                                 (verse-map/specificity< specificity lowest-unequal-specificity))
-                                                               verse-map/verse-map-specificities))
+          shown-specificities        (into [] (drop-while (fn [specificity]
+                                                            (verse-map/specificity< specificity lowest-unequal-specificity))
+                                                          verse-map/verse-map-specificities))
 ]
       (str verse-string ((verse-map/->str-fn shown-specificities) end-verse-map)))))
 

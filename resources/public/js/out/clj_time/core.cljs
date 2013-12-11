@@ -27,7 +27,7 @@
   (year [this] (.getFullYear this))
   (month [this] (.getMonth this))
   (day [this] (.getDate this))
-  (day-of-week [this] (inc (.getDay this)))
+  (day-of-week [this] (.getDay this))
   (hour [this] (.getHours this))
   (minute [this] (.getMinutes this))
   (second [this] (.getSeconds this))
@@ -41,7 +41,7 @@
   (year [this] (.getFullYear this))
   (month [this] (.getMonth this))
   (day [this] (.getDate this))
-  (day-of-week [this] (inc (.getDay this)))
+  (day-of-week [this] (.getDay this))
   (hour [this] (.getHours this))
   (minute [this] (.getMinutes this))
   (second [this] (.getSeconds this))
@@ -55,14 +55,14 @@
   (year [this] (.getFullYear this))
   (month [this] (.getMonth this))
   (day [this] (.getDate this))
-  (day-of-week [this] (inc (.getDay this)))
+  (day-of-week [this] (.getDay this))
   (after? [this #^goog.date.Date that] (< 0 (goog.date.Date/compare this that)))
   (before? [this #^goog.date.Date that] (> 0 (goog.date.Date/compare this that)))
   (plus- [this #^goog.date.Interval interval] (doto (.clone this) (.add interval)))
   (minus- [this #^goog.date.Interval interval] (doto (.clone this) (.add (.getInverse interval)))))
 
 (defn now []
-  (goog.date.UtcDateTime.))
+  (goog.date.DateTime.))
 
 (defn plus
   "Returns a new date/time corresponding to the given date/time moved forwards by
