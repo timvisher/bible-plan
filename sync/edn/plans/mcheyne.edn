@@ -524,7 +524,7 @@
   {:kind "secret" :start {:book 59 :chapter 3}}]
  [{:kind "family" :start {:book 4 :chapter 21}}
   {:kind "family" :start {:book 19 :chapter 60} :end {:book 19 :chapter 61}}
-  {:kind "secret" :start {:verse 5 :book 23 :chapter 10}}
+  {:kind "secret" :start {:verse 5 :book 23 :chapter 10} :end {:verse 34 :book 23 :chapter 10}}
   {:kind "secret" :start {:book 59 :chapter 4}}]
  [{:kind "family" :start {:book 4 :chapter 22}}
   {:kind "family" :start {:book 19 :chapter 62} :end {:book 19 :chapter 63}}
@@ -575,7 +575,7 @@
   {:kind "secret" :start {:book 23 :chapter 25}}
   {:kind "secret" :start {:book 62 :chapter 3}}]
  [{:kind "family" :start {:book 4 :chapter 34}}
-  {:kind "family" :start {:verse 38 :book 19 :chapter 78}}
+  {:kind "family" :start {:verse 38 :book 19 :chapter 78} :end {:verse 72 :book 19 :chapter 78}}
   {:kind "secret" :start {:book 23 :chapter 26}}
   {:kind "secret" :start {:book 62 :chapter 4}}]
  [{:kind "family" :start {:book 4 :chapter 35}}
@@ -690,7 +690,7 @@
   {:kind "family" :start {:verse 1 :book 19 :chapter 119} :end {:verse 24 :book 19 :chapter 119}}
   {:kind "secret" :start {:book 23 :chapter 54}}
   {:kind "secret" :start {:book 40 :chapter 2}}]
- [{:kind "family" :start {:verse 20 :book 5 :chapter 28}}
+ [{:kind "family" :start {:verse 20 :book 5 :chapter 28} :end {:verse 68 :book 5 :chapter 28}}
   {:kind "family" :start {:verse 25 :book 19 :chapter 119} :end {:verse 48 :book 19 :chapter 119}}
   {:kind "secret" :start {:book 23 :chapter 55}}
   {:kind "secret" :start {:book 40 :chapter 3}}]
@@ -830,7 +830,7 @@
   {:kind "family" :start {:book 44 :chapter 14}}
   {:kind "secret" :start {:book 24 :chapter 23}}
   {:kind "secret" :start {:book 41 :chapter 9}}]
- [{:kind "family" :start {:verse 12 :book 7 :chapter 11}}
+ [{:kind "family" :start {:verse 12 :book 7 :chapter 11} :end {:verse 40 :book 7 :chapter 11}}
   {:kind "family" :start {:book 44 :chapter 15}}
   {:kind "secret" :start {:book 24 :chapter 24}}
   {:kind "secret" :start {:book 41 :chapter 10}}]
@@ -1281,7 +1281,7 @@
  [{:kind "family" :start {:book 13 :chapter 9} :end {:book 13 :chapter 10}}
   {:kind "family" :start {:book 58 :chapter 12}}
   {:kind "secret" :start {:book 30 :chapter 6}}
-  {:kind "secret" :start {:verse 39 :book 42 :chapter 1}}]
+  {:kind "secret" :start {:verse 39 :book 42 :chapter 1} :end {:book 42 :chapter 1 :verse 80}}]
  [{:kind "family" :start {:book 13 :chapter 11} :end {:book 13 :chapter 12}}
   {:kind "family" :start {:book 58 :chapter 13}}
   {:kind "secret" :start {:book 30 :chapter 7}}
@@ -1354,7 +1354,7 @@
   {:kind "family" :start {:book 62 :chapter 4}}
   {:kind "secret" :start {:book 34 :chapter 3}}
   {:kind "secret" :start {:book 42 :chapter 19}}]
- [{:kind "family" :start {:verse 12 :book 14 :chapter 6}}
+ [{:kind "family" :start {:verse 12 :book 14 :chapter 6} :end {:verse 42 :book 14 :chapter 6}}
   {:kind "family" :start {:book 62 :chapter 5}}
   {:kind "secret" :start {:book 35 :chapter 1}}
   {:kind "secret" :start {:book 42 :chapter 20}}]
@@ -1436,7 +1436,7 @@
   {:kind "secret" :start {:book 43 :chapter 15}}]
  [{:kind "family" :start {:book 14 :chapter 31}}
   {:kind "family" :start {:book 66 :chapter 17}}
-  {:kind "secret" :start {:verse 2 :book 38 :chapter 13}}
+  {:kind "secret" :start {:verse 2 :book 38 :chapter 13} :end {:verse 9 :book 38 :chapter 13}}
   {:kind "secret" :start {:book 43 :chapter 16}}]
  [{:kind "family" :start {:book 14 :chapter 32}}
   {:kind "family" :start {:book 66 :chapter 18}}

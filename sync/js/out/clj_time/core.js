@@ -4,7 +4,7 @@ goog.require('cljs.core');
 goog.require('goog.date.UtcDateTime');
 goog.require('goog.date.DateTime');
 goog.require('goog.date.Interval');
-clj_time.core.DateTimeProtocol = (function (){var obj13328 = {};return obj13328;
+clj_time.core.DateTimeProtocol = (function (){var obj13784 = {};return obj13784;
 })();
 clj_time.core.year = (function year(this$){if((function (){var and__3279__auto__ = this$;if(and__3279__auto__)
 {return this$.clj_time$core$DateTimeProtocol$year$arity$1;
@@ -273,17 +273,17 @@ goog.date.Date.prototype.clj_time$core$DateTimeProtocol$month$arity$1 = (functio
 });
 goog.date.Date.prototype.clj_time$core$DateTimeProtocol$day$arity$1 = (function (this$){var this$__$1 = this;return this$__$1.getDate();
 });
-goog.date.Date.prototype.clj_time$core$DateTimeProtocol$day_of_week$arity$1 = (function (this$){var this$__$1 = this;return (this$__$1.getDay() + 1);
+goog.date.Date.prototype.clj_time$core$DateTimeProtocol$day_of_week$arity$1 = (function (this$){var this$__$1 = this;return this$__$1.getDay();
 });
 goog.date.Date.prototype.clj_time$core$DateTimeProtocol$after_QMARK_$arity$2 = (function (this$,that){var this$__$1 = this;return (0 < goog.date.Date.compare(this$__$1,that));
 });
 goog.date.Date.prototype.clj_time$core$DateTimeProtocol$before_QMARK_$arity$2 = (function (this$,that){var this$__$1 = this;return (0 > goog.date.Date.compare(this$__$1,that));
 });
-goog.date.Date.prototype.clj_time$core$DateTimeProtocol$plus_$arity$2 = (function (this$,interval){var this$__$1 = this;var G__13329 = this$__$1.clone();G__13329.add(interval);
-return G__13329;
+goog.date.Date.prototype.clj_time$core$DateTimeProtocol$plus_$arity$2 = (function (this$,interval){var this$__$1 = this;var G__13785 = this$__$1.clone();G__13785.add(interval);
+return G__13785;
 });
-goog.date.Date.prototype.clj_time$core$DateTimeProtocol$minus_$arity$2 = (function (this$,interval){var this$__$1 = this;var G__13330 = this$__$1.clone();G__13330.add(interval.getInverse());
-return G__13330;
+goog.date.Date.prototype.clj_time$core$DateTimeProtocol$minus_$arity$2 = (function (this$,interval){var this$__$1 = this;var G__13786 = this$__$1.clone();G__13786.add(interval.getInverse());
+return G__13786;
 });
 goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$ = true;
 goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$year$arity$1 = (function (this$){var this$__$1 = this;return this$__$1.getFullYear();
@@ -292,7 +292,7 @@ goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$month$arity$1 = (fun
 });
 goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$day$arity$1 = (function (this$){var this$__$1 = this;return this$__$1.getDate();
 });
-goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$day_of_week$arity$1 = (function (this$){var this$__$1 = this;return (this$__$1.getDay() + 1);
+goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$day_of_week$arity$1 = (function (this$){var this$__$1 = this;return this$__$1.getDay();
 });
 goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$hour$arity$1 = (function (this$){var this$__$1 = this;return this$__$1.getHours();
 });
@@ -306,11 +306,11 @@ goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$after_QMARK_$arity$2
 });
 goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$before_QMARK_$arity$2 = (function (this$,that){var this$__$1 = this;return (0 > goog.date.Date.compare(this$__$1,that));
 });
-goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$plus_$arity$2 = (function (this$,interval){var this$__$1 = this;var G__13331 = this$__$1.clone();G__13331.add(interval);
-return G__13331;
+goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$plus_$arity$2 = (function (this$,interval){var this$__$1 = this;var G__13787 = this$__$1.clone();G__13787.add(interval);
+return G__13787;
 });
-goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$minus_$arity$2 = (function (this$,interval){var this$__$1 = this;var G__13332 = this$__$1.clone();G__13332.add(interval.getInverse());
-return G__13332;
+goog.date.DateTime.prototype.clj_time$core$DateTimeProtocol$minus_$arity$2 = (function (this$,interval){var this$__$1 = this;var G__13788 = this$__$1.clone();G__13788.add(interval.getInverse());
+return G__13788;
 });
 goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$ = true;
 goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$year$arity$1 = (function (this$){var this$__$1 = this;return this$__$1.getFullYear();
@@ -319,7 +319,7 @@ goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$month$arity$1 = (
 });
 goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$day$arity$1 = (function (this$){var this$__$1 = this;return this$__$1.getDate();
 });
-goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$day_of_week$arity$1 = (function (this$){var this$__$1 = this;return (this$__$1.getDay() + 1);
+goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$day_of_week$arity$1 = (function (this$){var this$__$1 = this;return this$__$1.getDay();
 });
 goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$hour$arity$1 = (function (this$){var this$__$1 = this;return this$__$1.getHours();
 });
@@ -333,13 +333,13 @@ goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$after_QMARK_$arit
 });
 goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$before_QMARK_$arity$2 = (function (this$,that){var this$__$1 = this;return (0 > goog.date.Date.compare(this$__$1,that));
 });
-goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$plus_$arity$2 = (function (this$,interval){var this$__$1 = this;var G__13333 = this$__$1.clone();G__13333.add(interval);
-return G__13333;
+goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$plus_$arity$2 = (function (this$,interval){var this$__$1 = this;var G__13789 = this$__$1.clone();G__13789.add(interval);
+return G__13789;
 });
-goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$minus_$arity$2 = (function (this$,interval){var this$__$1 = this;var G__13334 = this$__$1.clone();G__13334.add(interval.getInverse());
-return G__13334;
+goog.date.UtcDateTime.prototype.clj_time$core$DateTimeProtocol$minus_$arity$2 = (function (this$,interval){var this$__$1 = this;var G__13790 = this$__$1.clone();G__13790.add(interval.getInverse());
+return G__13790;
 });
-clj_time.core.now = (function now(){return (new goog.date.UtcDateTime());
+clj_time.core.now = (function now(){return (new goog.date.DateTime());
 });
 /**
 * Returns a new date/time corresponding to the given date/time moved forwards by
@@ -351,22 +351,22 @@ var plus = null;
 var plus__2 = (function (dt,p){return clj_time.core.plus_(dt,p);
 });
 var plus__3 = (function() { 
-var G__13335__delegate = function (dt,p,ps){return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3(clj_time.core.plus_,clj_time.core.plus_(dt,p),ps);
+var G__13791__delegate = function (dt,p,ps){return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3(clj_time.core.plus_,clj_time.core.plus_(dt,p),ps);
 };
-var G__13335 = function (dt,p,var_args){
+var G__13791 = function (dt,p,var_args){
 var ps = null;if (arguments.length > 2) {
   ps = cljs.core.array_seq(Array.prototype.slice.call(arguments, 2),0);} 
-return G__13335__delegate.call(this,dt,p,ps);};
-G__13335.cljs$lang$maxFixedArity = 2;
-G__13335.cljs$lang$applyTo = (function (arglist__13336){
-var dt = cljs.core.first(arglist__13336);
-arglist__13336 = cljs.core.next(arglist__13336);
-var p = cljs.core.first(arglist__13336);
-var ps = cljs.core.rest(arglist__13336);
-return G__13335__delegate(dt,p,ps);
+return G__13791__delegate.call(this,dt,p,ps);};
+G__13791.cljs$lang$maxFixedArity = 2;
+G__13791.cljs$lang$applyTo = (function (arglist__13792){
+var dt = cljs.core.first(arglist__13792);
+arglist__13792 = cljs.core.next(arglist__13792);
+var p = cljs.core.first(arglist__13792);
+var ps = cljs.core.rest(arglist__13792);
+return G__13791__delegate(dt,p,ps);
 });
-G__13335.cljs$core$IFn$_invoke$arity$variadic = G__13335__delegate;
-return G__13335;
+G__13791.cljs$core$IFn$_invoke$arity$variadic = G__13791__delegate;
+return G__13791;
 })()
 ;
 plus = function(dt,p,var_args){
