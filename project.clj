@@ -5,7 +5,7 @@
                  :url "http://creativecommons.org/licenses/by/3.0/"}
   :source-paths ["src/clj" "src/cljs"]
   :dependencies [[org.clojure/clojure             "1.5.1"]
-                 [org.clojure/clojurescript       "0.0-2075"]
+                 [org.clojure/clojurescript       "0.0-2138"]
                  [prismatic/dommy                 "0.1.2"]
                  [ring                            "1.2.0"]
                  [compojure                       "1.1.5"]
