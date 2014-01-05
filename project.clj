@@ -16,7 +16,7 @@
   :repositories {"sonatype-staging" "https://oss.sonatype.org/content/groups/staging/"}
   :profiles     {:dev {;; :repl-options {:init-ns dev-server}
                        :plugins      [[com.cemerick/austin "0.1.3"]
-                                      [lein-cljsbuild      "1.0.1-SNAPSHOT"]]
+                                      [lein-cljsbuild      "1.0.1"]]
                        :cljsbuild    {:builds [{:id             "whitespace"
                                                 :source-paths   ["src/cljs"]
                                                 :notify-command ["terminal-notifier"
