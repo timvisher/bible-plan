@@ -4,8 +4,10 @@
 
   (:use-macros [dommy.macros :only [node]]))
 
-(defn ->td [date]
+(defn date->long-format [date]
   (let [long-date-formatter (goog.i18n.DateTimeFormat. goog.i18n.DateTimeFormat.Format.LONG_DATE)
-        now                 date
-        formatted-now       (.format long-date-formatter date)]
-    (node [:td (date->long-format date)])))
+        formatted-date      (.format long-date-formatter date)]
+    formatted-date))
+
+(defn ->td [date]
+  (node [:td (date->long-format date)]))
