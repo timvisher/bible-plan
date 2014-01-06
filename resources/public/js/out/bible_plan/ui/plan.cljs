@@ -1,11 +1,12 @@
 (ns bible-plan.ui.plan
-  (:require    time-ui
-               [clj-time.core           :as ct]
-               [bible-plan.ui.reference :as ref-ui]
-               [dommy.core              :as dom]
-               [bible-plan.plan         :as plan]
-               [shodan.console          :as console])
-  (:use-macros [dommy.macros :only [sel1 sel node deftemplate]]))
+  (:require [clj-time.core           :as ct]
+            [bible-plan.ui.reference :as ref-ui]
+            [dommy.core              :as dom]
+            [bible-plan.plan         :as plan]
+            [shodan.console          :as console]
+            [bible-plan.export.core  :refer [exporters]])
+
+  (:use-macros [dommy.macros :only [sel1 sel]]))
 
 (comment
   (in-ns 'bible-plan.ui.plan)
@@ -62,19 +63,11 @@
     (console/log (pr-str plan-options))
     plan-options))
 
-(deftemplate plan-day->tr [{:keys [readings date] :as plan-day}]
-  [:tr
-   (time-ui/->td date)
-   (map ref-ui/->td readings)])
-
-(defn plan->dom-content [the-plan]
-  (map plan-day->tr the-plan))
-
 (defn re-show-plan [e]
   (if (sel1 (keyword "input[name=plan]:checked"))
     (let [plan-options     (plan-state->plan-options)
           the-plan         (plan/calculate-plan plan-options)
-          plan-dom-content (plan->dom-content the-plan)]
+          plan-dom-content ((:html exporters) the-plan)]
       (show-plan! plan-dom-content))))
 
 (comment

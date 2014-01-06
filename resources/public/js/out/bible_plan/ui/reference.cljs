@@ -2,7 +2,6 @@
   (:require    [dommy.core           :as dom]
                [bible-plan.reference :as ref]
                [clojure.string       :as string]
-               time-ui
                titlecase)
 
   (:use-macros [dommy.macros :only [sel1 sel node deftemplate]]))
