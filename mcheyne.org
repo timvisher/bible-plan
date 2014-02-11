@@ -1,11 +1,11 @@
 
-* TODO Create RtM Export Data Form in page
+* DONE Create RtM Export Data Form in page
 
   import mail:
   list title:
   item tags:
 
-* TODO Wire export form submit to RtM export function
+* DONE Wire export form submit to RtM export function
 
   In core.cljs, attach a listener to the submit event of the export
   form for =bible-plan.export.rtm/export=.
