@@ -1,0 +1,33 @@
+
+* TODO Create RtM Export Data Form in page
+
+  import mail:
+  list title:
+  item tags:
+
+* TODO Wire export form submit to RtM export function
+
+  In core.cljs, attach a listener to the submit event of the export
+  form for =bible-plan.export.rtm/export=.
+
+* TODO Create an esv.to urlifier that follows [[http://esv.to/][the spec]]
+
+  bible-plan.reference/->esv.to
+
+  - Use + instead of a space
+  - Use . (a period) instead of : (a colon)
+  - Use , (a comma) instead of ; (a semicolon)
+  - Use common abbreviations of book titles
+  - Use - (a dash) for a passage
+  
+* TODO Roll up plan into chunks of no more than 20 tasks and no more than 2000 characters long
+
+  $title [#$tag-1 …] [$url]
+
+  - title: References
+  - url: esv.to url
+  - tags: form tags
+
+* TODO Display a mailto link with the RtM import address and a set of tasks that fit
+
+  mailto:$rtm-import-address?subject=$rtm-project-list&body=$task-set
