@@ -1,76 +1,76 @@
-// Compiled by ClojureScript 0.0-2138
+// Compiled by ClojureScript 0.0-2202
 goog.provide('bible_plan.plan');
 goog.require('cljs.core');
 goog.require('ajax.core');
+goog.require('shodan.console');
+goog.require('clj_time.periodic');
 goog.require('ajax.core');
 goog.require('clj_time.core');
 goog.require('clj_time.core');
-goog.require('clj_time.periodic');
+goog.require('shodan.console');
 goog.require('bible_plan.reference');
+goog.require('clj_time.periodic');
 goog.require('ajax.core');
 goog.require('bible_plan.reference');
-goog.require('shodan.console');
-goog.require('shodan.console');
-goog.require('clj_time.periodic');
 bible_plan.plan.plans = cljs.core.atom.call(null,cljs.core.PersistentArrayMap.EMPTY);
 bible_plan.plan.assoc_plan = (function assoc_plan(name,plan_data){return cljs.core.swap_BANG_.call(null,bible_plan.plan.plans,cljs.core.assoc,name,plan_data);
 });
-bible_plan.plan.load_plans = (function load_plans(){return ajax.core.ajax_request.call(null,"/edn/plans/plans.edn",new cljs.core.Keyword(null,"get","get",1014006472),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"handler","handler",1706707644),(function load_available_plans(p__5653){var vec__5663 = p__5653;var ok = cljs.core.nth.call(null,vec__5663,0,null);var plan_names = cljs.core.nth.call(null,vec__5663,1,null);if(cljs.core.truth_(ok))
-{var seq__5664 = cljs.core.seq.call(null,plan_names);var chunk__5665 = null;var count__5666 = 0;var i__5667 = 0;while(true){
-if((i__5667 < count__5666))
-{var plan_name = cljs.core._nth.call(null,chunk__5665,i__5667);shodan.console.log.call(null,[cljs.core.str("Loading plan: "),cljs.core.str(plan_name)].join(''));
-ajax.core.ajax_request.call(null,[cljs.core.str("/edn/plans/"),cljs.core.str(cljs.core.name.call(null,plan_name)),cljs.core.str(".edn")].join(''),new cljs.core.Keyword(null,"get","get",1014006472),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"handler","handler",1706707644),((function (seq__5664,chunk__5665,count__5666,i__5667,plan_name){
-return (function (p__5668){var vec__5669 = p__5668;var ok__$1 = cljs.core.nth.call(null,vec__5669,0,null);var plan_data = cljs.core.nth.call(null,vec__5669,1,null);if(cljs.core.truth_(ok__$1))
+bible_plan.plan.load_plans = (function load_plans(){return ajax.core.ajax_request.call(null,"/edn/plans/plans.edn",new cljs.core.Keyword(null,"get","get",1014006472),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"handler","handler",1706707644),(function load_available_plans(p__5767){var vec__5777 = p__5767;var ok = cljs.core.nth.call(null,vec__5777,0,null);var plan_names = cljs.core.nth.call(null,vec__5777,1,null);if(cljs.core.truth_(ok))
+{var seq__5778 = cljs.core.seq.call(null,plan_names);var chunk__5779 = null;var count__5780 = 0;var i__5781 = 0;while(true){
+if((i__5781 < count__5780))
+{var plan_name = cljs.core._nth.call(null,chunk__5779,i__5781);shodan.console.log.call(null,[cljs.core.str("Loading plan: "),cljs.core.str(plan_name)].join(''));
+ajax.core.ajax_request.call(null,[cljs.core.str("/edn/plans/"),cljs.core.str(cljs.core.name.call(null,plan_name)),cljs.core.str(".edn")].join(''),new cljs.core.Keyword(null,"get","get",1014006472),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"handler","handler",1706707644),((function (seq__5778,chunk__5779,count__5780,i__5781,plan_name,vec__5777,ok,plan_names){
+return (function (p__5782){var vec__5783 = p__5782;var ok__$1 = cljs.core.nth.call(null,vec__5783,0,null);var plan_data = cljs.core.nth.call(null,vec__5783,1,null);if(cljs.core.truth_(ok__$1))
 {return bible_plan.plan.assoc_plan.call(null,plan_name,plan_data);
 } else
 {return null;
 }
-});})(seq__5664,chunk__5665,count__5666,i__5667,plan_name))
+});})(seq__5778,chunk__5779,count__5780,i__5781,plan_name,vec__5777,ok,plan_names))
 ,new cljs.core.Keyword(null,"format","format",4040092521),ajax.core.edn_format.call(null)], null));
 {
-var G__5672 = seq__5664;
-var G__5673 = chunk__5665;
-var G__5674 = count__5666;
-var G__5675 = (i__5667 + 1);
-seq__5664 = G__5672;
-chunk__5665 = G__5673;
-count__5666 = G__5674;
-i__5667 = G__5675;
+var G__5786 = seq__5778;
+var G__5787 = chunk__5779;
+var G__5788 = count__5780;
+var G__5789 = (i__5781 + 1);
+seq__5778 = G__5786;
+chunk__5779 = G__5787;
+count__5780 = G__5788;
+i__5781 = G__5789;
 continue;
 }
 } else
-{var temp__4092__auto__ = cljs.core.seq.call(null,seq__5664);if(temp__4092__auto__)
-{var seq__5664__$1 = temp__4092__auto__;if(cljs.core.chunked_seq_QMARK_.call(null,seq__5664__$1))
-{var c__4150__auto__ = cljs.core.chunk_first.call(null,seq__5664__$1);{
-var G__5676 = cljs.core.chunk_rest.call(null,seq__5664__$1);
-var G__5677 = c__4150__auto__;
-var G__5678 = cljs.core.count.call(null,c__4150__auto__);
-var G__5679 = 0;
-seq__5664 = G__5676;
-chunk__5665 = G__5677;
-count__5666 = G__5678;
-i__5667 = G__5679;
+{var temp__4126__auto__ = cljs.core.seq.call(null,seq__5778);if(temp__4126__auto__)
+{var seq__5778__$1 = temp__4126__auto__;if(cljs.core.chunked_seq_QMARK_.call(null,seq__5778__$1))
+{var c__4229__auto__ = cljs.core.chunk_first.call(null,seq__5778__$1);{
+var G__5790 = cljs.core.chunk_rest.call(null,seq__5778__$1);
+var G__5791 = c__4229__auto__;
+var G__5792 = cljs.core.count.call(null,c__4229__auto__);
+var G__5793 = 0;
+seq__5778 = G__5790;
+chunk__5779 = G__5791;
+count__5780 = G__5792;
+i__5781 = G__5793;
 continue;
 }
 } else
-{var plan_name = cljs.core.first.call(null,seq__5664__$1);shodan.console.log.call(null,[cljs.core.str("Loading plan: "),cljs.core.str(plan_name)].join(''));
-ajax.core.ajax_request.call(null,[cljs.core.str("/edn/plans/"),cljs.core.str(cljs.core.name.call(null,plan_name)),cljs.core.str(".edn")].join(''),new cljs.core.Keyword(null,"get","get",1014006472),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"handler","handler",1706707644),((function (seq__5664,chunk__5665,count__5666,i__5667,plan_name,seq__5664__$1,temp__4092__auto__){
-return (function (p__5670){var vec__5671 = p__5670;var ok__$1 = cljs.core.nth.call(null,vec__5671,0,null);var plan_data = cljs.core.nth.call(null,vec__5671,1,null);if(cljs.core.truth_(ok__$1))
+{var plan_name = cljs.core.first.call(null,seq__5778__$1);shodan.console.log.call(null,[cljs.core.str("Loading plan: "),cljs.core.str(plan_name)].join(''));
+ajax.core.ajax_request.call(null,[cljs.core.str("/edn/plans/"),cljs.core.str(cljs.core.name.call(null,plan_name)),cljs.core.str(".edn")].join(''),new cljs.core.Keyword(null,"get","get",1014006472),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"handler","handler",1706707644),((function (seq__5778,chunk__5779,count__5780,i__5781,plan_name,seq__5778__$1,temp__4126__auto__,vec__5777,ok,plan_names){
+return (function (p__5784){var vec__5785 = p__5784;var ok__$1 = cljs.core.nth.call(null,vec__5785,0,null);var plan_data = cljs.core.nth.call(null,vec__5785,1,null);if(cljs.core.truth_(ok__$1))
 {return bible_plan.plan.assoc_plan.call(null,plan_name,plan_data);
 } else
 {return null;
 }
-});})(seq__5664,chunk__5665,count__5666,i__5667,plan_name,seq__5664__$1,temp__4092__auto__))
+});})(seq__5778,chunk__5779,count__5780,i__5781,plan_name,seq__5778__$1,temp__4126__auto__,vec__5777,ok,plan_names))
 ,new cljs.core.Keyword(null,"format","format",4040092521),ajax.core.edn_format.call(null)], null));
 {
-var G__5680 = cljs.core.next.call(null,seq__5664__$1);
-var G__5681 = null;
-var G__5682 = 0;
-var G__5683 = 0;
-seq__5664 = G__5680;
-chunk__5665 = G__5681;
-count__5666 = G__5682;
-i__5667 = G__5683;
+var G__5794 = cljs.core.next.call(null,seq__5778__$1);
+var G__5795 = null;
+var G__5796 = 0;
+var G__5797 = 0;
+seq__5778 = G__5794;
+chunk__5779 = G__5795;
+count__5780 = G__5796;
+i__5781 = G__5797;
 continue;
 }
 }
@@ -92,10 +92,10 @@ bible_plan.plan.annotate_plan_readings_with_days = (function annotate_plan_readi
 });
 bible_plan.plan.reading_day__GT_ = (function reading_day__GT_(annotated_reading,annotated_reading_day){var reading_day_day_number = cljs.core.comp.call(null,new cljs.core.Keyword(null,"day","day",1014003470),cljs.core.first).call(null,annotated_reading_day);var reading_day_number = cljs.core.get.call(null,annotated_reading,new cljs.core.Keyword(null,"day","day",1014003470));return (reading_day_number > reading_day_day_number);
 });
-bible_plan.plan.reading_book_QMARK_ = (function reading_book_QMARK_(book,reading_day){return cljs.core.some.call(null,(function start_or_end_in_book_QMARK_(p__5691){var map__5695 = p__5691;var map__5695__$1 = ((cljs.core.seq_QMARK_.call(null,map__5695))?cljs.core.apply.call(null,cljs.core.hash_map,map__5695):map__5695);var map__5696 = cljs.core.get.call(null,map__5695__$1,new cljs.core.Keyword(null,"start","start",1123661780));var map__5696__$1 = ((cljs.core.seq_QMARK_.call(null,map__5696))?cljs.core.apply.call(null,cljs.core.hash_map,map__5696):map__5696);var s_book = cljs.core.get.call(null,map__5696__$1,new cljs.core.Keyword(null,"book","book",1016933979));var map__5697 = cljs.core.get.call(null,map__5695__$1,new cljs.core.Keyword(null,"end","end",1014004813));var map__5697__$1 = ((cljs.core.seq_QMARK_.call(null,map__5697))?cljs.core.apply.call(null,cljs.core.hash_map,map__5697):map__5697);var e_book = cljs.core.get.call(null,map__5697__$1,new cljs.core.Keyword(null,"book","book",1016933979));return cljs.core.some.call(null,cljs.core.partial.call(null,cljs.core._EQ_,book),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [s_book,e_book], null));
+bible_plan.plan.reading_book_QMARK_ = (function reading_book_QMARK_(book,reading_day){return cljs.core.some.call(null,(function start_or_end_in_book_QMARK_(p__5805){var map__5809 = p__5805;var map__5809__$1 = ((cljs.core.seq_QMARK_.call(null,map__5809))?cljs.core.apply.call(null,cljs.core.hash_map,map__5809):map__5809);var map__5810 = cljs.core.get.call(null,map__5809__$1,new cljs.core.Keyword(null,"start","start",1123661780));var map__5810__$1 = ((cljs.core.seq_QMARK_.call(null,map__5810))?cljs.core.apply.call(null,cljs.core.hash_map,map__5810):map__5810);var s_book = cljs.core.get.call(null,map__5810__$1,new cljs.core.Keyword(null,"book","book",1016933979));var map__5811 = cljs.core.get.call(null,map__5809__$1,new cljs.core.Keyword(null,"end","end",1014004813));var map__5811__$1 = ((cljs.core.seq_QMARK_.call(null,map__5811))?cljs.core.apply.call(null,cljs.core.hash_map,map__5811):map__5811);var e_book = cljs.core.get.call(null,map__5811__$1,new cljs.core.Keyword(null,"book","book",1016933979));return cljs.core.some.call(null,cljs.core.partial.call(null,cljs.core._EQ_,book),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [s_book,e_book], null));
 }),reading_day);
 });
-bible_plan.plan.readings_for_book_in_reading_day = (function readings_for_book_in_reading_day(book,reading_day){return cljs.core.some.call(null,(function start_or_end_in_book_QMARK_(p__5705){var map__5709 = p__5705;var map__5709__$1 = ((cljs.core.seq_QMARK_.call(null,map__5709))?cljs.core.apply.call(null,cljs.core.hash_map,map__5709):map__5709);var reading = map__5709__$1;var map__5710 = cljs.core.get.call(null,map__5709__$1,new cljs.core.Keyword(null,"start","start",1123661780));var map__5710__$1 = ((cljs.core.seq_QMARK_.call(null,map__5710))?cljs.core.apply.call(null,cljs.core.hash_map,map__5710):map__5710);var s_book = cljs.core.get.call(null,map__5710__$1,new cljs.core.Keyword(null,"book","book",1016933979));var map__5711 = cljs.core.get.call(null,map__5709__$1,new cljs.core.Keyword(null,"end","end",1014004813));var map__5711__$1 = ((cljs.core.seq_QMARK_.call(null,map__5711))?cljs.core.apply.call(null,cljs.core.hash_map,map__5711):map__5711);var e_book = cljs.core.get.call(null,map__5711__$1,new cljs.core.Keyword(null,"book","book",1016933979));if(cljs.core.truth_(cljs.core.some.call(null,cljs.core.partial.call(null,cljs.core._EQ_,book),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [s_book,e_book], null))))
+bible_plan.plan.readings_for_book_in_reading_day = (function readings_for_book_in_reading_day(book,reading_day){return cljs.core.some.call(null,(function start_or_end_in_book_QMARK_(p__5819){var map__5823 = p__5819;var map__5823__$1 = ((cljs.core.seq_QMARK_.call(null,map__5823))?cljs.core.apply.call(null,cljs.core.hash_map,map__5823):map__5823);var reading = map__5823__$1;var map__5824 = cljs.core.get.call(null,map__5823__$1,new cljs.core.Keyword(null,"start","start",1123661780));var map__5824__$1 = ((cljs.core.seq_QMARK_.call(null,map__5824))?cljs.core.apply.call(null,cljs.core.hash_map,map__5824):map__5824);var s_book = cljs.core.get.call(null,map__5824__$1,new cljs.core.Keyword(null,"book","book",1016933979));var map__5825 = cljs.core.get.call(null,map__5823__$1,new cljs.core.Keyword(null,"end","end",1014004813));var map__5825__$1 = ((cljs.core.seq_QMARK_.call(null,map__5825))?cljs.core.apply.call(null,cljs.core.hash_map,map__5825):map__5825);var e_book = cljs.core.get.call(null,map__5825__$1,new cljs.core.Keyword(null,"book","book",1016933979));if(cljs.core.truth_(cljs.core.some.call(null,cljs.core.partial.call(null,cljs.core._EQ_,book),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [s_book,e_book], null))))
 {return reading;
 } else
 {return null;
@@ -104,30 +104,30 @@ bible_plan.plan.readings_for_book_in_reading_day = (function readings_for_book_i
 });
 bible_plan.plan.contiguous_readings_from = (function contiguous_readings_from(annotated_plan,annotated_reading){var available_reading_days = cljs.core.drop_while.call(null,cljs.core.partial.call(null,bible_plan.plan.reading_day__GT_,annotated_reading),annotated_plan);var annotated_reading_book = cljs.core.get_in.call(null,annotated_reading,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"start","start",1123661780),new cljs.core.Keyword(null,"book","book",1016933979)], null));var contiguous_book_reading_days = cljs.core.take_while.call(null,cljs.core.partial.call(null,bible_plan.plan.reading_book_QMARK_,annotated_reading_book),available_reading_days);var readings_for_book = cljs.core.map.call(null,cljs.core.partial.call(null,bible_plan.plan.readings_for_book_in_reading_day,annotated_reading_book),contiguous_book_reading_days);return readings_for_book;
 });
-bible_plan.plan.book_order = (function book_order(plan){var annotated_plan = cljs.core.map.call(null,(function (reading_day){return cljs.core.map.call(null,(function (p1__5712_SHARP_){return cljs.core.select_keys.call(null,p1__5712_SHARP_,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"start","start",1123661780),new cljs.core.Keyword(null,"end","end",1014004813),new cljs.core.Keyword(null,"day","day",1014003470)], null));
+bible_plan.plan.book_order = (function book_order(plan){var annotated_plan = cljs.core.map.call(null,(function (reading_day){return cljs.core.map.call(null,(function (p1__5826_SHARP_){return cljs.core.select_keys.call(null,p1__5826_SHARP_,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"start","start",1123661780),new cljs.core.Keyword(null,"end","end",1014004813),new cljs.core.Keyword(null,"day","day",1014003470)], null));
 }),reading_day);
-}),bible_plan.plan.annotate_plan_readings_with_days.call(null,plan));var annotated_readings = cljs.core.reduce.call(null,cljs.core.into,cljs.core.PersistentVector.EMPTY,annotated_plan);var G__5718 = annotated_readings;var vec__5719 = G__5718;var annotated_reading = cljs.core.nth.call(null,vec__5719,0,null);var next_annotated_readings = cljs.core.nthnext.call(null,vec__5719,1);var processed_readings = cljs.core.PersistentHashSet.EMPTY;var book_order__$1 = cljs.core.PersistentVector.EMPTY;var G__5718__$1 = G__5718;var processed_readings__$1 = processed_readings;var book_order__$2 = book_order__$1;while(true){
-var vec__5720 = G__5718__$1;var annotated_reading__$1 = cljs.core.nth.call(null,vec__5720,0,null);var next_annotated_readings__$1 = cljs.core.nthnext.call(null,vec__5720,1);var processed_readings__$2 = processed_readings__$1;var book_order__$3 = book_order__$2;if(cljs.core.not.call(null,annotated_reading__$1))
+}),bible_plan.plan.annotate_plan_readings_with_days.call(null,plan));var annotated_readings = cljs.core.reduce.call(null,cljs.core.into,cljs.core.PersistentVector.EMPTY,annotated_plan);var G__5832 = annotated_readings;var vec__5833 = G__5832;var annotated_reading = cljs.core.nth.call(null,vec__5833,0,null);var next_annotated_readings = cljs.core.nthnext.call(null,vec__5833,1);var processed_readings = cljs.core.PersistentHashSet.EMPTY;var book_order__$1 = cljs.core.PersistentVector.EMPTY;var G__5832__$1 = G__5832;var processed_readings__$1 = processed_readings;var book_order__$2 = book_order__$1;while(true){
+var vec__5834 = G__5832__$1;var annotated_reading__$1 = cljs.core.nth.call(null,vec__5834,0,null);var next_annotated_readings__$1 = cljs.core.nthnext.call(null,vec__5834,1);var processed_readings__$2 = processed_readings__$1;var book_order__$3 = book_order__$2;if(cljs.core.not.call(null,annotated_reading__$1))
 {return book_order__$3;
 } else
 {if(cljs.core.truth_(processed_readings__$2.call(null,annotated_reading__$1)))
 {{
-var G__5721 = next_annotated_readings__$1;
-var G__5722 = processed_readings__$2;
-var G__5723 = book_order__$3;
-G__5718__$1 = G__5721;
-processed_readings__$1 = G__5722;
-book_order__$2 = G__5723;
+var G__5835 = next_annotated_readings__$1;
+var G__5836 = processed_readings__$2;
+var G__5837 = book_order__$3;
+G__5832__$1 = G__5835;
+processed_readings__$1 = G__5836;
+book_order__$2 = G__5837;
 continue;
 }
 } else
 {var contiguous_readings = bible_plan.plan.contiguous_readings_from.call(null,annotated_plan,annotated_reading__$1);{
-var G__5724 = next_annotated_readings__$1;
-var G__5725 = cljs.core.into.call(null,processed_readings__$2,contiguous_readings);
-var G__5726 = cljs.core.conj.call(null,book_order__$3,cljs.core.get_in.call(null,annotated_reading__$1,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"start","start",1123661780),new cljs.core.Keyword(null,"book","book",1016933979)], null)));
-G__5718__$1 = G__5724;
-processed_readings__$1 = G__5725;
-book_order__$2 = G__5726;
+var G__5838 = next_annotated_readings__$1;
+var G__5839 = cljs.core.into.call(null,processed_readings__$2,contiguous_readings);
+var G__5840 = cljs.core.conj.call(null,book_order__$3,cljs.core.get_in.call(null,annotated_reading__$1,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"start","start",1123661780),new cljs.core.Keyword(null,"book","book",1016933979)], null)));
+G__5832__$1 = G__5838;
+processed_readings__$1 = G__5839;
+book_order__$2 = G__5840;
 continue;
 }
 }
@@ -135,15 +135,15 @@ continue;
 break;
 }
 });
-bible_plan.plan.update_vals = (function update_vals(the_map,update_fn){return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,(function (){var iter__4119__auto__ = (function iter__5735(s__5736){return (new cljs.core.LazySeq(null,(function (){var s__5736__$1 = s__5736;while(true){
-var temp__4092__auto__ = cljs.core.seq.call(null,s__5736__$1);if(temp__4092__auto__)
-{var s__5736__$2 = temp__4092__auto__;if(cljs.core.chunked_seq_QMARK_.call(null,s__5736__$2))
-{var c__4117__auto__ = cljs.core.chunk_first.call(null,s__5736__$2);var size__4118__auto__ = cljs.core.count.call(null,c__4117__auto__);var b__5738 = cljs.core.chunk_buffer.call(null,size__4118__auto__);if((function (){var i__5737 = 0;while(true){
-if((i__5737 < size__4118__auto__))
-{var vec__5741 = cljs.core._nth.call(null,c__4117__auto__,i__5737);var k = cljs.core.nth.call(null,vec__5741,0,null);var v = cljs.core.nth.call(null,vec__5741,1,null);cljs.core.chunk_append.call(null,b__5738,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,update_fn.call(null,v)], null));
+bible_plan.plan.update_vals = (function update_vals(the_map,update_fn){return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,(function (){var iter__4198__auto__ = (function iter__5849(s__5850){return (new cljs.core.LazySeq(null,(function (){var s__5850__$1 = s__5850;while(true){
+var temp__4126__auto__ = cljs.core.seq.call(null,s__5850__$1);if(temp__4126__auto__)
+{var s__5850__$2 = temp__4126__auto__;if(cljs.core.chunked_seq_QMARK_.call(null,s__5850__$2))
+{var c__4196__auto__ = cljs.core.chunk_first.call(null,s__5850__$2);var size__4197__auto__ = cljs.core.count.call(null,c__4196__auto__);var b__5852 = cljs.core.chunk_buffer.call(null,size__4197__auto__);if((function (){var i__5851 = 0;while(true){
+if((i__5851 < size__4197__auto__))
+{var vec__5855 = cljs.core._nth.call(null,c__4196__auto__,i__5851);var k = cljs.core.nth.call(null,vec__5855,0,null);var v = cljs.core.nth.call(null,vec__5855,1,null);cljs.core.chunk_append.call(null,b__5852,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,update_fn.call(null,v)], null));
 {
-var G__5743 = (i__5737 + 1);
-i__5737 = G__5743;
+var G__5857 = (i__5851 + 1);
+i__5851 = G__5857;
 continue;
 }
 } else
@@ -152,12 +152,12 @@ continue;
 break;
 }
 })())
-{return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__5738),iter__5735.call(null,cljs.core.chunk_rest.call(null,s__5736__$2)));
+{return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__5852),iter__5849.call(null,cljs.core.chunk_rest.call(null,s__5850__$2)));
 } else
-{return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__5738),null);
+{return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__5852),null);
 }
 } else
-{var vec__5742 = cljs.core.first.call(null,s__5736__$2);var k = cljs.core.nth.call(null,vec__5742,0,null);var v = cljs.core.nth.call(null,vec__5742,1,null);return cljs.core.cons.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,update_fn.call(null,v)], null),iter__5735.call(null,cljs.core.rest.call(null,s__5736__$2)));
+{var vec__5856 = cljs.core.first.call(null,s__5850__$2);var k = cljs.core.nth.call(null,vec__5856,0,null);var v = cljs.core.nth.call(null,vec__5856,1,null);return cljs.core.cons.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [k,update_fn.call(null,v)], null),iter__5849.call(null,cljs.core.rest.call(null,s__5850__$2)));
 }
 } else
 {return null;
@@ -165,7 +165,7 @@ break;
 break;
 }
 }),null,null));
-});return iter__4119__auto__.call(null,the_map);
+});return iter__4198__auto__.call(null,the_map);
 })());
 });
 bible_plan.plan.group_into_ascending_readings = (function group_into_ascending_readings(readings){return cljs.core.reduce.call(null,(function (ascending_readings,reference){if(cljs.core.truth_(bible_plan.reference._LT_.call(null,cljs.core.last.call(null,cljs.core.nth.call(null,ascending_readings,(cljs.core.count.call(null,ascending_readings) - 1))),reference)))
@@ -183,18 +183,20 @@ return (function reading_start_book(reading){return cljs.core.get_in.call(null,r
 });
 bible_plan.plan.group_reading_day = (function group_reading_day(raw_reading_day){var original_order = cljs.core.distinct.call(null,cljs.core.map.call(null,cljs.core.comp.call(null,new cljs.core.Keyword(null,"book","book",1016933979),new cljs.core.Keyword(null,"start","start",1123661780)),raw_reading_day));var grouped_readings = cljs.core.group_by.call(null,cljs.core.comp.call(null,new cljs.core.Keyword(null,"book","book",1016933979),new cljs.core.Keyword(null,"start","start",1123661780)),raw_reading_day);return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"book-order","book-order",2217817820),original_order,new cljs.core.Keyword(null,"book-readings","book-readings",1725265213),grouped_readings], null);
 });
-bible_plan.plan.coalesce_reading_day = (function coalesce_reading_day(p__5744){var map__5746 = p__5744;var map__5746__$1 = ((cljs.core.seq_QMARK_.call(null,map__5746))?cljs.core.apply.call(null,cljs.core.hash_map,map__5746):map__5746);var grouped_reading_day = map__5746__$1;var book_readings = cljs.core.get.call(null,map__5746__$1,new cljs.core.Keyword(null,"book-readings","book-readings",1725265213));var book_order = cljs.core.get.call(null,map__5746__$1,new cljs.core.Keyword(null,"book-order","book-order",2217817820));return cljs.core.map.call(null,(function merge_reading_book_group(reading_book_group){return cljs.core.reduce.call(null,bible_plan.reference.merge_refs,cljs.core.get.call(null,book_readings,reading_book_group));
-}),book_order);
+bible_plan.plan.coalesce_reading_day = (function coalesce_reading_day(p__5858){var map__5860 = p__5858;var map__5860__$1 = ((cljs.core.seq_QMARK_.call(null,map__5860))?cljs.core.apply.call(null,cljs.core.hash_map,map__5860):map__5860);var grouped_reading_day = map__5860__$1;var book_readings = cljs.core.get.call(null,map__5860__$1,new cljs.core.Keyword(null,"book-readings","book-readings",1725265213));var book_order = cljs.core.get.call(null,map__5860__$1,new cljs.core.Keyword(null,"book-order","book-order",2217817820));return cljs.core.map.call(null,((function (map__5860,map__5860__$1,grouped_reading_day,book_readings,book_order){
+return (function merge_reading_book_group(reading_book_group){return cljs.core.reduce.call(null,bible_plan.reference.merge_refs,cljs.core.get.call(null,book_readings,reading_book_group));
+});})(map__5860,map__5860__$1,grouped_reading_day,book_readings,book_order))
+,book_order);
 });
-bible_plan.plan.raw_plan_by_book = (function raw_plan_by_book(book_readings,book_order){var raw_plan = cljs.core.PersistentVector.EMPTY;var book_readings__$1 = book_readings;var G__5752 = book_order;var vec__5753 = G__5752;var book = cljs.core.nth.call(null,vec__5753,0,null);var next_books = cljs.core.nthnext.call(null,vec__5753,1);var raw_plan__$1 = raw_plan;var book_readings__$2 = book_readings__$1;var G__5752__$1 = G__5752;while(true){
-var raw_plan__$2 = raw_plan__$1;var book_readings__$3 = book_readings__$2;var vec__5754 = G__5752__$1;var book__$1 = cljs.core.nth.call(null,vec__5754,0,null);var next_books__$1 = cljs.core.nthnext.call(null,vec__5754,1);if(cljs.core.truth_(book__$1))
+bible_plan.plan.raw_plan_by_book = (function raw_plan_by_book(book_readings,book_order){var raw_plan = cljs.core.PersistentVector.EMPTY;var book_readings__$1 = book_readings;var G__5866 = book_order;var vec__5867 = G__5866;var book = cljs.core.nth.call(null,vec__5867,0,null);var next_books = cljs.core.nthnext.call(null,vec__5867,1);var raw_plan__$1 = raw_plan;var book_readings__$2 = book_readings__$1;var G__5866__$1 = G__5866;while(true){
+var raw_plan__$2 = raw_plan__$1;var book_readings__$3 = book_readings__$2;var vec__5868 = G__5866__$1;var book__$1 = cljs.core.nth.call(null,vec__5868,0,null);var next_books__$1 = cljs.core.nthnext.call(null,vec__5868,1);if(cljs.core.truth_(book__$1))
 {var current_book_readings = cljs.core.first.call(null,cljs.core.get.call(null,book_readings__$3,book__$1));var next_book_readings = cljs.core.update_in.call(null,book_readings__$3,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [book__$1], null),cljs.core.rest);{
-var G__5755 = cljs.core.into.call(null,raw_plan__$2,current_book_readings);
-var G__5756 = next_book_readings;
-var G__5757 = next_books__$1;
-raw_plan__$1 = G__5755;
-book_readings__$2 = G__5756;
-G__5752__$1 = G__5757;
+var G__5869 = cljs.core.into.call(null,raw_plan__$2,current_book_readings);
+var G__5870 = next_book_readings;
+var G__5871 = next_books__$1;
+raw_plan__$1 = G__5869;
+book_readings__$2 = G__5870;
+G__5866__$1 = G__5871;
 continue;
 }
 } else
@@ -209,16 +211,16 @@ bible_plan.plan.partition_all_balanced = (function partition_all_balanced(n,coll
 {var rest_coll_items = coll;var partitioned_coll = cljs.core.PersistentVector.EMPTY;var step_size = Math.floor(n);var sub_1_part = cljs.core.rem.call(null,n,1);var make_up = sub_1_part;while(true){
 if(cljs.core.seq.call(null,rest_coll_items))
 {{
-var G__5758 = cljs.core.drop.call(null,(step_size + Math.floor(make_up)),rest_coll_items);
-var G__5759 = cljs.core.conj.call(null,partitioned_coll,cljs.core.take.call(null,(step_size + Math.floor(make_up)),rest_coll_items));
-var G__5760 = step_size;
-var G__5761 = sub_1_part;
-var G__5762 = (sub_1_part + cljs.core.rem.call(null,make_up,1));
-rest_coll_items = G__5758;
-partitioned_coll = G__5759;
-step_size = G__5760;
-sub_1_part = G__5761;
-make_up = G__5762;
+var G__5872 = cljs.core.drop.call(null,(step_size + Math.floor(make_up)),rest_coll_items);
+var G__5873 = cljs.core.conj.call(null,partitioned_coll,cljs.core.take.call(null,(step_size + Math.floor(make_up)),rest_coll_items));
+var G__5874 = step_size;
+var G__5875 = sub_1_part;
+var G__5876 = (sub_1_part + cljs.core.rem.call(null,make_up,1));
+rest_coll_items = G__5872;
+partitioned_coll = G__5873;
+step_size = G__5874;
+sub_1_part = G__5875;
+make_up = G__5876;
 continue;
 }
 } else
@@ -244,7 +246,7 @@ if((number_of_reading_days > cljs.core.count.call(null,plan)))
 }),bible_plan.plan.partition_all_balanced.call(null,(cljs.core.count.call(null,plan) / number_of_reading_days),plan));var fixed_raw_reading_days = (((cljs.core.count.call(null,plan) > number_of_reading_days))?bible_plan.plan.combine_last_two_items.call(null,raw_reading_days):raw_reading_days);var grouped_reading_days = cljs.core.map.call(null,bible_plan.plan.group_reading_day,fixed_raw_reading_days);var coalesced_reading_days = cljs.core.map.call(null,bible_plan.plan.coalesce_reading_day,grouped_reading_days);return coalesced_reading_days;
 }
 });
-bible_plan.plan.calculate_plan = (function calculate_plan(p__5763){var map__5765 = p__5763;var map__5765__$1 = ((cljs.core.seq_QMARK_.call(null,map__5765))?cljs.core.apply.call(null,cljs.core.hash_map,map__5765):map__5765);var plan_options = map__5765__$1;var books_at_a_time_QMARK_ = cljs.core.get.call(null,map__5765__$1,new cljs.core.Keyword(null,"books-at-a-time?","books-at-a-time?",761096577));var skip_days = cljs.core.get.call(null,map__5765__$1,new cljs.core.Keyword(null,"skip-days","skip-days",3061888855));var end_date = cljs.core.get.call(null,map__5765__$1,new cljs.core.Keyword(null,"end-date","end-date",2692795602));var start_date = cljs.core.get.call(null,map__5765__$1,new cljs.core.Keyword(null,"start-date","start-date",3689065899));var base_plan = cljs.core.get.call(null,map__5765__$1,new cljs.core.Keyword(null,"base-plan","base-plan",3446158359));if(cljs.core.truth_(base_plan))
+bible_plan.plan.calculate_plan = (function calculate_plan(p__5877){var map__5879 = p__5877;var map__5879__$1 = ((cljs.core.seq_QMARK_.call(null,map__5879))?cljs.core.apply.call(null,cljs.core.hash_map,map__5879):map__5879);var plan_options = map__5879__$1;var books_at_a_time_QMARK_ = cljs.core.get.call(null,map__5879__$1,new cljs.core.Keyword(null,"books-at-a-time?","books-at-a-time?",761096577));var skip_days = cljs.core.get.call(null,map__5879__$1,new cljs.core.Keyword(null,"skip-days","skip-days",3061888855));var end_date = cljs.core.get.call(null,map__5879__$1,new cljs.core.Keyword(null,"end-date","end-date",2692795602));var start_date = cljs.core.get.call(null,map__5879__$1,new cljs.core.Keyword(null,"start-date","start-date",3689065899));var base_plan = cljs.core.get.call(null,map__5879__$1,new cljs.core.Keyword(null,"base-plan","base-plan",3446158359));if(cljs.core.truth_(base_plan))
 {} else
 {throw (new Error([cljs.core.str("Assert failed: "),cljs.core.str(cljs.core.pr_str.call(null,new cljs.core.Symbol(null,"base-plan","base-plan",791722590,null)))].join('')));
 }
@@ -252,11 +254,13 @@ if(cljs.core.truth_(base_plan.call(null,cljs.core.deref.call(null,bible_plan.pla
 {} else
 {throw (new Error([cljs.core.str("Assert failed: "),cljs.core.str(cljs.core.pr_str.call(null,cljs.core.list(new cljs.core.Symbol(null,"base-plan","base-plan",791722590,null),cljs.core.list(new cljs.core.Symbol("clojure.core","deref","clojure.core/deref",-564909588,null),new cljs.core.Symbol(null,"plans","plans",-1533783005,null)))))].join('')));
 }
-var the_plan = base_plan.call(null,cljs.core.deref.call(null,bible_plan.plan.plans));var start_date__$1 = (cljs.core.truth_(start_date)?start_date:clj_time.core.now.call(null));var end_date__$1 = (cljs.core.truth_(end_date)?end_date:clj_time.core.plus.call(null,start_date__$1,clj_time.core.years.call(null,1)));var dates = cljs.core.filter.call(null,cljs.core.comp.call(null,cljs.core.complement.call(null,(function (){var or__3408__auto__ = skip_days;if(cljs.core.truth_(or__3408__auto__))
-{return or__3408__auto__;
+var the_plan = base_plan.call(null,cljs.core.deref.call(null,bible_plan.plan.plans));var start_date__$1 = (cljs.core.truth_(start_date)?start_date:clj_time.core.now.call(null));var end_date__$1 = (cljs.core.truth_(end_date)?end_date:clj_time.core.plus.call(null,start_date__$1,clj_time.core.years.call(null,1)));var dates = cljs.core.filter.call(null,cljs.core.comp.call(null,cljs.core.complement.call(null,(function (){var or__3481__auto__ = skip_days;if(cljs.core.truth_(or__3481__auto__))
+{return or__3481__auto__;
 } else
 {return cljs.core.PersistentHashSet.EMPTY;
 }
-})()),clj_time.core.day_of_week),cljs.core.take_while.call(null,cljs.core.partial.call(null,clj_time.core.after_QMARK_,end_date__$1),clj_time.periodic.periodic_seq.call(null,start_date__$1,clj_time.core.days.call(null,1))));var _ = shodan.console.log.call(null,cljs.core.count.call(null,dates));var the_plan__$1 = (cljs.core.truth_(books_at_a_time_QMARK_)?bible_plan.plan.order_by_book.call(null,cljs.core.count.call(null,dates),the_plan):bible_plan.plan.order_by_plan.call(null,cljs.core.count.call(null,dates),the_plan));var ___$1 = shodan.console.log.call(null,cljs.core.count.call(null,the_plan__$1));return cljs.core.map.call(null,(function (readings,date){return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"readings","readings",4441962201),readings,new cljs.core.Keyword(null,"date","date",1016980256),date], null);
-}),the_plan__$1,dates);
+})()),clj_time.core.day_of_week),cljs.core.take_while.call(null,cljs.core.partial.call(null,clj_time.core.after_QMARK_,end_date__$1),clj_time.periodic.periodic_seq.call(null,start_date__$1,clj_time.core.days.call(null,1))));var _ = shodan.console.log.call(null,cljs.core.count.call(null,dates));var the_plan__$1 = (cljs.core.truth_(books_at_a_time_QMARK_)?bible_plan.plan.order_by_book.call(null,cljs.core.count.call(null,dates),the_plan):bible_plan.plan.order_by_plan.call(null,cljs.core.count.call(null,dates),the_plan));var ___$1 = shodan.console.log.call(null,cljs.core.count.call(null,the_plan__$1));return cljs.core.map.call(null,((function (the_plan,start_date__$1,end_date__$1,dates,_,the_plan__$1,___$1,map__5879,map__5879__$1,plan_options,books_at_a_time_QMARK_,skip_days,end_date,start_date,base_plan){
+return (function (readings,date){return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"readings","readings",4441962201),readings,new cljs.core.Keyword(null,"date","date",1016980256),date], null);
+});})(the_plan,start_date__$1,end_date__$1,dates,_,the_plan__$1,___$1,map__5879,map__5879__$1,plan_options,books_at_a_time_QMARK_,skip_days,end_date,start_date,base_plan))
+,the_plan__$1,dates);
 });

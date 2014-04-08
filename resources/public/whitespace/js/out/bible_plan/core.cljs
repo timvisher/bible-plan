@@ -3,6 +3,7 @@
                [dommy.attrs             :as dom-attrs]
                [bible-plan.ui.reference :as ref-ui]
                [bible-plan.ui.plan      :as plan-ui]
+               [bible-plan.ui.export    :as export-ui]
                [goog.ui.DatePicker]
                clojure.browser.repl)
 
@@ -12,7 +13,9 @@
   (in-ns 'bible-plan.core)
   )
 
-(dom/listen! (sel1 :form) :change plan-ui/re-show-plan)
+(dom/listen! (sel1 (keyword "#wizard")) :change plan-ui/re-show-plan)
+
+(dom/listen! (sel1 (keyword "#export")) :submit export-ui/show-plan-exporter)
 
 (when-not (.-date (.-inputtypes js/Modernizr))
   (dom-attrs/add-class! (.-documentElement js/document) "no-date-input"))

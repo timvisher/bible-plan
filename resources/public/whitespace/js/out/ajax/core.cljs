@@ -219,10 +219,12 @@
     :raw (raw-response-format)
     nil))
 
-(defn transform-handler [{:keys [handler error-handler]}]
+(defn transform-handler [{:keys [handler error-handler finally]}]
   (fn easy-handler [[ok result]]
     (if-let [h (if ok handler error-handler)]
-      (h result))))
+      (h result))
+    (when (fn? finally)
+      (finally))))
 
 (defn transform-format [{:keys [format response-format] :as opts}]
   (let [rf (keyword-response-format response-format opts)]
@@ -253,6 +255,19 @@
   :params - a map of parameters that will be sent with the request"
   [uri & [opts]]
   (ajax-request uri "GET" (transform-opts opts)))
+
+(defn PUT
+  "accepts the URI and an optional map of options, options include:
+  :handler - the handler function for successful operation
+             should accept a single parameter which is the deserialized
+             response
+  :error-handler - the handler function for errors, should accept a map
+                   with keys :status and :status-text
+  :format - the format for the request
+  :response-format - the format for the response
+  :params - a map of parameters that will be sent with the request"
+  [uri & [opts]]
+  (ajax-request uri "PUT" (transform-opts opts)))
 
 (defn POST
   "accepts the URI and an optional map of options, options include:

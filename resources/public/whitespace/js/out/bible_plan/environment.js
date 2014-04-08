@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 0.0-2138
+// Compiled by ClojureScript 0.0-2202
 goog.provide('bible_plan.environment');
 goog.require('cljs.core');
 bible_plan.environment.hostname = (function hostname(){return location.hostname;

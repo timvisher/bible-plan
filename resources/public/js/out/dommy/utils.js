@@ -1,18 +1,18 @@
-// Compiled by ClojureScript 0.0-2138
+// Compiled by ClojureScript 0.0-2202
 goog.provide('dommy.utils');
 goog.require('cljs.core');
 /**
 * Dissociate this keyseq from m, removing any empty maps created as a result
 * (including at the top-level).
 */
-dommy.utils.dissoc_in = (function dissoc_in(m,p__11244){var vec__11246 = p__11244;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__11246,0,null);var ks = cljs.core.nthnext(vec__11246,1);if(cljs.core.truth_(m))
-{var temp__4090__auto__ = (function (){var and__3396__auto__ = ks;if(and__3396__auto__)
+dommy.utils.dissoc_in = (function dissoc_in(m,p__11448){var vec__11450 = p__11448;var k = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__11450,0,null);var ks = cljs.core.nthnext(vec__11450,1);if(cljs.core.truth_(m))
+{var temp__4124__auto__ = (function (){var and__3469__auto__ = ks;if(and__3469__auto__)
 {return dissoc_in((m.cljs$core$IFn$_invoke$arity$1 ? m.cljs$core$IFn$_invoke$arity$1(k) : m.call(null,k)),ks);
 } else
-{return and__3396__auto__;
+{return and__3469__auto__;
 }
-})();if(cljs.core.truth_(temp__4090__auto__))
-{var res = temp__4090__auto__;return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(m,k,res);
+})();if(cljs.core.truth_(temp__4124__auto__))
+{var res = temp__4124__auto__;return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(m,k,res);
 } else
 {var res = cljs.core.dissoc.cljs$core$IFn$_invoke$arity$2(m,k);if(cljs.core.empty_QMARK_(res))
 {return null;

@@ -1,18 +1,19 @@
-// Compiled by ClojureScript 0.0-2138
+// Compiled by ClojureScript 0.0-2202
 goog.provide('bible_plan.ui.plan');
 goog.require('cljs.core');
 goog.require('bible_plan.export$.core');
+goog.require('shodan.console');
+goog.require('bible_plan.plan');
+goog.require('clj_time.core');
+goog.require('dommy.core');
+goog.require('bible_plan.ui.reference');
+goog.require('clj_time.core');
 goog.require('bible_plan.export$.core');
-goog.require('clj_time.core');
-goog.require('bible_plan.plan');
-goog.require('clj_time.core');
+goog.require('shodan.console');
+goog.require('bible_plan.ui.reference');
 goog.require('bible_plan.plan');
 goog.require('dommy.core');
-goog.require('bible_plan.ui.reference');
-goog.require('bible_plan.ui.reference');
-goog.require('shodan.console');
-goog.require('shodan.console');
-goog.require('dommy.core');
+goog.require('goog.date');
 bible_plan.ui.plan.hide_plan = (function hide_plan(){return dommy.core.add_class_BANG_.call(null,document.getElementById("plan"),new cljs.core.Keyword(null,"hidden","hidden",4091384092));
 });
 bible_plan.ui.plan.log_pr = (function log_pr(object){return shodan.console.log.call(null,cljs.core.pr_str.call(null,object));
@@ -40,7 +41,8 @@ return (function day_input__GT_day_number(day_input){return cljs.core.get.call(n
 return plan_options;
 });
 bible_plan.ui.plan.re_show_plan = (function re_show_plan(e){if(cljs.core.truth_(document.querySelector(dommy.core.selector.call(null,cljs.core.keyword.call(null,"input[name=plan]:checked")))))
-{var plan_options = bible_plan.ui.plan.plan_state__GT_plan_options.call(null);var the_plan = bible_plan.plan.calculate_plan.call(null,plan_options);var plan_dom_content = new cljs.core.Keyword(null,"html","html",1017117469).cljs$core$IFn$_invoke$arity$1(bible_plan.export$.core.exporters).call(null,the_plan);return bible_plan.ui.plan.show_plan_BANG_.call(null,plan_dom_content);
+{var plan_options = bible_plan.ui.plan.plan_state__GT_plan_options.call(null);var the_plan = bible_plan.plan.calculate_plan.call(null,plan_options);var plan_dom_content = new cljs.core.Keyword(null,"html","html",1017117469).cljs$core$IFn$_invoke$arity$1(bible_plan.export$.core.exporters).call(null,the_plan);bible_plan.ui.plan.show_plan_BANG_.call(null,plan_dom_content);
+return new cljs.core.Keyword(null,"remember-the-milk","remember-the-milk",3672490665).cljs$core$IFn$_invoke$arity$1(bible_plan.export$.core.exporters).call(null,the_plan);
 } else
 {return null;
 }

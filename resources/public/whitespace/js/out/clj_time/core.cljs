@@ -1,5 +1,6 @@
 (ns clj-time.core
-  (:require goog.date.Interval
+  (:require goog.date.Date
+            goog.date.Interval
             goog.date.DateTime
             goog.date.UtcDateTime)
   (:refer-clojure :exclude [second]))

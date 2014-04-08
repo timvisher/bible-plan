@@ -1,4 +1,4 @@
-// Compiled by ClojureScript 0.0-2138
+// Compiled by ClojureScript 0.0-2202
 goog.provide('titlecase');
 goog.require('cljs.core');
 goog.require('clojure.string');
