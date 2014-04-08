@@ -4,8 +4,8 @@
   :license      {:name "Creative Commons Attribution 3.0 Unported License"
                  :url "http://creativecommons.org/licenses/by/3.0/"}
   :source-paths ["src/clj" "src/cljs"]
-  :dependencies [[org.clojure/clojure             "1.5.1"]
-                 [org.clojure/clojurescript       "0.0-2156"]
+  :dependencies [[org.clojure/clojure             "1.6.0"]
+                 [org.clojure/clojurescript       "0.0-2202"]
                  [prismatic/dommy                 "0.1.2"]
                  [ring                            "1.2.1"]
                  [compojure                       "1.1.6"]
@@ -16,7 +16,7 @@
   :repositories {"sonatype-staging" "https://oss.sonatype.org/content/groups/staging/"}
   :profiles     {:dev {;; :repl-options {:init-ns dev-server}
                        :plugins      [[com.cemerick/austin "0.1.3"]
-                                      [lein-cljsbuild      "1.0.1"]]
+                                      [lein-cljsbuild      "1.0.3"]]
                        :cljsbuild    {:builds [{:id             "whitespace"
                                                 :source-paths   ["src/cljs"]
                                                 :notify-command ["terminal-notifier"
