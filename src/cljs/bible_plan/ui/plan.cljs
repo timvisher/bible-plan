@@ -4,7 +4,8 @@
             [dommy.core              :as dom]
             [bible-plan.plan         :as plan]
             [shodan.console          :as console]
-            [bible-plan.export.core  :refer [exporters]])
+            [bible-plan.export.core  :refer [exporters]]
+            goog.date)
 
   (:use-macros [dommy.macros :only [sel1 sel]]))
 
@@ -68,7 +69,8 @@
     (let [plan-options     (plan-state->plan-options)
           the-plan         (plan/calculate-plan plan-options)
           plan-dom-content ((:html exporters) the-plan)]
-      (show-plan! plan-dom-content))))
+      (show-plan! plan-dom-content)
+      ((:remember-the-milk exporters) the-plan))))
 
 (comment
   (in-ns 'bible-plan.ui.plan)
